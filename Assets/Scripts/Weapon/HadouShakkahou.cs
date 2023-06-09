@@ -1,36 +1,29 @@
 using UnityEngine;
 
-public class HadouShakkahou : MonoBehaviour
+public class HadouShakkahou : WeaponBase
 {
-    [SerializeField] float timeToAttack;
-    float timer;
-
-    PlayerMovement playerMove;
-
     [SerializeField] GameObject hadouPrefab;
+    [SerializeField] float spread = 0.5f;
 
-
-    private void Awake()
+    public override void Attack()
     {
-        playerMove = GetComponentInParent<PlayerMovement>();
-    }
-
-    private void Update()
-    {
-        if (timer < timeToAttack)
+        UpdateVectorOfAttack();
+        for(int i = 0; i < weaponStats.numberOfAttacks; i++)
         {
-            timer += Time.deltaTime;
-            return;
+            GameObject shakkahou = Instantiate(hadouPrefab);
+
+            Vector2 newPosition = transform.position;
+            if(weaponStats.numberOfAttacks > 1)
+            {
+                newPosition.y -= (spread * (weaponStats.numberOfAttacks-1)) / 2;
+                newPosition.y += i * spread;
+            }
+
+            shakkahou.transform.position = newPosition;
+            HadouShakkahouProjectile hadouShakkahouProjectile = shakkahou.GetComponent<HadouShakkahouProjectile>();
+
+            hadouShakkahouProjectile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
+            hadouShakkahouProjectile.damage = GetDamage();
         }
-
-        timer = 0;
-        SpawnHadou();
-    }
-
-    private void SpawnHadou()
-    {
-        GameObject shakkahou = Instantiate(hadouPrefab);
-        shakkahou.transform.position = transform.position;
-        shakkahou.GetComponent<HadouShakkahouProjectile>().SetDirection(playerMove.lastHorizontalVector, playerMove.lastVerticalVector);
     }
 }

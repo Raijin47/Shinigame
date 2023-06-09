@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -5,10 +6,17 @@ public class Character : MonoBehaviour
     public int maxHp;
     public int currentHp;
     public int armor = 0;
+
+    public float hpRegenerationRate = 1f;
+    public float hpRegenerationTimer;
+
+    public float damageBonus;
     private bool isDeath = false;
     [SerializeField] StatusBar hpBar;
     [HideInInspector] public Level level;
     [HideInInspector] public Coins coins;
+
+    [SerializeField] private DataContainer dataContainer;
 
     private void Awake()
     {
@@ -17,7 +25,28 @@ public class Character : MonoBehaviour
     }
     private void Start()
     {
+        ApplyPersistantUpgrades();
         hpBar.SetState(currentHp, maxHp);
+    }
+
+    private void ApplyPersistantUpgrades()
+    {
+        int hpUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
+
+        maxHp += maxHp / 10 * hpUpgradeLevel;
+    
+        int damageUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
+        damageBonus = 1f + 0.1f * damageUpgradeLevel;
+    }
+
+    private void Update()
+    {
+        hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
+        if (hpRegenerationTimer > 1f)
+        {
+            Heal(1);
+            hpRegenerationTimer -= 1f;
+        }
     }
     public void TakeDamage(int damage)
     {

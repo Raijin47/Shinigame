@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c948207983de166488dea650eea79c80, type: 3}
+  m_Name: Hadou31
+  m_EditorClassIdentifier: 
+  Name: Hadou31 - Shakkahou
+  stats:
+    damage: 100
+    timeToAttack: 2
+    numberOfAttacks: 2
+  weaponBasePrefab: {fileID: 1107162244422284836, guid: b60504c285b19e447a77450a0a88c6ac, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: 1702e6bb7a60d1b4ca3adada8f9cf7e2, type: 2}
+  - {fileID: 11400000, guid: 8708a1975b654af47ac35c700e109413, type: 2}
+  - {fileID: 11400000, guid: 69a171e24e933084aa263b9528afea85, type: 2}
+  - {fileID: 11400000, guid: ab0b8c84a85aae54982be2b73139d224, type: 2}
