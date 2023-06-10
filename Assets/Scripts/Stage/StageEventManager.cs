@@ -1,14 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StageEventManager : MonoBehaviour
 {
     [SerializeField] StageData stageData;
     EnemyManager enemyManager;
-
     StageTime stageTime;
+
     int eventIndexer;
 
     private void Awake()
@@ -43,10 +40,7 @@ public class StageEventManager : MonoBehaviour
                     SpawnEnemyBoss();
                     break;
             }
-
-
-            Debug.Log(stageData.stageEvents[eventIndexer].message);
-            eventIndexer += 1;
+            eventIndexer ++;
         }
     }
 
@@ -57,7 +51,7 @@ public class StageEventManager : MonoBehaviour
 
     private void WinStage()
     {
-        EssentialService.instance.playerWinManager.Win();
+        EssentialService.instance.playerWinManager.Win(stageData.stageID);
     }
 
     private void SpawnObject()

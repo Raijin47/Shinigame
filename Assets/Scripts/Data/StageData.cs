@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -26,8 +25,9 @@ public class StageEvent
     public int repeatCount;
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Stage Data", menuName = "ScriptableObjects/StageData", order = 51)]
 public class StageData : ScriptableObject
 {
     public List<StageEvent> stageEvents;
+    public int stageID;
 }

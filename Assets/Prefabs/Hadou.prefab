@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4351279307819077690}
   - component: {fileID: 1455131884752892173}
-  - component: {fileID: 4261238357633260062}
-  - component: {fileID: 4825705852851258529}
+  - component: {fileID: 6518521258844004707}
   m_Layer: 0
   m_Name: Hadou
   m_TagString: Untagged
@@ -86,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4261238357633260062
+--- !u!114 &6518521258844004707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,21 +94,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6962613407668175508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aeb9a1e3ceaf0a47a2c008180735df4, type: 3}
+  m_Script: {fileID: 11500000, guid: 70a85b65b66f8694c8c56f2a1e83f76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  damage: 5
---- !u!114 &4825705852851258529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6962613407668175508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c191340a76b7de42905dd43eaf84aeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 50
+  speed: 1
+  attackArea: 0.3

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerAnimate : MonoBehaviour
@@ -6,13 +7,13 @@ public class PlayerAnimate : MonoBehaviour
 
     Animator anim;
 
-    void Awake()
-    {
-        anim = GetComponentInChildren<Animator>();
-    }
-
     void Update()
     {
         anim.SetFloat("Horizontal", horizontal);
+    }
+
+    internal void SetAnimate(GameObject animObject)
+    {
+        anim = animObject.GetComponent<Animator>();
     }
 }

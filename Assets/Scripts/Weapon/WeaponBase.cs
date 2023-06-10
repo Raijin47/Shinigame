@@ -12,7 +12,7 @@ public enum DirectionOfAttack
 }
 public abstract class WeaponBase : MonoBehaviour
 {
-    PlayerMovement playerMove;
+    protected PlayerMovement playerMove;
 
     public WeaponData weaponData;
 
@@ -23,6 +23,8 @@ public abstract class WeaponBase : MonoBehaviour
     Character wielder;
     public Vector2 vectorOfAttack;
     [SerializeField] DirectionOfAttack attackDirection;
+
+    PoolManager poolManager;
 
     private void Awake()
     {
@@ -43,7 +45,12 @@ public abstract class WeaponBase : MonoBehaviour
     {
         weaponData = wd;
 
-        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.numberOfAttacks);
+        weaponStats = new WeaponStats(wd.stats);
+    }
+
+    public void SetPoolManager(PoolManager poolManager)
+    {
+        this.poolManager = poolManager;
     }
 
     public abstract void Attack();
@@ -76,11 +83,22 @@ public abstract class WeaponBase : MonoBehaviour
             IDamageable e = colliders[i].GetComponent<IDamageable>();
             if (e != null)
             {
-
-                PostDamage(damage, colliders[i].transform.position);
-                e.TakeDamage(damage);
+                ApplyDamage(colliders[i].transform.position, damage, e);
             }
         }
+    }
+
+    public void ApplyDamage(Vector2 position, int damage, IDamageable e)
+    {
+        PostDamage(damage, position);
+        e.TakeDamage(damage);
+        ApplyAdditionalEffects(e, position);
+    }
+
+    private void ApplyAdditionalEffects(IDamageable e, Vector3 enemyPosition)
+    {
+        e.Stun(weaponStats.stun);
+        e.Knockback((enemyPosition - transform.position).normalized, weaponStats.knockback, weaponStats.knockbackTimeWeight);
     }
 
     public void UpdateVectorOfAttack()
@@ -109,5 +127,19 @@ public abstract class WeaponBase : MonoBehaviour
                 break;
         }
         vectorOfAttack = vectorOfAttack.normalized;
+    }
+
+    public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
+    {
+        GameObject projectileGO = poolManager.GetObject(poolObjectData);
+
+        projectileGO.transform.position = position;
+
+        Projectile projectile = projectileGO.GetComponent<Projectile>();
+
+        projectile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
+        projectile.SetStats(this);
+
+        return projectileGO;
     }
 }

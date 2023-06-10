@@ -6,13 +6,8 @@ public class WhipWeapon : WeaponBase
     [SerializeField] GameObject leftWhipObject;
     [SerializeField] GameObject rightWhipObject;
 
-    PlayerMovement playerMove;
     [SerializeField] Vector2 attackSize;
 
-    private void Awake()
-    {
-        playerMove = GetComponentInParent<PlayerMovement>();
-    }
     public override void Attack()
     {
         StartCoroutine(AttackProcess());

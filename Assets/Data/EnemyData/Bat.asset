@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   nameEnemy: Bat
-  animatedPrefab: {fileID: 4444524370124816753, guid: f722cd0e3b4e4634993688df1f21aecb, type: 3}
+  poolObjectData: {fileID: 11400000, guid: 474b16a5dc0f2064fbeec57f495dca74, type: 2}
   stats:
     hp: 50
     damage: 1

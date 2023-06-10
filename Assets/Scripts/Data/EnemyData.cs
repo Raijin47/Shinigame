@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Enemy Data", menuName = "ScriptableObjects/EnemyData", order = 51)]
 public class EnemyData : ScriptableObject
 {
     public string nameEnemy;
-    public GameObject animatedPrefab;
+    public PoolObjectData poolObjectData;
     public EnemyStats stats;
 }
