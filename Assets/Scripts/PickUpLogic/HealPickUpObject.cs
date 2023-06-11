@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealPickUpObject : MonoBehaviour, IPickUpObject
 {
-    [SerializeField] int healAmount;
+    [SerializeField] private int healAmount;
     public void OnPickUp(Character character)
     {
         character.Heal(healAmount);

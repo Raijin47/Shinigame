@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,20 +29,21 @@ public class EnemySpawnGroup
 
 public class EnemyManager : MonoBehaviour
 {
-    StageProgress stageProgress;
-    [SerializeField] PoolManager poolManager;
-    [SerializeField] Vector2 spawnArea;
-    GameObject player;
-
-    List<Enemy> bossEnemiesList;
-    int totalBossHealth;
-    int currentBossHealth;
+    [SerializeField] private PoolManager poolManager;
+    [SerializeField] private Vector2 spawnArea;
     [SerializeField] private Slider bossHealthBar;
 
+    private StageProgress stageProgress;
+    private GameObject player;
+
+    List<Enemy> bossEnemiesList;
     List<EnemySpawnGroup> enemySpawnGroupList;
     List<EnemySpawnGroup> repeatedSpawnGroupList;
 
-    int spawnPerFrame = 2;
+    private int totalBossHealth;
+    private int currentBossHealth;
+    private int spawnPerFrame = 2;
+
     private void Start()
     {
         player = GameManager.instance.playerTransform.gameObject;

@@ -26,35 +26,24 @@ public class EnemyStats
 }
 public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 {
-    Transform targetDestination;
-
-
-    Rigidbody2D rb;
-    GameObject targetGameObject;
-    Character targetCharacter;
     public EnemyStats stats;
+    [SerializeField] private EnemyData enemyData;
+
+    private Rigidbody2D rb;
+    private GameObject targetGameObject;
+    private Character targetCharacter;
+    private Transform targetDestination;
+    private PoolMember poolMember;
     private Vector2 knockbackVector;
-    [SerializeField] EnemyData enemyData;
+
+    private float stunned;
     private float knockbackForce;
     private float knockbackTimeWeight;
-
-    float stunned;
-    private PoolMember poolMember;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    //private void Start()
-    //{
-    //    if(enemyData != null)
-    //    {
-    //        InitSprite(enemyData.animatedPrefab);
-    //        SetStats(enemyData.stats);
-    //        SetTarget(GameManager.instance.playerTransform.gameObject);
-    //    }
-    //}
 
     public void SetTarget(GameObject target)
     {
@@ -150,7 +139,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         stunned = stun;
     }
-
 
     public void Knockback(Vector2 vector, float force, float timeWeight)
     {

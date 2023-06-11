@@ -3,7 +3,7 @@ guid: e82d6162b918a4b43bd273701b9386fa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,7 +20,6 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -64,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -2378,114 +2377,115 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TX Props_104: 1762526400
+      TX Props_0: -1035343468
+      TX Props_1: -1012930681
       TX Props_10: 1184394961
-      TX Props_5: -621699041
-      TX Props_53: -1867557342
       TX Props_100: 1155553723
-      TX Props_47: -1288001732
-      TX Props_48: -857964629
-      TX Props_32: -777491121
-      TX Props_94: 1630931810
-      TX Props_34: 1801664995
-      TX Props_42: 333778791
-      TX Props_52: 436959966
-      TX Props_45: 1020978328
-      TX Props_22: 1444260749
-      TX Props_29: 1569788434
-      TX Props_38: -2119043619
-      TX Props_103: 864007229
-      TX Props_61: -4056924
-      TX Props_49: 1650310458
-      TX Props_89: -295005832
-      TX Props_30: 1806660886
-      TX Props_26: -417487863
-      TX Props_83: 988949006
-      TX Props_43: -2051100692
-      TX Props_54: -757173568
-      TX Props_41: -904794332
-      TX Props_80: -1963613019
-      TX Props_98: 754933584
-      TX Props_67: -1792151933
-      TX Props_31: -1945869325
-      TX Props_13: -1059032316
-      TX Props_92: 408633792
-      TX Props_77: 1996182540
-      TX Props_79: 413146673
-      TX Props_93: 625833207
       TX Props_101: 1863943743
       TX Props_102: -1396504740
-      TX Props_96: 179934178
-      TX Props_68: -942021890
-      TX Props_18: -1038183052
+      TX Props_103: 864007229
+      TX Props_104: 1762526400
+      TX Props_105: -1061718386
+      TX Props_11: 1002846725
+      TX Props_12: 1212519162
+      TX Props_13: -1059032316
+      TX Props_14: 22449575
+      TX Props_15: -2098532115
       TX Props_16: 1116518488
-      TX Props_62: -1372133343
+      TX Props_17: -664615701
+      TX Props_18: -1038183052
+      TX Props_19: 1406053772
+      TX Props_2: -1302008778
+      TX Props_20: 506078021
+      TX Props_21: 438446251
+      TX Props_22: 1444260749
+      TX Props_23: -1576369152
+      TX Props_24: 1007153571
+      TX Props_25: -1066589472
+      TX Props_26: -417487863
+      TX Props_27: -1177130680
+      TX Props_28: 925979581
+      TX Props_29: 1569788434
+      TX Props_3: -1448612698
+      TX Props_30: 1806660886
+      TX Props_31: -1945869325
+      TX Props_32: -777491121
+      TX Props_33: 558453677
+      TX Props_34: 1801664995
+      TX Props_35: 530986740
+      TX Props_36: 1113755212
+      TX Props_37: 1568395003
+      TX Props_38: -2119043619
+      TX Props_39: 1459312978
+      TX Props_4: -235439971
+      TX Props_40: 1872055973
+      TX Props_41: -904794332
+      TX Props_42: 333778791
+      TX Props_43: -2051100692
+      TX Props_44: 917908460
+      TX Props_45: 1020978328
+      TX Props_46: 1681507324
+      TX Props_47: -1288001732
+      TX Props_48: -857964629
+      TX Props_49: 1650310458
+      TX Props_5: -621699041
+      TX Props_50: -612501770
+      TX Props_51: -1531545513
+      TX Props_52: 436959966
+      TX Props_53: -1867557342
+      TX Props_54: -757173568
+      TX Props_55: 1088035287
+      TX Props_56: 131764475
       TX Props_57: -401306190
+      TX Props_58: -1690250816
+      TX Props_59: 1184120340
+      TX Props_6: -451173031
+      TX Props_60: -1783860533
+      TX Props_61: -4056924
+      TX Props_62: -1372133343
+      TX Props_63: 1380778026
+      TX Props_64: 366256488
+      TX Props_65: 1582315457
+      TX Props_66: -1612740204
+      TX Props_67: -1792151933
+      TX Props_68: -942021890
+      TX Props_69: -644555585
+      TX Props_7: -1831418224
+      TX Props_70: 1783323374
+      TX Props_71: -1121844070
+      TX Props_72: -1119552988
+      TX Props_73: 556370174
+      TX Props_74: -309382606
       TX Props_75: 524770348
       TX Props_76: 1844545284
-      TX Props_105: -1061718386
-      TX Props_25: -1066589472
-      TX Props_23: -1576369152
-      TX Props_73: 556370174
-      TX Props_15: -2098532115
-      TX Props_17: -664615701
-      TX Props_27: -1177130680
-      TX Props_12: 1212519162
-      TX Props_71: -1121844070
-      TX Props_7: -1831418224
-      TX Props_50: -612501770
-      TX Props_99: 145697143
-      TX Props_72: -1119552988
-      TX Props_0: -1035343468
-      TX Props_4: -235439971
-      TX Props_21: 438446251
-      TX Props_55: 1088035287
-      TX Props_95: -1575108779
-      TX Props_36: 1113755212
-      TX Props_6: -451173031
-      TX Props_69: -644555585
-      TX Props_60: -1783860533
-      TX Props_86: -258337219
-      TX Props_65: 1582315457
-      TX Props_33: 558453677
-      TX Props_19: 1406053772
+      TX Props_77: 1996182540
+      TX Props_78: -162004226
+      TX Props_79: 413146673
+      TX Props_8: -123822374
+      TX Props_80: -1963613019
+      TX Props_81: 2029517437
+      TX Props_82: -61476438
+      TX Props_83: 988949006
       TX Props_84: -210906293
       TX Props_85: 1690241092
-      TX Props_63: 1380778026
-      TX Props_37: 1568395003
-      TX Props_1: -1012930681
-      TX Props_70: 1783323374
-      TX Props_74: -309382606
-      TX Props_24: 1007153571
-      TX Props_81: 2029517437
-      TX Props_14: 22449575
-      TX Props_66: -1612740204
-      TX Props_20: 506078021
-      TX Props_39: 1459312978
-      TX Props_64: 366256488
-      TX Props_97: -591101063
-      TX Props_9: -1318043605
-      TX Props_58: -1690250816
-      TX Props_8: -123822374
-      TX Props_44: 917908460
-      TX Props_59: 1184120340
-      TX Props_3: -1448612698
-      TX Props_35: 530986740
-      TX Props_28: 925979581
+      TX Props_86: -258337219
       TX Props_87: -330952381
-      TX Props_56: 131764475
-      TX Props_91: 1645222037
-      TX Props_40: 1872055973
-      TX Props_82: -61476438
       TX Props_88: 802877715
-      TX Props_2: -1302008778
-      TX Props_11: 1002846725
+      TX Props_89: -295005832
+      TX Props_9: -1318043605
       TX Props_90: -496132002
-      TX Props_78: -162004226
-      TX Props_46: 1681507324
-      TX Props_51: -1531545513
+      TX Props_91: 1645222037
+      TX Props_92: 408633792
+      TX Props_93: 625833207
+      TX Props_94: 1630931810
+      TX Props_95: -1575108779
+      TX Props_96: 179934178
+      TX Props_97: -591101063
+      TX Props_98: 754933584
+      TX Props_99: 145697143
   spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

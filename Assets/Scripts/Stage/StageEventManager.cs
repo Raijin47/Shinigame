@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class StageEventManager : MonoBehaviour
 {
-    [SerializeField] StageData stageData;
-    EnemyManager enemyManager;
-    StageTime stageTime;
+    [SerializeField] private StageData stageData;
 
-    int eventIndexer;
+    private EnemyManager enemyManager;
+    private StageTime stageTime;
+
+    private int eventIndexer;
 
     private void Awake()
     {

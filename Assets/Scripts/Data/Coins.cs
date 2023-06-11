@@ -3,8 +3,9 @@ using TMPro;
 
 public class Coins : MonoBehaviour
 {
-    public int coinAcquired;
     [SerializeField] TextMeshProUGUI coinsCountText;
+    public int coinAcquired;
+
     public void Add(int count)
     {
         coinAcquired += count;

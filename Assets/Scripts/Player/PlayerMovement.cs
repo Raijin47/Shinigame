@@ -5,22 +5,22 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float _speed;
 
-    Rigidbody2D rb;
-    Vector3 movementVector;
-    PlayerAnimate anim;
+    private PlayerInput playerInput;
+    private Rigidbody2D rb;
+    private PlayerAnimate anim;
+    private Vector2 movementVector;
 
     [HideInInspector] public float lastHorizontalDeCoupledVector;
     [HideInInspector] public float lastVerticalDeCoupledVector;
-
-
     [HideInInspector] public float lastHorizontalCoupledVector;
     [HideInInspector] public float lastVerticalCoupledVector;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        movementVector = new Vector3();
+        movementVector = new Vector2();
         anim = GetComponent<PlayerAnimate>();
+        playerInput = GetComponent<PlayerInput>();
     }
     private void Start()
     {
@@ -32,9 +32,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        movementVector.x = Input.GetAxisRaw("Horizontal");
-        movementVector.y = Input.GetAxisRaw("Vertical");
-
+        movementVector = playerInput.direction;
 
         if(movementVector.x != 0 || movementVector.y != 0)
         {

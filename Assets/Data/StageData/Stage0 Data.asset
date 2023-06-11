@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Stage0 Data
   m_EditorClassIdentifier: 
   stageEvents:
-  - eventType: 3
-    time: 5
+  - eventType: 0
+    time: 15
     message: 
     enemyToSpawn: {fileID: 11400000, guid: 50f30195a310aed4ab62c7f89ef7ecb1, type: 2}
     objectToSpawn: {fileID: 0}
@@ -22,10 +22,10 @@ MonoBehaviour:
     isRepeatedEvent: 1
     repeatEverySeconds: 10
     repeatCount: 10
-  - eventType: 0
-    time: 15
+  - eventType: 3
+    time: 300
     message: 
-    enemyToSpawn: {fileID: 11400000, guid: 50f30195a310aed4ab62c7f89ef7ecb1, type: 2}
+    enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 0}
     count: 10
     isRepeatedEvent: 1

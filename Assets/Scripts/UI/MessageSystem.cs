@@ -11,7 +11,7 @@ public class MessageSystem : MonoBehaviour
             instance = this;
     }
 
-    [SerializeField] GameObject damageMessage;
+    [SerializeField] private GameObject damageMessage;
     List<TextMeshPro> messagePool;
     private int objectCount = 10;
     private int count;

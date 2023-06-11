@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class LevelSelectPanel : MonoBehaviour
 {
     [SerializeField] List<Button> stageSelectButton;
-    [SerializeField] DataContainer dataContainer;
+    [SerializeField] private DataContainer dataContainer;
 
     void UpdateButtons()
     {

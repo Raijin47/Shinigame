@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StageProgress : MonoBehaviour
 {
-    StageTime stageTime;
     [SerializeField] private float progressTimeRate;
     [SerializeField] private float progressPerSplit;
+    StageTime stageTime;
+
     private void Awake()
     {
         stageTime = GetComponent<StageTime>();

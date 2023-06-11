@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    [SerializeField] Transform player;
-    [SerializeField] float smooth;
-    [SerializeField] float offset;
+    [SerializeField] private Transform player;
 
-    void LateUpdate()
+    [SerializeField] private float smooth;
+    [SerializeField] private float offset;
+
+    private void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, new Vector3(player.position.x, player.position.y + offset, transform.position.z), smooth);
     }

@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
-    PauseManager pauseManager;
+    private PauseManager pauseManager;
 
     private void Awake()
     {

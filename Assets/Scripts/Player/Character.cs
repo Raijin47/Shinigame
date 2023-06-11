@@ -1,22 +1,22 @@
-using System;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] private DataContainer dataContainer;
+    [SerializeField] private StatusBar hpBar;
+
+    [HideInInspector] public Level level;
+    [HideInInspector] public Coins coins;
+
+    public float hpRegenerationRate = 1f;
+    public float hpRegenerationTimer;
+    public float damageBonus;
+
     public int maxHp;
     public int currentHp;
     public int armor = 0;
 
-    public float hpRegenerationRate = 1f;
-    public float hpRegenerationTimer;
-
-    public float damageBonus;
     private bool isDeath = false;
-    [SerializeField] StatusBar hpBar;
-    [HideInInspector] public Level level;
-    [HideInInspector] public Coins coins;
-
-    [SerializeField] private DataContainer dataContainer;
 
     private void Awake()
     {

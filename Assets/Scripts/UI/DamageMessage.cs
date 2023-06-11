@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class DamageMessage : MonoBehaviour
 {
-    [SerializeField] float timeToLive = 2f;
-    float ttl = 2f;
+    [SerializeField] private float timeToLive = 2f;
+    private float ttl = 2f;
     
-
     private void OnEnable()
     {
         ttl = timeToLive;

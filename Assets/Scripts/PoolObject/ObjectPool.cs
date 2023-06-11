@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    PoolObjectData originalPoolData;
+    private PoolObjectData originalPoolData;
     List<GameObject> pool;
     public void Set(PoolObjectData pod)
     {

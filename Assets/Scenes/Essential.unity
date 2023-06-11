@@ -3675,6 +3675,7 @@ GameObject:
   - component: {fileID: 1393391755}
   - component: {fileID: 1393391756}
   - component: {fileID: 1393391757}
+  - component: {fileID: 1393391758}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3778,16 +3779,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a33c09178156b844bda8e3b530f6994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 1000
-  currentHp: 1000
-  armor: 0
-  hpRegenerationRate: 1
-  hpRegenerationTimer: 0
-  damageBonus: 0
+  dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
   hpBar: {fileID: 1707339917}
   level: {fileID: 0}
   coins: {fileID: 0}
-  dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
+  hpRegenerationRate: 1
+  hpRegenerationTimer: 0
+  damageBonus: 0
+  maxHp: 1000
+  currentHp: 1000
+  armor: 0
 --- !u!114 &1393391753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3802,6 +3803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   experienceBar: {fileID: 1204841005}
   upgradeManager: {fileID: 74318692}
+  upgadesAvailableOnStart: []
   upgrades:
   - {fileID: 11400000, guid: 7ec5b24ea7463884b83d7c85c6d77077, type: 2}
   - {fileID: 11400000, guid: 6dec60a97ca09444b9c5f80e46367235, type: 2}
@@ -3809,7 +3811,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b0955cb078e30846b779b015b1db7e9, type: 2}
   - {fileID: 11400000, guid: 305e6a9d697dcfd448f70430e4596fe3, type: 2}
   - {fileID: 11400000, guid: 1702e6bb7a60d1b4ca3adada8f9cf7e2, type: 2}
-  upgadesAvailableOnStart: []
 --- !u!114 &1393391754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3822,8 +3823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f509f89e67a73c345a4026a877460359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinAcquired: 0
   coinsCountText: {fileID: 1202709979}
+  coinAcquired: 0
 --- !u!114 &1393391755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3865,6 +3866,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponObjectContainer: {fileID: 554927308}
   poolManager: {fileID: 695908193}
+--- !u!114 &1393391758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393391746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d622f10b7894a54eb20e0dd27c6db09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
 --- !u!1 &1465430322
 GameObject:
   m_ObjectHideFlags: 0

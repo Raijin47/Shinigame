@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PoolMember : MonoBehaviour
 {
-    ObjectPool pool;
+    private ObjectPool pool;
 
     public void Set(ObjectPool pool)
     {

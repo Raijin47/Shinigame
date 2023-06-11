@@ -14,7 +14,7 @@ public class ItemStats
 }
 
 [CreateAssetMenu(fileName = "New Item Data", menuName = "ScriptableObjects/ItemData", order = 51)]
-public class Item : ScriptableObject
+public class ItemData: ScriptableObject
 {
     public string Name;
     public ItemStats stats;

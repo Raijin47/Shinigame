@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GemPickUpObject : MonoBehaviour, IPickUpObject
 {
-    [SerializeField] int amount;
+    [SerializeField] private int amount;
     public void OnPickUp(Character character)
     {
         character.level.AddExperience(amount);

@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
 public class PlayerAnimate : MonoBehaviour
 {
     [HideInInspector] public float horizontal;
 
-    Animator anim;
+    private Animator anim;
 
     void Update()
     {

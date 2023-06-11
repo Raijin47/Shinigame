@@ -4,18 +4,19 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     [SerializeField] ExperienceBar experienceBar;
-    int level = 1;
-    int experience = 0;
     [SerializeField] UpgradeManager upgradeManager;
 
-    [SerializeField] List<UpgradeData> upgrades;
-    List<UpgradeData> selectedUpgrades;
-
-    List<UpgradeData> acquiredUpgrades;
-    WeaponManager weaponManager;
-    PassiveItems passiveItems;
-
     [SerializeField] List<UpgradeData> upgadesAvailableOnStart;
+    [SerializeField] List<UpgradeData> upgrades;
+
+    private WeaponManager weaponManager;
+    private PassiveItems passiveItems;
+
+    private int level = 1;
+    private int experience = 0;
+
+    List<UpgradeData> selectedUpgrades;
+    List<UpgradeData> acquiredUpgrades;
 
     private void Awake()
     {
@@ -80,8 +81,6 @@ public class Level : MonoBehaviour
                 AddUpgradesIntoTheListOfAvailableUpgrades(upgradeData.item.upgrades);
                 break;
         }
-
-
         acquiredUpgrades.Add(upgradeData);
         upgrades.Remove(upgradeData);
     }
@@ -123,5 +122,4 @@ public class Level : MonoBehaviour
 
         return upgradeList;
     }
-
 }

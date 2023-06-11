@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class LocationScroll : MonoBehaviour
 {
-    private Transform playerTransform;
     [SerializeField] private Vector2Int playerTilePosition;
 
     [SerializeField] private float tileSize;
@@ -12,8 +11,9 @@ public class LocationScroll : MonoBehaviour
     [SerializeField] private int fieldOfVisionHeight;
     [SerializeField] private int fieldOfVisionWidth;
 
-    private Vector2Int onTileGridPlayerPosition;
+    private Transform playerTransform;
     private GameObject[,] terrainTiles;
+    private Vector2Int onTileGridPlayerPosition;
     private Vector2Int currentTilePosition = new Vector2Int(0,0);
 
     private void Awake()
@@ -80,7 +80,7 @@ public class LocationScroll : MonoBehaviour
             }
             else
             {
-                currentValue += 1;
+                currentValue++;
                 currentValue = terrainTileHorizontalCount - 1 + currentValue % terrainTileHorizontalCount;
             }
         }

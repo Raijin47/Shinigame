@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum DirectionOfAttack
@@ -12,19 +9,17 @@ public enum DirectionOfAttack
 }
 public abstract class WeaponBase : MonoBehaviour
 {
-    protected PlayerMovement playerMove;
-
-    public WeaponData weaponData;
-
-    public WeaponStats weaponStats; 
-
-    float timer;
-
-    Character wielder;
-    public Vector2 vectorOfAttack;
     [SerializeField] DirectionOfAttack attackDirection;
 
-    PoolManager poolManager;
+    public WeaponData weaponData;
+    public WeaponStats weaponStats;
+    public Vector2 vectorOfAttack;
+
+    private Character wielder;
+    private PoolManager poolManager;
+    protected PlayerMovement playerMove;
+
+    private float timer;
 
     private void Awake()
     {
