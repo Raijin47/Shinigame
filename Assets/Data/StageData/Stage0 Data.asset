@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageEvents:
   - eventType: 0
-    time: 15
+    time: 5
     message: 
     enemyToSpawn: {fileID: 11400000, guid: 50f30195a310aed4ab62c7f89ef7ecb1, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
     isRepeatedEvent: 1
-    repeatEverySeconds: 10
-    repeatCount: 10
+    repeatEverySeconds: 15
+    repeatCount: 100
   - eventType: 3
     time: 300
     message: 

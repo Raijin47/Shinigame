@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +17,6 @@ public class UpgradeManager : MonoBehaviour
         pauseManager = GetComponent<PauseManager>();
         characterLevel = GameManager.instance.playerTransform.GetComponent<Level>();
     }
-
 
     private void Start()
     {

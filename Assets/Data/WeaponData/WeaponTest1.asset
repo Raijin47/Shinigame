@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: Test
+  Description: 
   icon: {fileID: 21300000, guid: 0407342d5e3eb0d4381b423cd4c2273a, type: 3}
-  weaponData: {fileID: 11400000, guid: 745ecf45eab705941b8b368cea542834, type: 2}
+  weaponData: {fileID: 11400000, guid: 93ffd15358554824a84416e08a8a665a, type: 2}
   weaponUpgradeStats:
-    damage: 100
-    timeToAttack: 0
+    damage: 1000
+    timeToAttack: -0.33
     numberOfAttacks: 0
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 0
+    knockback: 0
+    knockbackTimeWeight: 0
   item: {fileID: 0}
   itemStats:
     armor: 0

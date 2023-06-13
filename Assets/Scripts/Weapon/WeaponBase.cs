@@ -52,7 +52,7 @@ public abstract class WeaponBase : MonoBehaviour
 
     public int GetDamage()
     {
-        int damage = (int)(weaponData.stats.damage * wielder.damageBonus);
+        int damage = (int)(weaponStats.damage * wielder.damageBonus);
         return damage;
     }
     public virtual void PostDamage(int damage, Vector2 targetPosition)

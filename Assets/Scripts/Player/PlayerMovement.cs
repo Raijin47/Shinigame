@@ -24,21 +24,22 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Start()
     {
-        lastHorizontalDeCoupledVector = 1f;
+        lastHorizontalDeCoupledVector = -1f;
         lastVerticalDeCoupledVector = 1f;
 
-        lastHorizontalCoupledVector = 1f;
+        lastHorizontalCoupledVector = -1f;
         lastVerticalCoupledVector = 0;
     }
     void FixedUpdate()
     {
         movementVector = playerInput.direction;
 
-        if(movementVector.x != 0 || movementVector.y != 0)
+        if (movementVector.x != 0 || movementVector.y != 0)
         {
             lastHorizontalCoupledVector = movementVector.x;
             lastVerticalCoupledVector = movementVector.y;
         }
+
         if(movementVector.x != 0)
         {
             lastHorizontalDeCoupledVector = movementVector.x;
@@ -48,10 +49,8 @@ public class PlayerMovement : MonoBehaviour
             lastVerticalDeCoupledVector = movementVector.y;
         }
 
-        anim.horizontal = movementVector.x; 
+        anim.horizontal = movementVector.x;
 
-        movementVector *= _speed;
-
-        rb.velocity = movementVector;
+        rb.velocity = movementVector.normalized * _speed;
     }
 }
