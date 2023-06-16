@@ -2088,6 +2088,7 @@ MonoBehaviour:
   timerUI: {fileID: 1096509684}
   pauseManager: {fileID: 74318694}
   playerWinManager: {fileID: 74318696}
+  dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!4 &728645430
 Transform:
   m_ObjectHideFlags: 0
@@ -3779,15 +3780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a33c09178156b844bda8e3b530f6994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
   hpBar: {fileID: 1707339917}
   level: {fileID: 0}
   coins: {fileID: 0}
-  hpRegenerationRate: 1
-  hpRegenerationTimer: 0
   damageBonus: 0
-  maxHp: 1000
-  currentHp: 1000
+  attackSpeedBonus: 0
   armor: 0
 --- !u!114 &1393391753
 MonoBehaviour:
@@ -3818,7 +3815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsCountText: {fileID: 1202709979}
-  coinAcquired: 0
 --- !u!114 &1393391755
 MonoBehaviour:
   m_ObjectHideFlags: 0

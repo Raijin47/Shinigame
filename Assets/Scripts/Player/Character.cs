@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] private DataContainer dataContainer;
     [SerializeField] private StatusBar hpBar;
 
     [HideInInspector] public Level level;
     [HideInInspector] public Coins coins;
-
-    public float hpRegenerationRate = 1f;
-    public float hpRegenerationTimer;
+    private CharacterData charaData;
+    private float hpRegenerationRate = 1f;
+    private float hpRegenerationTimer;
     public float damageBonus;
-
-    public int maxHp;
-    public int currentHp;
-    public int armor = 0;
+    public float attackSpeedBonus;
+    private int recoveryHp;
+    private int maxHp;
+    private int currentHp;
+    [HideInInspector]public int armor;
 
     private bool isDeath = false;
 
@@ -25,7 +25,7 @@ public class Character : MonoBehaviour
     }
     private void Start()
     {
-        LoadSelectedCharacter(dataContainer.selectedCharacter);
+        LoadSelectedCharacter(EssentialService.instance.dataContainer.selectedCharacter);
         ApplyPersistantUpgrades();
         hpBar.SetState(currentHp, maxHp);
     }
@@ -34,6 +34,7 @@ public class Character : MonoBehaviour
     {
         InitAnimation(selectedCharacter.spritePrefab);
         GetComponent<WeaponManager>().AddWeapon(selectedCharacter.startingWeapon);
+        maxHp = selectedCharacter.Health;
     }
 
     private void InitAnimation(GameObject spritePrefab)
@@ -44,12 +45,21 @@ public class Character : MonoBehaviour
 
     private void ApplyPersistantUpgrades()
     {
-        int hpUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
-
+        int hpUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
         maxHp += maxHp / 10 * hpUpgradeLevel;
+        currentHp = maxHp;
     
-        int damageUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
+        int damageUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
         damageBonus = 1f + 0.1f * damageUpgradeLevel;
+
+        int armorUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
+        armor = armorUpgradeLevel;
+
+        int recoveryUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
+        recoveryHp = recoveryUpgradeLevel;
+
+        float attackSpeedUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
+        attackSpeedBonus = attackSpeedUpgradeLevel / 20;
     }
 
     private void Update()
@@ -57,7 +67,7 @@ public class Character : MonoBehaviour
         hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
         if (hpRegenerationTimer > 1f)
         {
-            Heal(1);
+            Heal(recoveryHp);
             hpRegenerationTimer -= 1f;
         }
     }

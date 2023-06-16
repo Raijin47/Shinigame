@@ -32,7 +32,7 @@ public abstract class WeaponBase : MonoBehaviour
         if(timer < 0f)
         {
             Attack();
-            timer = weaponStats.timeToAttack;
+            timer = weaponStats.timeToAttack - wielder.attackSpeedBonus;
         }
     }
 

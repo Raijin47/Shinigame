@@ -3,8 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float _speed;
-
+    [SerializeField] private float _speed;
     private PlayerInput playerInput;
     private Rigidbody2D rb;
     private PlayerAnimate anim;
@@ -29,7 +28,16 @@ public class PlayerMovement : MonoBehaviour
 
         lastHorizontalCoupledVector = -1f;
         lastVerticalCoupledVector = 0;
+
+        ApplyPersistantUpgrades();
     }
+
+    private void ApplyPersistantUpgrades()
+    {
+        float MovementSpeedUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
+        _speed += (MovementSpeedUpgradeLevel / 5);
+    }
+
     void FixedUpdate()
     {
         movementVector = playerInput.direction;

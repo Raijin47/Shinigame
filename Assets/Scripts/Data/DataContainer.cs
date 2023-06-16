@@ -5,7 +5,15 @@ using System;
 public enum PlayerPersisrentUpgrades
 {
     HP,
-    Damage
+    Damage,
+    MovementSpeed,
+    AttackSpeed,
+    RecoveryHP,
+    Armor,
+    ShellsSpeed,
+    NumberOfShells,
+    ExperienceBoost,
+    GoldBoost
 }
 
 [Serializable]

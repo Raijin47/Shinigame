@@ -6,6 +6,7 @@ public class EssentialService : MonoBehaviour
     public TimerUI timerUI;
     public PauseManager pauseManager;
     public PlayerWinManager playerWinManager;
+    public DataContainer dataContainer;
     private void Awake()
     {
         if (instance == null)

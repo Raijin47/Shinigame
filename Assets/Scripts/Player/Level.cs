@@ -14,6 +14,7 @@ public class Level : MonoBehaviour
 
     private int level = 1;
     private int experience = 0;
+    private float boostExp;
 
     List<UpgradeData> selectedUpgrades;
     List<UpgradeData> acquiredUpgrades;
@@ -36,6 +37,14 @@ public class Level : MonoBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
         AddUpgradesIntoTheListOfAvailableUpgrades(upgadesAvailableOnStart);
+
+        ApplyPersistantUpgrades();
+    }
+
+    private void ApplyPersistantUpgrades()
+    {
+        float ExperienceBoostUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
+        boostExp = 1 + ExperienceBoostUpgradeLevel / 10;
     }
 
     internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
@@ -46,7 +55,7 @@ public class Level : MonoBehaviour
 
     public void AddExperience(int amount)
     {
-        experience += amount;
+        experience += (int)(amount * boostExp);
         CheckLevelUp();
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
     }
