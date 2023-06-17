@@ -10,10 +10,12 @@ public enum PlayerPersisrentUpgrades
     AttackSpeed,
     RecoveryHP,
     Armor,
-    ShellsSpeed,
-    NumberOfShells,
+    ProjectileSpeed,
+    ProjectileCount,
     ExperienceBoost,
-    GoldBoost
+    GoldBoost,
+    AttackAreaSize,
+    Reroll
 }
 
 [Serializable]
@@ -25,11 +27,11 @@ public class PlayerUpgrades
     public int[] costToUpgrade;
 }
 
-
 [CreateAssetMenu(fileName = "New DataContainer", menuName = "ScriptableObjects/DataContainer", order = 51)]
 public class DataContainer : ScriptableObject
 {
     public int coins;
+    public int diamonds;
     public List<bool> stageCompletion;
     public List<PlayerUpgrades> upgrades;
     public CharacterData selectedCharacter;

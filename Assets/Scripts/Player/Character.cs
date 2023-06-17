@@ -6,7 +6,6 @@ public class Character : MonoBehaviour
 
     [HideInInspector] public Level level;
     [HideInInspector] public Coins coins;
-    private CharacterData charaData;
     private float hpRegenerationRate = 1f;
     private float hpRegenerationTimer;
     public float damageBonus;
@@ -49,17 +48,19 @@ public class Character : MonoBehaviour
         maxHp += maxHp / 10 * hpUpgradeLevel;
         currentHp = maxHp;
     
-        int damageUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
-        damageBonus = 1f + 0.1f * damageUpgradeLevel;
+        float damageUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
+        float damageCharaBase = EssentialService.instance.dataContainer.selectedCharacter.Damage;
+        float damageCharaLevel = EssentialService.instance.dataContainer.selectedCharacter.Level;
+        damageBonus = damageCharaBase + damageUpgradeLevel * 0.06f + damageCharaLevel * 0.015f;
 
         int armorUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
         armor = armorUpgradeLevel;
 
-        int recoveryUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
-        recoveryHp = recoveryUpgradeLevel;
+        int recoveryHpUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
+        recoveryHp = recoveryHpUpgradeLevel;
 
-        float attackSpeedUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
-        attackSpeedBonus = attackSpeedUpgradeLevel / 20;
+        float attackSpeed = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
+        attackSpeedBonus = attackSpeed / 20;
     }
 
     private void Update()

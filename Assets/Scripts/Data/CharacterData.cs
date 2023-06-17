@@ -7,6 +7,7 @@ public class CharacterData : ScriptableObject
     public GameObject spritePrefab;
     public WeaponData startingWeapon;
 
-    public int level;
+    public int Level;
     public int Health;
+    [Range(0.8f, 1.2f)]public float Damage;
 }

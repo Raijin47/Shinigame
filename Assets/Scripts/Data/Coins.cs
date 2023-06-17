@@ -9,13 +9,12 @@ public class Coins : MonoBehaviour
     private void Start()
     {
         ApplyPersistantUpgrades();
-        Add(0);
     }
 
     private void ApplyPersistantUpgrades()
     {
         float GoldBoostUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
-        coinBoost = 1 + GoldBoostUpgradeLevel / 10;
+        coinBoost = 1 + GoldBoostUpgradeLevel * 0.2f;
     }
 
     public void Add(int count)

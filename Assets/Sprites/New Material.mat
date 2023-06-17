@@ -10,7 +10,7 @@ Material:
   m_Name: New Material
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
-  - _ENABLEPOISON_ON
+  - _ENABLEFULLGLOWDISSOLVE_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
@@ -217,7 +217,7 @@ Material:
     - _EnableFrozen: 0
     - _EnableFullAlphaDissolve: 0
     - _EnableFullDistortion: 0
-    - _EnableFullGlowDissolve: 0
+    - _EnableFullGlowDissolve: 1
     - _EnableGlitch: 0
     - _EnableHalftone: 0
     - _EnableHologram: 0
@@ -227,7 +227,7 @@ Material:
     - _EnableMetal: 0
     - _EnableOuterOutline: 0
     - _EnablePixelate: 0
-    - _EnablePoison: 1
+    - _EnablePoison: 0
     - _EnableRainbow: 0
     - _EnableRecolor: 0
     - _EnableSaturation: 0
@@ -264,7 +264,7 @@ Material:
     - _FullAlphaDissolveWidth: 0.5
     - _FullDistortionFade: 1
     - _FullFade: 1
-    - _FullGlowDissolveFade: 0.5
+    - _FullGlowDissolveFade: 1
     - _FullGlowDissolveWidth: 0.5
     - _GlitchBrightness: 4
     - _GlitchFade: 1
