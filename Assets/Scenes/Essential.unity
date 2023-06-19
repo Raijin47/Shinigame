@@ -3709,7 +3709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd15199024c64bc47b953cc429939df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
+  _speed: 3
   lastHorizontalDeCoupledVector: 0
   lastVerticalDeCoupledVector: 0
   lastHorizontalCoupledVector: 0
@@ -3765,8 +3765,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016009599, y: -0.01325658}
-  m_Size: {x: 0.38597506, y: 0.7249579}
+  m_Offset: {x: -0.006993592, y: 0.048567474}
+  m_Size: {x: 0.28551102, y: 0.88467}
   m_Direction: 0
 --- !u!114 &1393391752
 MonoBehaviour:
