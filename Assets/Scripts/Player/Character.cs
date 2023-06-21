@@ -102,6 +102,6 @@ public class Character : MonoBehaviour
     private void ApplyArmor(ref int damage)
     {
         damage -= armor;
-        if(damage < 0) { damage = 0; }
+        if(damage < 0) { damage = 1; }
     }
 }
