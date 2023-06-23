@@ -4,22 +4,21 @@ using TMPro;
 public class Coins : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI coinsCountText;
-    private float coinBoost;
+    private float _coinBoost;
+    private DataContainer data;
 
     private void Start()
     {
-        ApplyPersistantUpgrades();
+        data = EssentialService.instance.dataContainer;
     }
-
-    private void ApplyPersistantUpgrades()
+    public void SetBoost(float coinBoost)
     {
-        float GoldBoostUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
-        coinBoost = 1 + GoldBoostUpgradeLevel * 0.2f;
+        _coinBoost = coinBoost;
     }
 
     public void Add(int count)
     {
-        EssentialService.instance.dataContainer.coins += (int)(count * coinBoost);
-        coinsCountText.text = "Coins: " + EssentialService.instance.dataContainer.coins.ToString();
+        data.coins += (int)(count * _coinBoost);
+        coinsCountText.text = "Coins: " + data.coins.ToString();
     }
 }

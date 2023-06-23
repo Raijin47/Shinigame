@@ -6,10 +6,14 @@ public class Character : MonoBehaviour
 
     [HideInInspector] public Level level;
     [HideInInspector] public Coins coins;
+    private PlayerMovement playerMovement;
+
+    [HideInInspector] public float damageBonus;
+    [HideInInspector] public float attackSpeedBonus;
+    [HideInInspector] public float attackAreaSizeBonus;
     private float hpRegenerationRate = 1f;
     private float hpRegenerationTimer;
-    public float damageBonus;
-    public float attackSpeedBonus;
+
     private int recoveryHp;
     private int maxHp;
     private int currentHp;
@@ -21,6 +25,7 @@ public class Character : MonoBehaviour
     {
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
     private void Start()
     {
@@ -44,29 +49,54 @@ public class Character : MonoBehaviour
 
     private void ApplyPersistantUpgrades()
     {
-        int hpUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
+        DataContainer data = EssentialService.instance.dataContainer;
+
+        int hpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
         maxHp += maxHp / 10 * hpUpgradeLevel;
         currentHp = maxHp;
     
-        float damageUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
-        float damageCharaBase = EssentialService.instance.dataContainer.selectedCharacter.Damage;
-        float damageCharaLevel = EssentialService.instance.dataContainer.selectedCharacter.Level;
+        float damageUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
+        float damageCharaBase = data.selectedCharacter.Damage;
+        float damageCharaLevel = data.selectedCharacter.Level;
+        if (damageCharaLevel > 30) damageCharaLevel = 30;
         damageBonus = damageCharaBase + damageUpgradeLevel * 0.06f + damageCharaLevel * 0.015f;
 
-        int armorUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
+        int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
         armor = armorUpgradeLevel;
 
-        int recoveryHpUpgradeLevel = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
+        int recoveryHpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
         recoveryHp = recoveryHpUpgradeLevel;
 
-        float attackSpeed = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
-        attackSpeedBonus = attackSpeed / 20;
+        float attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
+        attackSpeedBonus = 1 + attackSpeedUpgradeLevel * 0.1f;
+
+        float attackAreaSizeUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackAreaSize);
+        attackAreaSizeBonus = 1 + attackAreaSizeUpgradeLevel * 0.05f;
+
+        float movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
+        float movementSpeedBase = data.selectedCharacter.MovementSpeed;
+        float speed = movementSpeedBase * (1 + 0.05f * movementSpeedUpgradeLevel);
+        playerMovement.SetSpeed(speed);
+
+        float goldBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
+        float goldBoost = 1 + goldBoostUpgradeLevel * 0.2f;
+        coins.SetBoost(goldBoost);
+
+        float ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
+        float boostExp = 1 + ExperienceBoostUpgradeLevel / 10;
+        level.SetBoost(boostExp);
+
+        //float projectaleSpeed = 0;
+        //int projectileCount = 1;
+        //int reroll = 1;
+
+
     }
 
     private void Update()
     {
         hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
-        if (hpRegenerationTimer > 1f)
+        if (hpRegenerationTimer > 3f)
         {
             Heal(recoveryHp);
             hpRegenerationTimer -= 1f;

@@ -18,7 +18,7 @@ namespace CartoonFX
         [Header("Dynamic")]
         [Tooltip("Allow changing the text at runtime with the 'UpdateText' method. If disabled, this script will be excluded from the build.")]
         public bool isDynamic;
-
+        private ParticleSystem particle;
         [Header("Text")]
         [SerializeField] string text;
         [SerializeField] float size = 1f;
@@ -94,7 +94,7 @@ namespace CartoonFX
                 Destroy(this);
                 return;
             }
-
+            particle = GetComponent<ParticleSystem>();
             InitializeFirstParticle();
         }
 
@@ -103,7 +103,10 @@ namespace CartoonFX
         float baseScaleY;
         float baseScaleZ;
         Vector3 basePivot;
-
+        public void Play()
+        {
+            particle.Play();
+        }
         void InitializeFirstParticle()
         {
             if (isDynamic && this.transform.childCount == 0)

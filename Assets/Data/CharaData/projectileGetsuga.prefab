@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7449399317512712067}
   - component: {fileID: 2295788025664450365}
   - component: {fileID: 6841192818305416501}
+  - component: {fileID: 621851495806249336}
   m_Layer: 0
   m_Name: projectileGetsuga
   m_TagString: Untagged
@@ -97,4 +98,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a85b65b66f8694c8c56f2a1e83f76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackArea: 0.5
+--- !u!68 &621851495806249336
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773313053087323779}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.36909404, y: -0.024045944}
+  - {x: 0.33924007, y: -0.17060375}
+  - {x: 0.2561803, y: -0.31367064}
+  - {x: 0.1255908, y: -0.4153824}
+  - {x: -0.012957573, y: -0.45867395}
+  - {x: 0.14913845, y: -0.4412551}
+  - {x: 0.32576323, y: -0.3559389}
+  - {x: 0.43193865, y: -0.23404503}
+  - {x: 0.47613144, y: -0.13703108}
+  - {x: 0.49966908, y: -0.049696445}
+  - {x: 0.5036917, y: 0.04695463}
+  - {x: 0.4645567, y: 0.17167664}
+  - {x: 0.38289404, y: 0.30102205}
+  - {x: 0.2457838, y: 0.4037943}
+  - {x: 0.11737347, y: 0.45047665}
+  - {x: -0.013278961, y: 0.46333122}
+  - {x: 0.11757755, y: 0.4234581}
+  - {x: 0.25242376, y: 0.31923294}
+  - {x: 0.3290844, y: 0.21244812}
+  - {x: 0.36385822, y: 0.080060005}
+  m_AdjacentStartPoint: {x: 0.37, y: 0}
+  m_AdjacentEndPoint: {x: 0.37, y: 0}
+  m_UseAdjacentStartPoint: 1
+  m_UseAdjacentEndPoint: 1

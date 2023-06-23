@@ -1,18 +1,19 @@
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour, IPoolMember
 {
-    PoolMember poolMember;
-    WeaponBase weapon;
-    Vector3 direction;
-    float speed;
-    int damage;
-    int numOfHits;
-    public float attackArea = 0.3f;
-    List<IDamageable> enemyHit;
+    private PoolMember poolMember;
+    private WeaponBase weapon;
+    private Vector3 direction;
+    private float speed;
+    private int damage;
+    private int numOfHits;
+    //[SerializeField] float defaultAttackArea = 0.3f;
+    //private float attackArea;
+    //List<IDamageable> enemyHit;
 
-    float ttl = 6f;
+    private float ttl = 6f;
 
     public void SetDirection(float dir_x, float dir_y)
     {
@@ -54,16 +55,19 @@ public class Projectile : MonoBehaviour, IPoolMember
                 break;
         }
 
+        float boostSize = EssentialService.instance.character.attackAreaSizeBonus;
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.localScale = new Vector2(1 * boostSize, 1 * boostSize);
+        //attackArea = defaultAttackArea * boostSize;
     }
-    void Update()
+    private void Update()
     {
         Move();
 
-        if (Time.frameCount % 6 == 0)// ןנמגונךא םא ךאזהûי 2י פנויל
-        {
-            HitDetection();
-        }
+        //if (Time.frameCount % 6 == 0)// ןנמגונךא םא ךאזהûי 2י פנויל
+        //{
+        //    HitDetection();
+        //}
 
         TimerToLive();
     }
@@ -89,29 +93,17 @@ public class Projectile : MonoBehaviour, IPoolMember
         }       
     }
 
-    private void HitDetection()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, attackArea);
-        foreach (Collider2D c in hit)
+        if(numOfHits > 0)
         {
-            if (numOfHits > 0)
-            {
-                IDamageable enemy = c.GetComponent<IDamageable>();
-                if (enemy != null)
-                {
-                    if (CheckRepeatHit(enemy) == false)
-                    {
-                        weapon.ApplyDamage(c.transform.position, damage, enemy);
-                        enemyHit.Add(enemy);
-                        numOfHits--;
-                    }
-                }
-            }
-            else
-            {
-                break;
-            }
+            IDamageable enemy = collision.GetComponent<IDamageable>();
 
+            if (collision.TryGetComponent(out IDamageable _))
+            {
+                weapon.ApplyDamage(collision.transform.position, damage, enemy);
+                numOfHits--;
+            }
         }
         if (numOfHits <= 0)
         {
@@ -119,12 +111,44 @@ public class Projectile : MonoBehaviour, IPoolMember
         }
     }
 
-    private bool CheckRepeatHit(IDamageable enemy)
-    {
-        if (enemyHit == null) { enemyHit = new List<IDamageable>(); }
 
-        return enemyHit.Contains(enemy);
-    }
+
+    //private void HitDetection()
+    //{
+    //    Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, attackArea);
+    //    foreach (Collider2D c in hit)
+    //    {
+    //        if (numOfHits > 0)
+    //        {
+    //            IDamageable enemy = c.GetComponent<IDamageable>();
+    //            if (enemy != null)
+    //            {
+    //                if (CheckRepeatHit(enemy) == false)
+    //                {
+    //                    weapon.ApplyDamage(c.transform.position, damage, enemy);
+    //                    enemyHit.Add(enemy);
+    //                    numOfHits--;
+    //                }
+    //            }
+    //        }
+    //        else
+    //        {
+    //            break;
+    //        }
+
+    //    }
+    //    if (numOfHits <= 0)
+    //    {
+    //        DestroyProjectile();
+    //    }
+    //}
+
+    //private bool CheckRepeatHit(IDamageable enemy)
+    //{
+    //    if (enemyHit == null) { enemyHit = new List<IDamageable>(); }
+
+    //    return enemyHit.Contains(enemy);
+    //}
 
     private void Move()
     {
@@ -136,11 +160,11 @@ public class Projectile : MonoBehaviour, IPoolMember
         MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackArea);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, attackArea);
+    //}
 
     public void SetStats(WeaponBase weaponBase)
     {
@@ -154,6 +178,7 @@ public class Projectile : MonoBehaviour, IPoolMember
     {
         ttl = 6f;
     }
+
 
     public void SetPoolMember(PoolMember poolMember)
     {

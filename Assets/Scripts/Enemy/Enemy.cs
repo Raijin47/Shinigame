@@ -39,8 +39,11 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private float stunned;
     private float knockbackForce;
     private float knockbackTimeWeight;
+    private float timeToAttack = .5f;
+    private float currentTime;
 
-    void Awake()
+    private bool isAttack = false;
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -50,7 +53,23 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         targetGameObject = target;
         targetDestination = target.transform;
     }
-    void FixedUpdate()
+
+    private void Update()
+    {
+        ProcessAttack();
+    }
+
+    private void ProcessAttack()
+    {
+        currentTime -= Time.deltaTime;
+        if (isAttack && currentTime < 0)
+        {
+            Attack();
+            currentTime = timeToAttack;
+        }
+    }
+
+    private void FixedUpdate()
     {
         ProcessStun();
         Move();
@@ -85,12 +104,19 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
         return knockbackVector * knockbackForce * (knockbackTimeWeight > 0f ? 1f : 0f);
     }
-
-    void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == targetGameObject)
         {
-            Attack();
+            isAttack = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject == targetGameObject)
+        {
+            isAttack = false;
         }
     }
 

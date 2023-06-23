@@ -9,5 +9,6 @@ public class CharacterData : ScriptableObject
 
     public int Level;
     public int Health;
+    public float MovementSpeed;
     [Range(0.8f, 1.2f)]public float Damage;
 }
