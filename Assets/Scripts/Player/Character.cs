@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     [HideInInspector] public float damageBonus;
     [HideInInspector] public float attackSpeedBonus;
     [HideInInspector] public float attackAreaSizeBonus;
+    [HideInInspector] public int projectileCountBonus;
     private float hpRegenerationRate = 1f;
     private float hpRegenerationTimer;
 
@@ -50,7 +51,7 @@ public class Character : MonoBehaviour
     private void ApplyPersistantUpgrades()
     {
         DataContainer data = EssentialService.instance.dataContainer;
-
+        //дополнить с учётом предметов
         int hpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
         maxHp += maxHp / 10 * hpUpgradeLevel;
         currentHp = maxHp;
@@ -86,6 +87,8 @@ public class Character : MonoBehaviour
         float boostExp = 1 + ExperienceBoostUpgradeLevel / 10;
         level.SetBoost(boostExp);
 
+        int projectileCountUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileCount);
+        projectileCountBonus = projectileCountUpgradeLevel;
         //float projectaleSpeed = 0;
         //int projectileCount = 1;
         //int reroll = 1;

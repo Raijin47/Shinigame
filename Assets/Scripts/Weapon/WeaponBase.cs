@@ -130,7 +130,7 @@ public abstract class WeaponBase : MonoBehaviour
 
         projectileGO.transform.position = position;
 
-        Projectile projectile = projectileGO.GetComponent<Projectile>();
+        ProjectileBase projectile = projectileGO.GetComponent<ProjectileBase>();
 
         projectile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
         projectile.SetStats(this);

@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7449399317512712067}
   - component: {fileID: 2295788025664450365}
-  - component: {fileID: 6841192818305416501}
   - component: {fileID: 621851495806249336}
+  - component: {fileID: 2658624610726129801}
+  - component: {fileID: 3587022582893272890}
   m_Layer: 0
   m_Name: projectileGetsuga
   m_TagString: Untagged
@@ -86,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6841192818305416501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8773313053087323779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a85b65b66f8694c8c56f2a1e83f76f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!68 &621851495806249336
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -138,3 +127,27 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0.37, y: 0}
   m_UseAdjacentStartPoint: 1
   m_UseAdjacentEndPoint: 1
+--- !u!114 &2658624610726129801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773313053087323779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039fb72783152d24cb9dabd86940b936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3587022582893272890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773313053087323779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039fb72783152d24cb9dabd86940b936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
