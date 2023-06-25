@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Senbonzakura
   stats:
-    damage: 5
-    timeToAttack: 1
+    damage: 1
+    timeToAttack: 11
     numberOfAttacks: 1
     numberOfHits: 5
-    projectileSpeed: 5
+    projectileSpeed: 1
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0

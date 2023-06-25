@@ -11,7 +11,7 @@ public abstract class WeaponBase : MonoBehaviour
 {
     [SerializeField] DirectionOfAttack attackDirection;
 
-    public WeaponData weaponData;
+    [HideInInspector] public WeaponData weaponData;
     public WeaponStats weaponStats;
     public Vector2 vectorOfAttack;
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
-  m_Name: IchigoData
+  m_Name: InoueData
   m_EditorClassIdentifier: 
   Name: Ichigo
   spritePrefab: {fileID: 4944422310658691296, guid: f0a57feea0d3fe24fa9c3839131ca8e8, type: 3}

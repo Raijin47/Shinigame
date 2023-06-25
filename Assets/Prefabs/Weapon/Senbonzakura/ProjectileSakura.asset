@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf8c45327f37894f845dbff80660da1, type: 3}
   m_Name: ProjectileSakura
   m_EditorClassIdentifier: 
-  originalPrefab: {fileID: 6962613407668175508, guid: bde8fc57c4ecb1740afabc786e0baf84, type: 3}
+  originalPrefab: {fileID: 8292627551930053042, guid: 87380837fb7042d49971b5f4ed6cc895, type: 3}
   containerPrefab: {fileID: 0}
   poolID: 2

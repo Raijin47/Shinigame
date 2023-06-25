@@ -8,11 +8,12 @@ public abstract class ProjectileBase : MonoBehaviour, IPoolMember
     protected float speed;
     protected int damage;
     private int numOfHits;
-
-    private float ttl = 6f;
+    [SerializeField] protected float timeToLive;
+    private float ttl;
+    
     public virtual void SetDirection(float dir_x, float dir_y)
     {
-
+        ttl = timeToLive;
     }
     protected void Update()
     {
@@ -76,11 +77,6 @@ public abstract class ProjectileBase : MonoBehaviour, IPoolMember
         speed = weaponBase.weaponStats.projectileSpeed;
         damage = weaponBase.GetDamage();
         numOfHits = weaponBase.weaponStats.numberOfHits;
-    }
-
-    protected void OnEnable()
-    {
-        ttl = 6f;
     }
 
     public virtual void SetPoolMember(PoolMember poolMember)
