@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Ichigo
   spritePrefab: {fileID: 4944422310658691296, guid: f0a57feea0d3fe24fa9c3839131ca8e8, type: 3}
-  startingWeapon: {fileID: 11400000, guid: 65da1c590b6762a4c836715c1958b989, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 4862a05d228c519479ec565e1666f925, type: 2}
   Level: 20
   Health: 100
   MovementSpeed: 2

@@ -26,7 +26,7 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
+    attackAreaSize: 2
   item: {fileID: 0}
   itemStats:
     armor: 0

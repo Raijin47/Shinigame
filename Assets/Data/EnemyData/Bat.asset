@@ -15,7 +15,7 @@ MonoBehaviour:
   nameEnemy: Bat
   poolObjectData: {fileID: 11400000, guid: 474b16a5dc0f2064fbeec57f495dca74, type: 2}
   stats:
-    hp: 250000
+    hp: 25
     damage: 10
     experienceReward: 500
     moveSpeed: 2
