@@ -5,7 +5,6 @@ public class PlayerUpgradeUIElement : MonoBehaviour
 {
     [SerializeField] PlayerPersisrentUpgrades upgrade;
 
-    [SerializeField] TextMeshProUGUI upgradeName;
     [SerializeField] TextMeshProUGUI level;
     [SerializeField] TextMeshProUGUI price;
 
@@ -30,10 +29,17 @@ public class PlayerUpgradeUIElement : MonoBehaviour
     }
     void UpdateElement()
     {
-        PlayerUpgrades playerUpgrade = dataContainer.upgrades[(int)upgrade];
+        PlayerUpgrades playerUpgrades = dataContainer.upgrades[(int)upgrade];
+        if (playerUpgrades.level >= playerUpgrades.maxLevel)
+        {
+            level.text = "max";
+            price.text = "sold";
+        }
+        else
+        {
+            level.text = playerUpgrades.level.ToString();
+            price.text = playerUpgrades.costToUpgrade[playerUpgrades.level].ToString();
+        }
 
-        upgradeName.text = upgrade.ToString();
-        level.text = playerUpgrade.level.ToString();
-        price.text = playerUpgrade.costToUpgrade[playerUpgrade.level].ToString();
     }
 }

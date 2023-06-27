@@ -422,7 +422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &12693599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4806,7 +4806,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 11
-  upgradeName: {fileID: 1225669937}
   level: {fileID: 687436006}
   price: {fileID: 240084443}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -5415,7 +5414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &653312997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9258,7 +9257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 4
-  upgradeName: {fileID: 285945180}
   level: {fileID: 665756808}
   price: {fileID: 736027460}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -9491,7 +9489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 6
-  upgradeName: {fileID: 989373305}
   level: {fileID: 146517594}
   price: {fileID: 331021328}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -9665,7 +9662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 9
-  upgradeName: {fileID: 2053301038}
   level: {fileID: 40803599}
   price: {fileID: 1510202332}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -10536,7 +10532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 8
-  upgradeName: {fileID: 277056467}
   level: {fileID: 1050397701}
   price: {fileID: 438533097}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -11555,7 +11550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 7
-  upgradeName: {fileID: 1234194607}
   level: {fileID: 1876926188}
   price: {fileID: 645351351}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -12461,7 +12455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 1
-  upgradeName: {fileID: 184924770}
   level: {fileID: 597509160}
   price: {fileID: 1513769994}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -12559,7 +12552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 3
-  upgradeName: {fileID: 412320380}
   level: {fileID: 1334343055}
   price: {fileID: 86547017}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -13741,7 +13733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 2
-  upgradeName: {fileID: 201386835}
   level: {fileID: 634291907}
   price: {fileID: 343563289}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -13839,7 +13830,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 5
-  upgradeName: {fileID: 410305432}
   level: {fileID: 1503257634}
   price: {fileID: 719850771}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -14713,7 +14703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 0
-  upgradeName: {fileID: 1879755228}
   level: {fileID: 2034657892}
   price: {fileID: 2120140868}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
@@ -16753,7 +16742,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: 10
-  upgradeName: {fileID: 1657190308}
   level: {fileID: 1966038970}
   price: {fileID: 834523253}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
