@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
   m_Name: GinData
   m_EditorClassIdentifier: 
-  Name: Ichigo
+  Name: Gin
   spritePrefab: {fileID: 4944422310658691296, guid: f0a57feea0d3fe24fa9c3839131ca8e8, type: 3}
   startingWeapon: {fileID: 11400000, guid: 4862a05d228c519479ec565e1666f925, type: 2}
-  Level: 0
+  Level: 1
   Health: 100
   MovementSpeed: 2
   Damage: 0.8

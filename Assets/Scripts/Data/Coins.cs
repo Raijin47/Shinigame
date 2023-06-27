@@ -4,7 +4,7 @@ using TMPro;
 public class Coins : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI coinsCountText;
-    private float _coinBoost;
+    private float _soulBoost;
     private DataContainer data;
 
     private void Start()
@@ -13,12 +13,12 @@ public class Coins : MonoBehaviour
     }
     public void SetBoost(float coinBoost)
     {
-        _coinBoost = coinBoost;
+        _soulBoost = coinBoost;
     }
 
     public void Add(int count)
     {
-        data.coins += (int)(count * _coinBoost);
-        coinsCountText.text = "Coins: " + data.coins.ToString();
+        data.souls += (int)(count * _soulBoost);
+        coinsCountText.text = "Coins: " + data.souls.ToString();
     }
 }

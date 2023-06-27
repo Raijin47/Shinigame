@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ZangetsuUpgrade3
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: "\u0417\u0430\u043D\u0433\u0435\u0442\u0441\u0443"
-  Description: test2
+  Name: Zangetsu
+  Description: testtt
   icon: {fileID: 0}
   weaponData: {fileID: 11400000, guid: 65da1c590b6762a4c836715c1958b989, type: 2}
   weaponUpgradeStats:

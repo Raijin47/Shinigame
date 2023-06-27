@@ -30,7 +30,7 @@ public class PlayerUpgrades
 [CreateAssetMenu(fileName = "New DataContainer", menuName = "ScriptableObjects/DataContainer", order = 51)]
 public class DataContainer : ScriptableObject
 {
-    public int coins;
+    public int souls;
     public int diamonds;
     public List<bool> stageCompletion;
     public List<PlayerUpgrades> upgrades;

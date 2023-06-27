@@ -21,9 +21,9 @@ public class PlayerUpgradeUIElement : MonoBehaviour
         PlayerUpgrades playerUpgrades = dataContainer.upgrades[(int)upgrade];
 
         if(playerUpgrades.level >= playerUpgrades.maxLevel) { return; }
-        if(dataContainer.coins >= playerUpgrades.costToUpgrade[playerUpgrades.level])
+        if(dataContainer.souls >= playerUpgrades.costToUpgrade[playerUpgrades.level])
         {
-            dataContainer.coins -= playerUpgrades.costToUpgrade[playerUpgrades.level];
+            dataContainer.souls -= playerUpgrades.costToUpgrade[playerUpgrades.level];
             playerUpgrades.level += 1;
             UpdateElement();
         }

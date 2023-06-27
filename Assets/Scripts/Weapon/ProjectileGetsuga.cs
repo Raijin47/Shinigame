@@ -43,9 +43,9 @@ public class ProjectileGetsuga : ProjectileBase
                 break;
         }
 
-        float boostSize = EssentialService.instance.character.attackAreaSizeBonus;
+        //float boostSize = EssentialService.instance.character.attackAreaSizeBonus;
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.localScale = new Vector2(1 * boostSize, 1 * boostSize);
+        transform.localScale = projectileSize;
     }
     protected override void DestroyProjectile() => base.DestroyProjectile();
     protected override void OnTriggerEnter2D(Collider2D collision) => base.OnTriggerEnter2D(collision);

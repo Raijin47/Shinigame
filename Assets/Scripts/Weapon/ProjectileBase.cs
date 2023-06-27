@@ -10,6 +10,8 @@ public abstract class ProjectileBase : MonoBehaviour, IPoolMember
     private int numOfHits;
     [SerializeField] protected float timeToLive;
     private float ttl;
+    protected float size;
+    protected Vector2 projectileSize = new Vector2(1,1);
     
     public virtual void SetDirection(float dir_x, float dir_y)
     {
@@ -66,17 +68,15 @@ public abstract class ProjectileBase : MonoBehaviour, IPoolMember
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    //public void PostDamage(int damage, Vector2 worldPosition)
-    //{
-    //    MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
-    //}
-
     public void SetStats(WeaponBase weaponBase)
     {
         weapon = weaponBase;
         speed = weaponBase.weaponStats.projectileSpeed;
         damage = weaponBase.GetDamage();
         numOfHits = weaponBase.weaponStats.numberOfHits;
+        //size = weaponBase.weaponStats.attackAreaSize;
+        //float boostSize = EssentialService.instance.character.attackAreaSizeBonus;
+        //projectileSize = new Vector2(1, 1) * size * boostSize;
     }
 
     public virtual void SetPoolMember(PoolMember poolMember)

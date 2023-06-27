@@ -1,14 +1,14 @@
 using UnityEngine;
-using TMPro;
+using Assets.SimpleLocalization;
 
 public class UpgradeDescriptionPanel : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI upgradeNameText;
-    [SerializeField] TextMeshProUGUI upgradeDescription;
+    [SerializeField] LocalizedDynamic upgradeNameText;
+    [SerializeField] LocalizedDynamic upgradeDescription;
 
     public void Set(UpgradeData upgradeData)
     {
-        upgradeNameText.text = upgradeData.Name;
-        upgradeDescription.text = upgradeData.Description;
+        upgradeNameText.Localize(upgradeData.Name);
+        upgradeDescription.Localize(upgradeData.Description);
     }
 }
