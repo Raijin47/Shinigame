@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 6826118}
   - component: {fileID: 6826120}
   - component: {fileID: 6826119}
+  - component: {fileID: 6826121}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -258,6 +259,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6826117}
   m_CullTransparentMesh: 1
+--- !u!114 &6826121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 6826119}
 --- !u!1 &11185468
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &12693599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -495,6 +509,7 @@ GameObject:
   - component: {fileID: 21360244}
   - component: {fileID: 21360246}
   - component: {fileID: 21360245}
+  - component: {fileID: 21360247}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -619,6 +634,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21360243}
   m_CullTransparentMesh: 1
+--- !u!114 &21360247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21360243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 21360245}
 --- !u!1 &40803598
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +793,7 @@ GameObject:
   - component: {fileID: 61257384}
   - component: {fileID: 61257386}
   - component: {fileID: 61257385}
+  - component: {fileID: 61257387}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -889,6 +918,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61257383}
   m_CullTransparentMesh: 1
+--- !u!114 &61257387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61257383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 61257385}
 --- !u!1 &86547016
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +942,7 @@ GameObject:
   - component: {fileID: 86547019}
   - component: {fileID: 86547018}
   - component: {fileID: 86547017}
+  - component: {fileID: 86547020}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -1024,6 +1067,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &86547020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86547016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 86547017}
 --- !u!1 &146517593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,6 +1360,7 @@ GameObject:
   - component: {fileID: 184924772}
   - component: {fileID: 184924771}
   - component: {fileID: 184924770}
+  - component: {fileID: 184924773}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -1428,6 +1485,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &184924773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184924769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Damage
 --- !u!1 &194373132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,6 +1802,7 @@ GameObject:
   - component: {fileID: 201386837}
   - component: {fileID: 201386836}
   - component: {fileID: 201386835}
+  - component: {fileID: 201386838}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -1856,6 +1927,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &201386838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201386834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: MovementSpeed
 --- !u!1 &231199821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocalizationKey: Store
+  LocalizationKey: Shop
 --- !u!1 &236656648
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2100,7 @@ GameObject:
   - component: {fileID: 236656649}
   - component: {fileID: 236656651}
   - component: {fileID: 236656650}
+  - component: {fileID: 236656652}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2140,6 +2225,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236656648}
   m_CullTransparentMesh: 1
+--- !u!114 &236656652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236656648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Back
 --- !u!1 &240084442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,6 +2249,7 @@ GameObject:
   - component: {fileID: 240084445}
   - component: {fileID: 240084444}
   - component: {fileID: 240084443}
+  - component: {fileID: 240084446}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -2275,6 +2374,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &240084446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240084442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 240084443}
 --- !u!1 &251787247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2398,7 @@ GameObject:
   - component: {fileID: 251787248}
   - component: {fileID: 251787250}
   - component: {fileID: 251787249}
+  - component: {fileID: 251787251}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2410,6 +2523,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251787247}
   m_CullTransparentMesh: 1
+--- !u!114 &251787251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251787247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Play
 --- !u!1 &261670965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,6 +2892,7 @@ GameObject:
   - component: {fileID: 277056469}
   - component: {fileID: 277056468}
   - component: {fileID: 277056467}
+  - component: {fileID: 277056470}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -2890,6 +3017,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &277056470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277056466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: ExperienceBoost
 --- !u!1 &285945179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,6 +3041,7 @@ GameObject:
   - component: {fileID: 285945182}
   - component: {fileID: 285945181}
   - component: {fileID: 285945180}
+  - component: {fileID: 285945183}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -3025,6 +3166,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &285945183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285945179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: RecoveryHp
 --- !u!1 &331021327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,6 +3190,7 @@ GameObject:
   - component: {fileID: 331021330}
   - component: {fileID: 331021329}
   - component: {fileID: 331021328}
+  - component: {fileID: 331021331}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -3160,6 +3315,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &331021331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331021327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 331021328}
 --- !u!1 &343563288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,6 +3339,7 @@ GameObject:
   - component: {fileID: 343563291}
   - component: {fileID: 343563290}
   - component: {fileID: 343563289}
+  - component: {fileID: 343563292}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -3295,6 +3464,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &343563292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343563288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 343563289}
 --- !u!1 &351991791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,6 +3768,7 @@ GameObject:
   - component: {fileID: 370711429}
   - component: {fileID: 370711431}
   - component: {fileID: 370711430}
+  - component: {fileID: 370711432}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3710,6 +3893,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370711428}
   m_CullTransparentMesh: 1
+--- !u!114 &370711432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370711428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Twist
 --- !u!1 &383666992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,6 +4147,7 @@ GameObject:
   - component: {fileID: 410305434}
   - component: {fileID: 410305433}
   - component: {fileID: 410305432}
+  - component: {fileID: 410305435}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -4075,6 +4272,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &410305435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410305431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Armor
 --- !u!1 &412320379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4086,6 +4296,7 @@ GameObject:
   - component: {fileID: 412320382}
   - component: {fileID: 412320381}
   - component: {fileID: 412320380}
+  - component: {fileID: 412320383}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -4210,6 +4421,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &412320383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412320379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: AttackSpeed
 --- !u!1 &438533096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4221,6 +4445,7 @@ GameObject:
   - component: {fileID: 438533099}
   - component: {fileID: 438533098}
   - component: {fileID: 438533097}
+  - component: {fileID: 438533100}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -4345,6 +4570,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &438533100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438533096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 438533097}
 --- !u!1 &454280785
 GameObject:
   m_ObjectHideFlags: 0
@@ -4356,6 +4594,7 @@ GameObject:
   - component: {fileID: 454280786}
   - component: {fileID: 454280788}
   - component: {fileID: 454280787}
+  - component: {fileID: 454280789}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4480,6 +4719,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454280785}
   m_CullTransparentMesh: 1
+--- !u!114 &454280789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454280785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Settings
 --- !u!1 &475440695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,6 +4743,7 @@ GameObject:
   - component: {fileID: 475440696}
   - component: {fileID: 475440698}
   - component: {fileID: 475440697}
+  - component: {fileID: 475440699}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4615,6 +4868,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475440695}
   m_CullTransparentMesh: 1
+--- !u!114 &475440699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475440695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 475440697}
 --- !u!1 &525927094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,6 +4892,7 @@ GameObject:
   - component: {fileID: 525927095}
   - component: {fileID: 525927097}
   - component: {fileID: 525927096}
+  - component: {fileID: 525927098}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4750,6 +5017,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525927094}
   m_CullTransparentMesh: 1
+--- !u!114 &525927098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525927094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 525927096}
 --- !u!1 &527136677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4808,6 +5088,8 @@ MonoBehaviour:
   upgrade: 11
   level: {fileID: 687436006}
   price: {fileID: 240084443}
+  button: {fileID: 2092257478}
+  buttonText: {fileID: 1919053448}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &527136680
 MonoBehaviour:
@@ -5275,6 +5557,7 @@ GameObject:
   - component: {fileID: 645351353}
   - component: {fileID: 645351352}
   - component: {fileID: 645351351}
+  - component: {fileID: 645351354}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -5399,6 +5682,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &645351354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645351350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 645351351}
 --- !u!1 &653312996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5414,7 +5710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &653312997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6361,6 +6657,7 @@ GameObject:
   - component: {fileID: 719850773}
   - component: {fileID: 719850772}
   - component: {fileID: 719850771}
+  - component: {fileID: 719850774}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -6485,6 +6782,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &719850774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719850770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 719850771}
 --- !u!1 &736027459
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,6 +6806,7 @@ GameObject:
   - component: {fileID: 736027462}
   - component: {fileID: 736027461}
   - component: {fileID: 736027460}
+  - component: {fileID: 736027463}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -6620,6 +6931,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &736027463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736027459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 736027460}
 --- !u!1 &755554802
 GameObject:
   m_ObjectHideFlags: 0
@@ -6923,6 +7247,7 @@ GameObject:
   - component: {fileID: 796051464}
   - component: {fileID: 796051466}
   - component: {fileID: 796051465}
+  - component: {fileID: 796051467}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6970,7 +7295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+  m_text: "\u041D\u0430\u0437\u0430\u0434"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7047,6 +7372,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796051463}
   m_CullTransparentMesh: 1
+--- !u!114 &796051467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796051463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Back
 --- !u!1 &832774767
 GameObject:
   m_ObjectHideFlags: 0
@@ -7058,6 +7396,7 @@ GameObject:
   - component: {fileID: 832774768}
   - component: {fileID: 832774770}
   - component: {fileID: 832774769}
+  - component: {fileID: 832774771}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7182,6 +7521,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832774767}
   m_CullTransparentMesh: 1
+--- !u!114 &832774771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832774767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 832774769}
 --- !u!1 &834523252
 GameObject:
   m_ObjectHideFlags: 0
@@ -7193,6 +7545,7 @@ GameObject:
   - component: {fileID: 834523255}
   - component: {fileID: 834523254}
   - component: {fileID: 834523253}
+  - component: {fileID: 834523256}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -7317,6 +7670,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &834523256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834523252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 834523253}
 --- !u!1 &835764898
 GameObject:
   m_ObjectHideFlags: 0
@@ -8557,6 +8923,7 @@ GameObject:
   - component: {fileID: 989373307}
   - component: {fileID: 989373306}
   - component: {fileID: 989373305}
+  - component: {fileID: 989373308}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -8681,6 +9048,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &989373308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989373304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: ProjectileSpeed
 --- !u!1 &1001349149
 GameObject:
   m_ObjectHideFlags: 0
@@ -9259,6 +9639,8 @@ MonoBehaviour:
   upgrade: 4
   level: {fileID: 665756808}
   price: {fileID: 736027460}
+  button: {fileID: 361296416}
+  buttonText: {fileID: 61257387}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1128346985
 MonoBehaviour:
@@ -9309,6 +9691,7 @@ GameObject:
   - component: {fileID: 1147035994}
   - component: {fileID: 1147035996}
   - component: {fileID: 1147035995}
+  - component: {fileID: 1147035997}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9433,6 +9816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147035993}
   m_CullTransparentMesh: 1
+--- !u!114 &1147035997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147035993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Gacha
 --- !u!1 &1148644992
 GameObject:
   m_ObjectHideFlags: 0
@@ -9491,6 +9887,8 @@ MonoBehaviour:
   upgrade: 6
   level: {fileID: 146517594}
   price: {fileID: 331021328}
+  button: {fileID: 1491391135}
+  buttonText: {fileID: 1264530911}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1148644995
 MonoBehaviour:
@@ -9664,6 +10062,8 @@ MonoBehaviour:
   upgrade: 9
   level: {fileID: 40803599}
   price: {fileID: 1510202332}
+  button: {fileID: 1546413494}
+  buttonText: {fileID: 1705224936}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1172060179
 MonoBehaviour:
@@ -9714,6 +10114,7 @@ GameObject:
   - component: {fileID: 1177691926}
   - component: {fileID: 1177691928}
   - component: {fileID: 1177691927}
+  - component: {fileID: 1177691929}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9838,6 +10239,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177691925}
   m_CullTransparentMesh: 1
+--- !u!114 &1177691929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177691925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Back
 --- !u!1 &1225669936
 GameObject:
   m_ObjectHideFlags: 0
@@ -9849,6 +10263,7 @@ GameObject:
   - component: {fileID: 1225669939}
   - component: {fileID: 1225669938}
   - component: {fileID: 1225669937}
+  - component: {fileID: 1225669940}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -9973,6 +10388,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1225669940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225669936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Reroll
 --- !u!1 &1234194606
 GameObject:
   m_ObjectHideFlags: 0
@@ -9984,6 +10412,7 @@ GameObject:
   - component: {fileID: 1234194609}
   - component: {fileID: 1234194608}
   - component: {fileID: 1234194607}
+  - component: {fileID: 1234194610}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -10108,6 +10537,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1234194610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234194606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: ProjectileCount
 --- !u!1 &1238658396
 GameObject:
   m_ObjectHideFlags: 0
@@ -10217,6 +10659,7 @@ GameObject:
   - component: {fileID: 1253935765}
   - component: {fileID: 1253935767}
   - component: {fileID: 1253935766}
+  - component: {fileID: 1253935768}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10341,6 +10784,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253935764}
   m_CullTransparentMesh: 1
+--- !u!114 &1253935768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253935764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1253935766}
 --- !u!1 &1264530907
 GameObject:
   m_ObjectHideFlags: 0
@@ -10352,6 +10808,7 @@ GameObject:
   - component: {fileID: 1264530908}
   - component: {fileID: 1264530910}
   - component: {fileID: 1264530909}
+  - component: {fileID: 1264530911}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10476,6 +10933,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264530907}
   m_CullTransparentMesh: 1
+--- !u!114 &1264530911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264530907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1264530909}
 --- !u!1 &1270895679
 GameObject:
   m_ObjectHideFlags: 0
@@ -10534,6 +11004,8 @@ MonoBehaviour:
   upgrade: 8
   level: {fileID: 1050397701}
   price: {fileID: 438533097}
+  button: {fileID: 2008384954}
+  buttonText: {fileID: 21360247}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1270895682
 MonoBehaviour:
@@ -11552,6 +12024,8 @@ MonoBehaviour:
   upgrade: 7
   level: {fileID: 1876926188}
   price: {fileID: 645351351}
+  button: {fileID: 715559981}
+  buttonText: {fileID: 1253935768}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1460241022
 MonoBehaviour:
@@ -11871,6 +12345,7 @@ GameObject:
   - component: {fileID: 1510202334}
   - component: {fileID: 1510202333}
   - component: {fileID: 1510202332}
+  - component: {fileID: 1510202335}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -11995,6 +12470,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1510202335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510202331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1510202332}
 --- !u!1 &1513769993
 GameObject:
   m_ObjectHideFlags: 0
@@ -12006,6 +12494,7 @@ GameObject:
   - component: {fileID: 1513769996}
   - component: {fileID: 1513769995}
   - component: {fileID: 1513769994}
+  - component: {fileID: 1513769997}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -12130,6 +12619,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1513769997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513769993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1513769994}
 --- !u!1 &1544644889
 GameObject:
   m_ObjectHideFlags: 0
@@ -12457,6 +12959,8 @@ MonoBehaviour:
   upgrade: 1
   level: {fileID: 597509160}
   price: {fileID: 1513769994}
+  button: {fileID: 2029373528}
+  buttonText: {fileID: 832774771}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1575248946
 MonoBehaviour:
@@ -12554,6 +13058,8 @@ MonoBehaviour:
   upgrade: 3
   level: {fileID: 1334343055}
   price: {fileID: 86547017}
+  button: {fileID: 1291913032}
+  buttonText: {fileID: 525927098}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1575849243
 MonoBehaviour:
@@ -12874,6 +13380,7 @@ GameObject:
   - component: {fileID: 1624110453}
   - component: {fileID: 1624110455}
   - component: {fileID: 1624110454}
+  - component: {fileID: 1624110456}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -12998,6 +13505,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624110452}
   m_CullTransparentMesh: 1
+--- !u!114 &1624110456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624110452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Upgrades
 --- !u!1 &1636982100
 GameObject:
   m_ObjectHideFlags: 0
@@ -13123,6 +13643,7 @@ GameObject:
   - component: {fileID: 1657190310}
   - component: {fileID: 1657190309}
   - component: {fileID: 1657190308}
+  - component: {fileID: 1657190311}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -13247,6 +13768,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1657190311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657190307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: AttackAreaSize
 --- !u!1 &1694753070
 GameObject:
   m_ObjectHideFlags: 0
@@ -13404,6 +13938,7 @@ GameObject:
   - component: {fileID: 1705224933}
   - component: {fileID: 1705224935}
   - component: {fileID: 1705224934}
+  - component: {fileID: 1705224936}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13528,6 +14063,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705224932}
   m_CullTransparentMesh: 1
+--- !u!114 &1705224936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705224932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1705224934}
 --- !u!1 &1736408471
 GameObject:
   m_ObjectHideFlags: 0
@@ -13735,6 +14283,8 @@ MonoBehaviour:
   upgrade: 2
   level: {fileID: 634291907}
   price: {fileID: 343563289}
+  button: {fileID: 276726840}
+  buttonText: {fileID: 475440699}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1757118931
 MonoBehaviour:
@@ -13832,6 +14382,8 @@ MonoBehaviour:
   upgrade: 5
   level: {fileID: 1503257634}
   price: {fileID: 719850771}
+  button: {fileID: 1442092985}
+  buttonText: {fileID: 6826121}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1766635012
 MonoBehaviour:
@@ -13958,6 +14510,7 @@ GameObject:
   - component: {fileID: 1786748968}
   - component: {fileID: 1786748970}
   - component: {fileID: 1786748969}
+  - component: {fileID: 1786748971}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -14082,6 +14635,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786748967}
   m_CullTransparentMesh: 1
+--- !u!114 &1786748971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786748967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1786748969}
 --- !u!1 &1804515538
 GameObject:
   m_ObjectHideFlags: 0
@@ -14523,6 +15089,7 @@ GameObject:
   - component: {fileID: 1879755230}
   - component: {fileID: 1879755229}
   - component: {fileID: 1879755228}
+  - component: {fileID: 1879755231}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -14647,6 +15214,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1879755231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879755227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Survivability
 --- !u!1 &1892951114
 GameObject:
   m_ObjectHideFlags: 0
@@ -14705,6 +15285,8 @@ MonoBehaviour:
   upgrade: 0
   level: {fileID: 2034657892}
   price: {fileID: 2120140868}
+  button: {fileID: 1056429359}
+  buttonText: {fileID: 2018386301}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &1892951117
 MonoBehaviour:
@@ -14890,6 +15472,7 @@ GameObject:
   - component: {fileID: 1919053445}
   - component: {fileID: 1919053447}
   - component: {fileID: 1919053446}
+  - component: {fileID: 1919053448}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -15014,6 +15597,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919053444}
   m_CullTransparentMesh: 1
+--- !u!114 &1919053448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919053444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1919053446}
 --- !u!1 &1966038969
 GameObject:
   m_ObjectHideFlags: 0
@@ -15469,6 +16065,7 @@ GameObject:
   - component: {fileID: 2018386298}
   - component: {fileID: 2018386300}
   - component: {fileID: 2018386299}
+  - component: {fileID: 2018386301}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -15593,6 +16190,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018386297}
   m_CullTransparentMesh: 1
+--- !u!114 &2018386301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018386297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2018386299}
 --- !u!1 &2029373526
 GameObject:
   m_ObjectHideFlags: 0
@@ -15873,6 +16483,7 @@ GameObject:
   - component: {fileID: 2053301040}
   - component: {fileID: 2053301039}
   - component: {fileID: 2053301038}
+  - component: {fileID: 2053301041}
   m_Layer: 5
   m_Name: Text UpgradeName
   m_TagString: Untagged
@@ -15997,6 +16608,19 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2053301041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053301037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: SoulsBoost
 --- !u!1 &2056687743
 GameObject:
   m_ObjectHideFlags: 0
@@ -16008,6 +16632,7 @@ GameObject:
   - component: {fileID: 2056687744}
   - component: {fileID: 2056687746}
   - component: {fileID: 2056687745}
+  - component: {fileID: 2056687747}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -16132,6 +16757,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056687743}
   m_CullTransparentMesh: 1
+--- !u!114 &2056687747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056687743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Back
 --- !u!1 &2092257476
 GameObject:
   m_ObjectHideFlags: 0
@@ -16562,6 +17200,7 @@ GameObject:
   - component: {fileID: 2120140870}
   - component: {fileID: 2120140869}
   - component: {fileID: 2120140868}
+  - component: {fileID: 2120140871}
   m_Layer: 5
   m_Name: Text UpgradePrice
   m_TagString: Untagged
@@ -16686,6 +17325,19 @@ RectTransform:
   m_AnchoredPosition: {x: -110, y: 38}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2120140871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120140867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7960ca1dc1cc0dc4d8f5cd6f9c653092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2120140868}
 --- !u!1 &2145891341
 GameObject:
   m_ObjectHideFlags: 0
@@ -16744,6 +17396,8 @@ MonoBehaviour:
   upgrade: 10
   level: {fileID: 1966038970}
   price: {fileID: 834523253}
+  button: {fileID: 157453271}
+  buttonText: {fileID: 1786748971}
   dataContainer: {fileID: 11400000, guid: ed8d823f6e1d8d244bae256ccda28ed8, type: 2}
 --- !u!114 &2145891344
 MonoBehaviour:
