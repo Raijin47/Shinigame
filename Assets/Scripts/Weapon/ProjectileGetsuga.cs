@@ -43,7 +43,6 @@ public class ProjectileGetsuga : ProjectileBase
                 break;
         }
 
-        //float boostSize = EssentialService.instance.character.attackAreaSizeBonus;
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
         transform.localScale = projectileSize;
     }

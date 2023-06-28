@@ -30,7 +30,7 @@ public class WeaponStats
 
     internal void Sum(WeaponStats weaponUpgradeStats)
     {
-        this.damage *= weaponUpgradeStats.damage;
+        this.damage += weaponUpgradeStats.damage;
         this.timeToAttack -= weaponUpgradeStats.timeToAttack;
         this.numberOfAttacks += weaponUpgradeStats.numberOfAttacks;
         this.numberOfHits += weaponUpgradeStats.numberOfHits;

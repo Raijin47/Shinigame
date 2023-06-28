@@ -74,9 +74,9 @@ public abstract class ProjectileBase : MonoBehaviour, IPoolMember
         speed = weaponBase.weaponStats.projectileSpeed;
         damage = weaponBase.GetDamage();
         numOfHits = weaponBase.weaponStats.numberOfHits;
-        //size = weaponBase.weaponStats.attackAreaSize;
-        //float boostSize = EssentialService.instance.character.attackAreaSizeBonus;
-        //projectileSize = new Vector2(1, 1) * size * boostSize;
+        size = weaponBase.weaponStats.attackAreaSize;
+        float boostSize = EssentialService.instance.character.attackAreaSizeBonus;
+        projectileSize = new Vector2(1, 1) * size * boostSize;
     }
 
     public virtual void SetPoolMember(PoolMember poolMember)

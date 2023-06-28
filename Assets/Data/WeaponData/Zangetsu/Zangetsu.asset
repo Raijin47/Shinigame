@@ -22,6 +22,7 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
+    attackAreaSize: 1
   weaponBasePrefab: {fileID: 9098344206436914155, guid: b11d77ab5ce801443aa3ffd623fa46c7, type: 3}
   upgrades:
   - {fileID: 11400000, guid: 5c5b9afe8da8c7c4cb243078f1d0262c, type: 2}

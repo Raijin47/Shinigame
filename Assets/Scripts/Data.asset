@@ -64,4 +64,4 @@ MonoBehaviour:
     level: 3
     maxLevel: 5
     costToUpgrade: 6400000064000000640000006400000064000000640000006400000064000000
-  selectedCharacter: {fileID: 11400000, guid: 398a7c3786d4a334a8e43b757bb669f8, type: 2}
+  selectedCharacter: {fileID: 11400000, guid: 7f27d2bcef8c823418f530e8326a3efd, type: 2}

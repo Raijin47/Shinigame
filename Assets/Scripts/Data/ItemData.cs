@@ -6,7 +6,6 @@ using UnityEngine;
 public class ItemStats
 {
     public int armor;
-
     internal void Sum(ItemStats stats)
     {
         armor += stats.armor;
