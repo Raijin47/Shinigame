@@ -79,16 +79,16 @@ public class Character : MonoBehaviour
         damageBonus = damageCharaBase + damageUpgradeLevel * 0.06f + damageCharaLevel * 0.015f;
 
         int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
-        armor = armorUpgradeLevel;
+        armor = armorUpgradeLevel + armorItem;
 
         int recoveryHpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
-        recoveryHp = recoveryHpUpgradeLevel;
+        recoveryHp = recoveryHpUpgradeLevel + recoveryItem;
 
         float attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
-        attackSpeedBonus = 1 + attackSpeedUpgradeLevel * 0.1f;
+        attackSpeedBonus = (1 + attackSpeedUpgradeLevel * 0.1f) * attackSpeedItem;
 
         float attackAreaSizeUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackAreaSize);
-        attackAreaSizeBonus = 1 + attackAreaSizeUpgradeLevel * 0.05f;
+        attackAreaSizeBonus = (1 + attackAreaSizeUpgradeLevel * 0.05f) * attackAreaSizeItem;
 
         float movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
         float movementSpeedBase = data.selectedCharacter.MovementSpeed;
@@ -96,7 +96,7 @@ public class Character : MonoBehaviour
         playerMovement.SetSpeed(speed);
 
         float goldBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
-        float goldBoost = 1 + goldBoostUpgradeLevel * 0.2f;
+        float goldBoost = (1 + goldBoostUpgradeLevel * 0.2f) * soulsItem;
         coins.SetBoost(goldBoost);
 
         float ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
@@ -104,7 +104,7 @@ public class Character : MonoBehaviour
         level.SetBoost(boostExp);
 
         int projectileCountUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileCount);
-        projectileCountBonus = projectileCountUpgradeLevel;
+        projectileCountBonus = projectileCountUpgradeLevel + projectileCountItem;
         //float projectaleSpeed = 0;
         //int projectileCount = 1;
         //int reroll = 1;
