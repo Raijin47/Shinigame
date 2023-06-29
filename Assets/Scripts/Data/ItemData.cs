@@ -5,10 +5,31 @@ using UnityEngine;
 [Serializable]
 public class ItemStats
 {
+    public float damage;
+    public float attackSpeed;
+    public float attackArea;
+    public float projectileSpeed;
+    public float movementSpeed;
+    public float experience;
+    public float souls;
+    public float health;
+    public int recovery;
+    public int projectileCount;
     public int armor;
+
     internal void Sum(ItemStats stats)
     {
-        armor += stats.armor;
+        this.damage += stats.damage;
+        this.attackSpeed += stats.attackSpeed;
+        this.attackArea += stats.attackArea;
+        this.projectileSpeed += stats.projectileSpeed;
+        this.movementSpeed += stats.movementSpeed;
+        this.experience += stats.experience;
+        this.souls += stats.souls;
+        this.health += stats.health;
+        this.recovery += stats.recovery;
+        this.projectileCount += stats.projectileCount;
+        this.armor += stats.armor;
     }
 }
 
@@ -26,12 +47,34 @@ public class ItemData: ScriptableObject
         upgrades = new List<UpgradeData>();
     }
     public void Equip(Character character)
-    {
-        character.armor += stats.armor;
+    {        
+        character.damageItem += stats.damage;
+        character.attackSpeedItem += stats.attackSpeed;
+        character.attackAreaSizeItem += stats.attackArea;
+        character.projectileSpeedItem += stats.projectileSpeed;
+        character.movementSpeedItem += stats.movementSpeed;
+        character.experienceItem += stats.experience;
+        character.soulsItem += stats.souls;
+        character.healthItem += stats.health;
+        character.recoveryItem += stats.recovery;
+        character.projectileCountItem += stats.projectileCount;
+        character.armorItem += stats.armor;
+
+        character.CalculateStats();
     }
 
     public void UnEquip(Character character)
     {
-        character.armor -= stats.armor;
+        character.damageItem -= stats.damage;
+        character.attackSpeedItem -= stats.attackSpeed;
+        character.attackAreaSizeItem -= stats.attackArea;
+        character.projectileSpeedItem -= stats.projectileSpeed;
+        character.movementSpeedItem -= stats.movementSpeed;
+        character.experienceItem -= stats.experience;
+        character.soulsItem -= stats.souls;
+        character.healthItem -= stats.health;
+        character.recoveryItem -= stats.recovery;
+        character.projectileCountItem -= stats.projectileCount;
+        character.armorItem -= stats.armor;
     }
 }

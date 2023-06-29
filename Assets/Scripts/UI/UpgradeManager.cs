@@ -71,7 +71,6 @@ public class UpgradeManager : MonoBehaviour
     {
         upgradeDescriptionPanel.gameObject.SetActive(true);
         upgradeDescriptionPanel.Set(upgradeData[selectedUpgradeID]);
-
     }
 
     public void ClosePanel()
