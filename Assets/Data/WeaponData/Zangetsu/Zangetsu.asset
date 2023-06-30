@@ -24,9 +24,4 @@ MonoBehaviour:
     knockbackTimeWeight: 0
     attackAreaSize: 1
   weaponBasePrefab: {fileID: 9098344206436914155, guid: b11d77ab5ce801443aa3ffd623fa46c7, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: 5c5b9afe8da8c7c4cb243078f1d0262c, type: 2}
-  - {fileID: 11400000, guid: 4da1a26ebb744fb4fb47de5ebf0724fb, type: 2}
-  - {fileID: 11400000, guid: 37b3b0fa91644d345b75e75d030a7846, type: 2}
-  - {fileID: 11400000, guid: e52def0d31d08e74087d325b3c9a1a5a, type: 2}
-  - {fileID: 11400000, guid: 44e6ef470bd62c04ca68970c8c641469, type: 2}
+  upgrades: []

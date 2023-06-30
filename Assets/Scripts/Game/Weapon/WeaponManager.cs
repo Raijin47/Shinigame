@@ -6,7 +6,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Transform weaponObjectContainer;
     [SerializeField] PoolManager poolManager;
 
-    List<WeaponBase> weapons;
+    [SerializeField]List<WeaponBase> weapons;
 
     Character character;
 

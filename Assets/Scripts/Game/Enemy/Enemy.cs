@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private float currentTime;
 
     private bool isAttack = false;
+    private bool isRight = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -57,6 +58,22 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private void Update()
     {
         ProcessAttack();
+        Flip();
+    }
+
+    private void Flip()
+    {
+        //if(isRight)
+        //{
+        //    if(transform.position.x < targetDestination.position.x)
+        //    {
+        //        transform.localScale = new Vector2(-1, 0);
+        //    }
+        //}
+        //else
+        //{
+
+        //}
     }
 
     private void ProcessAttack()

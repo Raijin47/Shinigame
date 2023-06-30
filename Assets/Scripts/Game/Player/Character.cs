@@ -116,24 +116,22 @@ public class Character : MonoBehaviour
     {
         DataContainer data = EssentialService.instance.dataContainer;
 
-        //damage
         float damageUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
         float damageCharaBase = data.selectedCharacter.Damage;
         float damageCharaLevel = data.selectedCharacter.Level;
         if (damageCharaLevel > 30) damageCharaLevel = 30;
         damageBonus = (damageCharaBase + damageUpgradeLevel * 0.06f + damageCharaLevel * 0.015f) * damageItem;
-        //attackSpeed
+
         float attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
-        attackSpeedBonus = 1 + attackSpeedUpgradeLevel * 0.1f;
-        //attackAreaSize
+        attackSpeedBonus = (1 + attackSpeedUpgradeLevel * 0.1f) * attackSpeedItem;
+
         float attackAreaSizeUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackAreaSize);
-        attackAreaSizeBonus = 1 + attackAreaSizeUpgradeLevel * 0.05f;
+        attackAreaSizeBonus = (1 + attackAreaSizeUpgradeLevel * 0.05f) * attackAreaSizeItem;
         //projectileSpeed
 
-        //movementSpeed
         float movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
         float movementSpeedBase = data.selectedCharacter.MovementSpeed;
-        float speed = movementSpeedBase * (1 + 0.05f * movementSpeedUpgradeLevel);
+        float speed = (movementSpeedBase * (1 + 0.05f * movementSpeedUpgradeLevel)) * movementSpeedItem;
         playerMovement.SetSpeed(speed);
         //experienceBoost
         float ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
@@ -147,13 +145,13 @@ public class Character : MonoBehaviour
         int hpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
         maxHp += maxHp / 10 * hpUpgradeLevel;
         currentHp = maxHp;
-        //recoveryHP
+
         int recoveryHpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
-        recoveryHp = recoveryHpUpgradeLevel;
-        //projectileCount
+        recoveryHp = recoveryHpUpgradeLevel + recoveryItem;
+
         int projectileCountUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileCount);
-        projectileCountBonus = projectileCountUpgradeLevel;
-        //armor
+        projectileCountBonus = projectileCountUpgradeLevel + projectileCountItem;
+
         int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
         armor = armorUpgradeLevel + armorItem;
     }
