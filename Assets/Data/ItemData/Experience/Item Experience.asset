@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
+  m_Name: Item Experience
+  m_EditorClassIdentifier: 
+  Name: MovementSpeed
+  stats:
+    damage: 0
+    attackSpeed: 0
+    attackArea: 0
+    projectileSpeed: 0
+    movementSpeed: 0
+    experience: 0.1
+    souls: 0
+    health: 0
+    recovery: 0
+    projectileCount: 0
+    armor: 0
+  upgrades:
+  - {fileID: 11400000, guid: a4dc26b9754d4d14581ae5a45c930ada, type: 2}

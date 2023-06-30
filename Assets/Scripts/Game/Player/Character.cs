@@ -47,7 +47,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         LoadSelectedCharacter(EssentialService.instance.dataContainer.selectedCharacter);
-        ApplyPersistantUpgrades();
+        CalculateStats();
         hpBar.SetState(currentHp, maxHp);
     }
 
@@ -55,7 +55,6 @@ public class Character : MonoBehaviour
     {
         InitAnimation(selectedCharacter.spritePrefab);
         GetComponent<WeaponManager>().AddWeapon(selectedCharacter.startingWeapon);
-        maxHp = selectedCharacter.Health;
     }
 
     private void InitAnimation(GameObject spritePrefab)
@@ -64,86 +63,41 @@ public class Character : MonoBehaviour
         GetComponent<PlayerAnimate>().SetAnimate(animObject);
     }
 
-    private void ApplyPersistantUpgrades()
-    {
-        DataContainer data = EssentialService.instance.dataContainer;
-        //дополнить с учётом предметов
-        int hpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
-        maxHp += maxHp / 10 * hpUpgradeLevel;
-        currentHp = maxHp;
-    
-        float damageUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
-        float damageCharaBase = data.selectedCharacter.Damage;
-        float damageCharaLevel = data.selectedCharacter.Level;
-        if (damageCharaLevel > 30) damageCharaLevel = 30;
-        damageBonus = damageCharaBase + damageUpgradeLevel * 0.06f + damageCharaLevel * 0.015f;
-
-        int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
-        armor = armorUpgradeLevel + armorItem;
-
-        int recoveryHpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
-        recoveryHp = recoveryHpUpgradeLevel + recoveryItem;
-
-        float attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
-        attackSpeedBonus = (1 + attackSpeedUpgradeLevel * 0.1f) * attackSpeedItem;
-
-        float attackAreaSizeUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackAreaSize);
-        attackAreaSizeBonus = (1 + attackAreaSizeUpgradeLevel * 0.05f) * attackAreaSizeItem;
-
-        float movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
-        float movementSpeedBase = data.selectedCharacter.MovementSpeed;
-        float speed = movementSpeedBase * (1 + 0.05f * movementSpeedUpgradeLevel);
-        playerMovement.SetSpeed(speed);
-
-        float goldBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
-        float goldBoost = (1 + goldBoostUpgradeLevel * 0.2f) * soulsItem;
-        coins.SetBoost(goldBoost);
-
-        float ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
-        float boostExp = 1 + ExperienceBoostUpgradeLevel / 10;
-        level.SetBoost(boostExp);
-
-        int projectileCountUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileCount);
-        projectileCountBonus = projectileCountUpgradeLevel + projectileCountItem;
-        //float projectaleSpeed = 0;
-        //int projectileCount = 1;
-        //int reroll = 1;
-
-
-    }
-
     public void CalculateStats()
     {
         DataContainer data = EssentialService.instance.dataContainer;
+        int charaLevel = data.selectedCharacter.Level;
+        if (charaLevel > 30) charaLevel = 30;
 
         float damageUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
         float damageCharaBase = data.selectedCharacter.Damage;
-        float damageCharaLevel = data.selectedCharacter.Level;
-        if (damageCharaLevel > 30) damageCharaLevel = 30;
-        damageBonus = (damageCharaBase + damageUpgradeLevel * 0.06f + damageCharaLevel * 0.015f) * damageItem;
+        damageBonus = (damageCharaBase + damageUpgradeLevel * 0.06f + charaLevel * 0.015f) * damageItem;
 
         float attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
         attackSpeedBonus = (1 + attackSpeedUpgradeLevel * 0.1f) * attackSpeedItem;
 
         float attackAreaSizeUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackAreaSize);
         attackAreaSizeBonus = (1 + attackAreaSizeUpgradeLevel * 0.05f) * attackAreaSizeItem;
-        //projectileSpeed
+
+        float projectileSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileSpeed);
+        projectileSpeedBonus = projectileSpeedUpgradeLevel * projectileSpeedItem;
 
         float movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
         float movementSpeedBase = data.selectedCharacter.MovementSpeed;
         float speed = (movementSpeedBase * (1 + 0.05f * movementSpeedUpgradeLevel)) * movementSpeedItem;
         playerMovement.SetSpeed(speed);
-        //experienceBoost
+
         float ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
-        float boostExp = 1 + ExperienceBoostUpgradeLevel / 10;
+        float boostExp = (1 + ExperienceBoostUpgradeLevel * 0.2f) * experienceItem;
         level.SetBoost(boostExp);
-        //soulsBoost
-        float goldBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
-        float goldBoost = 1 + goldBoostUpgradeLevel * 0.2f;
-        coins.SetBoost(goldBoost);
-        //healh
+
+        float soulsUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
+        float soulsBoost = (1 + soulsUpgradeLevel * 0.2f) * soulsItem;
+        coins.SetBoost(soulsBoost);
+
+        int healthCharaBase = data.selectedCharacter.Health;
         int hpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
-        maxHp += maxHp / 10 * hpUpgradeLevel;
+        maxHp = (int)((1 + hpUpgradeLevel * 0.1f + charaLevel * 0.015f) * healthCharaBase * healthItem);
         currentHp = maxHp;
 
         int recoveryHpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);

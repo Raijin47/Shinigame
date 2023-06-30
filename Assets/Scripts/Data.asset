@@ -17,7 +17,7 @@ MonoBehaviour:
   stageCompletion: 000000
   upgrades:
   - persisrentUpgrades: 0
-    level: 0
+    level: 10
     maxLevel: 10
     costToUpgrade: 64000000c80000002c01000090010000f4010000f4010000f4010000f4010000f4010000f4010000f4010000
   - persisrentUpgrades: 1

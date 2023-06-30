@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780db07532fd60d4d805ddf4151441ab, type: 3}
+  m_Name: Acquire Health
+  m_EditorClassIdentifier: 
+  upgradeType: 3
+  Name: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0445\u041F"
+  Description: "\u0445\u043F"
+  icon: {fileID: 0}
+  weaponData: {fileID: 0}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    numberOfAttacks: 0
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 0
+    knockback: 0
+    knockbackTimeWeight: 0
+    attackAreaSize: 0
+  item: {fileID: 11400000, guid: 5754d0a35813fad478a80bd39f5ab19a, type: 2}
+  itemStats:
+    damage: 0
+    attackSpeed: 0
+    attackArea: 0
+    projectileSpeed: 0
+    movementSpeed: 0
+    experience: 0
+    souls: 0
+    health: 0
+    recovery: 0
+    projectileCount: 0
+    armor: 0
