@@ -42,11 +42,6 @@ public class ProjectileGetsuga : ProjectileBase
                 angle = 315;
                 break;
         }
-
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.localScale = projectileSize;
     }
-    protected override void DestroyProjectile() => base.DestroyProjectile();
-    protected override void OnTriggerEnter2D(Collider2D collision) => base.OnTriggerEnter2D(collision);
-    public override void SetPoolMember(PoolMember poolMember) => base.SetPoolMember(poolMember);
 }

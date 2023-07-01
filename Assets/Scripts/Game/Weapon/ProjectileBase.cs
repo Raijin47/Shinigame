@@ -16,6 +16,7 @@ public abstract class ProjectileBase : MonoBehaviour, IPoolMember
     public virtual void SetDirection(float dir_x, float dir_y)
     {
         ttl = timeToLive;
+        transform.localScale = projectileSize;
     }
     protected void Update()
     {

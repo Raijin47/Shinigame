@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade Health
   m_EditorClassIdentifier: 
   upgradeType: 1
-  Name: "\u0443\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0445\u043F"
-  Description: 1
+  Name: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+  Description: "\u0425\u041F"
   icon: {fileID: 0}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

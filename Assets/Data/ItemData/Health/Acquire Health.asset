@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Acquire Health
   m_EditorClassIdentifier: 
   upgradeType: 3
-  Name: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0445\u041F"
+  Name: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C"
   Description: "\u0445\u043F"
   icon: {fileID: 0}
   weaponData: {fileID: 0}

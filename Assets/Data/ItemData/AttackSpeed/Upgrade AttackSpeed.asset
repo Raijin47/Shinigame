@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade AttackSpeed
   m_EditorClassIdentifier: 
   upgradeType: 1
-  Name: attackSpeed
-  Description: 1
+  Name: "\u0423\u043B\u0443\u0448\u0447\u0438\u0442\u044C"
+  Description: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0430\u0442\u0430\u043A\u0438"
   icon: {fileID: 0}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

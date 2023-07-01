@@ -9,27 +9,27 @@ public class Character : MonoBehaviour
     private PlayerMovement playerMovement;
 
     // default stats
-    public float damageBonus;
-    public float attackSpeedBonus;
-    public float attackAreaSizeBonus;
-    public float projectileSpeedBonus;
-    public int projectileCountBonus;
-    [SerializeField]private int armor;
-    [SerializeField]private int recoveryHp;
-    [SerializeField]private int maxHp;
+    [HideInInspector] public float damageBonus;
+    [HideInInspector] public float attackSpeedBonus;
+    [HideInInspector] public float attackAreaSizeBonus;
+    [HideInInspector] public float projectileSpeedBonus;
+    [HideInInspector] public int projectileCountBonus;
+    private int armor;
+    private int recoveryHp;
+    private int maxHp;
     // default stats
     //item stats
-    public float damageItem = 1;
-    public float attackSpeedItem = 1;
-    public float attackAreaSizeItem = 1;
-    public float projectileSpeedItem = 1;
-    public float movementSpeedItem = 1;
-    public float experienceItem = 1;
-    public float soulsItem = 1;
-    public float healthItem = 1;
-    public int recoveryItem;
-    public int projectileCountItem;
-    public int armorItem;
+    [HideInInspector] public float damageItem = 1;
+    [HideInInspector] public float attackSpeedItem = 1;
+    [HideInInspector] public float attackAreaSizeItem = 1;
+    [HideInInspector] public float projectileSpeedItem = 1;
+    [HideInInspector] public float movementSpeedItem = 1;
+    [HideInInspector] public float experienceItem = 1;
+    [HideInInspector] public float soulsItem = 1;
+    [HideInInspector] public float healthItem = 1;
+    [HideInInspector] public int recoveryItem;
+    [HideInInspector] public int projectileCountItem;
+    [HideInInspector] public int armorItem;
     //itme stats
 
     private float hpRegenerationRate = 1f;
@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
         attackAreaSizeBonus = (1 + attackAreaSizeUpgradeLevel * 0.05f) * attackAreaSizeItem;
 
         float projectileSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileSpeed);
-        projectileSpeedBonus = projectileSpeedUpgradeLevel * projectileSpeedItem;
+        projectileSpeedBonus = (1 + 0.05f * projectileSpeedUpgradeLevel) * projectileSpeedItem;
 
         float movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
         float movementSpeedBase = data.selectedCharacter.MovementSpeed;

@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Acquire Experience
   m_EditorClassIdentifier: 
   upgradeType: 3
-  Name: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435
-    \u043E\u043F\u044B\u0442\u0430"
-  Description: "\u0445\u043F"
+  Name: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C"
+  Description: "\u041E\u043F\u044B\u0442"
   icon: {fileID: 0}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 1
   Name: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  Description: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u043D\u0430\u0440\u044F\u0434\u043E\u0432"
+  Description: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0441\u043D\u0430\u0440\u044F\u0434\u043E\u0432"
   icon: {fileID: 0}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

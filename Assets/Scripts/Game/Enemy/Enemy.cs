@@ -35,6 +35,9 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private Transform targetDestination;
     private PoolMember poolMember;
     private Vector2 knockbackVector;
+    private EnemyFade enemyFade;
+    private BoxCollider2D _boxCollider;
+    private CapsuleCollider2D _capsuleCollider;
 
     private float stunned;
     private float knockbackForce;
@@ -43,12 +46,19 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private float currentTime;
 
     private bool isAttack = false;
-    private bool isRight = false;
+    private bool isRight = true;
+    private bool isDeath = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
 
+    }
+    private void Start()
+    {
+        enemyFade = GetComponentInChildren<EnemyFade>();
+        _boxCollider = GetComponentInChildren<BoxCollider2D>();
+        _capsuleCollider = GetComponent<CapsuleCollider2D>();
+    }
     public void SetTarget(GameObject target)
     {
         targetGameObject = target;
@@ -57,23 +67,33 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     private void Update()
     {
+        if(isDeath) { return; }
         ProcessAttack();
         Flip();
     }
-
+    private void FixedUpdate()
+    {
+        ProcessStun();
+        Move();
+    }
     private void Flip()
     {
-        //if(isRight)
-        //{
-        //    if(transform.position.x < targetDestination.position.x)
-        //    {
-        //        transform.localScale = new Vector2(-1, 0);
-        //    }
-        //}
-        //else
-        //{
-
-        //}
+        if (transform.position.x > targetDestination.position.x)
+        {
+            if (isRight)
+            {
+                isRight = false;
+                transform.localScale = new Vector2(-1, 1);
+            }
+        }
+        else
+        {
+            if (!isRight)
+            {
+                isRight = true;
+                transform.localScale = new Vector2(1, 1);
+            }
+        }
     }
 
     private void ProcessAttack()
@@ -85,13 +105,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             currentTime = timeToAttack;
         }
     }
-
-    private void FixedUpdate()
-    {
-        ProcessStun();
-        Move();
-    }
-
     private void ProcessStun()
     {
         if(stunned > 0f)
@@ -109,7 +122,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     private Vector3 CalculateMovementVelocity(Vector3 direction)
     {
-        return direction * stats.moveSpeed * (stunned > 0f ? 0f: 1f);
+        return direction * stats.moveSpeed * (stunned > 0f || isDeath ? 0f: 1f);
     }
 
     private Vector3 CalculateKnockBack()
@@ -165,9 +178,16 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     private void Defeated()
     {
+        isDeath = true;
+        enemyFade.Death(isDeath);
+        _boxCollider.isTrigger = isDeath;
+        _capsuleCollider.enabled = false;
+    }
+    public void ReturnToPool()
+    {
         targetGameObject.GetComponent<Level>().AddExperience(stats.experienceReward);
         GetComponent<DropOnDestroy>().CheckDrop();
-        if(poolMember != null)
+        if (poolMember != null)
         {
             poolMember.ReturnToPool();
         }
@@ -175,7 +195,17 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         {
             Destroy(gameObject);
         }
+    }
 
+    private void OnEnable()
+    {
+        if(enemyFade != null)
+        {
+            isDeath = false;
+            enemyFade.Death(isDeath);
+            _boxCollider.isTrigger = isDeath;
+            _capsuleCollider.enabled = true;
+        }
     }
 
     public void Stun(float stun)

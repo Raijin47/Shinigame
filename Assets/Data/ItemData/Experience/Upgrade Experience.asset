@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade Experience
   m_EditorClassIdentifier: 
   upgradeType: 1
-  Name: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435
-    \u043E\u043F\u044B\u0442\u0430"
-  Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435
-    \u043E\u043F\u044B\u0442\u0430"
+  Name: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+  Description: "\u041E\u043F\u044B\u0442"
   icon: {fileID: 0}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

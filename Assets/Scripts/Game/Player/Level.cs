@@ -8,6 +8,7 @@ public class Level : MonoBehaviour
 
     [SerializeField] List<UpgradeData> upgadesAvailableOnStart;
     [SerializeField] List<UpgradeData> upgrades;
+    [SerializeField] List<UpgradeData> persistanceUpgrades;
 
     private WeaponManager weaponManager;
     private PassiveItems passiveItems;
@@ -102,7 +103,13 @@ public class Level : MonoBehaviour
         experienceBar.SetLevelText(level);
     }
 
-    public void ShuffleUpgrades()
+    public void Reroll()
+    {
+        selectedUpgrades.Clear();
+        selectedUpgrades.AddRange(GetUpgrades(4));
+        upgradeManager.RerollPanel(selectedUpgrades);
+    }
+    private void ShuffleUpgrades()
     {
         for(int i = upgrades.Count - 1; i > 0; i--)
         {
@@ -115,7 +122,7 @@ public class Level : MonoBehaviour
     public List<UpgradeData> GetUpgrades(int count)
     {
         ShuffleUpgrades();
-        List<UpgradeData> upgradeList = new List<UpgradeData>();
+        List<UpgradeData> upgradeList = new List<UpgradeData>();        
 
         if(count > upgrades.Count)
         {
@@ -125,6 +132,11 @@ public class Level : MonoBehaviour
         {
             upgradeList.Add(upgrades[i]);
         }
+
+        //if (upgradeList.Count < 4)
+        //{
+        //    upgradeList.Add(persistanceUpgrades[0]);
+        //}
 
         return upgradeList;
     }

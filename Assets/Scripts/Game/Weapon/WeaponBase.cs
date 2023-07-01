@@ -15,7 +15,7 @@ public abstract class WeaponBase : MonoBehaviour
     public WeaponStats weaponStats;
     public Vector2 vectorOfAttack;
 
-    private Character wielder;
+    protected Character wielder;
     private PoolManager poolManager;
     protected PlayerMovement playerMove;
 
