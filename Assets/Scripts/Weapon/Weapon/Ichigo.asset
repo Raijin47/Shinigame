@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: -2494595465585468781, guid: bfb2cb55a753c3847bb55079bba059c5, type: 3}
   Name: Ichigo
   spritePrefab: {fileID: 5525926703480083068, guid: f0a57feea0d3fe24fa9c3839131ca8e8, type: 3}
-  startingWeapon: {fileID: 11400000, guid: 6cc54f545e4ea8e4d884513a39bb6c06, type: 2}
+  startingWeapon: {fileID: 11400000, guid: d710338531566894c9a936020c119557, type: 2}
   Level: 3
   Health: 100
   MovementSpeed: 3

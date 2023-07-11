@@ -18,7 +18,7 @@ MonoBehaviour:
     damage: 20
     timeToAttack: 1
     numberOfAttacks: 1
-    numberOfHits: 5
+    numberOfHits: 1
     projectileSpeed: 5
     stun: 0
     knockback: 0

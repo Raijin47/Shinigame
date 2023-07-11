@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc8a953a1695084c835c71a08f3bdc7, type: 3}
-  m_Name: New Upgrade Weapon Data
+  m_Script: {fileID: 11500000, guid: 780db07532fd60d4d805ddf4151441ab, type: 3}
+  m_Name: Cero Upgrade Data
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: 
   Description: 
   icon: {fileID: 0}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: d710338531566894c9a936020c119557, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0

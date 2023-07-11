@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   Name: 
   stats:
-    damage: 5
+    damage: 10
     timeToAttack: 5
     numberOfAttacks: 1
     numberOfHits: 0

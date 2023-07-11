@@ -20,9 +20,11 @@ MonoBehaviour:
     numberOfAttacks: 1
     numberOfHits: 0
     projectileSpeed: 0
-    stun: 0
+    stun: 0.5
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 1
+    timeBurn: 0
+    damageBurn: 0
   weaponBasePrefab: {fileID: 5455311492470679645, guid: e4da2562616c79e49ac8f71666cb281a, type: 3}
   upgrades: []

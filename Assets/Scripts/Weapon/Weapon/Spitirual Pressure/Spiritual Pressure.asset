@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Spiritual Pressure
   stats:
     damage: 5
-    timeToAttack: 1
+    timeToAttack: 0.5
     numberOfAttacks: 1
     numberOfHits: 0
     projectileSpeed: 0

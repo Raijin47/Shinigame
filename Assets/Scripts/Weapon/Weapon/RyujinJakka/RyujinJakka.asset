@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   Name: 
   stats:
-    damage: 1
+    damage: 3
     timeToAttack: 5
     numberOfAttacks: 0
     numberOfHits: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 0
-    timeBurn: 5
-    damageBurn: 1
+    timeBurn: 6
+    damageBurn: 3
   weaponBasePrefab: {fileID: 5031643930611410761, guid: 2f4e7c793e832ea4b89ca9d4e36ebfd6, type: 3}
   upgrades: []

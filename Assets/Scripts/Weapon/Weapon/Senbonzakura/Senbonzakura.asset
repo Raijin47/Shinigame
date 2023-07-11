@@ -15,14 +15,16 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6fe53fc2cfae48e48b9e44c6215db28b, type: 3}
   Name: Senbonzakura
   stats:
-    damage: 1
+    damage: 2
     timeToAttack: 15
     numberOfAttacks: 1
     numberOfHits: 5
     projectileSpeed: 1
     stun: 0
-    knockback: 0
-    knockbackTimeWeight: 0
+    knockback: 0.1
+    knockbackTimeWeight: 0.1
     attackAreaSize: 0
+    timeBurn: 0
+    damageBurn: 0
   weaponBasePrefab: {fileID: 1277543758822168086, guid: e1c6e95d84190b94eb63dd07df93ce14, type: 3}
   upgrades: []
