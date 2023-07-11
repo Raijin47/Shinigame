@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item AttackSpeed
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 03aee7c101bfde1438fd012a07b6c7a5, type: 3}
   Name: SetDamage
   stats:
     damage: 0

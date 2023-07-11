@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Chara Data", menuName = "ScriptableObjects/CharaData", order = 51)]
 public class CharacterData : ScriptableObject
 {
+    public Sprite icon;
     public string Name;
     public GameObject spritePrefab;
     public WeaponData startingWeapon;

@@ -21,4 +21,13 @@ public class UtilityTools
 
         return position;
     }
+
+    public static Vector3 GenerateOppositePattern(Vector2 curVector)
+    {
+        Vector3 position = new Vector3();
+
+        position.x = curVector.x * -1 + Random.Range(-0.4f, 0.4f);
+        position.y = curVector.y * -1 + Random.Range(-0.4f, 0.4f);
+        return position;
+    }
 }

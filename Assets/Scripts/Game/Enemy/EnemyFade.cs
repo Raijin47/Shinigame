@@ -5,7 +5,9 @@ public class EnemyFade : MonoBehaviour
     Material material;
     private Enemy enemy;
     int fadePropertyID;
+    int fireID;
     float fadeValue;
+    float burnValue;
     [SerializeField] private float _speedFade;
     private bool isDeath = false;
 
@@ -13,9 +15,10 @@ public class EnemyFade : MonoBehaviour
     {
         material = GetComponent<SpriteRenderer>().material;
 
-        fadePropertyID = Shader.PropertyToID("_DirectionalDistortionFade");
-
-        fadeValue = 6;
+        fadePropertyID = Shader.PropertyToID("_FullGlowDissolveFade");
+        fireID = Shader.PropertyToID("_BurnFade");
+        fadeValue = 1;
+        burnValue = 0;
         enemy = GetComponentInParent<Enemy>();
     }
 
@@ -31,10 +34,15 @@ public class EnemyFade : MonoBehaviour
             material.SetFloat(fadePropertyID, fadeValue);
             if (fadeValue < 0) 
             {
-                fadeValue = 6;
+                fadeValue = 1;
                 material.SetFloat(fadePropertyID, fadeValue);
                 enemy.ReturnToPool();
             }
         }
+    }
+    public void Fire(bool isBurn)
+    {
+        burnValue = isBurn ? 1 : 0;
+        material.SetFloat(fireID, burnValue);
     }
 }

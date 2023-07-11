@@ -35,17 +35,22 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private Transform targetDestination;
     private PoolMember poolMember;
     private Vector2 knockbackVector;
-    private EnemyFade enemyFade;
-    private BoxCollider2D _boxCollider;
-    private CapsuleCollider2D _capsuleCollider;
-
+    private EnemyFade enemyFade; 
+    private CapsuleCollider2D _capCol;
+    private BoxCollider2D _boxCol;
+    private MessageSystem message;
     private float stunned;
+    private float burn;
     private float knockbackForce;
     private float knockbackTimeWeight;
     private float timeToAttack = .5f;
     private float currentTime;
+    private float timeToBurn = 1;
+    private float curTTB;
+    private int burnDamage;
 
     private bool isAttack = false;
+    private bool isBurn = false;
     private bool isRight = true;
     private bool isDeath = false;
     private void Awake()
@@ -56,8 +61,9 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private void Start()
     {
         enemyFade = GetComponentInChildren<EnemyFade>();
-        _boxCollider = GetComponentInChildren<BoxCollider2D>();
-        _capsuleCollider = GetComponent<CapsuleCollider2D>();
+        _capCol = GetComponent<CapsuleCollider2D>();
+        _boxCol = GetComponent<BoxCollider2D>();
+        message = EssentialService.instance.message;
     }
     public void SetTarget(GameObject target)
     {
@@ -70,7 +76,39 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         if(isDeath) { return; }
         ProcessAttack();
         Flip();
+        ProcessBurn();
     }
+    public void Burn(float time, int damage)
+    {
+        isBurn = true;
+        burn = time;
+        burnDamage += damage;
+        enemyFade.Fire(isBurn);   
+    }
+    private void ProcessBurn()
+    {
+        if(isBurn)
+        {
+            if (burn > 0f)
+            {
+                burn -= Time.deltaTime;
+                curTTB += Time.deltaTime;
+                if(curTTB > timeToBurn)
+                {
+                    curTTB = 0;
+                    TakeDamage(burnDamage);
+                    message.PostMessage(burnDamage.ToString(), transform.position);
+                }
+            }
+            else
+            {
+                isBurn = false;
+                enemyFade.Fire(isBurn);
+                burnDamage = 0;
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         ProcessStun();
@@ -180,8 +218,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         isDeath = true;
         enemyFade.Death(isDeath);
-        _boxCollider.isTrigger = isDeath;
-        _capsuleCollider.enabled = false;
+        _capCol.enabled = false;
+        _boxCol.enabled = false;
     }
     public void ReturnToPool()
     {
@@ -203,8 +241,9 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         {
             isDeath = false;
             enemyFade.Death(isDeath);
-            _boxCollider.isTrigger = isDeath;
-            _capsuleCollider.enabled = true;
+            enemyFade.Fire(false);
+            _capCol.enabled = true;
+            _boxCol.enabled = true;
         }
     }
 

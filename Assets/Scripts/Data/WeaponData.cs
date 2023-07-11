@@ -14,6 +14,8 @@ public class WeaponStats
     public float knockback;
     public float knockbackTimeWeight;
     public float attackAreaSize;
+    public float timeBurn;
+    public int damageBurn;
 
     public WeaponStats(WeaponStats stats)
     {
@@ -26,6 +28,8 @@ public class WeaponStats
         this.knockback = stats.knockback;
         this.knockbackTimeWeight = stats.knockbackTimeWeight;
         this.attackAreaSize = stats.attackAreaSize;
+        this.timeBurn = stats.timeBurn;
+        this.damageBurn = stats.damageBurn;
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)
@@ -39,11 +43,14 @@ public class WeaponStats
         this.knockback += weaponUpgradeStats.knockback;
         this.knockbackTimeWeight += weaponUpgradeStats.knockbackTimeWeight;
         this.attackAreaSize += weaponUpgradeStats.attackAreaSize;
+        this.timeBurn += weaponUpgradeStats.timeBurn;
+        this.damageBurn += weaponUpgradeStats.damageBurn;
     }
 }
 [CreateAssetMenu(fileName = "New WeaponData", menuName = "ScriptableObjects/WeaponData", order = 51)]
 public class WeaponData : ScriptableObject
 {
+    public Sprite icon;
     public string Name;
     public WeaponStats stats;
     public GameObject weaponBasePrefab;

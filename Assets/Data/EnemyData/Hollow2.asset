@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427a8343166cc884a893105c5905fd62, type: 3}
+  m_Name: Hollow2
+  m_EditorClassIdentifier: 
+  nameEnemy: Hollow
+  poolObjectData: {fileID: 11400000, guid: e585653dfb5b0224ea139400b39da64a, type: 2}
+  stats:
+    hp: 10
+    damage: 20
+    experienceReward: 50
+    moveSpeed: 2

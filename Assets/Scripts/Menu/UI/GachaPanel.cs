@@ -15,6 +15,11 @@ public class GachaPanel : MonoBehaviour
     [SerializeField] private PoolGacha[] gacha;
     [SerializeField] private int price;
     [SerializeField] private DataContainer data;
+    [SerializeField] private GameObject noSoulsPanel;
+    [SerializeField] private GachaFX gachaFX;
+    [SerializeField] private GameObject lockPanel;
+    [SerializeField] private GameObject rewardPanel;
+    [SerializeField] private Image image;
     private int id;
 
     private void Start()
@@ -47,13 +52,27 @@ public class GachaPanel : MonoBehaviour
     {
         if(data.souls >= price)
         {
-            data.souls -= price;
-            gacha[id].data[UnityEngine.Random.Range(0, gacha[id].data.Length)].Level++;
+            lockPanel.SetActive(true);
+            gachaFX.Twist();
+        }
+        else
+        {
+            noSoulsPanel.SetActive(true);
         }
     }
 
     private void UpdateUI()
     {
         bunnerSprite.sprite = gacha[id].bunnerImage;
+    }
+
+    public void Reward()
+    {
+        data.souls -= price;
+        int a = UnityEngine.Random.Range(0, gacha[id].data.Length);
+
+        rewardPanel.SetActive(true);
+        image.sprite = gacha[id].data[a].icon;
+        gacha[id].data[a].Level++;
     }
 }

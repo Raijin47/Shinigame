@@ -8,6 +8,7 @@ public class EssentialService : MonoBehaviour
     public PlayerWinManager playerWinManager;
     public DataContainer dataContainer;
     public Character character;
+    public MessageSystem message;
     private void Awake()
     {
         if (instance == null)

@@ -26,7 +26,9 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
+    attackAreaSize: 0.5
+    timeBurn: 0
+    damageBurn: 0
   item: {fileID: 11400000, guid: 32415a4bbd7d6f740973245b383a5777, type: 2}
   itemStats:
     damage: 0

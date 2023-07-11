@@ -20,15 +20,51 @@ MonoBehaviour:
     objectToSpawn: {fileID: 0}
     count: 10
     isRepeatedEvent: 1
-    repeatEverySeconds: 15
-    repeatCount: 100
-  - eventType: 3
-    time: 300
+    repeatEverySeconds: 9
+    repeatCount: 30
+  - eventType: 0
+    time: 30
     message: 
-    enemyToSpawn: {fileID: 0}
+    enemyToSpawn: {fileID: 11400000, guid: 26116dad2d98fea4b8341f570640a84e, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
     isRepeatedEvent: 1
-    repeatEverySeconds: 10
-    repeatCount: 10
+    repeatEverySeconds: 9
+    repeatCount: 30
+  - eventType: 0
+    time: 60
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 0953967eb3d4d0949b5333387a75c2fe, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 9
+    repeatCount: 30
+  - eventType: 0
+    time: 90
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 4ba8e4b1b75d4c5428abb110de1b0cdb, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 9
+    repeatCount: 30
+  - eventType: 1
+    time: 120
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: fa2e317bf7c00704193176ef28fe2e59, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 1
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
+  - eventType: 3
+    time: 200
+    message: 
+    enemyToSpawn: {fileID: 0}
+    objectToSpawn: {fileID: 0}
+    count: 0
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
   stageID: 0

@@ -32,32 +32,51 @@ public class Level : MonoBehaviour
             return level * 1000;
         }
     }
-
     private void Start()
     {
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
         AddUpgradesIntoTheListOfAvailableUpgrades(upgadesAvailableOnStart);
     }
-
     public void SetBoost(float boostExp)
     {
         _boostExp = boostExp;
     }
-
     internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
     {
         if(upgradesToAdd == null) { return; }
         this.upgrades.AddRange(upgradesToAdd);
+        
     }
-
+    public void CheckRemove()
+    {
+        if(weaponManager.id == 6)
+        {
+            for (int i = upgrades.Count - 1; i > -1; i--)
+            {
+                if(upgrades[i].upgradeType == UpgradeType.WeaponUnlock)
+                {
+                    upgrades.RemoveAt(i);
+                }
+            }
+        }
+        if(passiveItems.id == 6)
+        {
+            for (int i = upgrades.Count - 1; i > -1; i--)
+            {
+                if (upgrades[i].upgradeType == UpgradeType.ItemUnlock)
+                {
+                    upgrades.RemoveAt(i);
+                }
+            }
+        }
+    }
     public void AddExperience(int amount)
     {
         experience += (int)(amount * _boostExp);
         CheckLevelUp();
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
     }
-
     public void CheckLevelUp()
     {
         if (experience >= TO_LEVEL_UP)
@@ -65,7 +84,6 @@ public class Level : MonoBehaviour
             LevelUp();
         }
     }
-
     public void Upgrade(int selectedUpgradeId)
     {
         UpgradeData upgradeData = selectedUpgrades[selectedUpgradeId];
@@ -90,6 +108,8 @@ public class Level : MonoBehaviour
         }
         acquiredUpgrades.Add(upgradeData);
         upgrades.Remove(upgradeData);
+        CheckRemove();
+        weaponManager.ResizeWeapons();
     }
     private void LevelUp()
     {

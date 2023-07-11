@@ -36,6 +36,7 @@ public class ItemStats
 [CreateAssetMenu(fileName = "New Item Data", menuName = "ScriptableObjects/ItemData", order = 51)]
 public class ItemData: ScriptableObject
 {
+    public Sprite icon;
     public string Name;
     public ItemStats stats;
     public List<UpgradeData> upgrades;

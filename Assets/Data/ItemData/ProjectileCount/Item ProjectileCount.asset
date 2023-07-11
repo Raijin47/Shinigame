@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item ProjectileCount
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300058, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
   Name: MovementSpeed
   stats:
     damage: 0

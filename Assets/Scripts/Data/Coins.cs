@@ -10,6 +10,7 @@ public class Coins : MonoBehaviour
     private void Start()
     {
         data = EssentialService.instance.dataContainer;
+        Add(0);
     }
     public void SetBoost(float coinBoost)
     {
@@ -19,6 +20,6 @@ public class Coins : MonoBehaviour
     public void Add(int count)
     {
         data.souls += (int)(count * _soulBoost);
-        coinsCountText.text = "Coins: " + data.souls.ToString();
+        coinsCountText.text = data.souls.ToString();
     }
 }

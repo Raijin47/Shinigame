@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
+  m_Name: Nelliel
+  m_EditorClassIdentifier: 
+  icon: {fileID: 499602930717725595, guid: 132629b50af001640acff99e4b968765, type: 3}
+  Name: Nelliel
+  spritePrefab: {fileID: 1645713953504965348, guid: 22065387f1e5d444ea7dfb7ab20b1b60, type: 3}
+  startingWeapon: {fileID: 11400000, guid: d710338531566894c9a936020c119557, type: 2}
+  Level: 1
+  Health: 100
+  MovementSpeed: 2
+  Damage: 0.8

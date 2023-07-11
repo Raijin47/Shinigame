@@ -17,4 +17,9 @@ public class DestructableObject : MonoBehaviour, IDamageable
         GetComponent<DropOnDestroy>().CheckDrop();
         Destroy(gameObject);
     }
+
+    public void Burn(float time, int damage)
+    {
+
+    }
 }

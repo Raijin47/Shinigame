@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PassiveItems : MonoBehaviour
 {
     [SerializeField] List<ItemData> items;
     private Character character;
-
+    [SerializeField] private Image[] img;
+    [HideInInspector] public int id;
     private void Awake()
     {
         character = GetComponent<Character>();
@@ -22,6 +24,9 @@ public class PassiveItems : MonoBehaviour
 
         items.Add(newItemInstance);
         newItemInstance.Equip(character);
+
+        img[id].sprite = itemToEquip.icon;
+        id++;
     }
     public void UnEquip(ItemData itemToEquip)
     {
