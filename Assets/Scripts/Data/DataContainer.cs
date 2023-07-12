@@ -15,7 +15,8 @@ public enum PlayerPersisrentUpgrades
     ExperienceBoost,
     GoldBoost,
     AttackAreaSize,
-    Reroll
+    Reroll,
+    Duration
 }
 
 [Serializable]

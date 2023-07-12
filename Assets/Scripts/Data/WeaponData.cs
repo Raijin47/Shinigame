@@ -16,6 +16,7 @@ public class WeaponStats
     public float attackAreaSize;
     public float timeBurn;
     public int damageBurn;
+    public float duration;
 
     public WeaponStats(WeaponStats stats)
     {
@@ -30,6 +31,7 @@ public class WeaponStats
         this.attackAreaSize = stats.attackAreaSize;
         this.timeBurn = stats.timeBurn;
         this.damageBurn = stats.damageBurn;
+        this.duration = stats.duration;
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)
@@ -45,6 +47,7 @@ public class WeaponStats
         this.attackAreaSize += weaponUpgradeStats.attackAreaSize;
         this.timeBurn += weaponUpgradeStats.timeBurn;
         this.damageBurn += weaponUpgradeStats.damageBurn;
+        this.duration += weaponUpgradeStats.duration;
     }
 }
 [CreateAssetMenu(fileName = "New WeaponData", menuName = "ScriptableObjects/WeaponData", order = 51)]

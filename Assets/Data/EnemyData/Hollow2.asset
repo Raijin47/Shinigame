@@ -17,5 +17,5 @@ MonoBehaviour:
   stats:
     hp: 10
     damage: 20
-    experienceReward: 50
+    experienceReward: 0
     moveSpeed: 2

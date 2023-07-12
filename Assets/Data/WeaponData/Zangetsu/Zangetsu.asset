@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c948207983de166488dea650eea79c80, type: 3}
+  m_Name: Zangetsu
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 5147f2f3e216e2a44bc4c62f75a41596, type: 3}
+  Name: Zangetsu
+  stats:
+    damage: 10
+    timeToAttack: 1
+    numberOfAttacks: 1
+    numberOfHits: 10
+    projectileSpeed: 5
+    stun: 0
+    knockback: 0
+    knockbackTimeWeight: 0
+    attackAreaSize: 1
+    timeBurn: 0
+    damageBurn: 0
+    duration: 0
+  weaponBasePrefab: {fileID: 9098344206436914155, guid: b11d77ab5ce801443aa3ffd623fa46c7, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: 5c5b9afe8da8c7c4cb243078f1d0262c, type: 2}
+  - {fileID: 11400000, guid: 16e671eae81ef3943971ac4b304a1d57, type: 2}
+  - {fileID: 11400000, guid: 0a92d6fb69eaa1e47bccb64a26c4ca99, type: 2}
+  - {fileID: 11400000, guid: 9ca7ee54bc1da3f44bfc331558412ff6, type: 2}
+  - {fileID: 11400000, guid: f6de200000923214ead75272dcacd944, type: 2}
+  - {fileID: 11400000, guid: 1f7fbe226b6c1ae4f82f6b2bec5c78ae, type: 2}
+  - {fileID: 11400000, guid: 9f6336dbf20d68b488473134c98652fe, type: 2}

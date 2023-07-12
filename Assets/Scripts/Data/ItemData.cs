@@ -16,6 +16,7 @@ public class ItemStats
     public int recovery;
     public int projectileCount;
     public int armor;
+    public float duration;
 
     internal void Sum(ItemStats stats)
     {
@@ -30,6 +31,7 @@ public class ItemStats
         this.recovery += stats.recovery;
         this.projectileCount += stats.projectileCount;
         this.armor += stats.armor;
+        this.duration += stats.duration;
     }
 }
 
@@ -60,7 +62,7 @@ public class ItemData: ScriptableObject
         character.recoveryItem += stats.recovery;
         character.projectileCountItem += stats.projectileCount;
         character.armorItem += stats.armor;
-
+        character.durationItem += stats.duration;
         character.CalculateStats();
     }
 
@@ -77,5 +79,6 @@ public class ItemData: ScriptableObject
         character.recoveryItem -= stats.recovery;
         character.projectileCountItem -= stats.projectileCount;
         character.armorItem -= stats.armor;
+        character.durationItem -= stats.duration;
     }
 }

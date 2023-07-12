@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
+  m_Name: Ichigo
+  m_EditorClassIdentifier: 
+  icon: {fileID: -2494595465585468781, guid: bfb2cb55a753c3847bb55079bba059c5, type: 3}
+  Name: Ichigo
+  spritePrefab: {fileID: 5525926703480083068, guid: f0a57feea0d3fe24fa9c3839131ca8e8, type: 3}
+  startingWeapon: {fileID: 11400000, guid: 4862a05d228c519479ec565e1666f925, type: 2}
+  Level: 3
+  Health: 100
+  MovementSpeed: 3
+  Damage: 1.2

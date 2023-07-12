@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
     [HideInInspector] public float attackSpeedBonus;
     [HideInInspector] public float attackAreaSizeBonus;
     [HideInInspector] public float projectileSpeedBonus;
+    [HideInInspector] public float durationBonus;
     [HideInInspector] public int projectileCountBonus;
     private int armor;
     private int recoveryHp;
@@ -27,6 +28,7 @@ public class Character : MonoBehaviour
     [HideInInspector] public float experienceItem = 1;
     [HideInInspector] public float soulsItem = 1;
     [HideInInspector] public float healthItem = 1;
+    [HideInInspector] public float durationItem = 1;
     [HideInInspector] public int recoveryItem;
     [HideInInspector] public int projectileCountItem;
     [HideInInspector] public int armorItem;
@@ -68,26 +70,26 @@ public class Character : MonoBehaviour
         DataContainer data = EssentialService.instance.dataContainer;
         int charaLevel = data.selectedCharacter.Level;
         if (charaLevel > 30) charaLevel = 30;
-
-        float damageUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
+        
+        int damageUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
         float damageCharaBase = data.selectedCharacter.Damage;
         damageBonus = (damageCharaBase + damageUpgradeLevel * 0.06f + charaLevel * 0.015f) * damageItem;
 
-        float attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
+        int attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
         attackSpeedBonus = (1 + attackSpeedUpgradeLevel * 0.1f) * attackSpeedItem;
 
-        float attackAreaSizeUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackAreaSize);
+        int attackAreaSizeUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackAreaSize);
         attackAreaSizeBonus = (1 + attackAreaSizeUpgradeLevel * 0.05f) * attackAreaSizeItem;
 
-        float projectileSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileSpeed);
+        int projectileSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileSpeed);
         projectileSpeedBonus = (1 + 0.05f * projectileSpeedUpgradeLevel) * projectileSpeedItem;
 
-        float movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
+        int movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
         float movementSpeedBase = data.selectedCharacter.MovementSpeed;
         float speed = (movementSpeedBase * (1 + 0.05f * movementSpeedUpgradeLevel)) * movementSpeedItem;
         playerMovement.SetSpeed(speed);
 
-        float ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
+        int ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);
         float boostExp = (1 + ExperienceBoostUpgradeLevel * 0.2f) * experienceItem;
         level.SetBoost(boostExp);
 
@@ -108,6 +110,9 @@ public class Character : MonoBehaviour
 
         int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
         armor = armorUpgradeLevel + armorItem;
+
+        int durationUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Duration);
+        durationBonus = (1 + durationUpgradeLevel * 0.2f) * durationItem;
     }
 
 

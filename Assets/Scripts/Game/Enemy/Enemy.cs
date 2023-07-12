@@ -80,10 +80,13 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     }
     public void Burn(float time, int damage)
     {
+        if(time == 0) { return; }
+
         isBurn = true;
         burn = time;
         burnDamage += damage;
-        enemyFade.Fire(isBurn);   
+        enemyFade.Fire(isBurn);
+
     }
     private void ProcessBurn()
     {
@@ -216,6 +219,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     private void Defeated()
     {
+        isAttack = false;
         isDeath = true;
         enemyFade.Death(isDeath);
         _capCol.enabled = false;

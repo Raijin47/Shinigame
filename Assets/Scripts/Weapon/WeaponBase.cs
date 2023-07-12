@@ -26,7 +26,7 @@ public abstract class WeaponBase : MonoBehaviour
     {
         playerMove = GetComponentInParent<PlayerMovement>();
     }
-    private void Start()
+    protected virtual void Start()
     {
         message = EssentialService.instance.message;
     }

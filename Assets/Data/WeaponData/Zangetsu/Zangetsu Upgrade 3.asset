@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780db07532fd60d4d805ddf4151441ab, type: 3}
+  m_Name: Zangetsu Upgrade 3
+  m_EditorClassIdentifier: 
+  upgradeType: 0
+  Name: Zangetsu
+  Description: test
+  icon: {fileID: 21300000, guid: 5147f2f3e216e2a44bc4c62f75a41596, type: 3}
+  weaponData: {fileID: 11400000, guid: 65da1c590b6762a4c836715c1958b989, type: 2}
+  weaponUpgradeStats:
+    damage: 5
+    timeToAttack: 0
+    numberOfAttacks: 0
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 0
+    knockback: 0
+    knockbackTimeWeight: 0
+    attackAreaSize: 0
+    timeBurn: 0
+    damageBurn: 0
+    duration: 0
+  item: {fileID: 0}
+  itemStats:
+    damage: 0
+    attackSpeed: 0
+    attackArea: 0
+    projectileSpeed: 0
+    movementSpeed: 0
+    experience: 0
+    souls: 0
+    health: 0
+    recovery: 0
+    projectileCount: 0
+    armor: 0
+    duration: 0
