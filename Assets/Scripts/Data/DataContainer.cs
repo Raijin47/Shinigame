@@ -32,9 +32,9 @@ public class PlayerUpgrades
 public class DataContainer : ScriptableObject
 {
     public int souls;
-    public int diamonds;
-    public List<bool> stageCompletion;
-    public List<PlayerUpgrades> upgrades;
+    public int butterflies;
+    public bool[] stageCompletion;
+    public PlayerUpgrades[] upgrades;
     public CharacterData selectedCharacter;
 
     public void StageComplete(int i)

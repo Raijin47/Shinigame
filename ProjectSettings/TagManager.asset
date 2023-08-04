@@ -12,13 +12,13 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - EnemySafeZone
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Object
+  - Player
+  - IDamageable
+  - Projectile
+  - Item
+  - AutoPickUp
+  - Chara
   - 
   - 
   - 

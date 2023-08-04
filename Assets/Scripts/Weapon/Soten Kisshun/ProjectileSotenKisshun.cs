@@ -2,52 +2,51 @@ using UnityEngine;
 
 public class ProjectileSotenKisshun : ProjectileBase
 {
-    [SerializeField] private float maxDistance;
-    private float timer = .5f;
+    private float timer = 1f;
     private float curTimer;
-    private Character chara;
+    private Transform target;
+    [SerializeField] private Vector2 radius;
+    [SerializeField] private LayerMask layer;
 
-    private void Start()
+    protected override void Move()
     {
-        chara = EssentialService.instance.character;
+        transform.Translate(Vector3.down * speed * Time.deltaTime);
+        Turn();
+        SetTarget();
     }
-    public override void SetDirection(float dir_x, float dir_y)
+    private void SetTarget()
     {
-        base.SetDirection(dir_x, dir_y);
-        direction = new Vector3(dir_x, dir_y);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.localRotation = Quaternion.Euler(0f, 0f, angle + 90);
-    }
-    protected override void Update()
-    {
-        base.Update();
-        NewPosition();
-    }
-    private void NewPosition()
-    {
-        if(Vector2.Distance(transform.position, weapon.transform.position) > maxDistance)
+        curTimer += Time.deltaTime;
+        if (curTimer > timer)
         {
-            curTimer += Time.deltaTime;
-            if(curTimer > timer)
-            {
-                curTimer = 0;
-                direction = UtilityTools.GenerateOppositePattern(direction).normalized;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                transform.localRotation = Quaternion.Euler(0f, 0f, angle + 90);
-            }
+            curTimer = 0;
+            Collider2D[] collider = Physics2D.OverlapBoxAll(EssentialService.instance.character.transform.position, radius, 0f, layer);
+            if (collider.Length != 0) target = collider[Random.Range(0, collider.Length)].transform;
+            else target = EssentialService.instance.character.transform;
+        }
+    }
+    private void Turn()
+    {
+        if (target != null)
+        {
+            float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg;
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0f, 0f, angle + 90), speed/2 * Time.deltaTime);
         }
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable enemy = collision.GetComponent<IDamageable>();
-
-        if (collision.TryGetComponent(out IDamageable _))
+        if (collision.TryGetComponent(out IDamageable enemy))
         {
             weapon.ApplyDamage(collision.transform.position, damage, enemy);
         }
-        else if(collision.TryGetComponent(out Character _))
+        else if(collision.TryGetComponent(out Character chara))
         {
             chara.Heal(damage);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(EssentialService.instance.character.transform.position, radius);
     }
 }

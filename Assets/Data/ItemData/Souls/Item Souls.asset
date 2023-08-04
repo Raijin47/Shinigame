@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item Souls
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 24cdc6c273837be4ba93360ce1b0666d, type: 3}
-  Name: MovementSpeed
+  icon: {fileID: 21300000, guid: a2dd5775e7b240744a0c457fe0ea01f0, type: 3}
+  level: E
+  Name: Coin
   stats:
     damage: 0
     attackSpeed: 0
@@ -21,10 +22,10 @@ MonoBehaviour:
     projectileSpeed: 0
     movementSpeed: 0
     experience: 0
-    souls: 0.1
+    souls: 0.2
     health: 0
     recovery: 0
     projectileCount: 0
     armor: 0
-  upgrades:
-  - {fileID: 11400000, guid: 103ed8c988c59ac4489b43623a777a58, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: a7b427dee448ce548bde25f4bfe65166, type: 2}

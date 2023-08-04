@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700503478688335230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89f55100ac2575418e13b801a2fc729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDirection: 1
+  attackDirection: 4
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -58,6 +58,12 @@ MonoBehaviour:
     attackAreaSize: 0
     timeBurn: 0
     damageBurn: 0
+    duration: 0
   vectorOfAttack: {x: 0, y: 0}
+  curTimer: 0
+  duration: 0
+  size: 0
+  damage: 0
+  numberOfAttacks: 0
+  projectileSpeed: 0
   prefab: {fileID: 11400000, guid: e77ef8e07f562784eb706c55b752ea7e, type: 2}
-  prefabSmall: {fileID: 11400000, guid: eedde09755d09bb4d9914a911bd716a3, type: 2}

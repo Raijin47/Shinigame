@@ -13,26 +13,20 @@ MonoBehaviour:
   m_Name: Senbonzakura
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 6fe53fc2cfae48e48b9e44c6215db28b, type: 3}
+  level: F
   Name: Senbonzakura
   stats:
-    damage: 1
-    timeToAttack: 15
-    numberOfAttacks: 1
-    numberOfHits: 5
-    projectileSpeed: 1
+    damage: 4
+    timeToAttack: 9
+    numberOfAttacks: 0
+    numberOfHits: 0
+    projectileSpeed: 0
     stun: 0
-    knockback: 0.1
-    knockbackTimeWeight: 0.1
+    knockback: 0
+    knockbackTimeWeight: 0
     attackAreaSize: 1
     timeBurn: 0
     damageBurn: 0
-    duration: 5
+    duration: 3
   weaponBasePrefab: {fileID: 1277543758822168086, guid: e1c6e95d84190b94eb63dd07df93ce14, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: 9f4f375165b1fc745b899a569f655f0c, type: 2}
-  - {fileID: 11400000, guid: d10062905be46e843853c937547f7954, type: 2}
-  - {fileID: 11400000, guid: 3a689cb7397452842a1a8128adbdf32d, type: 2}
-  - {fileID: 11400000, guid: 0911b9b6118a62a458200ec461fe3c01, type: 2}
-  - {fileID: 11400000, guid: bf20827f6c39946468dfd3c4f436e190, type: 2}
-  - {fileID: 11400000, guid: 53a950e99b14f80408e109ea82103be5, type: 2}
-  - {fileID: 11400000, guid: 0f24f1eed7130bb47ae0928ef7f765b5, type: 2}
+  upgrade: {fileID: 11400000, guid: 9f4f375165b1fc745b899a569f655f0c, type: 2}

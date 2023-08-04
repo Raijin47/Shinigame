@@ -1,16 +1,14 @@
 using UnityEngine;
 using TMPro;
-using Assets.SimpleLocalization;
-using UnityEngine.UI;
 
 public class PlayerUpgradeUIElement : MonoBehaviour
 {
     [SerializeField] PlayerPersisrentUpgrades upgrade;
 
-    [SerializeField] TextMeshProUGUI level;
     [SerializeField] TextMeshProUGUI price;
-    [SerializeField] private Button button;
-    [SerializeField] private LocalizedDynamic buttonText;
+    [SerializeField] private GameObject[] level;
+    [SerializeField] private GameObject maximum;
+    [SerializeField] private GameObject button;
 
     [SerializeField] DataContainer dataContainer;
 
@@ -18,7 +16,6 @@ public class PlayerUpgradeUIElement : MonoBehaviour
     {
         UpdateElement();
     }
-
     public void Upgrade()
     {
         PlayerUpgrades playerUpgrades = dataContainer.upgrades[(int)upgrade];
@@ -36,18 +33,17 @@ public class PlayerUpgradeUIElement : MonoBehaviour
         PlayerUpgrades playerUpgrades = dataContainer.upgrades[(int)upgrade];
         if (playerUpgrades.level >= playerUpgrades.maxLevel)
         {
-            level.text = playerUpgrades.level.ToString();
-            price.GetComponent<LocalizedDynamic>().Localize("Sold");
-            buttonText.Localize("Max");
-            button.interactable = false;
+            price.gameObject.SetActive(false);
+            button.SetActive(false);
+            maximum.SetActive(true);
         }
         else
         {
-            button.interactable = true;
-            buttonText.Localize("Improve");
-            level.text = playerUpgrades.level.ToString();
             price.text = playerUpgrades.costToUpgrade[playerUpgrades.level].ToString();
         }
-
+        for (int i = 0; i < playerUpgrades.level; i++)
+        {
+            level[i].SetActive(true);
+        }
     }
 }

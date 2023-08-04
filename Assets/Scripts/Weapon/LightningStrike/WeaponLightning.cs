@@ -3,9 +3,10 @@ using System.Collections;
 public class WeaponLightning: WeaponBase
 {
     [SerializeField] private Vector2 radius;
-    private Vector2 target;
     [SerializeField] private PoolObjectData lightningPrefab;
     [SerializeField] private LayerMask layer;
+    private Vector2 target;
+
     public override void Attack()
     {
         StartCoroutine(AttackProcess());
@@ -13,7 +14,7 @@ public class WeaponLightning: WeaponBase
     IEnumerator AttackProcess()
     {
         var timer = new WaitForSeconds(0.3f);
-        for (int i = 0; i < weaponStats.numberOfAttacks + wielder.projectileCountBonus; i++)
+        for (int i = 0; i < numberOfAttacks; i++)
         {
             SetTarget();
             SpawnProjectile(lightningPrefab, target);
@@ -28,7 +29,6 @@ public class WeaponLightning: WeaponBase
 
         return target;
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

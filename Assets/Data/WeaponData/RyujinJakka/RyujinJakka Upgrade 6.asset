@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: RyujinJakka Upgrade 6
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
-  Description: 
+  Name: RyujinUp
+  Description: RyujinUp6
   icon: {fileID: 21300000, guid: 305dbd6314fdf264198069217b227c36, type: 3}
+  level: S
   weaponData: {fileID: 11400000, guid: fc13f1f1ee840774bb3dd9b51923bb06, type: 2}
   weaponUpgradeStats:
     damage: 0
@@ -28,7 +29,7 @@ MonoBehaviour:
     knockbackTimeWeight: 0
     attackAreaSize: 0
     timeBurn: 0
-    damageBurn: 0
+    damageBurn: 4
     duration: 0
   item: {fileID: 0}
   itemStats:
@@ -44,3 +45,7 @@ MonoBehaviour:
     projectileCount: 0
     armor: 0
     duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 0}

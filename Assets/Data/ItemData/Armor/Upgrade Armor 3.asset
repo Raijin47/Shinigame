@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780db07532fd60d4d805ddf4151441ab, type: 3}
+  m_Name: Upgrade Armor 3
+  m_EditorClassIdentifier: 
+  upgradeType: 1
+  Name: ReishukakuUp
+  Description: ReishukakuUp3
+  icon: {fileID: 21300000, guid: d9ab61c1a4bf8134b976bb33a611c1cf, type: 3}
+  level: B
+  weaponData: {fileID: 0}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    numberOfAttacks: 0
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 0
+    knockback: 0
+    knockbackTimeWeight: 0
+    attackAreaSize: 0
+    timeBurn: 0
+    damageBurn: 0
+    duration: 0
+  item: {fileID: 11400000, guid: c23ff2dd5eab8d741825cdd634762a3b, type: 2}
+  itemStats:
+    damage: 0
+    attackSpeed: 0
+    attackArea: 0
+    projectileSpeed: 0
+    movementSpeed: 0
+    experience: 0
+    souls: 0
+    health: 0
+    recovery: 0
+    projectileCount: 0
+    armor: 1
+    duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 11400000, guid: a61c9185505b8f64487fa527ca4fd35b, type: 2}

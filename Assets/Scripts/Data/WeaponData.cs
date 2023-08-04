@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -54,8 +53,9 @@ public class WeaponStats
 public class WeaponData : ScriptableObject
 {
     public Sprite icon;
+    public string level;
     public string Name;
     public WeaponStats stats;
     public GameObject weaponBasePrefab;
-    public List<UpgradeData> upgrades;
+    public UpgradeData upgrade;
 }

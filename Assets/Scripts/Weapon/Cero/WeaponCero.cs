@@ -5,53 +5,57 @@ public class WeaponCero : WeaponBase
 {
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private Transform obj;
-    [SerializeField] private Vector2 attackSize;
+    [SerializeField] private LayerMask layer;
     [SerializeField] float distance;
-    private float dir;
+    RaycastHit2D[] colliders;
+    float attackTimer;
+
     public override void Attack()
     {
+        attackTimer = 0;
         particle.Play();
         StartCoroutine(AttackProcess());
-        if (Random.value < 0.5f) dir = 1;
-        else dir = -1;
     }
 
     protected override void Update()
     {
         base.Update();
-        obj.Rotate(0, 0, dir * weaponStats.projectileSpeed * Time.deltaTime);
+        obj.Rotate(0, 0, projectileSpeed * Time.deltaTime);
+        attackTimer += Time.deltaTime;
+        if(attackTimer > duration)
+        {
+            particle.Stop();
+        }
     }
 
     IEnumerator AttackProcess()
     {
         while(particle.isPlaying)
-        {
+        {         
             float angle = obj.rotation.eulerAngles.z * Mathf.Deg2Rad;
-            RaycastHit2D[] hit = Physics2D.LinecastAll(obj.position, new Vector2(
+            colliders = new RaycastHit2D[100];
+            Physics2D.LinecastNonAlloc(obj.position, new Vector2(
             obj.position.x + distance * Mathf.Cos(angle),
             obj.position.y + distance * Mathf.Sin(angle)
-            ));
+            ), colliders, layer);
 
-            int damage = GetDamage();
-            for (int a = 0; a < hit.Length; a++)
+            for (int i = 0; i < colliders.Length; i++)
             {
-                IDamageable e = hit[a].collider.GetComponent<IDamageable>();
-                if (e != null)
+                if (colliders[i].collider == null)
+                    break;
+                if(colliders[i].collider.TryGetComponent(out IDamageable enemy))
                 {
-                    ApplyDamage(hit[a].collider.transform.position, damage, e);
+                    ApplyDamage(colliders[i].collider.transform.position, damage, enemy);
                 }
             }
-
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(obj.position, attackSize, obj.rotation.z);
-            ApplyDamage(colliders);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
         float angle = obj.rotation.eulerAngles.z * Mathf.Deg2Rad;
+        Gizmos.color = Color.green;
         Gizmos.DrawLine(obj.position, new Vector2(
             obj.position.x + distance * Mathf.Cos(angle),
             obj.position.y + distance * Mathf.Sin(angle)

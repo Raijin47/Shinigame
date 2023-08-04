@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item AttackAreaSize
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300088, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
-  Name: SetDamage
+  icon: {fileID: 21300000, guid: 2b90e1f19360a15458987aeebe6c1108, type: 3}
+  level: E
+  Name: AttackArea
   stats:
     damage: 0
     attackSpeed: 0
-    attackArea: 0.5
+    attackArea: 0.07
     projectileSpeed: 0
     movementSpeed: 0
     experience: 0
@@ -26,12 +27,5 @@ MonoBehaviour:
     recovery: 0
     projectileCount: 0
     armor: 0
-  upgrades:
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
-  - {fileID: 11400000, guid: 1e23fa84d1a188a44a5f0a1954bf99e8, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: e269b4b5955be23438f0c766f9e0947a, type: 2}

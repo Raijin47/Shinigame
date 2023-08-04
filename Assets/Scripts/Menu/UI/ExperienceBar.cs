@@ -15,6 +15,6 @@ public class ExperienceBar : MonoBehaviour
 
     public void SetLevelText(int level)
     {
-        levelText.text = "LEVEL: " + level.ToString();
+        levelText.text = "LV: " + level.ToString();
     }
 }

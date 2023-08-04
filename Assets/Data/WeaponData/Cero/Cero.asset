@@ -13,26 +13,20 @@ MonoBehaviour:
   m_Name: Cero
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d1897cd004a40384fba9902667c21ad3, type: 3}
-  Name: 
+  level: F
+  Name: Cero
   stats:
-    damage: 2
+    damage: 6
     timeToAttack: 10
     numberOfAttacks: 1
     numberOfHits: 1
     projectileSpeed: 20
     stun: 0
-    knockback: 3
-    knockbackTimeWeight: 0.2
+    knockback: 0
+    knockbackTimeWeight: 0
     attackAreaSize: 1
     timeBurn: 0
     damageBurn: 0
-    duration: 0
+    duration: 4
   weaponBasePrefab: {fileID: 364815553644355661, guid: 5b63a96baf1fd8046a3f5128401c0f85, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: 2b916df8222996249886f7c4fb4f8034, type: 2}
-  - {fileID: 11400000, guid: e175def7c59cb24478dcccdef9115bf8, type: 2}
-  - {fileID: 11400000, guid: ddd0f34b443a8d446bb97a5e940917ea, type: 2}
-  - {fileID: 11400000, guid: 98024ed64c3da024c9bc609fd55251ec, type: 2}
-  - {fileID: 11400000, guid: 41e59cbc64b4dee4baa13d7c2a1eaf70, type: 2}
-  - {fileID: 11400000, guid: 4906fae465ff11d48b8d299fe4d73d01, type: 2}
-  - {fileID: 11400000, guid: 743c2dff348d8c946aea86aa1c881b23, type: 2}
+  upgrade: {fileID: 11400000, guid: 2b916df8222996249886f7c4fb4f8034, type: 2}

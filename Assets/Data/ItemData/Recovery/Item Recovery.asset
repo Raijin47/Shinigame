@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item Recovery
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: b5d4fb34400126049bb061acc14c0998, type: 3}
-  Name: MovementSpeed
+  icon: {fileID: 21300000, guid: f345ec187743c8640bf032192685d95b, type: 3}
+  level: E
+  Name: Recovery
   stats:
     damage: 0
     attackSpeed: 0
@@ -23,8 +24,8 @@ MonoBehaviour:
     experience: 0
     souls: 0
     health: 0
-    recovery: 1
+    recovery: 2
     projectileCount: 0
     armor: 0
-  upgrades:
-  - {fileID: 11400000, guid: 7d9fbcf34debd464ca1a29c73807d4bd, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: 0632864c4783c0c4ea16fa6dd1626a99, type: 2}

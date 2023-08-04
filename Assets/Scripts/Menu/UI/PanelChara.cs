@@ -5,38 +5,33 @@ using TMPro;
 public class PanelChara : MonoBehaviour
 {
     [SerializeField] private DataContainer data;
-    [SerializeField] private CharacterData[] charaData;
     [SerializeField] private LocalizedDynamic nameChara;
     [SerializeField] private TextMeshProUGUI levelChara;
-    [SerializeField] private GameObject panelStage;
-    private int selectedUpgradeID;
-    private void Start()
-    {
-        UpdateUI(charaData[0]);
-    }
+    [SerializeField] private TextMeshProUGUI healthChara;
+    [SerializeField] private TextMeshProUGUI movementChara;
+    [SerializeField] private TextMeshProUGUI damageChara;
+    [SerializeField] private LocalizedDynamic weaponName;
+    [SerializeField] private LocalizedDynamic weaponDescription;
+    [SerializeField] private MenuManager menuManager;
+    [SerializeField] private UpdateDescription updateDescription;
+    [SerializeField] private SelectionCharaButton[] buttons;
 
-    private void OnEnable()
+    private int currentIndex = 0;
+    public void UpdateUI(CharacterData getData, int id)
     {
-        selectedUpgradeID = -1;
-    }
+        buttons[currentIndex].DeselectButton();
+        currentIndex = id;
+        buttons[currentIndex].SelectedButton();
 
-    private void UpdateUI(CharacterData getData)
-    {
         data.SetSelectedCharacter(getData);
         nameChara.Localize(getData.Name);
         levelChara.text = getData.Level.ToString();
-    }
-    public void Selected(int pressedButtonID)
-    {
-        if (selectedUpgradeID != pressedButtonID)
-        {
-            selectedUpgradeID = pressedButtonID;
-            UpdateUI(charaData[pressedButtonID]);
-        }
-        else
-        {
-            panelStage.SetActive(true);
-            gameObject.SetActive(false);
-        }
+        healthChara.text = getData.Health.ToString();
+        movementChara.text = getData.MovementSpeed.ToString();
+        damageChara.text = getData.Damage.ToString();
+        weaponName.Localize(getData.WeaponName);
+        weaponDescription.Localize(getData.WeaponDescription);
+
+        updateDescription.AnimEnd();
     }
 }

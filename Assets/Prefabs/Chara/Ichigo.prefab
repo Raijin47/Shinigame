@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766227695962975917}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4155884894932798955}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8809725628443266652}
   - component: {fileID: 4900510478777622170}
   - component: {fileID: 5958970730429972122}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6663094185560492575}
   - component: {fileID: 5500764175611193416}
-  m_Layer: 0
+  - component: {fileID: 8928536344608693769}
+  m_Layer: 13
   m_Name: Ichigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,6 +230,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &8928536344608693769
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5525926703480083068}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0021536422, y: 0.058206216}
+  m_Size: {x: 0.36065292, y: 0.103202164}
+  m_Direction: 1
 --- !u!1 &5623288043087098535
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8089155142680040916}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4297054941377711164}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

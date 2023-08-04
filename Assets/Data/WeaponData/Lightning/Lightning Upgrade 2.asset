@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Lightning Upgrade 2
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
-  Description: 
+  Name: LightningUp
+  Description: LightningUp2
   icon: {fileID: 21300000, guid: 6353cfbae4f6bc34b9486eaaf9018826, type: 3}
+  level: 
   weaponData: {fileID: 11400000, guid: 7fc0e53d30ee4b942b4bc97330366b5e, type: 2}
   weaponUpgradeStats:
     damage: 0
@@ -26,7 +27,7 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
+    attackAreaSize: 0.1
     timeBurn: 0
     damageBurn: 0
     duration: 0
@@ -44,3 +45,7 @@ MonoBehaviour:
     projectileCount: 0
     armor: 0
     duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 11400000, guid: a6094b8ed0d2b6f4282c20fa8e8a75b4, type: 2}

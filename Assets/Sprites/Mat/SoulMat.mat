@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SoulMat
-  m_Shader: {fileID: 4800000, guid: 6e2eed3f9017db447814cf8cfbfa4fbe, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
   - _ENABLEFLAME_ON
   - _SHADERSPACE_UV

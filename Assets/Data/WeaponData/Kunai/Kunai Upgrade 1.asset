@@ -13,20 +13,21 @@ MonoBehaviour:
   m_Name: Kunai Upgrade 1
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Upgrade Kunai
-  Description: "\u0423\u0440\u043E\u043D"
+  Name: KunaiUp
+  Description: KunaiUp1
   icon: {fileID: 21300000, guid: 53cd99240d3dfb24d90785d935448112, type: 3}
+  level: E
   weaponData: {fileID: 11400000, guid: 458a206aac94e084e8371f7f3c1364e7, type: 2}
   weaponUpgradeStats:
-    damage: 5
-    timeToAttack: 0
-    numberOfAttacks: 0
-    numberOfHits: 0
-    projectileSpeed: 0
+    damage: 24
+    timeToAttack: 0.5
+    numberOfAttacks: 4
+    numberOfHits: 3
+    projectileSpeed: 4
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
+    attackAreaSize: 0.35
     timeBurn: 0
     damageBurn: 0
     duration: 0
@@ -44,3 +45,7 @@ MonoBehaviour:
     projectileCount: 0
     armor: 0
     duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 11400000, guid: 5f2056e5ac2e39946be03cd4f377e3f1, type: 2}

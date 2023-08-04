@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Unlock SotenKisshun
   m_EditorClassIdentifier: 
   upgradeType: 2
-  Name: 
-  Description: 
+  Name: SotenUnlock
+  Description: SotenDes
   icon: {fileID: 21300000, guid: 0ebec1d3b13af0c448805cd701370710, type: 3}
   weaponData: {fileID: 11400000, guid: 6cc54f545e4ea8e4d884513a39bb6c06, type: 2}
   weaponUpgradeStats:
@@ -44,3 +44,6 @@ MonoBehaviour:
     projectileCount: 0
     armor: 0
     duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0

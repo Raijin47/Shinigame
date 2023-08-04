@@ -1,0 +1,12 @@
+Key,ru,en
+Ryujin,Рюджин Джакка,Ryujin Jakka
+RyujinDes,Поджигает всех врагов в области поражения.,Sets fire to all enemies in the affected area.
+RyujinUnlock,Разблокировать Рюджин Джакку,Unlock Ryujin Jakka
+RyujinUp,Улучшить Рюджин Джакку,Upgrade Ryujin Jakka
+RyujinUp1,Увеличивает область поражения на 20%.,Increases the affected area by 20%.
+RyujinUp2,Увеличивает продолжительность горения от пламени 20% и силу горения на 40%.,Increases gorenje gorenje by 1 second and the burning force by 2 units.
+RyujinUp3,Сокращает время до повторной активации на 30%.,Reduces the time to reactivation by 30%.
+RyujinUp4,Сокращает время до повторной активации на 10% и урон пламени на 20%,Reduces the time to reactivation by 10% and base damage by 5 units.
+RyujinUp5,Увеличивает продолжительность горения от пламени на 30%.,Increases the duration of gorenje by 2 seconds.
+RyujinUp6,Увеличивает силу горения на 80%,Increases gorenje's burning power by 4 units.
+RyujinUp7,Увеличивает область поражения на 10% и урон на 20%,Increases the damage area by 10% and base damage by 2 units.

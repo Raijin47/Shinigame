@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4190637044224079149}
   - component: {fileID: 3169535905375264589}
   - component: {fileID: 1549125059893362263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileKunai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,4 +126,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToLive: 15
   projectSize: {x: 1, y: 1}
-  sprite: {fileID: 4190637044224079149}

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Upgrade ProjectileCount
   m_EditorClassIdentifier: 
   upgradeType: 1
-  Name: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
-  Description: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u043D\u0430\u0440\u044F\u0434\u043E\u0432"
-  icon: {fileID: 0}
+  Name: ChappyUp
+  Description: ChappyUp1
+  icon: {fileID: 21300000, guid: 1812413db2710d6429f3971356a31876, type: 3}
+  level: S
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
@@ -27,6 +28,9 @@ MonoBehaviour:
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 0
+    timeBurn: 0
+    damageBurn: 0
+    duration: 0
   item: {fileID: 11400000, guid: 980eefd20a8c2da4e9928a7776cd8f10, type: 2}
   itemStats:
     damage: 0
@@ -40,3 +44,8 @@ MonoBehaviour:
     recovery: 0
     projectileCount: 1
     armor: 0
+    duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 0}

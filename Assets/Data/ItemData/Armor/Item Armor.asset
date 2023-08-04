@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item Armor
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 1812413db2710d6429f3971356a31876, type: 3}
-  Name: "\u0417\u0430\u0449\u0438\u0442\u0430"
+  icon: {fileID: 21300000, guid: d9ab61c1a4bf8134b976bb33a611c1cf, type: 3}
+  level: E
+  Name: Armor
   stats:
     damage: 0
     attackSpeed: 0
@@ -26,5 +27,5 @@ MonoBehaviour:
     recovery: 0
     projectileCount: 0
     armor: 1
-  upgrades:
-  - {fileID: 11400000, guid: 1c8f61dc78d1f7f4583a4aaa7fcfd517, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: 11d56990ea9e3d741bd45b5d1aba4186, type: 2}

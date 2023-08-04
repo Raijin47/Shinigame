@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item ProjectileCount
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300058, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
-  Name: MovementSpeed
+  icon: {fileID: 21300000, guid: 1812413db2710d6429f3971356a31876, type: 3}
+  level: A
+  Name: ProjectCount
   stats:
     damage: 0
     attackSpeed: 0
@@ -26,5 +27,5 @@ MonoBehaviour:
     recovery: 0
     projectileCount: 1
     armor: 0
-  upgrades:
-  - {fileID: 11400000, guid: 497c65986234cb74d9afa7bb9af7c62b, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: 497c65986234cb74d9afa7bb9af7c62b, type: 2}

@@ -1,26 +1,30 @@
-Key,en,ru
-Back,Back,Назад
-Shop,Shop,Магазин
-Upgrades,Upgrades,Улучшения
-Gacha,Gacha,Гача
-Settings,Settings,Настройки
-Play,Play,Играть
-Twist,Twist,Крутить
-Improve,Improve,Улучшить
-Sold,sold,продано
-Max,Maximum,Максимум
-Survivability,Survivability,Выживаемость
-Damage,Damage,Урон
-MovementSpeed,Movement speed,Скорость перемещения
-AttackSpeed,Attack speed,Скорость атаки
-RecoveryHp,Recovery HP, Востановление ХП
-Armor,Armor,Броня
-ProjectileSpeed,Projectile speed,Скорость снаряда
-ProjectileCount,Projectile count,Количество снарядов
-ExperienceBoost,Experience boost,Бонус опыта
-SoulsBoost,Souls boost,Бонус душ
-AttackAreaSize,Attack area size,Радиус атаки
-Reroll,Reroll,Повтор
-Ichigo,Ichigo Kurosaki,Ичиго Куросаки
-Gin,Gin Ichimaru,Гин Ичимару
-Zangetsu,Zangetsu,Зангетсу
+Key,ru,en
+Back,Назад,Back
+Upgrades,Улучшения,Upgrades
+Gacha,Гача,Gacha
+Settings,Настройки,Settings
+Play,Играть,Play
+Twist,Крутить,Twist
+Improve,Улучшить,Upgrade
+Max,Максимум,Maximum
+Yes,Да,Yes
+No,Нет,No
+Rank,Ранг,Rank
+PanelUpgrades,Панель Улучшений,Panel Upgrades
+PanelGacha,Испытай удачу,Gacha
+PanelChara,Выбор Персонажа,Character Selection
+PanelStage,Выбор этапа,Stage selection
+NoMoney,Недостаточно адских бабочек,Not enough hellish butterflies
+Ads,Реклама,AD
+MovementSpeed,Скорость Движения,Movement Speed
+Health,Здоровье,Health
+desNoMoney,"Адские бабочки можно получить в награду за прохождение этапа, вы так же можете покрутить за просмотр рекламы или купить за яны","Infernal butterflies can be obtained as a reward for completing the stage, you can also spin for viewing ads or buy for Yan"
+Shop,Магазин,Shop
+Sound,Звук,Sound
+Music,Музыка,Music
+Language,Язык,Language
+Effects,Эффекты,Effects
+Audio,Аудио,Audio
+Select,Выбрать,Choose
+Pay,Купить,Buy
+GachaDes,"Получите случайного персонажа, при повторе увеличьте ранг персонажа, ранг увеличивает ХП и Атаку на 3% вплоть до 90%.","Get a random character, increase the character's rank on repeat, rank increases HP and Attack by 3% up to 90%."

@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 3006974798388396241}
   - component: {fileID: 4485219277040489462}
   - component: {fileID: 5594229297136556042}
-  - component: {fileID: 3748133122270501474}
   - component: {fileID: 232697845930493200}
   - component: {fileID: 3055248425950474085}
   - component: {fileID: 6890210727586130880}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: EnemyGrand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5766163478111917861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.02, y: 1.74, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,24 +74,14 @@ MonoBehaviour:
     damage: 0
     experienceReward: 0
     moveSpeed: 0
-  enemyData: {fileID: 0}
---- !u!114 &3748133122270501474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5766163478111917861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f72566088ae414cb51970606cf9cd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropItemPrefab:
-  - {fileID: 5577954845443327403, guid: fc4c7f0cca12efa4ea1643a5daa324e3, type: 3}
-  - {fileID: 2889032635635851858, guid: 4c56e083b76ef2048b60a07e7b8c4a0c, type: 3}
-  - {fileID: 2889032635635851858, guid: 4c56e083b76ef2048b60a07e7b8c4a0c, type: 3}
-  chance: 0.2
+  attackArea: {x: 1.31, y: 0.52}
+  offset: {x: -0.01, y: 0.15, z: 0}
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  dropData:
+  - {fileID: 11400000, guid: 778b6154553d4ad4da2b824934da1c26, type: 2}
+  _chanceDrop: 0.2
 --- !u!114 &232697845930493200
 MonoBehaviour:
   m_ObjectHideFlags: 0

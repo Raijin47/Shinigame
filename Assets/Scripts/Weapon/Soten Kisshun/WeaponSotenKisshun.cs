@@ -7,10 +7,8 @@ public class WeaponSotenKisshun : WeaponBase
     public override void Attack()
     {
         UpdateVectorOfAttack();
-        for (int i = 0; i < weaponStats.numberOfAttacks; i++)
-        {
-            Vector2 newPosition = transform.position;
-            SpawnProjectile(prefab, newPosition);
-        }
+
+        Vector2 newPosition = transform.position;
+        SpawnProjectile(prefab, newPosition);
     }
 }

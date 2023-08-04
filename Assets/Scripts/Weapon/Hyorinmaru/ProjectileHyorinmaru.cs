@@ -9,16 +9,9 @@ public class ProjectileHyorinmaru : ProjectileBase
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.localRotation = Quaternion.Euler(0f, 0f, angle + 90);
     }
-    protected override void Update()
-    {
-        TimerToLive();
-    }
-
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable enemy = collision.GetComponent<IDamageable>();
-
-        if (collision.TryGetComponent(out IDamageable _))
+        if (collision.TryGetComponent(out IDamageable enemy))
         {
             weapon.ApplyDamage(collision.transform.position, damage, enemy);
         }

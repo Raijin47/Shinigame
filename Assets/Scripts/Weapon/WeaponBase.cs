@@ -13,7 +13,7 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] DirectionOfAttack attackDirection;
 
     [HideInInspector] public WeaponData weaponData;
-     public WeaponStats weaponStats;
+    public WeaponStats weaponStats;
     [HideInInspector] public Vector2 vectorOfAttack;
 
     protected Character wielder;
@@ -22,11 +22,19 @@ public abstract class WeaponBase : MonoBehaviour
     private MessageSystem message;
     private float timer;
 
+    //currentWeaponStats
+    [SerializeField] private float curTimer;
+    [SerializeField] protected float duration;
+    public float size;
+    public int damage;
+    [SerializeField] protected int numberOfAttacks;
+    public float projectileSpeed;
+
     private void Awake()
     {
         playerMove = GetComponentInParent<PlayerMovement>();
     }
-    protected virtual void Start()
+    private void Start()
     {
         message = EssentialService.instance.message;
     }
@@ -37,75 +45,65 @@ public abstract class WeaponBase : MonoBehaviour
         if(timer < 0f)
         {
             Attack();
-            timer = weaponStats.timeToAttack / wielder.attackSpeedBonus;
+            timer = curTimer;
         }
     }
-
     public virtual void SetData(WeaponData wd)
     {
         weaponData = wd;
 
         weaponStats = new WeaponStats(wd.stats);
     }
-
     public void SetPoolManager(PoolManager poolManager)
     {
         this.poolManager = poolManager;
     }
-
     public abstract void Attack();
-    public virtual void Resize()
+    public virtual void Recalculate()
     {
-
-    }
-
-    public int GetDamage()
-    {
-        int damage = (int)(weaponStats.damage * wielder.damageBonus);
-        return damage;
+        damage = (int)(weaponStats.damage * wielder.damageBonus);
+        size = weaponStats.attackAreaSize * wielder.attackAreaSizeBonus;
+        duration = weaponStats.duration * wielder.durationBonus;
+        curTimer = weaponStats.timeToAttack / wielder.attackSpeedBonus;
+        numberOfAttacks = weaponStats.numberOfAttacks + wielder.projectileCountBonus;
+        projectileSpeed = weaponStats.projectileSpeed * wielder.projectileSpeedBonus;
     }
     public virtual void PostDamage(int damage, Vector2 targetPosition)
     {
         message.PostMessage(damage.ToString(), targetPosition);
     }
-
     public virtual void Upgrade(UpgradeData upgradeData)
     {
         weaponStats.Sum(upgradeData.weaponUpgradeStats);
     }
-
     public void AddOwnerCharacter(Character character)
     {
         wielder = character;
     }
-
     public void ApplyDamage(Collider2D[] colliders)
     {
-        int damage = GetDamage();
         for (int i = 0; i < colliders.Length; i++)
         {
-            IDamageable e = colliders[i].GetComponent<IDamageable>();
-            if (e != null)
+            if (colliders[i] == null)
+                break;
+            if (colliders[i].TryGetComponent(out IDamageable enemy))
             {
-                ApplyDamage(colliders[i].transform.position, damage, e);
+                ApplyDamage(colliders[i].transform.position, damage, enemy);
             }
         }
     }
-
     public void ApplyDamage(Vector2 position, int damage, IDamageable e)
     {
         PostDamage(damage, position);
         e.TakeDamage(damage);
         ApplyAdditionalEffects(e, position);
     }
-
     private void ApplyAdditionalEffects(IDamageable e, Vector3 enemyPosition)
     {
         e.Stun(weaponStats.stun);
         e.Knockback((enemyPosition - transform.position).normalized, weaponStats.knockback, weaponStats.knockbackTimeWeight);
         e.Burn(weaponStats.timeBurn, weaponStats.damageBurn);
     }
-
     public void UpdateVectorOfAttack()
     {
         if(attackDirection == DirectionOfAttack.None)
@@ -138,7 +136,6 @@ public abstract class WeaponBase : MonoBehaviour
         }
         vectorOfAttack = vectorOfAttack.normalized;
     }
-
     public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
     {
         GameObject projectileGO = poolManager.GetObject(poolObjectData);

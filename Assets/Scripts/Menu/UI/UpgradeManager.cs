@@ -1,38 +1,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using Assets.SimpleLocalization;
+using YG;
 
 public class UpgradeManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
-    [SerializeField] UpgradeDescriptionPanel upgradeDescriptionPanel;
     private PauseManager pauseManager;
     [SerializeField] private Button rerollButton;
     [SerializeField] List<UpgradeButton> upgradeButtons;
-
     Level characterLevel;
-    private int selectedUpgradeID;
     List<UpgradeData> upgradeData;
-    private int rerollCount = 0;
+    [SerializeField] TextMeshProUGUI rerollCountText;
+    [SerializeField] LocalizedDynamic text;
+    private int rerollCount;
+
+    private void OnEnable() => YandexGame.RewardVideoEvent += RewardedAds;
+    private void OnDisable() => YandexGame.RewardVideoEvent -= RewardedAds;
     private void Awake()
     {
         pauseManager = GetComponent<PauseManager>();
         characterLevel = GameManager.instance.playerTransform.GetComponent<Level>();
     }
-
     private void Start()
     {
         HideButtons();
-        selectedUpgradeID = -1;
         rerollCount = EssentialService.instance.dataContainer.GetUpgradeLevel(PlayerPersisrentUpgrades.Reroll);
     }
-
-    public void RerollPanel(List<UpgradeData> upgradeDatas)
+    private void RewardedAds(int x)
     {
-        rerollCount--;
-        UpdateRerollButton();
-        selectedUpgradeID = -1;
-        HideDescription();
+        characterLevel.Reroll();
+    }
+    public void RerollPanel()
+    {
+        if(rerollCount == 0)
+        {
+            YandexGame.RewVideoShow(0);
+        }
+        else
+        {
+            rerollCount--;
+            UpdateRerollStatus();
+            characterLevel.Reroll();
+        }
+    }
+    public void Reroll(List<UpgradeData> upgradeDatas)
+    {
         Clean();
 
         this.upgradeData = upgradeDatas;
@@ -43,14 +58,20 @@ public class UpgradeManager : MonoBehaviour
             upgradeButtons[i].Set(upgradeDatas[i]);
         }
     }
-    private void UpdateRerollButton()
+    private void UpdateRerollStatus()
     {
-        if (rerollCount == 0) rerollButton.interactable = false;
-        else rerollButton.interactable = true;
+        if (rerollCount == 0)
+        {
+            text.Localize("NoRerollCount");
+        }
+        else
+        {
+            rerollCountText.text = rerollCount.ToString();
+        }
     }
     public void OpenPanel(List<UpgradeData> upgradeDatas)
     {
-        UpdateRerollButton();
+        UpdateRerollStatus();
         Clean();
         pauseManager.PauseGame();
         panel.SetActive(true);
@@ -63,10 +84,6 @@ public class UpgradeManager : MonoBehaviour
             upgradeButtons[i].Set(upgradeDatas[i]);
         }
     }
-    public void SetRerollCount(int count)
-    {
-        rerollCount = count;
-    }
     public void Clean()
     {
         for (int i = 0; i < upgradeButtons.Count; i++)
@@ -74,42 +91,18 @@ public class UpgradeManager : MonoBehaviour
             upgradeButtons[i].Clean();
         }
     }
-
     public void Upgrade(int pressedButtonID)
     {
-        if(selectedUpgradeID != pressedButtonID)
-        {
-            selectedUpgradeID = pressedButtonID;
-            ShowDescription();
-        }
-        else
-        {
-            characterLevel.Upgrade(pressedButtonID);
-            ClosePanel();
-            HideDescription();
-        }
+        characterLevel.Upgrade(pressedButtonID);
+        ClosePanel();
     }
-
-    private void HideDescription()
-    {
-        upgradeDescriptionPanel.gameObject.SetActive(false);
-    }
-
-    private void ShowDescription()
-    {
-        upgradeDescriptionPanel.gameObject.SetActive(true);
-        upgradeDescriptionPanel.Set(upgradeData[selectedUpgradeID]);
-    }
-
     public void ClosePanel()
     {
-        selectedUpgradeID = -1;
         HideButtons();
 
         pauseManager.UnPauseGame();
         panel.SetActive(false);
     }
-
     private void HideButtons()
     {
         for (int i = 0; i < upgradeButtons.Count; i++)

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3036757306502051148}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1266125469811601470}
   - component: {fileID: 4341576351730935449}
   - component: {fileID: 1642349758042108557}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: IMG_8080
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,8 @@ GameObject:
   m_Component:
   - component: {fileID: 441029282720541319}
   - component: {fileID: 8566413685345690445}
-  m_Layer: 0
+  - component: {fileID: 1041523267706069449}
+  m_Layer: 13
   m_Name: Nelliel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,6 +199,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &1041523267706069449
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645713953504965348}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.020095514, y: 0.07204596}
+  m_Size: {x: 0.21682183, y: 0.15111037}
+  m_Direction: 1
 --- !u!1 &2446641309147025687
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7045034597501922468}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 790601502951912241}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5820050498159889973}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

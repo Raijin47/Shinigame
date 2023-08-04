@@ -39,15 +39,16 @@ public class ItemStats
 public class ItemData: ScriptableObject
 {
     public Sprite icon;
+    public string level;
     public string Name;
     public ItemStats stats;
-    public List<UpgradeData> upgrades;
+    public UpgradeData upgrade;
 
     public void Init(string Name)
     {
         this.Name = Name;
         stats = new ItemStats();
-        upgrades = new List<UpgradeData>();
+        //upgrades = new List<UpgradeData>();
     }
     public void Equip(Character character)
     {        

@@ -9,6 +9,8 @@ public class EssentialService : MonoBehaviour
     public DataContainer dataContainer;
     public Character character;
     public MessageSystem message;
+    public DropManager dropManager;
+    public PoolManager poolManager;
     private void Awake()
     {
         if (instance == null)

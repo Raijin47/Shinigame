@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Acquire Armor
   m_EditorClassIdentifier: 
   upgradeType: 3
-  Name: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C"
-  Description: "\u0411\u0440\u043E\u043D\u044F"
-  icon: {fileID: 0}
+  Name: ReishukakuUnlock
+  Description: ReishukakuDes
+  icon: {fileID: 21300000, guid: d9ab61c1a4bf8134b976bb33a611c1cf, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
@@ -27,6 +27,9 @@ MonoBehaviour:
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 0
+    timeBurn: 0
+    damageBurn: 0
+    duration: 0
   item: {fileID: 11400000, guid: c23ff2dd5eab8d741825cdd634762a3b, type: 2}
   itemStats:
     damage: 0
@@ -40,3 +43,7 @@ MonoBehaviour:
     recovery: 0
     projectileCount: 0
     armor: 0
+    duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0

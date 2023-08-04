@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item Health
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 575f490323d76254ab8d5d4cd472a3ea, type: 3}
-  Name: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0445\u043F"
+  icon: {fileID: 21300000, guid: 4607f7f3efb81ff49836f6a2644a26d1, type: 3}
+  level: E
+  Name: Health
   stats:
     damage: 0
     attackSpeed: 0
@@ -22,9 +23,9 @@ MonoBehaviour:
     movementSpeed: 0
     experience: 0
     souls: 0
-    health: 0.1
+    health: 0.2
     recovery: 0
     projectileCount: 0
     armor: 0
-  upgrades:
-  - {fileID: 11400000, guid: cc23344a003a0e74e803bf6764f98a05, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: ddd1fa22c4d3c2245a105e4019593947, type: 2}

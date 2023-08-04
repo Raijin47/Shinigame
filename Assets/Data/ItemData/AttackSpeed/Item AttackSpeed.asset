@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item AttackSpeed
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 03aee7c101bfde1438fd012a07b6c7a5, type: 3}
-  Name: SetDamage
+  icon: {fileID: 21300000, guid: 9383da1229b8fa34f96395022d3b3d8b, type: 3}
+  level: E
+  Name: AttackSpeed
   stats:
     damage: 0
-    attackSpeed: 0.1
+    attackSpeed: 0.04
     attackArea: 0
     projectileSpeed: 0
     movementSpeed: 0
@@ -26,5 +27,5 @@ MonoBehaviour:
     recovery: 0
     projectileCount: 0
     armor: 0
-  upgrades:
-  - {fileID: 11400000, guid: 995d1c05097f81848b07c159e5ade67c, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: dde9aeb8549603841bbd20a333abcd6e, type: 2}

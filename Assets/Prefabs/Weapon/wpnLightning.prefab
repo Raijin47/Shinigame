@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d49fe5f86a25ff4d948cbda4d82dc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDirection: 3
+  attackDirection: 4
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -56,11 +56,15 @@ MonoBehaviour:
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 0
+    timeBurn: 0
+    damageBurn: 0
+    duration: 0
   vectorOfAttack: {x: 0, y: 0}
+  size: 0
+  damage: 0
+  projectileSpeed: 0
   radius: {x: 20, y: 11}
-  nonTargetRadius: {x: 5, y: 3}
-  target: {x: 0, y: 0}
   lightningPrefab: {fileID: 11400000, guid: bd1a8187eaaf9d842a3a17b814a89644, type: 2}
   layer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512

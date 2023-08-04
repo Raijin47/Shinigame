@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
+  m_Name: Yoruichi
+  m_EditorClassIdentifier: 
+  icon: {fileID: 961031889, guid: 803f34f22b4ce4446943777f16bb941d, type: 3}
+  Name: Yoruichi
+  WeaponName: Kunai
+  WeaponDescription: KunaiDes
+  spritePrefab: {fileID: 1294093326373152140, guid: 7230c303a34182e4d8d4bf108758038a, type: 3}
+  startingWeapon: {fileID: 11400000, guid: 8872ddc863c070944b3bd1034b057466, type: 2}
+  Level: 0
+  Health: 80
+  MovementSpeed: 2.5
+  Damage: 1.1

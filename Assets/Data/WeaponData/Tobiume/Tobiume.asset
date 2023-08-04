@@ -12,27 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c948207983de166488dea650eea79c80, type: 3}
   m_Name: Tobiume
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  Name: 
+  icon: {fileID: 21300000, guid: 6e083a2e4556d5345991f0727d2a5e00, type: 3}
+  level: F
+  Name: Tobiume
   stats:
     damage: 20
-    timeToAttack: 1
+    timeToAttack: 3
     numberOfAttacks: 1
-    numberOfHits: 1
+    numberOfHits: 10
     projectileSpeed: 5
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 1
-    timeBurn: 3
-    damageBurn: 5
+    timeBurn: 1.1
+    damageBurn: 2
     duration: 0
   weaponBasePrefab: {fileID: 5929953913307725797, guid: 1de901a67c839b34fa6b77aefc49b246, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: 2ec7400123ce5824ebc06289286a4f61, type: 2}
-  - {fileID: 11400000, guid: cc4c6b2b2e1d21349948708fea09af13, type: 2}
-  - {fileID: 11400000, guid: 327bb20afa09ec04ca7394b42ad3d695, type: 2}
-  - {fileID: 11400000, guid: 20bf7a2736f6ae446b102ebe95269bb3, type: 2}
-  - {fileID: 11400000, guid: 92f188ae3ecd79d4b84c8c99059748da, type: 2}
-  - {fileID: 11400000, guid: 6273cbf5d63cce64b941e0da1bafcb74, type: 2}
-  - {fileID: 11400000, guid: df7211c1f7f9d844c9df504777c35e0c, type: 2}
+  upgrade: {fileID: 11400000, guid: 2ec7400123ce5824ebc06289286a4f61, type: 2}

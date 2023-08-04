@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3943350876249418685}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 730894832663629568}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8113009079138862321}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6656428083969397474}
   - component: {fileID: 1812742535823026116}
   - component: {fileID: 7457130647096659892}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: IMG_8043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3149989711731305768}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6738971609970029608}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1613948878403710400}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4206228537031438859}
   - component: {fileID: 5529467254755589780}
-  m_Layer: 0
+  - component: {fileID: 1169975941365393508}
+  m_Layer: 13
   m_Name: Orihime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,6 +362,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &1169975941365393508
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069096791746407016}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0013991349, y: 0.04228216}
+  m_Size: {x: 0.26034924, y: 0.12927651}
+  m_Direction: 1
 --- !u!1 &8333437769238190207
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3340131507102909602}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6158480695828514354}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

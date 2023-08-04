@@ -13,22 +13,23 @@ MonoBehaviour:
   m_Name: Tobiume Upgrade 1
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
-  Description: 
-  icon: {fileID: 0}
+  Name: TobiumeUp
+  Description: TobiumeUp1
+  icon: {fileID: 21300000, guid: 6e083a2e4556d5345991f0727d2a5e00, type: 3}
+  level: E
   weaponData: {fileID: 11400000, guid: 1d575fbea413ce747a4f32f6c38b2546, type: 2}
   weaponUpgradeStats:
-    damage: 0
-    timeToAttack: 0
-    numberOfAttacks: 0
+    damage: 30
+    timeToAttack: 0.5
+    numberOfAttacks: 3
     numberOfHits: 0
-    projectileSpeed: 0
+    projectileSpeed: 2
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
-    timeBurn: 0
-    damageBurn: 0
+    attackAreaSize: 0.3
+    timeBurn: 1.1
+    damageBurn: 1
     duration: 0
   item: {fileID: 0}
   itemStats:
@@ -44,3 +45,7 @@ MonoBehaviour:
     projectileCount: 0
     armor: 0
     duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 11400000, guid: cc4c6b2b2e1d21349948708fea09af13, type: 2}

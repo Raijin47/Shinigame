@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item Experience
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300094, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
-  Name: MovementSpeed
+  icon: {fileID: 21300000, guid: 03aee7c101bfde1438fd012a07b6c7a5, type: 3}
+  level: E
+  Name: Exp
   stats:
     damage: 0
     attackSpeed: 0
@@ -26,5 +27,5 @@ MonoBehaviour:
     recovery: 0
     projectileCount: 0
     armor: 0
-  upgrades:
-  - {fileID: 11400000, guid: a4dc26b9754d4d14581ae5a45c930ada, type: 2}
+    duration: 0
+  upgrade: {fileID: 11400000, guid: f074ba520cb0caa4da7a2df24313068d, type: 2}

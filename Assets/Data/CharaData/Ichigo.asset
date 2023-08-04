@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
   m_Name: Ichigo
   m_EditorClassIdentifier: 
-  icon: {fileID: -2494595465585468781, guid: bfb2cb55a753c3847bb55079bba059c5, type: 3}
+  icon: {fileID: 1946089714, guid: 803f34f22b4ce4446943777f16bb941d, type: 3}
   Name: Ichigo
+  WeaponName: Zangetsu
+  WeaponDescription: ZangetsuDes
   spritePrefab: {fileID: 5525926703480083068, guid: f0a57feea0d3fe24fa9c3839131ca8e8, type: 3}
-  startingWeapon: {fileID: 11400000, guid: 4862a05d228c519479ec565e1666f925, type: 2}
-  Level: 3
-  Health: 100
-  MovementSpeed: 3
+  startingWeapon: {fileID: 11400000, guid: e5db22892ba8b7749ae8a3ef0fcdf7d8, type: 2}
+  Level: 1
+  Health: 140
+  MovementSpeed: 2.1
   Damage: 1.2

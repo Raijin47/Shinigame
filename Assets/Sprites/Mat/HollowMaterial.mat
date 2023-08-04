@@ -197,7 +197,7 @@ Material:
     - _EnableFrozen: 0
     - _EnableFullAlphaDissolve: 0
     - _EnableFullDistortion: 0
-    - _EnableFullGlowDissolve: 1.1
+    - _EnableFullGlowDissolve: 1
     - _EnableGlitch: 0
     - _EnableHalftone: 0
     - _EnableHologram: 0

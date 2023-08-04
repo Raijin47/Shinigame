@@ -4,11 +4,9 @@ public class PickUp : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Character c = collision.GetComponent<Character>();
-        if (c != null)
+        if(collision.TryGetComponent(out Character chara))
         {
-            GetComponent<IPickUpObject>().OnPickUp(c);
-            Destroy(gameObject);
+            GetComponent<IPickUpObject>().OnPickUp(chara);
         }
     }
 }

@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: SotenKisshun Upgrade 1
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
-  Description: 
+  Name: SotenUp
+  Description: SotenUp1
   icon: {fileID: 21300000, guid: 0ebec1d3b13af0c448805cd701370710, type: 3}
+  level: E
   weaponData: {fileID: 11400000, guid: 6cc54f545e4ea8e4d884513a39bb6c06, type: 2}
   weaponUpgradeStats:
-    damage: 0
+    damage: 2
     timeToAttack: 0
     numberOfAttacks: 0
     numberOfHits: 0
@@ -29,7 +30,7 @@ MonoBehaviour:
     attackAreaSize: 0
     timeBurn: 0
     damageBurn: 0
-    duration: 0
+    duration: 4
   item: {fileID: 0}
   itemStats:
     damage: 0
@@ -44,3 +45,7 @@ MonoBehaviour:
     projectileCount: 0
     armor: 0
     duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 11400000, guid: 855e74697458e3e4c929fc1add3af585, type: 2}

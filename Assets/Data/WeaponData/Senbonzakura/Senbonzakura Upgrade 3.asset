@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: Senbonzakura Upgrade 3
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: "\u0423\u0440\u043E\u043D"
-  Description: 
+  Name: SenbonzakuraUp
+  Description: SenbonzakuraUp3
   icon: {fileID: 21300000, guid: 6fe53fc2cfae48e48b9e44c6215db28b, type: 3}
+  level: C
   weaponData: {fileID: 11400000, guid: 4862a05d228c519479ec565e1666f925, type: 2}
   weaponUpgradeStats:
-    damage: 5
+    damage: 0
     timeToAttack: 0
     numberOfAttacks: 0
     numberOfHits: 0
     projectileSpeed: 0
     stun: 0
-    knockback: 0
-    knockbackTimeWeight: 0
+    knockback: 0.4
+    knockbackTimeWeight: 0.2
     attackAreaSize: 0
     timeBurn: 0
     damageBurn: 0
@@ -44,3 +45,7 @@ MonoBehaviour:
     projectileCount: 0
     armor: 0
     duration: 0
+  persistanceStats:
+    HealAmount: 0
+    SoulAmount: 0
+  nextUpgrade: {fileID: 11400000, guid: 0911b9b6118a62a458200ec461fe3c01, type: 2}

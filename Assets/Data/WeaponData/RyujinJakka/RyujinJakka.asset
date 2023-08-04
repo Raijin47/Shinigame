@@ -13,26 +13,20 @@ MonoBehaviour:
   m_Name: RyujinJakka
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 305dbd6314fdf264198069217b227c36, type: 3}
-  Name: 
+  level: 
+  Name: Ryujin
   stats:
-    damage: 3
-    timeToAttack: 5
+    damage: 15
+    timeToAttack: 8
     numberOfAttacks: 0
     numberOfHits: 0
     projectileSpeed: 0
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
-    timeBurn: 6
-    damageBurn: 3
+    attackAreaSize: 1
+    timeBurn: 2.2
+    damageBurn: 5
     duration: 0
   weaponBasePrefab: {fileID: 5031643930611410761, guid: 2f4e7c793e832ea4b89ca9d4e36ebfd6, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: 35f9fe79002a1b844a91231514408151, type: 2}
-  - {fileID: 11400000, guid: 9f9fc5398b55e7648aee61a0e8aa83ec, type: 2}
-  - {fileID: 11400000, guid: e4043c4f8c0839641a0a7671c6038116, type: 2}
-  - {fileID: 11400000, guid: 699fc9d7e22abf5418eda4e050222171, type: 2}
-  - {fileID: 11400000, guid: 9002fcd0d8082344fbf0ea812afbf9e7, type: 2}
-  - {fileID: 11400000, guid: 8ff36267fc1fee54cb2c06054e75a9b8, type: 2}
-  - {fileID: 11400000, guid: 5327c0bcbc756884780238c67089c6b4, type: 2}
+  upgrade: {fileID: 11400000, guid: 35f9fe79002a1b844a91231514408151, type: 2}

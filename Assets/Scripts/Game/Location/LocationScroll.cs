@@ -23,7 +23,7 @@ public class LocationScroll : MonoBehaviour
 
     private void Start()
     {
-        UpdateTileOnScreen();
+        StartTileOnScreen();
         playerTransform = GameManager.instance.playerTransform;
     }
     private void Update()
@@ -43,7 +43,24 @@ public class LocationScroll : MonoBehaviour
             UpdateTileOnScreen();
         }
     }
+    private void StartTileOnScreen()
+    {
+        for (int x = -(fieldOfVisionWidth / 2); x <= fieldOfVisionWidth / 2; x++)
+        {
+            for (int y = -(fieldOfVisionHeight / 2); y <= fieldOfVisionHeight / 2; y++)
+            {
+                int tileToUpdate_x = CalculatePositionOnAxis(playerTilePosition.x + x, true);
+                int tileToUpdate_y = CalculatePositionOnAxis(playerTilePosition.y + y, false);
 
+                GameObject tile = terrainTiles[tileToUpdate_x, tileToUpdate_y];
+                Vector3 newPosition = CalculateTilePosition(playerTilePosition.x + x, playerTilePosition.y + y);
+                if (newPosition != tile.transform.position)
+                {
+                    tile.transform.position = newPosition;
+                }
+            }
+        }
+    }
     private void UpdateTileOnScreen()
     {
         for(int x = -(fieldOfVisionWidth/2); x <= fieldOfVisionWidth/2; x++)
@@ -60,16 +77,13 @@ public class LocationScroll : MonoBehaviour
                     tile.transform.position = newPosition;
                     terrainTiles[tileToUpdate_x, tileToUpdate_y].GetComponent<LocationTile>().Spawn();
                 }
-
             }
         }
     }
-
     private Vector3 CalculateTilePosition(int x, int y)
     {
         return new Vector3(x * tileSize, y * tileSize, 0f);
     }
-
     private int CalculatePositionOnAxis(float currentValue, bool horizontal)
     {
         if(horizontal)
@@ -99,7 +113,6 @@ public class LocationScroll : MonoBehaviour
 
         return (int)currentValue;
     }
-
     public void Add(GameObject tileGameObject, Vector2Int tilePos)
     {
         terrainTiles[tilePos.x, tilePos.y] = tileGameObject;

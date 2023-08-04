@@ -3,16 +3,24 @@ using UnityEngine;
 public class WeaponHyorinmaru : WeaponBase
 {
     [SerializeField] private PoolObjectData prefab;
-    [SerializeField] private PoolObjectData prefabSmall;
 
     public override void Attack()
     {
-        UpdateVectorOfAttack();
-        SpawnProjectile(prefab, transform.position);
-        for(int i = 0; i < weaponStats.numberOfAttacks + wielder.projectileCountBonus; i++)
+        for(int i = 0; i < numberOfAttacks; i++)
         {
-            vectorOfAttack = UtilityTools.GenerateRandomPositionSquarePattern(Vector2.one).normalized;
-            SpawnProjectile(prefabSmall, transform.position);
+            int a = 360 / numberOfAttacks * i;
+
+            vectorOfAttack = Cicle(a);
+            SpawnProjectile(prefab, transform.position);
         }
+    }
+    private Vector2 Cicle(int a)
+    {
+        Vector2 dir;
+        float ang = a;
+        dir.x = Mathf.Sin(ang * Mathf.Deg2Rad);
+        dir.y = Mathf.Cos(ang * Mathf.Deg2Rad);
+
+        return dir;
     }
 }

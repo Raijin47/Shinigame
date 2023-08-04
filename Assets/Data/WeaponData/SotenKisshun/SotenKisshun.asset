@@ -13,26 +13,20 @@ MonoBehaviour:
   m_Name: SotenKisshun
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 0ebec1d3b13af0c448805cd701370710, type: 3}
-  Name: 
+  level: F
+  Name: Soten
   stats:
-    damage: 10
-    timeToAttack: 5
+    damage: 12
+    timeToAttack: 10
     numberOfAttacks: 1
     numberOfHits: 0
-    projectileSpeed: 5
+    projectileSpeed: 10
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 0.5
     timeBurn: 0
     damageBurn: 0
-    duration: 0
+    duration: 12
   weaponBasePrefab: {fileID: 3928154488159259737, guid: 375a4d8aa3ac23b40bc556220f6fe6b4, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: 58de57fca72d7024b96067c6750d5950, type: 2}
-  - {fileID: 11400000, guid: 855e74697458e3e4c929fc1add3af585, type: 2}
-  - {fileID: 11400000, guid: bc989d2e267a87549bd6159752d7102c, type: 2}
-  - {fileID: 11400000, guid: 9a9fa22141d742244940cf71ea1d0312, type: 2}
-  - {fileID: 11400000, guid: 839b8759ae994a74298adce0c20aec0c, type: 2}
-  - {fileID: 11400000, guid: 624c91eebf4cc614fb9baa1811ab192d, type: 2}
-  - {fileID: 11400000, guid: 964ec69b2c9967543882b9fea9f25c6d, type: 2}
+  upgrade: {fileID: 11400000, guid: 58de57fca72d7024b96067c6750d5950, type: 2}

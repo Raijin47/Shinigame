@@ -5,8 +5,10 @@ public class CharacterData : ScriptableObject
 {
     public Sprite icon;
     public string Name;
+    public string WeaponName;
+    public string WeaponDescription;
     public GameObject spritePrefab;
-    public WeaponData startingWeapon;
+    public UpgradeData startingWeapon;
 
     public int Level;
     public int Health;

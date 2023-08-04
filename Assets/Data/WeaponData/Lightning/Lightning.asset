@@ -13,26 +13,20 @@ MonoBehaviour:
   m_Name: Lightning
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 6353cfbae4f6bc34b9486eaaf9018826, type: 3}
-  Name: 
+  level: F
+  Name: Lightning
   stats:
-    damage: 10
-    timeToAttack: 5
+    damage: 5
+    timeToAttack: 10
     numberOfAttacks: 1
     numberOfHits: 0
     projectileSpeed: 0
-    stun: 0.5
+    stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 1
+    attackAreaSize: 0.5
     timeBurn: 0
     damageBurn: 0
     duration: 0
   weaponBasePrefab: {fileID: 5455311492470679645, guid: e4da2562616c79e49ac8f71666cb281a, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: cc2beea61c8e6004bb494ccdfa7616a6, type: 2}
-  - {fileID: 11400000, guid: a6094b8ed0d2b6f4282c20fa8e8a75b4, type: 2}
-  - {fileID: 11400000, guid: d26af33419b55cd4c9a62337e113b45b, type: 2}
-  - {fileID: 11400000, guid: 59f4d0701b1b8864e93b2a48c974fc64, type: 2}
-  - {fileID: 11400000, guid: f6d947d6404e230429be0c19f2b3b4f5, type: 2}
-  - {fileID: 11400000, guid: a39dc2b84ca657b418cc73e97293a968, type: 2}
-  - {fileID: 11400000, guid: 1fbb36700ec14264598390f95192f56b, type: 2}
+  upgrade: {fileID: 11400000, guid: 1fbb36700ec14264598390f95192f56b, type: 2}
