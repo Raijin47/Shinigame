@@ -27,7 +27,7 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0.07
+    attackAreaSize: 0.2
     timeBurn: 0
     damageBurn: 0
     duration: 0

@@ -19,8 +19,8 @@ MonoBehaviour:
   level: B
   weaponData: {fileID: 11400000, guid: 1d575fbea413ce747a4f32f6c38b2546, type: 2}
   weaponUpgradeStats:
-    damage: 0
-    timeToAttack: 0.6
+    damage: 5
+    timeToAttack: 0.5
     numberOfAttacks: 0
     numberOfHits: 0
     projectileSpeed: 0

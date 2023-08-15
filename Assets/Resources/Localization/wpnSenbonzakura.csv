@@ -1,12 +1,19 @@
 Key,ru,en
-Senbonzakura,Сенбонзакура Кагейоши,Senbonzakura Kageyoshi
-SenbonzakuraDes,Распадается на тысячу лепестков сакуры которые летают вокруг владельца.,It breaks up into a thousand sakura petals that fly around the owner.
-SenbonzakuraUnlock,Разблокировать Сенбонзакуру,Unlock Senbonzakura Kageyoshi
-SenbonzakuraUp,Улучшить Сенбонзакуру,Upgrade Senbonzakura Kageyoshi
-SenbonzakuraUp1,Увеличивает базовый урон от лепестков сакуры на 4 единицы.,Increases the base damage from sakura petals by 4 units.
-SenbonzakuraUp2,Сокращает время до повторной активации Сенбонзакуры на 15%.,Reduces the time to reactivate the Senbonzakura by 15%.
-SenbonzakuraUp3,Сенбонзакура начинает отталкивать врагов.,Senbonzakura begins to repel enemies.
-SenbonzakuraUp4,Увеличивает продолжительность действия на 15%.,Increases the duration of action by 20%.
-SenbonzakuraUp5,Увеличивает область поражения на 15%.,Increases the affected area by 15%.
-SenbonzakuraUp6,Увеличивает область поражения на 7% и базовый урон на 2 единицы.,Increases the damage area by 7% and base damage by 2 units.
-SenbonzakuraUp7,Увеличивает область поражения на 7% и время действия на 5%.,Increases the affected area by 7% and the duration of action by 5%.
+SenbonzakuraUp1,"Уменьшает перезарядку на 0,3 секунды.
++1 к базовому урону.","Reduces cooldown by 0,3 seconds.
++1 to base damage."
+SenbonzakuraUp2,"Сенбонзакура позволяет отталкивать врагов.
+Продлевает время действия на 0.25 секунды.","Senbonzakura allows you to repel enemies.
+Extends the action time by 0.25 seconds."
+SenbonzakuraUp3,"Уменьшает перезарядку на 0,3 секунды.
+Продлевает время действия на 0.25 секунды.","Reduces cooldown by 0,3 seconds.
+Extends the action time by 0.25 seconds."
+SenbonzakuraUp4,"Продлевает время действия на 0.25 секунды.
++10% к базовой области.","Extends the action time by 0.25 seconds.
++10% to base area."
+SenbonzakuraUp5,"Уменьшает перезарядку на 0,3 секунды.
++20% к базовой области.","Reduces cooldown by 0,3 seconds.
++20% to base area."
+SenbonzakuraUp6,"+20% к базовой области.
++2 к базовому урону.","+20% to base area.
++2 to base damage."

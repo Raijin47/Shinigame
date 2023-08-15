@@ -128,6 +128,7 @@ public abstract class WeaponBase : MonoBehaviour
                 vectorOfAttack.x = 0f;
                 vectorOfAttack.y = playerMove.lastVerticalDeCoupledVector;
                 break;
+
             case DirectionOfAttack.Random:
                 Vector2 target = UtilityTools.GenerateRandomPositionSquarePattern(Vector2.one);
                 vectorOfAttack.x = target.x;

@@ -14,11 +14,11 @@ PanelUpgrades,Панель Улучшений,Panel Upgrades
 PanelGacha,Испытай удачу,Gacha
 PanelChara,Выбор Персонажа,Character Selection
 PanelStage,Выбор этапа,Stage selection
-NoMoney,Недостаточно адских бабочек,Not enough hellish butterflies
+NoMoney,Недостаточно адских бабочек!,Not enough hellish butterflies!
 Ads,Реклама,AD
 MovementSpeed,Скорость Движения,Movement Speed
 Health,Здоровье,Health
-desNoMoney,"Адские бабочки можно получить в награду за прохождение этапа, вы так же можете покрутить за просмотр рекламы или купить за яны","Infernal butterflies can be obtained as a reward for completing the stage, you can also spin for viewing ads or buy for Yan"
+desNoMoney,"Адские бабочки можно получить в награду за прохождение этапа, вы также можете покрутить бесплатно за просмотр рекламы!","Infernal butterflies can be obtained as a reward for completing the stage, you can also spin for free for watching ads!"
 Shop,Магазин,Shop
 Sound,Звук,Sound
 Music,Музыка,Music
@@ -27,4 +27,4 @@ Effects,Эффекты,Effects
 Audio,Аудио,Audio
 Select,Выбрать,Choose
 Pay,Купить,Buy
-GachaDes,"Получите случайного персонажа, при повторе увеличьте ранг персонажа, ранг увеличивает ХП и Атаку на 3% вплоть до 90%.","Get a random character, increase the character's rank on repeat, rank increases HP and Attack by 3% up to 90%."
+GachaDes,"Получите случайного персонажа, при повторе увеличьте ранг персонажа. Ранг увеличивает ХП и Атаку на 3% вплоть до 90%.","Get a random character, increase the character's rank when repeating. Rank increases HP and Attack by 3% up to 90%."

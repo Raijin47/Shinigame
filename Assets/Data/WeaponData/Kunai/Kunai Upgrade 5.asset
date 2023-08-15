@@ -19,7 +19,7 @@ MonoBehaviour:
   level: A
   weaponData: {fileID: 11400000, guid: 458a206aac94e084e8371f7f3c1364e7, type: 2}
   weaponUpgradeStats:
-    damage: 0
+    damage: 6
     timeToAttack: 0
     numberOfAttacks: 0
     numberOfHits: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
+    attackAreaSize: 0.35
     timeBurn: 0
     damageBurn: 0
     duration: 0

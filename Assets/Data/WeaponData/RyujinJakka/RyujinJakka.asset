@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RyujinJakka
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 305dbd6314fdf264198069217b227c36, type: 3}
-  level: 
+  level: F
   Name: Ryujin
   stats:
     damage: 15

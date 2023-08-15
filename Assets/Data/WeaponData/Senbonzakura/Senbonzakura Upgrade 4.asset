@@ -27,10 +27,10 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0
+    attackAreaSize: 0.1
     timeBurn: 0
     damageBurn: 0
-    duration: 0.75
+    duration: 0.25
   item: {fileID: 0}
   itemStats:
     damage: 0

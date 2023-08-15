@@ -16,18 +16,18 @@ MonoBehaviour:
   Name: LightningUp
   Description: LightningUp1
   icon: {fileID: 21300000, guid: 6353cfbae4f6bc34b9486eaaf9018826, type: 3}
-  level: 
+  level: E
   weaponData: {fileID: 11400000, guid: 7fc0e53d30ee4b942b4bc97330366b5e, type: 2}
   weaponUpgradeStats:
-    damage: 10
-    timeToAttack: 2
-    numberOfAttacks: 5
+    damage: 2
+    timeToAttack: 0.9
+    numberOfAttacks: 0
     numberOfHits: 0
     projectileSpeed: 0
-    stun: 0.4
+    stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0.5
+    attackAreaSize: 0
     timeBurn: 0
     damageBurn: 0
     duration: 0

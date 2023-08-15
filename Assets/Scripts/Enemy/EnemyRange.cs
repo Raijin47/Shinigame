@@ -7,24 +7,27 @@ public class EnemyRange : Enemy
     [SerializeField] private Transform projectileSpawner;
     private float currentTimeToAttack;
     private PoolManager poolManager;
-    protected override void Move()
+    //protected override void Move()
+    //{
+    //    if (stunned > 0f) { return; }
+    //    if (Vector2.Distance(targetDestination.position, transform.position) < distance)
+    //    {
+    //        rb.velocity = Vector2.zero;
+    //        return;
+    //    }
+
+    //    Vector3 direction = (targetDestination.position - transform.position).normalized;
+    //    rb.velocity = CalculateMovementVelocity(direction) + CalculateKnockBack();
+    //}
+    protected override void FixedUpdate()
     {
-        if (stunned > 0f) { return; }
-        if(Vector2.Distance(targetDestination.position, transform.position) < distance)
-        {
-            rb.velocity = Vector2.zero;
-            return;
-        }
-
-        Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rb.velocity = CalculateMovementVelocity(direction) + CalculateKnockBack();
+        if (isDeath) { return; }
+        ProcessStun();
     }
-
     protected override void Update()
     {
         base.Update();
         Attack();
-
     }
     protected override void Attack()
     {

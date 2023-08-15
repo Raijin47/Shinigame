@@ -27,6 +27,6 @@ MonoBehaviour:
     attackAreaSize: 0.7
     timeBurn: 0
     damageBurn: 0
-    duration: 0
+    duration: 10
   weaponBasePrefab: {fileID: 5001563910123114232, guid: f542fdc598785c244a30120c51f3a8ff, type: 3}
   upgrade: {fileID: 11400000, guid: 91acb83421ce61840977cd932162a0a6, type: 2}

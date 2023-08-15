@@ -16,4 +16,8 @@ public class EssentialService : MonoBehaviour
         if (instance == null)
             instance = this;
     }
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf8c45327f37894f845dbff80660da1, type: 3}
+  m_Name: EnemyRunner
+  m_EditorClassIdentifier: 
+  originalPrefab: {fileID: 9051629161091168837, guid: ff521bbf30450594ba76d541fb4cc7c9, type: 3}
+  containerPrefab: {fileID: 5867147466848371691, guid: 25b1bee518ed3994782181de6cc53cb2, type: 3}
+  poolID: 123412

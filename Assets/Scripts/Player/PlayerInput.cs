@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private Joystick joystick;
     [HideInInspector] public Vector2 direction;
-    private PlatformInput state;
+    [SerializeField] private PlatformInput state;
 
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;

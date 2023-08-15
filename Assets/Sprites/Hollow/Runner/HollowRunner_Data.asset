@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: HollowRunner_Data
+  m_EditorClassIdentifier: 
+  dataName: HollowRunner
+  dragonBonesJSON: {fileID: 4900000, guid: 801563e82d679e448abd5af3f18fb13f, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 897e4b55064c10f4e9d88370d4dcbe83, type: 3}
+    texture: {fileID: 2800000, guid: fccb3e2d5fea0ac4c80c8a2d309c334c, type: 3}
+    material: {fileID: 2100000, guid: 08d0ab1d35fca7b4493a66886c653897, type: 2}
+    uiMaterial: {fileID: 0}

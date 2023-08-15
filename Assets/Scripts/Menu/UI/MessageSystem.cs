@@ -1,23 +1,24 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using CartoonFX;
 
 public class MessageSystem : MonoBehaviour
 {
-    public static MessageSystem instance;
-    [SerializeField] private CFXR_ParticleText[] message;
-    [SerializeField]private Vector2 offset;
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
-
+    [SerializeField] private Vector2 offset;
     [SerializeField] private GameObject damageMessage;
+
     List<TextMeshPro> messagePool;
+    [SerializeField] private int objCount;
     private int count;
 
+    private void Start()
+    {
+        messagePool = new List<TextMeshPro>();
+        for(int i = 0; i < objCount; i++)
+        {
+            Populate();
+        }
+    }
     public void Populate()
     {
         GameObject go = Instantiate(damageMessage, transform);
@@ -26,12 +27,12 @@ public class MessageSystem : MonoBehaviour
     }
     public void PostMessage(string text, Vector2 worldPosition)
     {
-        message[count].transform.position = worldPosition + offset;
-        message[count].UpdateText(text);
-        message[count].Play();
+        messagePool[count].gameObject.SetActive(true);
+        messagePool[count].transform.position = worldPosition + offset;
+        messagePool[count].text = text;
 
         count += 1;
-        if (count >= message.Length)
+        if (count >= objCount)
         {
             count = 0;
         }

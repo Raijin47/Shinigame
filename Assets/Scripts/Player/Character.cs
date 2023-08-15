@@ -86,7 +86,7 @@ public class Character : MonoBehaviour
 
         int movementSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.MovementSpeed);
         float movementSpeedBase = data.selectedCharacter.MovementSpeed;
-        float speed = (movementSpeedBase * (1 + 0.05f * movementSpeedUpgradeLevel)) * movementSpeedItem;
+        float speed = (movementSpeedBase * (1 + 0.03f * movementSpeedUpgradeLevel)) * movementSpeedItem;
         playerMovement.SetSpeed(speed);
 
         int ExperienceBoostUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ExperienceBoost);

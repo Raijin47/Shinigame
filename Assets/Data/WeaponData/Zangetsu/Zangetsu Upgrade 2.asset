@@ -22,12 +22,12 @@ MonoBehaviour:
     damage: 2
     timeToAttack: 0
     numberOfAttacks: 0
-    numberOfHits: 0
+    numberOfHits: 4
     projectileSpeed: 0
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-    attackAreaSize: 0.1
+    attackAreaSize: 0
     timeBurn: 0
     damageBurn: 0
     duration: 0

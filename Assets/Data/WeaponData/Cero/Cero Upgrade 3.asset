@@ -25,12 +25,12 @@ MonoBehaviour:
     numberOfHits: 0
     projectileSpeed: 0
     stun: 0
-    knockback: 0
-    knockbackTimeWeight: 0
+    knockback: 1
+    knockbackTimeWeight: 0.1
     attackAreaSize: 0
     timeBurn: 0
     damageBurn: 0
-    duration: 0
+    duration: 0.2
   item: {fileID: 0}
   itemStats:
     damage: 0

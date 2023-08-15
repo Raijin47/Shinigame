@@ -1,12 +1,19 @@
 Key,ru,en
-Cero,Серо,Cero
-CeroDes,Выстреливает концентрированную духовную энергию в виде луча.,Shoots concentrated spiritual energy in the form of a ray.
-CeroUnlock,Разблокировать Серо,Unlock Cero
-CeroUp,Улучшить Серо,Upgrade Cero
-CeroUp1,Увеличивает урон от Серо на 33%.,Increases Cero Damage by 33%.
-CeroUp2,Серо позволяет отталкивать врагов.,Сero begins to repel enemies.
-CeroUp3,Увеличивает скорость вращения Серо на 20% и его урон на 15%.,Increases Cero spin speed by 20% and his damage by 15%
-CeroUp4,Сокращает время до повторной активации Серо на 10%.,Reduces the time to reactivate the Cero by 10%.
-CeroUp5,Увеличивает продолжительность действия Серо на 20%.,Increases the duration of the action of Cero by 20%.
-CeroUp6,Увеличивает продолжительность действия Серо на 10% и его урон на 15%.,Increases the duration of the action of the Cero by 10% and its damage by 15%.
-CeroUp7,Увеличивает скорость вращения Серо на 40%.,Increases the rotation speed of the Cero by 40%.
+CeroUp1,"+25% к базовой скорости.
++1 к базовому урону.","+25% to base speed.
++1 to base damage."
+CeroUp2,"Уменьшает перезарядку на 0.4 секунды.
++2 к базовому урону.","Reduces cooldown by 0.4 seconds.
++2 to base damage."
+CeroUp3,"Продлевает время действия на 0.2 секунды.
+Серо позволяет отталкивать врагов.","Extends the action time by 0.2 seconds.
+Cero allows you to repel enemies."
+CeroUp4,"Уменьшает перезарядку на 0.6 секунды.
++2 к базовому урону.","Reduces cooldown by 0.6 seconds.
++2 to base damage."
+CeroUp5,"+25% к базовой скорости.
++3 к базовому урону.","+25% to base speed.
++3 to base damage."
+CeroUp6,"Продлевает время действия на 0.4 секунды.
++4 к базовому урону.","Extends the action time by 0.4 seconds.
++4 to base damage."

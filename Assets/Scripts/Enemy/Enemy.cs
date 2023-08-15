@@ -52,13 +52,12 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private float currentTime;
     private float timeToBurn = 0.5f;
     private float curTTB;
-    
-
+ 
     private int burnDamage;
 
     private bool isBurn = false;
     private bool isRight = true;
-    private bool isDeath = false;
+    protected bool isDeath = false;
 
     private void Awake()
     {
@@ -97,9 +96,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         burn = time;
         burnDamage += damage;
         enemyFade.Fire(isBurn);
-
     }
-    private void ProcessBurn()
+    protected void ProcessBurn()
     {
         if(isBurn)
         {
@@ -132,7 +130,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             currentTime = timeToAttack;
         }
     }
-    private void Flip()
+    protected void Flip()
     {
         if (transform.position.x > targetDestination.position.x)
         {
@@ -151,7 +149,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             }
         }
     }
-    private void ProcessStun()
+    protected void ProcessStun()
     {
         if(stunned > 0f)
         {
@@ -197,7 +195,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private void Defeated()
     {
         isDeath = true;
-        enemyFade.Death(isDeath);
+        enemyFade.Death();
         _boxCol.enabled = false;
     }
     public void ReturnToPool()
@@ -213,12 +211,11 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             Destroy(gameObject);
         }
     }
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         if(enemyFade != null)
         {
             isDeath = false;
-            enemyFade.Death(isDeath);
             enemyFade.Fire(false);
             _boxCol.enabled = true;
         }

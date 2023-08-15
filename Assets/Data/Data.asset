@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f5c78592c1a2c4994cacb2864e3bdb, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  souls: 90320
-  butterflies: 20
+  souls: 90360
+  butterflies: 0
   stageCompletion: 010101
   upgrades:
   - persisrentUpgrades: 0
@@ -68,4 +68,4 @@ MonoBehaviour:
     level: 1
     maxLevel: 3
     costToUpgrade: 640000006400000064000000
-  selectedCharacter: {fileID: 11400000, guid: 7f27d2bcef8c823418f530e8326a3efd, type: 2}
+  selectedCharacter: {fileID: 11400000, guid: 63fb5a02d9d6c1341b6b959d59e41337, type: 2}

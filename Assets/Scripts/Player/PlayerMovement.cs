@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             lastVerticalDeCoupledVector = movementVector.y;
         }
 
+        anim.isMove = movementVector != Vector2.zero;
         anim.horizontal = movementVector.x;
 
         rb.velocity = movementVector.normalized * _speed;

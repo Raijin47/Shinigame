@@ -1,12 +1,19 @@
 Key,ru,en
-Soten,Сюн Сюн Рикка,Shun Shun Rikka
-SotenDes,Выпускает духов летающих на поле боя которые используются для атаки и исцеления.,Releases spirits flying on the battlefield that are used to attack and heal.
-SotenUnlock,Разблокировать Сюн Сюн Рикка,Unlock Shun Shun Rikka
-SotenUp,Улучшить Сюн Сюн Рикка,Upgrade Shun Shun Rikka
-SotenUp1,Увеличивает продолжительность действия на 4 секунды и базовую атаку на 2 единицы.,Increases the duration of the action by 4 seconds and the base attack by 2 units.
-SotenUp2,Увеличивает базовую атаку на 4 единицы.,Increases the base attack by 4 units.
-SotenUp3,Увеличивает скорость полёта духов на 60%.,Increases the flight speed of spirits by 60%.
-SotenUp4,Сокращает время до повторной активации на 33%.,Reduces the time to reactivation by 33%.
-SotenUp5,Сокращает время до повторной активации на 10% и базовую атаку на 2 единицы.,Reduces the time to reactivation by 10% and the base attack by 2 units.
-SotenUp6,Увеличивает продолжительность действия на 8 секунд.,Increases the duration of the action by 8 seconds.
-SotenUp7,Увеличивает размер духов на 50%.,Increases the size of the perfume by 50%.
+SotenUp1,"50% к базовой скорости.
++2 к базовому урону.","+50% to base speed.
++2 to base damage."
+SotenUp2,"Уменьшает перезарядку на 0.9 секунды.
++2 к базовому урону.","Reduces cooldown by 0.9 seconds.
++2 to base damage."
+SotenUp3,"50% к базовой скорости.
++2 к базовому урону.","+50% to base speed.
++2 to base damage."
+SotenUp4,"Продлевает время действия на 2 секунды.
++4 к базовому урону.","Extends the action time by 2 seconds.
++4 to base damage."
+SotenUp5,"Уменьшает перезарядку на 0.9 секунды.
++4 к базовому урону.","Reduces cooldown by 0.9 seconds.
++4 to base damage."
+SotenUp6,"Продлевает время действия на 2 секунды.
++4 к базовому урону.","Extends the action time by 2 seconds.
++4 to base damage."

@@ -1,12 +1,19 @@
 Key,ru,en
-Zangetsu,Тенса Зангетсу,Tensa Zangetsu
-ZangetsuDes,"Выпускает сгусток энергии принимающий форму полумесяца, способен поразить множество целей.","Releases a clot of energy taking the form of a crescent moon, capable of hitting many targets."
-ZangetsuUnlock,Разблокировать Зангетсу,Unlock Tensa Zangetsu
-ZangetsuUp,Улучшить Зангетсу,Upgrade Tensa Zangetsu
-ZangetsuUp1,Увеличивает базовый урон от гетсуги на 4 единицы.,Increases the base damage from getsuga by 4 units.
-ZangetsuUp2,Увеличивает размер гетсуги на 10% и её базовый урон на 2 единицы.,Increases the size of the getsuga by 10% and its base damage by 2 units.
-ZangetsuUp3,Увеличивает размер гетсуги на 20%.,Increases the size of the getsuga by 20%.
-ZangetsuUp4,Сокращает время до повторного использования гетсуги на 25%.,Reduces the time to reuse getsuga by 25%.
-ZangetsuUp5,Сокращает время до повторного использования гетсуги на 10% и её базовый урон на 2 единицы.,Reduces the time to reuse the getsuga by 10% and its base damage by 2 units.
-ZangetsuUp6,Гетсуга начинает отталкивать врагов.,Getsuga begins to repel enemies.
-ZangetsuUp7,Улучшает пробивание гетсуги на 10 единиц.,Improves the penetration of getsuga by 10 units.
+ZangetsuUp1,"Уменьшает перезарядку на 0.5 секунды.
++2 к базовому урону.","Reduces cooldown by 0.5 seconds.
++2 to base damage."
+ZangetsuUp2,"Проходит сквозь ещё 4 врага.
++2 к базовому урону.","Passes through 4 more enemies.
++2 to base damage."
+ZangetsuUp3,"Уменьшает перезарядку на 0.5 секунды.
++2 к базовому урону.","Reduces cooldown by 0.5 seconds.
++2 to base damage."
+ZangetsuUp4,"+30% к базовой скорости.
++3 к базовому урону.","+30% to base speed.
++3 to base damage."
+ZangetsuUp5,"Гетсуга позволяет отталкивать врагов.
++3 к базовому урону.","Getsuga allows you to repel enemies.
++3 to base damage."
+ZangetsuUp6,"+50% к базовой области.
++6 к базовому урону.","+50% to base area.
++6 to base damage."

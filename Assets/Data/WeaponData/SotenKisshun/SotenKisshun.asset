@@ -16,17 +16,17 @@ MonoBehaviour:
   level: F
   Name: Soten
   stats:
-    damage: 12
+    damage: 8
     timeToAttack: 10
     numberOfAttacks: 1
     numberOfHits: 0
-    projectileSpeed: 10
+    projectileSpeed: 5
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
     attackAreaSize: 0.5
     timeBurn: 0
     damageBurn: 0
-    duration: 12
+    duration: 9
   weaponBasePrefab: {fileID: 3928154488159259737, guid: 375a4d8aa3ac23b40bc556220f6fe6b4, type: 3}
   upgrade: {fileID: 11400000, guid: 58de57fca72d7024b96067c6750d5950, type: 2}

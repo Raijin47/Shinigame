@@ -20,5 +20,5 @@ MonoBehaviour:
   startingWeapon: {fileID: 11400000, guid: e5db22892ba8b7749ae8a3ef0fcdf7d8, type: 2}
   Level: 1
   Health: 140
-  MovementSpeed: 2.1
+  MovementSpeed: 3.2
   Damage: 1.2
