@@ -55,6 +55,7 @@ public class EnemyManager : MonoBehaviour
     private List<Enemy> _bossEnemiesList;
     private List<EnemySpawnGroup> _enemySpawnGroupList;
     private List<EnemySpawnGroup> _repeatedSpawnGroupList;
+    private List<IEnemy> _enemies = new List<IEnemy>();
 
     public void AddGroupToSpawn(EnemyData enemyToSpawn, int count, bool isBoss)
     {
@@ -66,7 +67,7 @@ public class EnemyManager : MonoBehaviour
     }
     public void AddRepeatedSpawn(StageEvent stageEvent, bool isBoss)
     {
-        EnemySpawnGroup repeatSpawnGroup = new EnemySpawnGroup(stageEvent.enemyToSpawn, stageEvent.count, isBoss);
+        var repeatSpawnGroup = new EnemySpawnGroup(stageEvent.enemyToSpawn, stageEvent.count, isBoss);
         repeatSpawnGroup.SetRepeatSpawn(stageEvent.repeatEverySeconds, stageEvent.repeatCount);
 
         if (_repeatedSpawnGroupList == null)
@@ -78,15 +79,17 @@ public class EnemyManager : MonoBehaviour
     }
     public void SpawnEnemy(EnemyData enemyToSpawn, bool isBoss)
     {
-        Vector3 position = GenerateSpawnPos();
+        var position = GenerateSpawnPos();
 
         GameObject newEnemy = _poolManager.GetObject(enemyToSpawn.poolObjectData);
         newEnemy.transform.position = position;
 
-        Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
+        var newEnemyComponent = newEnemy.GetComponent<Enemy>();
         newEnemyComponent.SetTarget(_player, _chara, _dropManager);
         newEnemyComponent.SetStats(enemyToSpawn.stats);
         newEnemyComponent.UpdateStatsForProgress(_stageProgress.Progress);
+        newEnemyComponent.Activate();
+        _enemies.Add(newEnemyComponent);
         if (isBoss)
         {
             SpawnBossEnemy(newEnemyComponent);
@@ -219,6 +222,17 @@ public class EnemyManager : MonoBehaviour
         UpdateBossHealth();
         ProcessSpawn();
         ProcessRepeatedSpawnGroups();
+        for (int i = 0; i < _enemies.Count; i++)
+        {
+            _enemies[i].UpdateState();
+        }
+    }
+    private void FixedUpdate()
+    {
+        for (int i = 0; i < _enemies.Count; i++)
+        {
+            _enemies[i].UpdateAction();
+        }
     }
     private void OnDrawGizmos()
     {

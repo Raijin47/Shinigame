@@ -100,6 +100,7 @@ MonoBehaviour:
     Damage: 0
     ExperienceReward: 0
     MoveSpeed: 0
+  _rigidbody: {fileID: 7847269316863069730}
   _attackArea: {x: 0, y: 0}
   _offset: {x: 0, y: 0, z: 0}
   _player:
@@ -109,6 +110,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 778b6154553d4ad4da2b824934da1c26, type: 2}
   _chanceDrop: 0.1
   _timeToAttack: 6.19
+  _enemyFade: {fileID: 0}
+  _boxCol: {fileID: 4208301388889419240}
   _distance: 5
   _projectile: {fileID: 11400000, guid: df71c6234b0e77043acecd310708c682, type: 2}
   _projectileSpawner: {fileID: 1087116118951160213}

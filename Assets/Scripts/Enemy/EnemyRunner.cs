@@ -13,7 +13,7 @@ public class EnemyRunner : Enemy
         _rigidbody.velocity = _direction * Stats.MoveSpeed;
     }
 
-    protected override void Activate()
+    public override void Activate()
     {
         base.Activate();
         if (_targetDestination != null)
@@ -22,7 +22,7 @@ public class EnemyRunner : Enemy
             Flip();
         }
     }
-    protected override void UpdateState()
+    public override void UpdateState()
     {
         if (_isDeath) return;
         ProcessBurn();

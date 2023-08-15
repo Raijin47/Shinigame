@@ -183,6 +183,7 @@ MonoBehaviour:
     Damage: 0
     ExperienceReward: 0
     MoveSpeed: 0
+  _rigidbody: {fileID: 4713639122484064503}
   _attackArea: {x: 0.7, y: 0.31}
   _offset: {x: -0.025, y: 0.07, z: 0}
   _player:
@@ -192,3 +193,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 778b6154553d4ad4da2b824934da1c26, type: 2}
   _chanceDrop: 0.1
   _timeToAttack: 0.5
+  _enemyFade: {fileID: 0}
+  _boxCol: {fileID: 796258090555027009}

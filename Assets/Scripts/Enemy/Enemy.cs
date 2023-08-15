@@ -25,13 +25,13 @@ public class EnemyStats
         //this.experienceReward = (int)(experienceReward * progress);
     }
 }
-public class Enemy : MonoBehaviour, IDamageable, IPoolMember
+public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
 {
     public EnemyStats Stats;
 
     protected bool _isDeath = false;
 
-    protected Rigidbody2D _rigidbody;
+    [SerializeField] protected Rigidbody2D _rigidbody;
     protected Transform _targetDestination;
 
     [SerializeField] private Vector2 _attackArea;
@@ -40,6 +40,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     [SerializeField] private PoolObjectData[] _dropData;
     [SerializeField, Range(0f,1f)] private float _chanceDrop;
     [SerializeField] protected float _timeToAttack = .5f;
+
+    [SerializeField] private BoxCollider2D _boxCol;
 
     private bool _isBurn = false;
     private bool _isRight = true;
@@ -58,11 +60,23 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     private Character _targetCharacter;
     private PoolMember _poolMember;
-    private EnemyFade _enemyFade; 
-    private BoxCollider2D _boxCol;
+    private EnemyFade _enemyFade;
     private MessageSystem _message;
     private DropManager _dropManager;
 
+    public virtual void Activate()
+    {
+        _isDeath = false;
+        _boxCol.enabled = true;
+        if (_message == null)
+            _message = EssentialService.instance.message;
+
+        if (_enemyFade == null)
+        {
+            _enemyFade = GetComponentInChildren<EnemyFade>();
+        }
+        _enemyFade.Fire(false);
+    }
     public void SetTarget(GameObject target, Character chara, DropManager drop)
     {
         _targetDestination = target.transform;
@@ -121,6 +135,19 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         _poolMember = poolMember;
     }
+    public virtual void UpdateState()
+    {
+        if (_isDeath) return;
+        Flip();
+        ProcessBurn();
+        ProcessStun();
+        Attack();
+    }
+    public virtual void UpdateAction()
+    {
+        if (_isDeath) return;
+        Move();
+    }
 
     internal void UpdateStatsForProgress(float progress)
     {
@@ -130,29 +157,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         Stats = new EnemyStats(stats);
     }
-    protected virtual void Activate()
-    {
-        if (_enemyFade != null)
-        {
-            _isDeath = false;
-            _enemyFade.Fire(false);
-            _boxCol.enabled = true;
-        }
-    }
-    protected virtual void UpdateState()
-    {
-        if (_isDeath) return;
-        Flip();
-        ProcessBurn();
-        ProcessStun();     
-        Attack();
-    }
-    protected virtual void UpdateAction()
-    {
-        if (_isDeath) return;
-        Move();
-    }
-
+   
+ 
     protected void ProcessBurn()
     {
         if(_isBurn)
@@ -239,26 +245,15 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         _boxCol.enabled = false;
     }
 
-   
-    private void Awake()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
-    }
-    private void Start()
-    {
-        _enemyFade = GetComponentInChildren<EnemyFade>();
-        _boxCol = GetComponent<BoxCollider2D>();
-        _message = EssentialService.instance.message;
-    }
 
-    private void Update()
-    {
-        UpdateState();
-    }
-    private void FixedUpdate()
-    {
-        UpdateAction();
-    }
+    //private void Update()
+    //{
+    //    UpdateState();
+    //}
+    //private void FixedUpdate()
+    //{
+    //    UpdateAction();
+    //}
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

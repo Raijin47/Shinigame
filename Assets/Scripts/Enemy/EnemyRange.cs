@@ -25,7 +25,7 @@ public class EnemyRange : Enemy
 
         return projectileGO;
     }
-    protected override void UpdateState()
+    public override void UpdateState()
     {
         if (_isDeath) return;
         ProcessStun();

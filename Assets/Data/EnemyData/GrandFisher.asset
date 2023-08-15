@@ -15,7 +15,7 @@ MonoBehaviour:
   nameEnemy: Hollow
   poolObjectData: {fileID: 11400000, guid: ad9b5f6e3a45dfe4386a7f2cc2eaade3, type: 2}
   stats:
-    hp: 5000
-    damage: 15
-    experienceReward: 10000
-    moveSpeed: 3.2
+    Hp: 5000
+    Damage: 15
+    ExperienceReward: 10000
+    MoveSpeed: 3.2

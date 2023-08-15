@@ -38,8 +38,8 @@ public class EnemyFade : MonoBehaviour
     public void Fire(bool isBurn)
     {
         _burnValue = isBurn ? 1 : 0;
-        _blockBurning.SetFloat(firePropertyID, _burnValue);
-        _renderer.SetPropertyBlock(_blockBurning);
+        _blockBurning?.SetFloat(firePropertyID, _burnValue);
+        _renderer?.SetPropertyBlock(_blockBurning);
     }
     IEnumerator DeathCOR()
     {
