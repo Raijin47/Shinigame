@@ -95,23 +95,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba8c4696511c5947b301dedebe9e8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-    hp: 0
-    damage: 0
-    experienceReward: 0
-    moveSpeed: 0
-  attackArea: {x: 0, y: 0}
-  offset: {x: 0, y: 0, z: 0}
-  player:
+  Stats:
+    Hp: 0
+    Damage: 0
+    ExperienceReward: 0
+    MoveSpeed: 0
+  _attackArea: {x: 0, y: 0}
+  _offset: {x: 0, y: 0, z: 0}
+  _player:
     serializedVersion: 2
     m_Bits: 256
-  dropData:
+  _dropData:
   - {fileID: 11400000, guid: 778b6154553d4ad4da2b824934da1c26, type: 2}
   _chanceDrop: 0.1
-  timeToAttack: 6.19
-  distance: 5
-  projectile: {fileID: 11400000, guid: df71c6234b0e77043acecd310708c682, type: 2}
-  projectileSpawner: {fileID: 1087116118951160213}
+  _timeToAttack: 6.19
+  _distance: 5
+  _projectile: {fileID: 11400000, guid: df71c6234b0e77043acecd310708c682, type: 2}
+  _projectileSpawner: {fileID: 1087116118951160213}
 --- !u!1 &4986041269361489405
 GameObject:
   m_ObjectHideFlags: 0

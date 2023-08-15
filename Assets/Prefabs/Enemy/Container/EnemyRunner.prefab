@@ -94,20 +94,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d513af8298f4ec64eb520be1e56b233e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-    hp: 0
-    damage: 0
-    experienceReward: 0
-    moveSpeed: 0
-  attackArea: {x: 1.12, y: 0.51}
-  offset: {x: 0, y: 0.2, z: 0}
-  player:
+  Stats:
+    Hp: 0
+    Damage: 0
+    ExperienceReward: 0
+    MoveSpeed: 0
+  _attackArea: {x: 1.12, y: 0.51}
+  _offset: {x: 0, y: 0.2, z: 0}
+  _player:
     serializedVersion: 2
     m_Bits: 256
-  dropData:
+  _dropData:
   - {fileID: 11400000, guid: 778b6154553d4ad4da2b824934da1c26, type: 2}
   _chanceDrop: 0.2
-  timeToAttack: 0.5
+  _timeToAttack: 0.5
 --- !u!1 &8564591165895298225
 GameObject:
   m_ObjectHideFlags: 0
