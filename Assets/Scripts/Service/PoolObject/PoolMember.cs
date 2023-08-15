@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class PoolMember : MonoBehaviour
 {
-    private ObjectPool pool;
+    private ObjectPool _pool;
 
     public void Set(ObjectPool pool)
     {
-        this.pool = pool;
+        _pool = pool;
         GetComponent<IPoolMember>().SetPoolMember(this);
     }
 
     public void ReturnToPool()
     {
-        pool.ReturnToPool(gameObject);
+        _pool.ReturnToPool(gameObject);
     }
 }

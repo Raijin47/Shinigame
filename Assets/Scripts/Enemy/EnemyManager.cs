@@ -4,68 +4,97 @@ using UnityEngine.UI;
 
 public class EnemySpawnGroup
 {
-    public EnemyData enemyData;
-    public int count;
-    public bool isBoss;
+    public EnemyData EnemyData;
+    public int Count;
+    public bool IsBoss;
 
-    public float repeatTimer;
-    public float timeBetweenSpawn;
-    public int repeatCount;
+    public float RepeatTimer;
+    public float TimeBetweenSpawn;
+    public int RepeatCount;
 
     public EnemySpawnGroup(EnemyData enemyData, int count, bool isBoss)
     {
-        this.enemyData = enemyData;
-        this.count = count;
-        this.isBoss = isBoss;
+        EnemyData = enemyData;
+        Count = count;
+        IsBoss = isBoss;
     }
     public void SetRepeatSpawn(float timeBetweenSpawns, int repeatCount)
     {
-        this.timeBetweenSpawn = timeBetweenSpawns;
-        this.repeatCount = repeatCount;
-        repeatTimer = timeBetweenSpawn;
+        TimeBetweenSpawn = timeBetweenSpawns;
+        RepeatCount = repeatCount;
+        RepeatTimer = TimeBetweenSpawn;
     }
 }
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private PoolManager poolManager;
-    [SerializeField] private Vector2 spawnArea;
-    [SerializeField] private Slider bossHealthBar;
-    [SerializeField] private Character chara;
-    [SerializeField] private DropManager dropManager;
+    [SerializeField] private float _offset;
 
-    [SerializeField] private float offset;
+    [SerializeField] private Vector2 _spawnArea;
 
-    private StageProgress stageProgress;
-    private GameObject player;
+    [SerializeField] private PoolManager _poolManager;
+    [SerializeField] private Slider _bossHealthBar;
+    [SerializeField] private Character _chara;
+    [SerializeField] private DropManager _dropManager;
 
-    private Vector3 min;
-    private Vector3 max;
-    private Vector3 center;
-    private Vector3 size;
-    private Vector3 halfSize;
-    private Vector3 borderPoint;
 
-    List<Enemy> bossEnemiesList;
-    List<EnemySpawnGroup> enemySpawnGroupList;
-    List<EnemySpawnGroup> repeatedSpawnGroupList;
+    private int _totalBossHealth;
+    private int _currentBossHealth;
+    private int _spawnPerFrame = 2;
 
-    private int totalBossHealth;
-    private int currentBossHealth;
-    private int spawnPerFrame = 2;
+    private Vector3 _min;
+    private Vector3 _max;
+    private Vector3 _center;
+    private Vector3 _size;
+    private Vector3 _halfSize;
+    private Vector3 _borderPoint;
 
-    private void Start()
+    private StageProgress _stageProgress;
+    private GameObject _player;
+
+    private List<Enemy> _bossEnemiesList;
+    private List<EnemySpawnGroup> _enemySpawnGroupList;
+    private List<EnemySpawnGroup> _repeatedSpawnGroupList;
+
+    public void AddGroupToSpawn(EnemyData enemyToSpawn, int count, bool isBoss)
     {
-        player = GameManager.instance.playerTransform.gameObject;
-        bossHealthBar = FindObjectOfType<BossHPBar>(true).GetComponent<Slider>();
-        stageProgress = FindObjectOfType<StageProgress>();
+        EnemySpawnGroup newGroupToSpawn = new EnemySpawnGroup(enemyToSpawn, count, isBoss);
+
+        if (_enemySpawnGroupList == null) { _enemySpawnGroupList = new List<EnemySpawnGroup>(); }
+
+        _enemySpawnGroupList.Add(newGroupToSpawn);
     }
-    private void Update()
+    public void AddRepeatedSpawn(StageEvent stageEvent, bool isBoss)
     {
-        UpdateBossHealth();
-        ProcessSpawn();
-        ProcessRepeatedSpawnGroups();
-    }  
+        EnemySpawnGroup repeatSpawnGroup = new EnemySpawnGroup(stageEvent.enemyToSpawn, stageEvent.count, isBoss);
+        repeatSpawnGroup.SetRepeatSpawn(stageEvent.repeatEverySeconds, stageEvent.repeatCount);
+
+        if (_repeatedSpawnGroupList == null)
+        {
+            _repeatedSpawnGroupList = new List<EnemySpawnGroup>();
+        }
+
+        _repeatedSpawnGroupList.Add(repeatSpawnGroup);
+    }
+    public void SpawnEnemy(EnemyData enemyToSpawn, bool isBoss)
+    {
+        Vector3 position = GenerateSpawnPos();
+
+        GameObject newEnemy = _poolManager.GetObject(enemyToSpawn.poolObjectData);
+        newEnemy.transform.position = position;
+
+        Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
+        newEnemyComponent.SetTarget(_player, _chara, _dropManager);
+        newEnemyComponent.SetStats(enemyToSpawn.stats);
+        newEnemyComponent.UpdateStatsForProgress(_stageProgress.Progress);
+        if (isBoss)
+        {
+            SpawnBossEnemy(newEnemyComponent);
+        }
+
+        newEnemy.transform.parent = transform;
+    }
+
     private Vector3 GenerateSpawnPos()
     {
         var ray = Camera.main.ScreenPointToRay(Vector2.zero);
@@ -73,145 +102,123 @@ public class EnemyManager : MonoBehaviour
 
         if (Physics.Raycast(ray2, out RaycastHit hit2, 100))
         {
-            max = hit2.point;
+            _max = hit2.point;
         }
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100))
         {
-            min = hit.point;
+            _min = hit.point;
         }
 
-        center = (min + max) / 2;
-        size = max - min;
-        halfSize = size / 2;
+        _center = (_min + _max) / 2;
+        _size = _max - _min;
+        _halfSize = _size / 2;
 
-        borderPoint = RandomPoint();
+        _borderPoint = RandomPoint();
 
-        return borderPoint;
+        return _borderPoint;
     }
     private Vector3 RandomPoint()
     {
-        var x = center.x;
-        var y = center.y;
-        var halfOffset = offset / 2;
+        var x = _center.x;
+        var y = _center.y;
+        var halfOffset = _offset / 2;
 
         if (Random.value > .5f)
         {
-            x -= Random.value > .5f ? -halfSize.x - halfOffset : halfSize.x + halfOffset;
-            y -= Random.Range(-halfSize.y, halfSize.y);
+            x -= Random.value > .5f ? -_halfSize.x - halfOffset : _halfSize.x + halfOffset;
+            y -= Random.Range(-_halfSize.y, _halfSize.y);
         }
         else
         {
-            x -= Random.Range(-halfSize.x, halfSize.x);
-            y -= Random.value > .5f ? -halfSize.y - halfOffset : halfSize.y + halfOffset;
+            x -= Random.Range(-_halfSize.x, _halfSize.x);
+            y -= Random.value > .5f ? -_halfSize.y - halfOffset : _halfSize.y + halfOffset;
         }
 
         return new Vector3(x, y);
     }
     private void ProcessRepeatedSpawnGroups()
     {
-        if(repeatedSpawnGroupList == null) { return; }
-        for(int i = repeatedSpawnGroupList.Count - 1; i >= 0; i--)
+        if(_repeatedSpawnGroupList == null) { return; }
+        for(int i = _repeatedSpawnGroupList.Count - 1; i >= 0; i--)
         {
-            repeatedSpawnGroupList[i].repeatTimer -= Time.deltaTime;
-            if(repeatedSpawnGroupList[i].repeatTimer < 0)
+            _repeatedSpawnGroupList[i].RepeatTimer -= Time.deltaTime;
+            if(_repeatedSpawnGroupList[i].RepeatTimer < 0)
             {
-                repeatedSpawnGroupList[i].repeatTimer = repeatedSpawnGroupList[i].timeBetweenSpawn;
-                AddGroupToSpawn(repeatedSpawnGroupList[i].enemyData, repeatedSpawnGroupList[i].count, repeatedSpawnGroupList[i].isBoss);
-                repeatedSpawnGroupList[i].repeatCount -= 1;
-                if(repeatedSpawnGroupList[i].repeatCount <=0)
+                _repeatedSpawnGroupList[i].RepeatTimer = _repeatedSpawnGroupList[i].TimeBetweenSpawn;
+                AddGroupToSpawn(_repeatedSpawnGroupList[i].EnemyData, _repeatedSpawnGroupList[i].Count, _repeatedSpawnGroupList[i].IsBoss);
+                _repeatedSpawnGroupList[i].RepeatCount -= 1;
+                if(_repeatedSpawnGroupList[i].RepeatCount <=0)
                 {
-                    repeatedSpawnGroupList.RemoveAt(i);
+                    _repeatedSpawnGroupList.RemoveAt(i);
                 }
             }
         }
     }
     private void ProcessSpawn()
     {
-        if(enemySpawnGroupList == null) { return; }
+        if(_enemySpawnGroupList == null) { return; }
 
-        for(int i = 0; i < spawnPerFrame; i++)
+        for(int i = 0; i < _spawnPerFrame; i++)
         {
-            if (enemySpawnGroupList.Count > 0)
+            if (_enemySpawnGroupList.Count > 0)
             {
-                if (enemySpawnGroupList[0].count <= 0) { return; }
-                SpawnEnemy(enemySpawnGroupList[0].enemyData, enemySpawnGroupList[0].isBoss);
-                enemySpawnGroupList[0].count -= 1;
+                if (_enemySpawnGroupList[0].Count <= 0) { return; }
+                SpawnEnemy(_enemySpawnGroupList[0].EnemyData, _enemySpawnGroupList[0].IsBoss);
+                _enemySpawnGroupList[0].Count -= 1;
 
-                if (enemySpawnGroupList[0].count <= 0)
+                if (_enemySpawnGroupList[0].Count <= 0)
                 {
-                    enemySpawnGroupList.RemoveAt(0);
+                    _enemySpawnGroupList.RemoveAt(0);
                 }
             }
         }
     }
     private void UpdateBossHealth()
     {
-        if(bossEnemiesList == null) { return; }
-        if(bossEnemiesList.Count == 0) { return; }
+        if(_bossEnemiesList == null) { return; }
+        if(_bossEnemiesList.Count == 0) { return; }
 
-        currentBossHealth = 0;
+        _currentBossHealth = 0;
 
-        for(int i= 0; i < bossEnemiesList.Count; i++)
+        for(int i= 0; i < _bossEnemiesList.Count; i++)
         {
-            if(bossEnemiesList[i] == null) { continue; }
-            currentBossHealth += bossEnemiesList[i].stats.hp;
+            if(_bossEnemiesList[i] == null) { continue; }
+            _currentBossHealth += _bossEnemiesList[i].Stats.Hp;
         }
 
-        bossHealthBar.value = currentBossHealth;
+        _bossHealthBar.value = _currentBossHealth;
 
-        if(currentBossHealth <= 0)
+        if(_currentBossHealth <= 0)
         {
-            bossHealthBar.gameObject.SetActive(false);
-            bossEnemiesList.Clear();
+            _bossHealthBar.gameObject.SetActive(false);
+            _bossEnemiesList.Clear();
         }
     }
-    public void AddGroupToSpawn(EnemyData enemyToSpawn, int count, bool isBoss)
-    {
-        EnemySpawnGroup newGroupToSpawn = new EnemySpawnGroup(enemyToSpawn, count, isBoss);
-
-        if(enemySpawnGroupList == null) { enemySpawnGroupList = new List<EnemySpawnGroup>(); }
-
-        enemySpawnGroupList.Add(newGroupToSpawn);
-    }
-    public void AddRepeatedSpawn(StageEvent stageEvent, bool isBoss)
-    {
-        EnemySpawnGroup repeatSpawnGroup = new EnemySpawnGroup(stageEvent.enemyToSpawn, stageEvent.count, isBoss);
-        repeatSpawnGroup.SetRepeatSpawn(stageEvent.repeatEverySeconds, stageEvent.repeatCount);
-
-        if(repeatedSpawnGroupList == null)
-        {
-            repeatedSpawnGroupList = new List<EnemySpawnGroup>();
-        }
-
-        repeatedSpawnGroupList.Add(repeatSpawnGroup);
-    }
-    public void SpawnEnemy(EnemyData enemyToSpawn, bool isBoss)
-    {
-        Vector3 position = GenerateSpawnPos();
-
-        GameObject newEnemy = poolManager.GetObject(enemyToSpawn.poolObjectData);
-        newEnemy.transform.position = position;
-
-        Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
-        newEnemyComponent.SetTarget(player, chara, dropManager);
-        newEnemyComponent.SetStats(enemyToSpawn.stats);
-        newEnemyComponent.UpdateStatsForProgress(stageProgress.Progress);
-        if(isBoss)
-        {
-            SpawnBossEnemy(newEnemyComponent);
-        }
-
-        newEnemy.transform.parent = transform;
-    }
+  
     private void SpawnBossEnemy(Enemy newBoss)
     {
-        if(bossEnemiesList == null) { bossEnemiesList = new List<Enemy>(); }
-        bossEnemiesList.Add(newBoss);
-        totalBossHealth += newBoss.stats.hp;
+        if(_bossEnemiesList == null) { _bossEnemiesList = new List<Enemy>(); }
+        _bossEnemiesList.Add(newBoss);
+        _totalBossHealth += newBoss.Stats.Hp;
 
-        bossHealthBar.gameObject.SetActive(true);
-        bossHealthBar.maxValue = totalBossHealth;
+        _bossHealthBar.gameObject.SetActive(true);
+        _bossHealthBar.maxValue = _totalBossHealth;
+    }
+  
+
+
+    private void Start()
+    {
+        _player = GameManager.instance.playerTransform.gameObject;
+        _bossHealthBar = FindObjectOfType<BossHPBar>(true).GetComponent<Slider>();
+        _stageProgress = FindObjectOfType<StageProgress>();
+    }
+    private void Update()
+    {
+        UpdateBossHealth();
+        ProcessSpawn();
+        ProcessRepeatedSpawnGroups();
     }
     private void OnDrawGizmos()
     {
@@ -225,7 +232,7 @@ public class EnemyManager : MonoBehaviour
         //Gizmos.DrawCube(center, size);
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(center, size + Vector3.one * offset);
+        Gizmos.DrawWireCube(_center, _size + Vector3.one * _offset);
         //Gizmos.DrawSphere(borderPoint, .3f);
     }
 }

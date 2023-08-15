@@ -3,46 +3,46 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    private PoolObjectData originalPoolData;
-    List<GameObject> pool;
+    private PoolObjectData _originalPoolData;
+    private List<GameObject> _pool;
     public void Set(PoolObjectData pod)
     {
-        pool = new List<GameObject>();
-        originalPoolData = pod;
+        _pool = new List<GameObject>();
+        _originalPoolData = pod;
     }
 
     public void ReturnToPool(GameObject gameObject)
     {
         gameObject.SetActive(false);
-        pool.Add(gameObject);
     }
 
-    public void InstantiateObject()
+    public GameObject InstantiateObject()
     {
-        GameObject newObject = Instantiate(originalPoolData.originalPrefab, transform);
-        GameObject mainObject = newObject;
+        var newObject = Instantiate(_originalPoolData.originalPrefab, transform);
+        var mainObject = newObject;
 
-        if (originalPoolData.containerPrefab != null)
+        if (_originalPoolData.containerPrefab != null)
         {
-            GameObject container = Instantiate(originalPoolData.containerPrefab);
+            var container = Instantiate(_originalPoolData.containerPrefab);
             newObject.transform.SetParent(container.transform);
             newObject.transform.localPosition = Vector2.zero;
             mainObject = container;
         }
 
-        pool.Add(mainObject);
-        PoolMember poolMember = mainObject.AddComponent<PoolMember>();
+        _pool.Add(mainObject);
+        var poolMember = mainObject.AddComponent<PoolMember>();
         poolMember.Set(this);
+        return mainObject;
     }
 
     public GameObject GetObject()
     {
-        if(pool.Count <= 0)
+        var go = _pool.Find(e => e.activeSelf == false);
+        if (go == null)
         {
-            InstantiateObject();
+            go = InstantiateObject();
         }
-        GameObject go = pool[0];
-        pool.RemoveAt(0);
+
         go.SetActive(true);
         return go;
     }

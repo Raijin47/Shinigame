@@ -2,30 +2,29 @@
 
 public class EnemyRunner : Enemy
 {
-    private Vector3 dir;
+    private Vector3 _direction;
     protected override void Move()
     {
-        if (dir == Vector3.zero)
+        if (_direction == Vector3.zero)
         {
-            dir = (targetDestination.position - transform.position).normalized;
+            _direction = (_targetDestination.position - transform.position).normalized;
             Flip();
         }
-        rb.velocity = dir * stats.moveSpeed;
+        _rigidbody.velocity = _direction * Stats.MoveSpeed;
     }
 
-    protected override void OnEnable()
+    protected override void Activate()
     {
-        base.OnEnable();
-        if (targetDestination != null)
+        base.Activate();
+        if (_targetDestination != null)
         {
-            dir = (targetDestination.position - transform.position).normalized;
+            _direction = (_targetDestination.position - transform.position).normalized;
             Flip();
         }
     }
-
-    protected override void Update()
+    protected override void UpdateState()
     {
-        if (isDeath) { return; }
+        if (_isDeath) return;
         ProcessBurn();
     }
 }

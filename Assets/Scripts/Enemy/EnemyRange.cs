@@ -2,11 +2,44 @@ using UnityEngine;
 
 public class EnemyRange : Enemy
 {
-    [SerializeField] private float distance;
-    [SerializeField] private PoolObjectData projectile;
-    [SerializeField] private Transform projectileSpawner;
-    private float currentTimeToAttack;
-    private PoolManager poolManager;
+    [SerializeField] private float _distance;
+    [SerializeField] private PoolObjectData _projectile;
+    [SerializeField] private Transform _projectileSpawner;
+
+    private float _currentTimeToAttack;
+    private PoolManager _poolManager;
+
+   
+    public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
+    {
+        if (_poolManager == null) _poolManager = EssentialService.instance.poolManager;
+
+        GameObject projectileGO = _poolManager.GetObject(poolObjectData);
+
+        projectileGO.transform.position = position;
+
+        EnemyProjectile projectile = projectileGO.GetComponent<EnemyProjectile>();
+
+        projectile.SetDirection(ShotDir(), Stats.Damage);
+
+
+        return projectileGO;
+    }
+    protected override void UpdateState()
+    {
+        if (_isDeath) return;
+        ProcessStun();
+        Attack();
+    }
+    protected override void Attack()
+    {
+        _currentTimeToAttack += Time.deltaTime;
+        if(_currentTimeToAttack > _timeToAttack)
+        {
+            SpawnProjectile(_projectile, _projectileSpawner.transform.position);
+            _currentTimeToAttack = 0;
+        }
+    }
     //protected override void Move()
     //{
     //    if (stunned > 0f) { return; }
@@ -19,47 +52,14 @@ public class EnemyRange : Enemy
     //    Vector3 direction = (targetDestination.position - transform.position).normalized;
     //    rb.velocity = CalculateMovementVelocity(direction) + CalculateKnockBack();
     //}
-    protected override void FixedUpdate()
-    {
-        if (isDeath) { return; }
-        ProcessStun();
-    }
-    protected override void Update()
-    {
-        base.Update();
-        Attack();
-    }
-    protected override void Attack()
-    {
-        currentTimeToAttack += Time.deltaTime;
-        if(currentTimeToAttack > timeToAttack)
-        {
-            SpawnProjectile(projectile, projectileSpawner.transform.position);
-            currentTimeToAttack = 0;
-        }
-    }
     private Vector2 ShotDir()
     {
         Vector2 dir;
 
-        dir = targetDestination.position - projectileSpawner.position;
+        dir = _targetDestination.position - _projectileSpawner.position;
         dir.Normalize();
 
         return dir;
     }
-    public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
-    {
-        if(poolManager == null) poolManager = EssentialService.instance.poolManager;
 
-        GameObject projectileGO = poolManager.GetObject(poolObjectData);
-
-        projectileGO.transform.position = position;
-
-        EnemyProjectile projectile = projectileGO.GetComponent<EnemyProjectile>();
-
-        projectile.SetDirection(ShotDir(), stats.damage);
-
-
-        return projectileGO;
-    }
 }

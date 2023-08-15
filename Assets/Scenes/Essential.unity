@@ -2063,12 +2063,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651dd903841cbfe469b7889cd7327c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolManager: {fileID: 695908193}
-  spawnArea: {x: 15, y: 9}
-  bossHealthBar: {fileID: 1584877885}
-  chara: {fileID: 1393391752}
-  dropManager: {fileID: 1293574921}
-  offset: 3
+  _offset: 3
+  _spawnArea: {x: 15, y: 9}
+  _poolManager: {fileID: 695908193}
+  _bossHealthBar: {fileID: 1584877885}
+  _chara: {fileID: 1393391752}
+  _dropManager: {fileID: 1293574921}
 --- !u!4 &436672558
 Transform:
   m_ObjectHideFlags: 0
