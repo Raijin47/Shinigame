@@ -25,20 +25,10 @@ public class EnemyRange : Enemy
 
         return projectileGO;
     }
-    public override void UpdateState()
-    {
-        if (_isDeath) return;
-        ProcessStun();
-        Attack();
-    }
+
     protected override void Attack()
     {
-        _currentTimeToAttack += Time.deltaTime;
-        if(_currentTimeToAttack > _timeToAttack)
-        {
-            SpawnProjectile(_projectile, _projectileSpawner.transform.position);
-            _currentTimeToAttack = 0;
-        }
+       SpawnProjectile(_projectile, _projectileSpawner.transform.position);
     }
     //protected override void Move()
     //{

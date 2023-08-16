@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using System.Data;
+using System.Collections;
 
 [Serializable]
 public class EnemyStats
@@ -25,7 +25,7 @@ public class EnemyStats
         //this.experienceReward = (int)(experienceReward * progress);
     }
 }
-public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
+public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 {
     public EnemyStats Stats;
 
@@ -43,18 +43,18 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
 
     [SerializeField] private BoxCollider2D _boxCol;
 
-    private bool _isBurn = false;
+    private bool _isActive;
+    private bool _isBurn;
+    private bool _isStunned;
     private bool _isRight = true;
 
     private int _burnDamage;
 
-    private float _stunned;
-    private float _burn;
+    private float _stunTime;
+    private float _burnTime;
     private float _knockbackForce;
     private float _knockbackTimeWeight;
-    private float _currentTime;
-    private float _timeToBurn = 0.5f;
-    private float _curTTB;
+    private float _burnDamageCycle = 0.5f;
 
     private Vector2 _knockbackVector;
 
@@ -64,8 +64,15 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
     private MessageSystem _message;
     private DropManager _dropManager;
 
+    private Coroutine _updateDirectionCoroutine;
+    private Coroutine _updateBurnProcessCoroutine;
+    private Coroutine _updateStunPrecessCoroutine;
+    private Coroutine _updateAttackPorecessCoroutine;
+    private Coroutine _updateMovementProcessCoroutine;
+
     public virtual void Activate()
     {
+        _isActive = true;
         _isDeath = false;
         _boxCol.enabled = true;
         if (_message == null)
@@ -76,6 +83,26 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
             _enemyFade = GetComponentInChildren<EnemyFade>();
         }
         _enemyFade.Fire(false);
+
+        if (_updateDirectionCoroutine != null)
+        {
+            StopCoroutine(_updateDirectionCoroutine);
+            _updateDirectionCoroutine = null;
+        }
+        _updateDirectionCoroutine = StartCoroutine(UpdateDirection());
+        if (_updateAttackPorecessCoroutine != null)
+        {
+            StopCoroutine(_updateAttackPorecessCoroutine);
+            _updateAttackPorecessCoroutine = null;
+        }
+        _updateAttackPorecessCoroutine = StartCoroutine(UpdateAttackPorecess());
+
+        if (_updateMovementProcessCoroutine != null)
+        {
+            StopCoroutine(_updateMovementProcessCoroutine);
+            _updateMovementProcessCoroutine = null;
+        }
+        _updateMovementProcessCoroutine = StartCoroutine(UpdateMovementProcess());
     }
     public void SetTarget(GameObject target, Character chara, DropManager drop)
     {
@@ -88,13 +115,23 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
         if (time == 0) { return; }
 
         _isBurn = true;
-        _burn = time;
+        _burnTime = time;
         _burnDamage += damage;
         _enemyFade.Fire(_isBurn);
+
+        if (_updateBurnProcessCoroutine != null)
+        {
+            StopCoroutine(_updateBurnProcessCoroutine);
+            _updateBurnProcessCoroutine = null;
+        }
+        StartCoroutine(UpdateBurnProcess());
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool showMessage = true)
     {
         Stats.Hp -= damage;
+        if (showMessage)
+            _message.PostMessage(damage.ToString(), transform.position);
+
         if (Stats.Hp < 1)
         {
             _targetCharacter.AddKilled();
@@ -116,12 +153,21 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
         }
     }
 
-    public void Stun(float stun)
+    public void Stun(float stunTime)
     {
-        if (stun == 0) { return; }
+        if (stunTime == 0) { return; }
 
-        _stunned = stun;
+        _isStunned = true;
+        _stunTime = stunTime;
         _rigidbody.velocity = Vector2.zero;
+
+        if (_updateStunPrecessCoroutine!=null)
+        {
+            StopCoroutine(_updateStunPrecessCoroutine);
+            _updateStunPrecessCoroutine = null;
+        }
+
+        StartCoroutine(UpdateStunPrecess());
     }
     public void Knockback(Vector2 vector, float force, float timeWeight)
     {
@@ -135,20 +181,7 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
     {
         _poolMember = poolMember;
     }
-    public virtual void UpdateState()
-    {
-        if (_isDeath) return;
-        Flip();
-        ProcessBurn();
-        ProcessStun();
-        Attack();
-    }
-    public virtual void UpdateAction()
-    {
-        if (_isDeath) return;
-        Move();
-    }
-
+  
     internal void UpdateStatsForProgress(float progress)
     {
         Stats.ApplyProgress(progress);
@@ -157,76 +190,74 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
     {
         Stats = new EnemyStats(stats);
     }
-   
- 
-    protected void ProcessBurn()
-    {
-        if(_isBurn)
-        {
-            if (_burn > 0f)
-            {
-                _burn -= Time.deltaTime;
-                _curTTB += Time.deltaTime;
-                if(_curTTB > _timeToBurn)
-                {
-                    _curTTB = 0;
-                    TakeDamage(_burnDamage);
-                    _message.PostMessage(_burnDamage.ToString(), transform.position);
-                }
-            }
-            else
-            {
-                _isBurn = false;
-                _enemyFade.Fire(_isBurn);
-                _burnDamage = 0;
-            }
-        }
-    }
+
+
     protected virtual void Attack()
     {
-        _currentTime -= Time.deltaTime;
-        if(_currentTime < 0)
-        {
-            Collider2D col = Physics2D.OverlapBox(transform.position + _offset, _attackArea, 0f, _player);
-            if(col != null) _targetCharacter.TakeDamage(Stats.Damage);
-            _currentTime = _timeToAttack;
-        }
+        _targetCharacter.TakeDamage(Stats.Damage);
     }
-    protected void Flip()
+    private IEnumerator UpdateAttackPorecess()
     {
-        if (transform.position.x > _targetDestination.position.x)
+        while (_isActive)
         {
-            if (_isRight)
+            yield return new WaitForSeconds(_timeToAttack);
+            var direction = _targetDestination.position - transform.position;
+            var directionLenth = direction.sqrMagnitude;
+            var maxDirectionLenth = (direction.normalized * _attackArea).sqrMagnitude;
+            if (directionLenth <= maxDirectionLenth)
             {
-                _isRight = false;
-                transform.localScale = new Vector2(-1, 1);
-            }
-        }
-        else
-        {
-            if (!_isRight)
-            {
-                _isRight = true;
-                transform.localScale = new Vector2(1, 1);
+                Attack();
             }
         }
     }
-    protected void ProcessStun()
+    private IEnumerator UpdateBurnProcess()
     {
-        if(_stunned > 0f)
+        var cyclesCount = MathF.Floor(_burnTime / _burnDamageCycle);
+        for (int i = 0; i < cyclesCount; i++)
         {
-            _stunned -= Time.deltaTime;
+            yield return new WaitForSeconds(_burnDamageCycle);
+            TakeDamage(_burnDamage);
+        }
+        _isBurn = false;
+        _enemyFade.Fire(_isBurn);
+        _burnDamage = 0;
+    }
+    private IEnumerator UpdateDirection()
+    {
+        while (_isActive)
+        {
+            var isRight = transform.position.x < _targetDestination.position.x;
+            if (_isRight != isRight)
+            {
+                _isRight = !_isRight;
+                transform.localScale = new Vector2(_isRight ? 1 : -1, 1);
+            }
+            yield return null;
+        }
+    }
+    private IEnumerator UpdateStunPrecess()
+    {
+        yield return new WaitForSeconds(_stunTime);
+        _isStunned = false;
+    }
+    private IEnumerator UpdateMovementProcess()
+    {
+        while (_isActive)
+        {
+            yield return new WaitUntil(() => _isStunned == false);
+
+            Move();
         }
     }
     protected virtual void Move()
     {
-        if (_stunned > 0f) { return; }
+        if (_isStunned) { return; }
         Vector3 direction = (_targetDestination.position - transform.position).normalized;
         _rigidbody.velocity = CalculateMovementVelocity(direction) + CalculateKnockBack();
     }
     protected Vector3 CalculateMovementVelocity(Vector3 direction)
     {
-        return direction * Stats.MoveSpeed * (_stunned > 0f || _isDeath ? 0f: 1f);
+        return direction * Stats.MoveSpeed;
     }
     protected Vector3 CalculateKnockBack()
     {
@@ -237,12 +268,21 @@ public class Enemy : MonoBehaviour,IEnemy, IDamageable, IPoolMember
 
         return _knockbackVector * _knockbackForce * (_knockbackTimeWeight > 0f ? 1f : 0f);
     }
-  
+
     private void Defeated()
     {
+        _isActive = false;
         _isDeath = true;
-        _enemyFade.Death();
         _boxCol.enabled = false;
+        _enemyFade.Death();
+
+        StopAllCoroutines();
+        _updateDirectionCoroutine = null;
+        _updateBurnProcessCoroutine = null;
+        _updateStunPrecessCoroutine = null;
+        _updateAttackPorecessCoroutine = null;
+        _updateMovementProcessCoroutine = null;
+
     }
 
 

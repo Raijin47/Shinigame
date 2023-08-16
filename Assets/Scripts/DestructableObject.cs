@@ -6,7 +6,7 @@ public class DestructableObject : MonoBehaviour, IDamageable, IPoolMember
     [SerializeField, Range(0,1f)] private float chance;
     private PoolMember poolMember;
     private DropManager dropManager;
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool showMessage = true)
     {
         dropManager.Drop(transform.position, drops, chance);
         DestroyObj();
