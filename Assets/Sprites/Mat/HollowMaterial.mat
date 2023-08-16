@@ -163,7 +163,7 @@ Material:
     - _BurnFade: 0
     - _BurnInsideContrast: 2
     - _BurnInsideNoiseFactor: 0.05
-    - _BurnRadius: 7
+    - _BurnRadius: 11
     - _BurnSwirlFactor: 1
     - _BurnWidth: 0.1
     - _CamouflageAnimated: 0
@@ -462,7 +462,7 @@ Material:
     - _FullDistortionDistortion: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _FullDistortionNoiseScale: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _FullGlowDissolveEdgeColor: {r: 11.98431, g: 0.627451, b: 0.627451, a: 0}
-    - _FullGlowDissolveNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - _FullGlowDissolveNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _GlitchDistortion: {r: 0.1, g: 0, b: 0, a: 0}
     - _GlitchDistortionScale: {r: 0, g: 3, b: 0, a: 0}
     - _GlitchDistortionSpeed: {r: 0, g: 1, b: 0, a: 0}
