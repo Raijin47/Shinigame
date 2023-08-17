@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private bool _isActive;
     private bool _isBurn;
     private bool _isStunned;
+    private bool _isknockback;
     private bool _isRight = true;
 
     private int _burnDamage;
@@ -57,6 +58,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private float _burnDamageCycle = 0.5f;
 
     private Vector2 _knockbackVector;
+    private Vector2 _newVelocity;
 
     private Character _targetCharacter;
     private PoolMember _poolMember;
@@ -69,7 +71,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private Coroutine _updateStunPrecessCoroutine;
     private Coroutine _updateAttackPorecessCoroutine;
     private Coroutine _updateMovementProcessCoroutine;
-
+    private Coroutine _updateKnockbackTimeCoroutine;
+    
     public virtual void Activate()
     {
         _isActive = true;
@@ -173,9 +176,17 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         if (force == 0) { return; }
 
+        _isknockback = true;
         _knockbackVector = vector;
         _knockbackForce = force;
         _knockbackTimeWeight = timeWeight;
+
+        if (_updateKnockbackTimeCoroutine != null)
+        {
+            StopCoroutine(_updateKnockbackTimeCoroutine);
+            _updateKnockbackTimeCoroutine = null;
+        }
+        _updateKnockbackTimeCoroutine = StartCoroutine(UpdateKnockbackTime());
     }
     public void SetPoolMember(PoolMember poolMember)
     {
@@ -244,31 +255,31 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         while (_isActive)
         {
-            yield return new WaitUntil(() => _isStunned == false);
-
-            Move();
+            if (_isStunned == false)
+            {
+                Move();
+            }
+            yield return null;
         }
     }
     protected virtual void Move()
     {
         if (_isStunned) { return; }
-        Vector3 direction = (_targetDestination.position - transform.position).normalized;
-        _rigidbody.velocity = CalculateMovementVelocity(direction) + CalculateKnockBack();
-    }
-    protected Vector3 CalculateMovementVelocity(Vector3 direction)
-    {
-        return direction * Stats.MoveSpeed;
-    }
-    protected Vector3 CalculateKnockBack()
-    {
-        if(_knockbackTimeWeight > 0f)
+
+        _newVelocity = (_targetDestination.position - transform.position).normalized * Stats.MoveSpeed;
+        if (_isknockback)
         {
-            _knockbackTimeWeight -= Time.fixedDeltaTime;
+            _newVelocity += _knockbackVector * _knockbackForce;
         }
+        _rigidbody.velocity = _newVelocity;
 
-        return _knockbackVector * _knockbackForce * (_knockbackTimeWeight > 0f ? 1f : 0f);
     }
 
+    private IEnumerator UpdateKnockbackTime()
+    {
+        yield return new WaitForSeconds(_knockbackTimeWeight);
+        _isknockback = false;
+    }
     private void Defeated()
     {
         _isActive = false;
@@ -282,7 +293,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         _updateStunPrecessCoroutine = null;
         _updateAttackPorecessCoroutine = null;
         _updateMovementProcessCoroutine = null;
-
+        _updateKnockbackTimeCoroutine = null;
     }
 
 
