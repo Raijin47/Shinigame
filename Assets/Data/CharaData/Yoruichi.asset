@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Yoruichi
   WeaponName: Kunai
   WeaponDescription: KunaiDes
-  spritePrefab: {fileID: 1294093326373152140, guid: 7230c303a34182e4d8d4bf108758038a, type: 3}
+  spritePrefab: {fileID: 4124804444446211218, guid: fea376fec5601634e8a209dbd52b34af, type: 3}
   startingWeapon: {fileID: 11400000, guid: 965d17c6b3fcfde41ab224957df0eed9, type: 2}
   Level: 0
   Health: 80

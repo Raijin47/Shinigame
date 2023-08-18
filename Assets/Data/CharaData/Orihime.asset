@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Orihime
   WeaponName: Soten
   WeaponDescription: SotenDes
-  spritePrefab: {fileID: 3069096791746407016, guid: 0bff0d6a7603c4849b1e4a2d32a5df79, type: 3}
+  spritePrefab: {fileID: 588852195598865551, guid: 386186e126c6f6044a815c1b3da166d1, type: 3}
   startingWeapon: {fileID: 11400000, guid: 8872ddc863c070944b3bd1034b057466, type: 2}
   Level: 0
   Health: 200

@@ -55,7 +55,6 @@ public class EnemyManager : MonoBehaviour
     private List<Enemy> _bossEnemiesList;
     private List<EnemySpawnGroup> _enemySpawnGroupList;
     private List<EnemySpawnGroup> _repeatedSpawnGroupList;
-    private List<IEnemy> _enemies = new List<IEnemy>();
 
     public void AddGroupToSpawn(EnemyData enemyToSpawn, int count, bool isBoss)
     {
@@ -89,7 +88,6 @@ public class EnemyManager : MonoBehaviour
         newEnemyComponent.SetStats(enemyToSpawn.stats);
         newEnemyComponent.UpdateStatsForProgress(_stageProgress.Progress);
         newEnemyComponent.Activate();
-        _enemies.Add(newEnemyComponent);
         if (isBoss)
         {
             SpawnBossEnemy(newEnemyComponent);
@@ -222,18 +220,8 @@ public class EnemyManager : MonoBehaviour
         UpdateBossHealth();
         ProcessSpawn();
         ProcessRepeatedSpawnGroups();
-        for (int i = 0; i < _enemies.Count; i++)
-        {
-            _enemies[i].UpdateState();
-        }
     }
-    private void FixedUpdate()
-    {
-        for (int i = 0; i < _enemies.Count; i++)
-        {
-            _enemies[i].UpdateAction();
-        }
-    }
+
     private void OnDrawGizmos()
     {
         //Gizmos.color = Color.red;

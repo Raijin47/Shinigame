@@ -12,10 +12,6 @@ public class PlayerUpgradeUIElement : MonoBehaviour
 
     [SerializeField] DataContainer dataContainer;
 
-    private void Start()
-    {
-        UpdateElement();
-    }
     public void Upgrade()
     {
         PlayerUpgrades playerUpgrades = dataContainer.upgrades[(int)upgrade];
@@ -28,7 +24,7 @@ public class PlayerUpgradeUIElement : MonoBehaviour
             UpdateElement();
         }
     }
-    void UpdateElement()
+    public void UpdateElement()
     {
         PlayerUpgrades playerUpgrades = dataContainer.upgrades[(int)upgrade];
         if (playerUpgrades.level >= playerUpgrades.maxLevel)

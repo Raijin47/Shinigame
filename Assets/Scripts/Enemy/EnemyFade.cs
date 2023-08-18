@@ -37,13 +37,14 @@ public class EnemyFade : MonoBehaviour
     }
     IEnumerator DeathCOR()
     {
-        while (true)
+        _fadeValue = 1;
+        while (_fadeValue > 0)
         {
             _fadeValue -= Time.deltaTime * _speedFade;
             _block.SetFloat(fadePropertyID, _fadeValue);
             _renderer.SetPropertyBlock(_block);
 
-            if (_fadeValue < 0)
+            if (_fadeValue <= 0)
             {
                 _fadeValue = 1;
                 _block.SetFloat(fadePropertyID, _fadeValue);

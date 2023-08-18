@@ -8,7 +8,6 @@ public class EnemyRunner : Enemy
         if (_direction == Vector3.zero)
         {
             _direction = (_targetDestination.position - transform.position).normalized;
-            Flip();
         }
         _rigidbody.velocity = _direction * Stats.MoveSpeed;
     }
@@ -19,12 +18,6 @@ public class EnemyRunner : Enemy
         if (_targetDestination != null)
         {
             _direction = (_targetDestination.position - transform.position).normalized;
-            Flip();
         }
-    }
-    public override void UpdateState()
-    {
-        if (_isDeath) return;
-        ProcessBurn();
     }
 }

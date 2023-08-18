@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Nelliel
   WeaponName: Cero
   WeaponDescription: CeroDes
-  spritePrefab: {fileID: 1645713953504965348, guid: 22065387f1e5d444ea7dfb7ab20b1b60, type: 3}
+  spritePrefab: {fileID: 7319573382895179681, guid: 09f809416d7bf8d45a788a333f460ca5, type: 3}
   startingWeapon: {fileID: 11400000, guid: b198d1ace86eaad4181fa6f6e5cafd1b, type: 2}
   Level: 0
   Health: 100

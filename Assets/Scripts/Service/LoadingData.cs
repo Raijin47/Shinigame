@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using YG;
-using Assets.SimpleLocalization;
 
 public class LoadingData : MonoBehaviour
 {
     [SerializeField] private DataContainer data;
     [SerializeField] private CharacterData[] chara;
+    [SerializeField] private LanguageSettings languageSettings;
 
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
@@ -33,8 +33,7 @@ public class LoadingData : MonoBehaviour
 
         data.souls = YandexGame.savesData.souls;
         data.butterflies = YandexGame.savesData.butterflies;
-        LocalizationManager.Read();
-        LocalizationManager.Language = YandexGame.savesData.language;
+        languageSettings.SetLanguage(YandexGame.savesData.language);
     }
 
     public void SaveData()

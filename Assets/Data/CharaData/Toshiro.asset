@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Toshiro
   WeaponName: Hyourinmaru
   WeaponDescription: HyourinmaruDes
-  spritePrefab: {fileID: 7865087076866376468, guid: 4bd4407c5c0e2e84b9e183248b37c20d, type: 3}
+  spritePrefab: {fileID: 8310345486343702789, guid: 84f0ab949171af8459b4951435838b44, type: 3}
   startingWeapon: {fileID: 11400000, guid: a01847feda3bf0a4491cfc34c15c3092, type: 2}
   Level: 0
   Health: 140
