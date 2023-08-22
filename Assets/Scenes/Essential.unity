@@ -2703,7 +2703,7 @@ Camera:
   far clip plane: 5
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3695,6 +3695,7 @@ MonoBehaviour:
   message: {fileID: 227162202}
   dropManager: {fileID: 1293574921}
   poolManager: {fileID: 695908193}
+  enemyManager: {fileID: 436672557}
 --- !u!4 &728645430
 Transform:
   m_ObjectHideFlags: 0

@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd295b65e601064dbe9b7e71ceebff6, type: 3}
   m_Name: testStage
   m_EditorClassIdentifier: 
-  stageEvents: []
+  stageEvents:
+  - eventType: 1
+    time: 0
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: fa2e317bf7c00704193176ef28fe2e59, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 1
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
   stageID: 0

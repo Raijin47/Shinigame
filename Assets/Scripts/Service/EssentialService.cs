@@ -11,6 +11,7 @@ public class EssentialService : MonoBehaviour
     public MessageSystem message;
     public DropManager dropManager;
     public PoolManager poolManager;
+    public EnemyManager enemyManager;
     private void Awake()
     {
         if (instance == null)

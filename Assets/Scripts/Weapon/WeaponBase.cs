@@ -20,6 +20,7 @@ public abstract class WeaponBase : MonoBehaviour
     protected PoolManager poolManager;
     protected PlayerMovement playerMove;
     private MessageSystem message;
+    [SerializeField] private AudioSource _audio;
     private float timer;
 
     //currentWeaponStats
@@ -137,6 +138,8 @@ public abstract class WeaponBase : MonoBehaviour
         }
         vectorOfAttack = vectorOfAttack.normalized;
     }
+
+    protected void AudioPlay() => _audio.Play();
     public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
     {
         GameObject projectileGO = poolManager.GetObject(poolObjectData);

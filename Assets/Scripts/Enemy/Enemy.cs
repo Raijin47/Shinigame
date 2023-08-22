@@ -21,7 +21,7 @@ public class EnemyStats
     internal void ApplyProgress(float progress)
     {
         Hp = (int)(Hp * progress);
-        Damage = (int)(Damage * progress);
+        //Damage = (int)(Damage * progress);
         //this.experienceReward = (int)(experienceReward * progress);
     }
 }
@@ -133,7 +133,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             StopCoroutine(_updateBurnProcessCoroutine);
             _updateBurnProcessCoroutine = null;
         }
-        StartCoroutine(UpdateBurnProcess());
+        _updateBurnProcessCoroutine = StartCoroutine(UpdateBurnProcess());
     }
     public void TakeDamage(int damage, bool showMessage = true)
     {
@@ -176,7 +176,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             _updateStunPrecessCoroutine = null;
         }
 
-        StartCoroutine(UpdateStunPrecess());
+        _updateStunPrecessCoroutine = StartCoroutine(UpdateStunPrecess());
     }
     public void Knockback(Vector2 vector, float force, float timeWeight)
     {
@@ -211,20 +211,20 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     protected virtual void Attack()
     {
-        _targetCharacter.TakeDamage(Stats.Damage);
+        var direction = _targetDestination.position - transform.position;
+        var directionLenth = direction.sqrMagnitude;
+        var maxDirectionLenth = (direction.normalized * _attackArea).sqrMagnitude;
+        if (directionLenth <= maxDirectionLenth)
+        {
+            _targetCharacter.TakeDamage(Stats.Damage);
+        }
     }
     private IEnumerator UpdateAttackPorecess()
     {
         while (_isActive)
         {
             yield return new WaitForSeconds(_timeToAttack);
-            var direction = _targetDestination.position - transform.position;
-            var directionLenth = direction.sqrMagnitude;
-            var maxDirectionLenth = (direction.normalized * _attackArea).sqrMagnitude;
-            if (directionLenth <= maxDirectionLenth)
-            {
-                Attack();
-            }
+            Attack();
         }
     }
     private IEnumerator UpdateBurnProcess()
@@ -286,7 +286,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         yield return new WaitForSeconds(_knockbackTimeWeight);
         _isknockback = false;
     }
-    private void Defeated()
+    protected virtual void Defeated()
     {
         _isActive = false;
         _isDeath = true;

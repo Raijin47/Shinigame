@@ -95,7 +95,19 @@ public class EnemyManager : MonoBehaviour
 
         newEnemy.transform.parent = transform;
     }
+    public void SpawnEnemy(EnemyData enemyToSpawn, Vector2 pos)
+    {
+        GameObject newEnemy = _poolManager.GetObject(enemyToSpawn.poolObjectData);
+        newEnemy.transform.position = pos;
 
+        var newEnemyComponent = newEnemy.GetComponent<Enemy>();
+        newEnemyComponent.SetTarget(_player, _chara, _dropManager);
+        newEnemyComponent.SetStats(enemyToSpawn.stats);
+        newEnemyComponent.UpdateStatsForProgress(_stageProgress.Progress);
+        newEnemyComponent.Activate();
+
+        newEnemy.transform.parent = transform;
+    }
     private Vector3 GenerateSpawnPos()
     {
         var ray = Camera.main.ScreenPointToRay(Vector2.zero);

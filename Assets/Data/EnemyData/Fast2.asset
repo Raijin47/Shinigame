@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427a8343166cc884a893105c5905fd62, type: 3}
   m_Name: Fast2
   m_EditorClassIdentifier: 
-  nameEnemy: Hollow
+  nameEnemy: Fast2
   poolObjectData: {fileID: 11400000, guid: bd001a36d47547b40959ecde3a35eeaa, type: 2}
   stats:
     Hp: 30

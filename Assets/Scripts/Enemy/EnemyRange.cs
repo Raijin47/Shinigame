@@ -6,14 +6,19 @@ public class EnemyRange : Enemy
     [SerializeField] private PoolObjectData _projectile;
     [SerializeField] private Transform _projectileSpawner;
 
-    private float _currentTimeToAttack;
     private PoolManager _poolManager;
 
-   
+    public override void Activate()
+    {
+        base.Activate();
+
+        if (_poolManager == null)
+        {
+            _poolManager = EssentialService.instance.poolManager;
+        }
+    }
     public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
     {
-        if (_poolManager == null) _poolManager = EssentialService.instance.poolManager;
-
         GameObject projectileGO = _poolManager.GetObject(poolObjectData);
 
         projectileGO.transform.position = position;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427a8343166cc884a893105c5905fd62, type: 3}
   m_Name: Tank
   m_EditorClassIdentifier: 
-  nameEnemy: Hollow
+  nameEnemy: Tank
   poolObjectData: {fileID: 11400000, guid: 56e1696ae80a46148b2fa6609d55132c, type: 2}
   stats:
     Hp: 50
