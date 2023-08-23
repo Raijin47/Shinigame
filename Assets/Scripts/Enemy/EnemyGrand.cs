@@ -11,8 +11,6 @@ public class EnemyGrand : Enemy
     private EnemyManager _manager;
 
     private Coroutine _updatePhaseCoroutine;
-    private Coroutine _rushPhaseCoroutine;
-    private Coroutine _spawnPhaseCoroutine;
 
     private bool _isAction;
     public override void Activate()
@@ -45,69 +43,41 @@ public class EnemyGrand : Enemy
 
         base.Move();
     }
-    private void UpdatePhase()
-    {
-        _isAction = !_isAction;
 
-        if (_isAction)
-        {
-            _rigidbody.velocity = Vector2.zero;
-        }
-        else
-        {
-            if (_updatePhaseCoroutine != null)
-            {
-                StopCoroutine(_updatePhaseCoroutine);
-                _updatePhaseCoroutine = null;
-            }
-            _updatePhaseCoroutine = StartCoroutine(UpdatePhaseProcess());
-            return;
-        }
-        
-        int phase = Random.Range(0, 2);
-        switch (phase)
-        {
-            case 0:
-                if(_rushPhaseCoroutine != null)
-                {
-                    StopCoroutine(_rushPhaseCoroutine);
-                    _rushPhaseCoroutine = null;
-                }
-                _rushPhaseCoroutine = StartCoroutine(RushPhase());
-                break;
-            case 1:
-                if(_spawnPhaseCoroutine != null)
-                {
-                    StopCoroutine(_spawnPhaseCoroutine);
-                    _spawnPhaseCoroutine = null;
-                }
-                _spawnPhaseCoroutine = StartCoroutine(SpawnPhase());
-                break;
-        }
-    }
     private IEnumerator UpdatePhaseProcess()
     {
-        var Timer = new WaitForSeconds(Random.Range(5f,10f));
-        yield return Timer;
-        UpdatePhase();
+        while (_isActive)
+        {
+            _isAction = true;
+            _rigidbody.velocity = Vector2.zero;
+
+            var action = Random.Range(0, 2) switch
+            {
+                0 => RushPhase(),
+                1 => SpawnPhase(),
+                _ => null,
+            };
+            yield return StartCoroutine(action);
+            _isAction = false;
+
+            yield return new WaitForSeconds(Random.Range(5f, 10f));
+        }
     }
+
     private void Rush()
     {
         _rigidbody.velocity = Vector2.zero;
-        Vector2 NewPos = (_targetDestination.position - transform.position).normalized;
-        _rigidbody.AddForce(NewPos * 8, ForceMode2D.Impulse);
+        var direction = (_targetDestination.position - transform.position).normalized;
+        _rigidbody.AddForce(direction * 8, ForceMode2D.Impulse);
     }
     private IEnumerator RushPhase()
     {
-        var timeLimit = new WaitForSeconds(2f);
-
+        var timeLimit = new WaitForSeconds(1f);
         for (int i = 0; i < 2; i++)
         {
             Rush();
             yield return timeLimit;
         }
-
-        UpdatePhase();
     }
     private IEnumerator SpawnPhase()
     {
@@ -118,37 +88,25 @@ public class EnemyGrand : Enemy
             _manager.SpawnEnemy(_minion, transform.position);
             yield return timer;
         }
-
-        UpdatePhase();
     }
     public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
     {
-        GameObject projectileGO = _poolManager.GetObject(poolObjectData);
-
-        projectileGO.transform.position = position;
-
-        EnemyProjectile projectile = projectileGO.GetComponent<EnemyProjectile>();
+        var projectile = _poolManager.GetObject(poolObjectData).GetComponent<EnemyProjectile>();
+        projectile.transform.position = position;
 
         projectile.SetDirection(ShotDirection(), Stats.Damage);
 
-
-        return projectileGO;
+        return projectile.gameObject;
     }
     private Vector2 ShotDirection()
     {
-        Vector2 dir;
-
-        dir = _targetDestination.position - (transform.position + _offsetProjectile);
-        dir.Normalize();
-
-        return dir;
+        var direction = _targetDestination.position - (transform.position + _offsetProjectile);
+        return direction.normalized;
     }
     protected override void Defeated()
     {
         base.Defeated();
         _updatePhaseCoroutine = null;
-        _rushPhaseCoroutine = null;
-        _spawnPhaseCoroutine = null;
     }
     protected override void Attack()
     {

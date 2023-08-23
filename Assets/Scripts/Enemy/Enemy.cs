@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     [SerializeField] private BoxCollider2D _boxCol;
 
-    private bool _isActive;
+    protected bool _isActive;
     private bool _isBurn;
     private bool _isStunned;
     private bool _isknockback;
