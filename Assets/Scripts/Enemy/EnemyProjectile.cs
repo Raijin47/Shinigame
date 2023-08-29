@@ -3,7 +3,7 @@
 public class EnemyProjectile : MonoBehaviour, IPoolMember
 {
     [SerializeField] private float speed;
-    private Vector3 direction;
+    [SerializeField] private Vector3 direction;
     private PoolMember poolMember;
     [SerializeField] private float ttl;
     private int damage;
@@ -52,5 +52,9 @@ public class EnemyProjectile : MonoBehaviour, IPoolMember
         {
             chara.TakeDamage(damage);
         }
+    }
+    public void ReboundDirection(Vector2 inNormal)
+    {
+        direction = Vector2.Reflect(direction, inNormal).normalized;
     }
 }

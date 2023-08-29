@@ -10715,6 +10715,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600422163}
   m_CullTransparentMesh: 1
+--- !u!1 &600602998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8552769829896484290, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
+  m_PrefabInstance: {fileID: 1245300814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &605573350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 647831906622553269, guid: 5abf83dbbb647734ebece25eba7fb16a, type: 3}
@@ -12158,6 +12163,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8552769829896484291, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
   m_PrefabInstance: {fileID: 1245300814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &804228929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600602998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bcdae2b5dda6d499eab8cb02ba3b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &819963233
 GameObject:
   m_ObjectHideFlags: 0
@@ -15557,7 +15574,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021178353}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -17717,7 +17734,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161632529}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -18807,7 +18824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -18816,7 +18833,7 @@ PrefabInstance:
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1407660862}
+      objectReference: {fileID: 804228929}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -18831,7 +18848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PanelAnim
+      value: StartGameplay
       objectReference: {fileID: 0}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -18839,7 +18856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
+      value: StartGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -18854,6 +18871,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: GameStage0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552769829896484348, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -18863,27 +18884,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8552769830991621292, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552769830991621292, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552769830991621292, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 178.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552769830991621292, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 41.68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552769830991621292, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 99.405
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552769830991621292, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552769830991621293, guid: 6f68a60e745c53940a358b220d31b361, type: 3}
       propertyPath: m_text
@@ -20465,7 +20486,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243864778437365490, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 08ab08bc05ad487408340b8633807d70, type: 3}
+  m_audioClip: {fileID: 8300000, guid: be73e81062b4eec4b89094fc18f7ea71, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -19,5 +19,10 @@ public class EnemyRunner : Enemy
         {
             _direction = (_targetDestination.position - transform.position).normalized;
         }
+        base.Flip();
+    }
+    protected override void Flip()
+    {
+
     }
 }

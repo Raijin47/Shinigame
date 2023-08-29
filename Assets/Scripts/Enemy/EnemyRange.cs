@@ -4,6 +4,7 @@ public class EnemyRange : Enemy
 {
     [SerializeField] private float _distance;
     [SerializeField] private PoolObjectData _projectile;
+    [SerializeField] private Vector3 _offsetProjectile = new Vector2(0, 0.8f);
     [SerializeField] private Transform _projectileSpawner;
 
     private PoolManager _poolManager;
@@ -19,42 +20,25 @@ public class EnemyRange : Enemy
     }
     public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
     {
-        GameObject projectileGO = _poolManager.GetObject(poolObjectData);
+        var projectile = _poolManager.GetObject(poolObjectData).GetComponent<EnemyProjectile>();
+        projectile.transform.position = position;
 
-        projectileGO.transform.position = position;
+        projectile.SetDirection(ShotDirection(), Stats.Damage);
 
-        EnemyProjectile projectile = projectileGO.GetComponent<EnemyProjectile>();
-
-        projectile.SetDirection(ShotDir(), Stats.Damage);
-
-
-        return projectileGO;
+        return projectile.gameObject;
     }
 
     protected override void Attack()
     {
-       SpawnProjectile(_projectile, _projectileSpawner.transform.position);
+        SpawnProjectile(_projectile, transform.position + _offsetProjectile);
     }
-    //protected override void Move()
-    //{
-    //    if (stunned > 0f) { return; }
-    //    if (Vector2.Distance(targetDestination.position, transform.position) < distance)
-    //    {
-    //        rb.velocity = Vector2.zero;
-    //        return;
-    //    }
-
-    //    Vector3 direction = (targetDestination.position - transform.position).normalized;
-    //    rb.velocity = CalculateMovementVelocity(direction) + CalculateKnockBack();
-    //}
-    private Vector2 ShotDir()
+    protected override void Move()
     {
-        Vector2 dir;
 
-        dir = _targetDestination.position - _projectileSpawner.position;
-        dir.Normalize();
-
-        return dir;
     }
-
+    private Vector2 ShotDirection()
+    {
+        var direction = _targetDestination.position - (transform.position + _offsetProjectile);
+        return direction.normalized;
+    }
 }

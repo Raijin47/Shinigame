@@ -7,7 +7,7 @@ public class WeaponSotenKisshun : WeaponBase
     public override void Attack()
     {
         UpdateVectorOfAttack();
-
+        AudioPlay();
         Vector2 newPosition = transform.position;
         SpawnProjectile(prefab, newPosition);
     }

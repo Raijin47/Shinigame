@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf8c45327f37894f845dbff80660da1, type: 3}
   m_Name: EnemyHollow
   m_EditorClassIdentifier: 
-  originalPrefab: {fileID: 1814378020975588443, guid: cff763218ae998f4ba7e2d844e4b8b91, type: 3}
+  originalPrefab: {fileID: 699955595549176195, guid: cff763218ae998f4ba7e2d844e4b8b91, type: 3}
   containerPrefab: {fileID: 8420636739435125438, guid: 10ff06c8e45fe6a4f80cd5cba4de5703, type: 3}
   poolID: 1

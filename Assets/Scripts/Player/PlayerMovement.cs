@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float _speed;
     private PlayerInput playerInput;
-    private Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D _rigidbody;
     private PlayerAnimate anim;
     private Vector2 movementVector;
 
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         movementVector = new Vector2();
         anim = GetComponent<PlayerAnimate>();
         playerInput = GetComponent<PlayerInput>();
@@ -56,6 +56,6 @@ public class PlayerMovement : MonoBehaviour
         anim.isMove = movementVector != Vector2.zero;
         anim.horizontal = movementVector.x;
 
-        rb.velocity = movementVector.normalized * _speed;
+        _rigidbody.velocity = movementVector.normalized * _speed;
     }
 }

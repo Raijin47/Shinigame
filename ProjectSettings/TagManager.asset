@@ -19,8 +19,8 @@ TagManager:
   - Item
   - AutoPickUp
   - Chara
-  - EnemyRunner
-  - 
+  - EnemyNoColl
+  - Boss
   - 
   - 
   - 

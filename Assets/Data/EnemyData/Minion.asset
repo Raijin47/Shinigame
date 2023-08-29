@@ -15,7 +15,7 @@ MonoBehaviour:
   nameEnemy: GrandMinion
   poolObjectData: {fileID: 11400000, guid: f8ca7127041023e43ac7ef83fd50997e, type: 2}
   stats:
-    Hp: 5
+    Hp: 10
     Damage: 6
-    ExperienceReward: 50
-    MoveSpeed: 2.5
+    ExperienceReward: 100
+    MoveSpeed: 2.8

@@ -12,6 +12,7 @@ public class WeaponCero : WeaponBase
 
     public override void Attack()
     {
+        AudioPlay();
         attackTimer = 0;
         particle.Play();
         StartCoroutine(AttackProcess());

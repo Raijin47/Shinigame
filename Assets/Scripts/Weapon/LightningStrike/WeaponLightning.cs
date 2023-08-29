@@ -18,6 +18,7 @@ public class WeaponLightning: WeaponBase
         {
             SetTarget();
             SpawnProjectile(lightningPrefab, target);
+            AudioPlay();
             yield return timer;
         }
     }

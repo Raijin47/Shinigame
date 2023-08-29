@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     [SerializeField] protected Rigidbody2D _rigidbody;
     protected Transform _targetDestination;
 
+    [SerializeField] private AudioSource _deathSound;
     [SerializeField] private Vector2 _attackArea;
     [SerializeField] private Vector3 _offset;
     [SerializeField] private LayerMask _player;
@@ -211,7 +212,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     protected virtual void Attack()
     {
-        var direction = _targetDestination.position - transform.position;
+        var direction = _targetDestination.position - (transform.position + _offset);// но это не точно
         var directionLenth = direction.sqrMagnitude;
         var maxDirectionLenth = (direction.normalized * _attackArea).sqrMagnitude;
         if (directionLenth <= maxDirectionLenth)
@@ -243,15 +244,20 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         while (_isActive)
         {
-            var isRight = transform.position.x < _targetDestination.position.x;
-            if (_isRight != isRight)
-            {
-                _isRight = !_isRight;
-                _spriteRenderer.flipX = !_isRight;
-            }
+            Flip();
             yield return null;
         }
     }
+    protected virtual void Flip()
+    {
+        var isRight = transform.position.x < _targetDestination.position.x;
+        if (_isRight != isRight)
+        {
+            _isRight = !_isRight;
+            _spriteRenderer.flipX = !_isRight;
+        }
+    }
+
     private IEnumerator UpdateStunPrecess()
     {
         yield return new WaitForSeconds(_stunTime);
@@ -273,12 +279,13 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         if (_isStunned) { return; }
 
         _newVelocity = (_targetDestination.position - transform.position).normalized * Stats.MoveSpeed;
+
         if (_isknockback)
         {
             _newVelocity += _knockbackVector * _knockbackForce;
         }
-        _rigidbody.velocity = _newVelocity;
 
+        _rigidbody.velocity = _newVelocity;
     }
 
     private IEnumerator UpdateKnockbackTime()
@@ -288,6 +295,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     }
     protected virtual void Defeated()
     {
+        _deathSound.Play();
         _isActive = false;
         _isDeath = true;
         _boxCol.enabled = false;

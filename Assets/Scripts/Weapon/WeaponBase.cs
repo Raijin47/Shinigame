@@ -138,8 +138,8 @@ public abstract class WeaponBase : MonoBehaviour
         }
         vectorOfAttack = vectorOfAttack.normalized;
     }
-
     protected void AudioPlay() => _audio.Play();
+    protected void AudioStop() => _audio.Stop();
     public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
     {
         GameObject projectileGO = poolManager.GetObject(poolObjectData);

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf8c45327f37894f845dbff80660da1, type: 3}
   m_Name: EnemyRange
   m_EditorClassIdentifier: 
-  originalPrefab: {fileID: 48092003410555389, guid: f24ca5d698374e1428b838703694bf35, type: 3}
+  originalPrefab: {fileID: 6479632626532139933, guid: f24ca5d698374e1428b838703694bf35, type: 3}
   containerPrefab: {fileID: 1543316256065248120, guid: 4576680b966b5bd4eb17653b9419d207, type: 3}
   poolID: 12123

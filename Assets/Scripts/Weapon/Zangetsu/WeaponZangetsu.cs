@@ -6,6 +6,7 @@ public class WeaponZangetsu : WeaponBase
 
     public override void Attack()
     {
+        AudioPlay();
         UpdateVectorOfAttack();
         Vector2 newPosition = transform.position;
         SpawnProjectile(getsugaPrefab, newPosition);

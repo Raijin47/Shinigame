@@ -6,6 +6,7 @@ public class WeaponHyorinmaru : WeaponBase
 
     public override void Attack()
     {
+        AudioPlay();
         for(int i = 0; i < numberOfAttacks; i++)
         {
             int a = 360 / numberOfAttacks * i;

@@ -9,6 +9,7 @@ public class WeaponRyujinJakka : WeaponBase
     private float _curRadius;
     public override void Attack()
     {
+        AudioPlay();
         particle.Play();
         colliders = new Collider2D[50];
         Physics2D.OverlapCircleNonAlloc(transform.position, _curRadius, colliders, layer);

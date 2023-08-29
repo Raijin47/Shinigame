@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf8c45327f37894f845dbff80660da1, type: 3}
   m_Name: EnemyMinion
   m_EditorClassIdentifier: 
-  originalPrefab: {fileID: 1465915519527386911, guid: 04d169dc909cad84fb19e80b895e7581, type: 3}
+  originalPrefab: {fileID: 1065842128938650281, guid: 04d169dc909cad84fb19e80b895e7581, type: 3}
   containerPrefab: {fileID: 5766163478111917861, guid: 87b305c9c345c5540bc770116ae9d0c5, type: 3}
   poolID: 5123

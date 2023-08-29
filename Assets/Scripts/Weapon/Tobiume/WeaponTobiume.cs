@@ -5,8 +5,9 @@ public class WeaponTobiume: WeaponBase
     [SerializeField] private PoolObjectData fireballPrefab;
     public override void Attack()
     {
+        AudioPlay();
         for(int i = 0; i < numberOfAttacks; i++)
-        {
+        {          
             UpdateVectorOfAttack();
             SpawnProjectile(fireballPrefab, transform.position);
         }

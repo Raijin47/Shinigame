@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf8c45327f37894f845dbff80660da1, type: 3}
   m_Name: EnemyRunner
   m_EditorClassIdentifier: 
-  originalPrefab: {fileID: 1320389657415256822, guid: 8b277b1da975dc346a4702055c16e50a, type: 3}
+  originalPrefab: {fileID: 2745311483445507313, guid: 8b277b1da975dc346a4702055c16e50a, type: 3}
   containerPrefab: {fileID: 5867147466848371691, guid: 25b1bee518ed3994782181de6cc53cb2, type: 3}
   poolID: 123412

@@ -68,7 +68,7 @@ MonoBehaviour:
   damage: 0
   numberOfAttacks: 0
   projectileSpeed: 0
-  _radius: 8
+  _radius: 5
   projectile: {fileID: 11400000, guid: 79de3cb6375c9d24190449bde302d529, type: 2}
   _layer:
     serializedVersion: 2

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf8c45327f37894f845dbff80660da1, type: 3}
   m_Name: EnemyTank
   m_EditorClassIdentifier: 
-  originalPrefab: {fileID: 4114496218322281863, guid: f1e3b18d716bf3740a423fc28ffd199a, type: 3}
+  originalPrefab: {fileID: 9010737639447419617, guid: f1e3b18d716bf3740a423fc28ffd199a, type: 3}
   containerPrefab: {fileID: 7603576391148513815, guid: ef4626d05d835294bbb9e21df7122c6f, type: 3}
   poolID: 4

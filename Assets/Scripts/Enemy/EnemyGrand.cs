@@ -6,6 +6,7 @@ public class EnemyGrand : Enemy
     [SerializeField] private PoolObjectData _projectile;
     [SerializeField] private Vector3 _offsetProjectile = new Vector2(0,0.8f);
     [SerializeField] private EnemyData _minion;
+    [SerializeField] private Animator _animator;
 
     private PoolManager _poolManager;
     private EnemyManager _manager;
@@ -13,11 +14,20 @@ public class EnemyGrand : Enemy
     private Coroutine _updatePhaseCoroutine;
 
     private bool _isAction;
+
+    private readonly string IdleA = "Idle";
+    private readonly string RushA = "Rush";
+    private readonly string MoveA = "Move";
     public override void Activate()
     {
         base.Activate();
 
         _isAction = false;
+
+        if(_animator == null)
+        {
+            _animator = GetComponentInChildren<Animator>();
+        }
 
         if (_poolManager == null)
         {
@@ -59,19 +69,21 @@ public class EnemyGrand : Enemy
             };
             yield return StartCoroutine(action);
             _isAction = false;
-
+            _animator.SetTrigger(MoveA);
             yield return new WaitForSeconds(Random.Range(5f, 10f));
         }
     }
 
     private void Rush()
     {
+        base.Flip();
         _rigidbody.velocity = Vector2.zero;
         var direction = (_targetDestination.position - transform.position).normalized;
         _rigidbody.AddForce(direction * 8, ForceMode2D.Impulse);
     }
     private IEnumerator RushPhase()
     {
+        _animator.SetTrigger(RushA);
         var timeLimit = new WaitForSeconds(1f);
         for (int i = 0; i < 2; i++)
         {
@@ -81,6 +93,7 @@ public class EnemyGrand : Enemy
     }
     private IEnumerator SpawnPhase()
     {
+        _animator.SetTrigger(IdleA);
         var timer = new WaitForSeconds(0.5f);
 
         for (int i = 0; i < 10; i++)
@@ -113,5 +126,11 @@ public class EnemyGrand : Enemy
         base.Attack();
         if (_isAction) { return; }
         SpawnProjectile(_projectile, transform.position + _offsetProjectile);
+    }
+
+    protected override void Flip()
+    {
+        if(_isAction) { return; }
+        base.Flip();
     }
 }
