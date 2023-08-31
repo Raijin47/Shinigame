@@ -209,13 +209,14 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         Stats = new EnemyStats(stats);
     }
 
-
     protected virtual void Attack()
     {
-        var direction = _targetDestination.position - (transform.position + _offset);// но это не точно
-        var directionLenth = direction.sqrMagnitude;
-        var maxDirectionLenth = (direction.normalized * _attackArea).sqrMagnitude;
-        if (directionLenth <= maxDirectionLenth)
+        var direction = _targetDestination.position - (transform.position + _offset);
+        var clampedDirection = direction;
+        clampedDirection.x = Mathf.Clamp(clampedDirection.x, -_attackArea.x / 2, _attackArea.x / 2);
+        clampedDirection.y = Mathf.Clamp(clampedDirection.y, -_attackArea.y / 2, _attackArea.y / 2);
+
+        if (direction.sqrMagnitude <= clampedDirection.sqrMagnitude)
         {
             _targetCharacter.TakeDamage(Stats.Damage);
         }
@@ -310,15 +311,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         _updateKnockbackTimeCoroutine = null;
     }
 
-
-    //private void Update()
-    //{
-    //    UpdateState();
-    //}
-    //private void FixedUpdate()
-    //{
-    //    UpdateAction();
-    //}
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
