@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     [SerializeField] private Vector3 _offset;
     [SerializeField] private LayerMask _player;
     [SerializeField] private PoolObjectData[] _dropData;
-    [SerializeField, Range(0f,1f)] private float _chanceDrop;
+    [SerializeField, Range(0f, 1f)] private float _chanceDrop;
     [SerializeField] protected float _timeToAttack = .5f;
 
     [SerializeField] private BoxCollider2D _boxCol;
@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private Coroutine _updateAttackPorecessCoroutine;
     private Coroutine _updateMovementProcessCoroutine;
     private Coroutine _updateKnockbackTimeCoroutine;
-    
+
     public virtual void Activate()
     {
         _isActive = true;
@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         }
         _enemyFade.Fire(false);
 
-        if(_spriteRenderer == null)
+        if (_spriteRenderer == null)
         {
             _spriteRenderer = transform.GetChild(1).GetComponent<SpriteRenderer>();
         }
@@ -148,7 +148,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             Defeated();
         }
     }
-  
+
     public void ReturnToPool()
     {
         _dropManager.ExpDrop(transform.position, Stats.ExperienceReward);
@@ -171,7 +171,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         _stunTime = stunTime;
         _rigidbody.velocity = Vector2.zero;
 
-        if (_updateStunPrecessCoroutine!=null)
+        if (_updateStunPrecessCoroutine != null)
         {
             StopCoroutine(_updateStunPrecessCoroutine);
             _updateStunPrecessCoroutine = null;
@@ -199,7 +199,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         _poolMember = poolMember;
     }
-  
+
     internal void UpdateStatsForProgress(float progress)
     {
         Stats.ApplyProgress(progress);

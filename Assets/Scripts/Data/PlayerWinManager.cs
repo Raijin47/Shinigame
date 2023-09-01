@@ -15,5 +15,6 @@ public class PlayerWinManager : MonoBehaviour
         winMessagePanel.SetActive(true);
         pauseManager.PauseGame();
         dataContainer.StageComplete(stageID);
+        dataContainer.butterflies++;
     }
 }

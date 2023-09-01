@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private Slider _bossHealthBar;
     [SerializeField] private Character _chara;
     [SerializeField] private DropManager _dropManager;
-
+    [SerializeField] private GameObject _barrierZone;
 
     private int _totalBossHealth;
     private int _currentBossHealth;
@@ -51,6 +51,7 @@ public class EnemyManager : MonoBehaviour
 
     private StageProgress _stageProgress;
     private GameObject _player;
+    private StageTime _stageTimer;
 
     private List<Enemy> _bossEnemiesList;
     private List<EnemySpawnGroup> _enemySpawnGroupList;
@@ -90,7 +91,7 @@ public class EnemyManager : MonoBehaviour
         newEnemyComponent.Activate();
         if (isBoss)
         {
-            SpawnBossEnemy(newEnemyComponent);
+            SpawnBossEnemy(newEnemyComponent, enemyToSpawn);
         }
 
         newEnemy.transform.parent = transform;
@@ -206,10 +207,13 @@ public class EnemyManager : MonoBehaviour
         {
             _bossHealthBar.gameObject.SetActive(false);
             _bossEnemiesList.Clear();
+
+            _barrierZone.SetActive(false);
+            _stageTimer.BossBattle(false);
         }
     }
-  
-    private void SpawnBossEnemy(Enemy newBoss)
+
+    private void SpawnBossEnemy(Enemy newBoss, EnemyData enemyData)
     {
         if(_bossEnemiesList == null) { _bossEnemiesList = new List<Enemy>(); }
         _bossEnemiesList.Add(newBoss);
@@ -217,15 +221,18 @@ public class EnemyManager : MonoBehaviour
 
         _bossHealthBar.gameObject.SetActive(true);
         _bossHealthBar.maxValue = _totalBossHealth;
-    }
-  
 
+        _barrierZone.transform.position = _chara.transform.position;
+        _barrierZone.SetActive(true);
+        _stageTimer.BossBattle(true, enemyData);
+    }
 
     private void Start()
     {
         _player = GameManager.instance.playerTransform.gameObject;
         _bossHealthBar = FindObjectOfType<BossHPBar>(true).GetComponent<Slider>();
         _stageProgress = FindObjectOfType<StageProgress>();
+        _stageTimer = FindObjectOfType<StageTime>();
     }
     private void Update()
     {
@@ -236,17 +243,7 @@ public class EnemyManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //Gizmos.color = Color.red;
-        //Gizmos.DrawSphere(min, .3f);
-
-        //Gizmos.color = Color.blue;
-        //Gizmos.DrawSphere(max, .3f);
-
-        //Gizmos.color = new Color(0, 1, 0, .3f);
-        //Gizmos.DrawCube(center, size);
-
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(_center, _size + Vector3.one * _offset);
-        //Gizmos.DrawSphere(borderPoint, .3f);
     }
 }

@@ -1,12 +1,16 @@
 using UnityEngine;
 using TMPro;
+using Assets.SimpleLocalization;
+
 public class TimerUI : MonoBehaviour
 {
-    private TextMeshProUGUI text;
+    private TextMeshProUGUI _text;
+    private LocalizedDynamic _localized;
 
     private void Awake()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        _text = GetComponent<TextMeshProUGUI>();
+        _localized = GetComponent<LocalizedDynamic>();
     }
 
     public void UpdateTime(float time)
@@ -14,6 +18,8 @@ public class TimerUI : MonoBehaviour
         int minutes = (int)(time / 60f);
         int seconds = (int)(time % 60f);
 
-        text.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        _text.text = minutes.ToString("00") + ":" + seconds.ToString("00");
     }
+
+    public void SetName(string name) => _localized.Localize(name);
 }

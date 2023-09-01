@@ -75,7 +75,7 @@ MonoBehaviour:
     count: 20
     isRepeatedEvent: 1
     repeatEverySeconds: 5
-    repeatCount: 20
+    repeatCount: 8
   - eventType: 0
     time: 190
     message: 
@@ -83,10 +83,10 @@ MonoBehaviour:
     objectToSpawn: {fileID: 0}
     count: 5
     isRepeatedEvent: 1
-    repeatEverySeconds: 10
+    repeatEverySeconds: 3
     repeatCount: 6
   - eventType: 1
-    time: 300
+    time: 240
     message: 
     enemyToSpawn: {fileID: 11400000, guid: fa2e317bf7c00704193176ef28fe2e59, type: 2}
     objectToSpawn: {fileID: 0}
@@ -94,4 +94,130 @@ MonoBehaviour:
     isRepeatedEvent: 0
     repeatEverySeconds: 10
     repeatCount: 6
+  - eventType: 0
+    time: 242
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 0953967eb3d4d0949b5333387a75c2fe, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 5
+    repeatCount: 45
+  - eventType: 0
+    time: 243
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 268735f652c82e445b1759916e664d88, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 8
+    isRepeatedEvent: 1
+    repeatEverySeconds: 5
+    repeatCount: 45
+  - eventType: 0
+    time: 250
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: d93e34dec4d427e45be969b0bd1f0df1, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 4
+    isRepeatedEvent: 1
+    repeatEverySeconds: 3
+    repeatCount: 74
+  - eventType: 0
+    time: 265
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 26116dad2d98fea4b8341f570640a84e, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 6
+    repeatCount: 34
+  - eventType: 0
+    time: 270
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 4ba8e4b1b75d4c5428abb110de1b0cdb, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 5
+    repeatCount: 40
+  - eventType: 0
+    time: 280
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 50f30195a310aed4ab62c7f89ef7ecb1, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 5
+    repeatCount: 38
+  - eventType: 0
+    time: 285
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 0953967eb3d4d0949b5333387a75c2fe, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 30
+  - eventType: 0
+    time: 290
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 4ba8e4b1b75d4c5428abb110de1b0cdb, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 10
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 28
+  - eventType: 0
+    time: 295
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 268735f652c82e445b1759916e664d88, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 4
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 33
+  - eventType: 0
+    time: 300
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: d93e34dec4d427e45be969b0bd1f0df1, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 5
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 54
+  - eventType: 0
+    time: 305
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 26116dad2d98fea4b8341f570640a84e, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 15
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 31
+  - eventType: 0
+    time: 310
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: 50f30195a310aed4ab62c7f89ef7ecb1, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 30
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 30
+  - eventType: 1
+    time: 480
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: fa2e317bf7c00704193176ef28fe2e59, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 1
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
+  - eventType: 3
+    time: 481
+    message: 
+    enemyToSpawn: {fileID: 0}
+    objectToSpawn: {fileID: 0}
+    count: 0
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
   stageID: 0

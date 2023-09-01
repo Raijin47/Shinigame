@@ -15,7 +15,7 @@ public class StageEventManager : MonoBehaviour
     }
     private void Start()
     {
-        enemyManager = FindObjectOfType<EnemyManager>();
+        enemyManager = EssentialService.instance.enemyManager;
     }
     private void Update()
     {

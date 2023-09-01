@@ -3,10 +3,25 @@ using UnityEngine;
 public class StageTime : MonoBehaviour
 {
     [HideInInspector] public float time;
+    private TimerUI _timer;
+    private bool _isBossBattle;
 
+    private void Start()
+    {
+        _timer = EssentialService.instance.timerUI;
+        _isBossBattle = false;
+    }
     private void Update()
     {
+        if(_isBossBattle) { return; }
         time += Time.deltaTime;
-        EssentialService.instance.timerUI.UpdateTime(time);
+        _timer.UpdateTime(time);
     }
+
+    public void BossBattle(bool isBattle, EnemyData enemy)
+    {
+        _isBossBattle = isBattle;
+        _timer.SetName(enemy.name);
+    }
+    public void BossBattle(bool isBattle) => _isBossBattle = isBattle;
 }
