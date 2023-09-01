@@ -212,7 +212,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
     protected virtual void Attack()
     {
-        var direction = _targetDestination.position - (transform.position + _offset);// но это не точно
+        var direction = _targetDestination.position - transform.position;
         var directionLenth = direction.sqrMagnitude;
         var maxDirectionLenth = (direction.normalized * _attackArea).sqrMagnitude;
         if (directionLenth <= maxDirectionLenth)
