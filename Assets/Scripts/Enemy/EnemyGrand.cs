@@ -9,7 +9,6 @@ public class EnemyGrand : Enemy
     [SerializeField] private Animator _animator;
 
     private PoolManager _poolManager;
-    private EnemyManager _manager;
 
     private Coroutine _updatePhaseCoroutine;
 
@@ -32,11 +31,6 @@ public class EnemyGrand : Enemy
         if (_poolManager == null)
         {
             _poolManager = EssentialService.instance.poolManager;
-        }
-
-        if (_manager == null)
-        {
-            _manager = EssentialService.instance.enemyManager;
         }
 
         if (_updatePhaseCoroutine != null)
@@ -98,7 +92,7 @@ public class EnemyGrand : Enemy
 
         for (int i = 0; i < 10; i++)
         {
-            _manager.SpawnEnemy(_minion, transform.position);
+            _enemyManager.SpawnEnemy(_minion, transform.position);
             yield return timer;
         }
     }
@@ -127,10 +121,13 @@ public class EnemyGrand : Enemy
         if (_isAction) { return; }
         SpawnProjectile(_projectile, transform.position + _offsetProjectile);
     }
-
     protected override void Flip()
     {
         if(_isAction) { return; }
         base.Flip();
+    }
+    public override void Knockback(Vector2 vector, float force, float timeWeight)
+    {
+
     }
 }

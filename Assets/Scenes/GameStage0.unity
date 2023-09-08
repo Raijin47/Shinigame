@@ -2259,7 +2259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d5b39ce53e7314c8a19222489968b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: d9a66b2cf688bcd48a75da83411f0345, type: 2}
+  stageData: {fileID: 11400000, guid: b06eb7574154d1543a6200428889072a, type: 2}
 --- !u!114 &1450589369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2272,8 +2272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07ab255e20e5e14faf5169105786625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressTimeRate: 30
-  progressPerSplit: 0.2
+  progressTimeRate: 20
+  progressPerSplit: 0.3
 --- !u!1001 &1511599527
 PrefabInstance:
   m_ObjectHideFlags: 0

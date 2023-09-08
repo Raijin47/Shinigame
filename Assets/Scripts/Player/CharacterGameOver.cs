@@ -10,6 +10,7 @@ public class CharacterGameOver : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         gameOverPanel.SetActive(true);
         weaponParent.SetActive(false);
-        pauseManager.PauseGame();
+        pauseManager.PauseGame(true);
+        SaveService.SaveGame();
     }
 }

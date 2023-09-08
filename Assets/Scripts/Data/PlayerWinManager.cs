@@ -13,8 +13,9 @@ public class PlayerWinManager : MonoBehaviour
     public void Win(int stageID)
     {
         winMessagePanel.SetActive(true);
-        pauseManager.PauseGame();
+        pauseManager.PauseGame(true);
         dataContainer.StageComplete(stageID);
         dataContainer.butterflies++;
+        SaveService.SaveGame();
     }
 }

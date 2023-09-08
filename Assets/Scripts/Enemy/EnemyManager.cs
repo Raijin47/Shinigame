@@ -29,6 +29,7 @@ public class EnemySpawnGroup
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private float _offset;
+    [SerializeField] private int _enemyLimit;
 
     [SerializeField] private Vector2 _spawnArea;
 
@@ -38,6 +39,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private DropManager _dropManager;
     [SerializeField] private GameObject _barrierZone;
 
+    private int _enemyCount;
     private int _totalBossHealth;
     private int _currentBossHealth;
     private int _spawnPerFrame = 2;
@@ -77,8 +79,17 @@ public class EnemyManager : MonoBehaviour
 
         _repeatedSpawnGroupList.Add(repeatSpawnGroup);
     }
+
+    public void RemoveEnemy()
+    {
+        _enemyCount--;
+    }
+    
     public void SpawnEnemy(EnemyData enemyToSpawn, bool isBoss)
     {
+        if(_enemyCount > _enemyLimit && !isBoss) return;
+        _enemyCount++;
+
         var position = GenerateSpawnPos();
 
         GameObject newEnemy = _poolManager.GetObject(enemyToSpawn.poolObjectData);

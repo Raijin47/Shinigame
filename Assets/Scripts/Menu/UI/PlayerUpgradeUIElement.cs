@@ -22,6 +22,7 @@ public class PlayerUpgradeUIElement : MonoBehaviour
             dataContainer.souls -= playerUpgrades.costToUpgrade[playerUpgrades.level];
             playerUpgrades.level += 1;
             UpdateElement();
+            SaveService.SaveUpgrade(upgrade);
         }
     }
     public void UpdateElement()

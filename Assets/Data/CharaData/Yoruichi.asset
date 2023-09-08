@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
   m_Name: Yoruichi
   m_EditorClassIdentifier: 
-  icon: {fileID: 961031889, guid: 803f34f22b4ce4446943777f16bb941d, type: 3}
+  ID: 5
+  icon: {fileID: 1580345036, guid: 00eaf63b4d708fb4597922ea986758ba, type: 3}
   Name: Yoruichi
   WeaponName: Kunai
   WeaponDescription: KunaiDes
   spritePrefab: {fileID: 4124804444446211218, guid: fea376fec5601634e8a209dbd52b34af, type: 3}
   startingWeapon: {fileID: 11400000, guid: 965d17c6b3fcfde41ab224957df0eed9, type: 2}
   Level: 0
-  Health: 80
+  Health: 180
   MovementSpeed: 3.5
   Damage: 1.1

@@ -110,7 +110,8 @@ MonoBehaviour:
   _dropData:
   - {fileID: 11400000, guid: 778b6154553d4ad4da2b824934da1c26, type: 2}
   _chanceDrop: 0.1
-  _timeToAttack: 6.19
+  _timeToAttack: 6
+  _disposeDistance: 15
   _boxCol: {fileID: 4208301388889419240}
   _distance: 5
   _projectile: {fileID: 11400000, guid: df71c6234b0e77043acecd310708c682, type: 2}
@@ -128,7 +129,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5a1eec2b49ed9594690114d28c4c6b53, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

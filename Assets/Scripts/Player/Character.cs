@@ -17,7 +17,7 @@ public class Character : MonoBehaviour
     [HideInInspector] public float projectileSpeedBonus;
     [HideInInspector] public float durationBonus;
     [HideInInspector] public int projectileCountBonus;
-    private int armor;
+    private float armor;
     private int recoveryHp;
     private int maxHp;
     // default stats
@@ -33,7 +33,7 @@ public class Character : MonoBehaviour
     [HideInInspector] public float durationItem = 1;
     [HideInInspector] public int recoveryItem;
     [HideInInspector] public int projectileCountItem;
-    [HideInInspector] public int armorItem;
+    [HideInInspector] public float armorItem;
     //itme stats
 
     private float hpRegenerationRate = 1f;
@@ -107,8 +107,11 @@ public class Character : MonoBehaviour
         int projectileCountUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileCount);
         projectileCountBonus = projectileCountUpgradeLevel + projectileCountItem;
 
+        //int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
+        //armor = armorUpgradeLevel + armorItem;
+
         int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
-        armor = armorUpgradeLevel + armorItem;
+        armor = 1f - (armorUpgradeLevel * 0.04f + armorItem);
 
         int durationUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Duration);
         durationBonus = (1 + durationUpgradeLevel * 0.03f) * durationItem;
@@ -118,18 +121,18 @@ public class Character : MonoBehaviour
     private void Update()
     {
         hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
-        if (hpRegenerationTimer > 3f)
+        if (hpRegenerationTimer > 1f)
         {
             Heal(recoveryHp);
-            hpRegenerationTimer -= 1f;
+            hpRegenerationTimer = 0;
         }
     }
     public void TakeDamage(int damage)
     {
         if(isDeath) { return; }
-        ApplyArmor(ref damage);
-
-        currentHp -= damage;
+        //ApplyArmor(ref damage);
+        int dmg = (int)(damage * armor);
+        currentHp -= dmg;
 
         if(currentHp <= 0)
         {
@@ -138,6 +141,11 @@ public class Character : MonoBehaviour
         }
         hpBar.SetState(currentHp, maxHp);
     }
+    //private void ApplyArmor(ref int damage)
+    //{
+    //    damage -= armor;
+    //    if (damage < 0) { damage = 1; }
+    //}
     public void Heal(int amount)
     {
         if(currentHp <= 0) { return; }
@@ -148,11 +156,6 @@ public class Character : MonoBehaviour
             currentHp = maxHp;
         }
         hpBar.SetState(currentHp, maxHp);
-    }
-    private void ApplyArmor(ref int damage)
-    {
-        damage -= armor;
-        if(damage < 0) { damage = 1; }
     }
     public void AddPersistance(UpgradeData data)
     {

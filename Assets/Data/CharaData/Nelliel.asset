@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
   m_Name: Nelliel
   m_EditorClassIdentifier: 
-  icon: {fileID: 1892259795, guid: 803f34f22b4ce4446943777f16bb941d, type: 3}
+  ID: 2
+  icon: {fileID: 733786791, guid: 00eaf63b4d708fb4597922ea986758ba, type: 3}
   Name: Nelliel
   WeaponName: Cero
   WeaponDescription: CeroDes
   spritePrefab: {fileID: 7319573382895179681, guid: 09f809416d7bf8d45a788a333f460ca5, type: 3}
   startingWeapon: {fileID: 11400000, guid: b198d1ace86eaad4181fa6f6e5cafd1b, type: 2}
-  Level: 0
-  Health: 100
+  Level: 1
+  Health: 200
   MovementSpeed: 3.3
   Damage: 1.15

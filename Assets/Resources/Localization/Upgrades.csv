@@ -13,7 +13,7 @@ Duration,Длительность,Duration
 ProjectSpeed,Ускорение,Acceleration
 ProjectCount,Боезапас,Ammunition
 desDamage,Увеличивает наносимый урон на 6% с каждым рангом.,Increases damage dealt by 6% with each rank.
-desArmor,Увеличивает защиту на 1 за каждый ранг.,Increases defense by 1 for each rank.
+desArmor,Уменьшает входящий урон на 4% за каждый ранг.,Reduces incoming damage by 4% per rank.
 desProjectCount,Выпускает на 1 снаряд больше.,Releases 1 more projectile.
 desExp,Персонаж получает на 5% опыта больше за каждый ранг.,The character gets 5% more experience for each rank.
 desGold,Персонаж получает на 5% больше золота за каждый ранг.,The character gets 5% more gold for each rank.

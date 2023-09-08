@@ -94,6 +94,6 @@ public class GachaPanel : MonoBehaviour
         image.sprite = gacha[id].data[a].icon;
         gacha[id].data[a].Level++;
 
-        saveService.SaveData();
+        SaveService.SaveChara(gacha[id].data[a]);
     }
 }

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
   m_Name: Byakuya
   m_EditorClassIdentifier: 
-  icon: {fileID: 302459252, guid: 803f34f22b4ce4446943777f16bb941d, type: 3}
+  ID: 1
+  icon: {fileID: 192296130, guid: 00eaf63b4d708fb4597922ea986758ba, type: 3}
   Name: Byakuya
   WeaponName: Senbonzakura
   WeaponDescription: SenbonzakuraDes
   spritePrefab: {fileID: 1229542461025739982, guid: fa971848a4d2b194a8e8e0ff118626d9, type: 3}
   startingWeapon: {fileID: 11400000, guid: 090f74db5dc3448469bb3839233b0ffa, type: 2}
-  Level: 0
-  Health: 120
+  Level: 1
+  Health: 240
   MovementSpeed: 3.2
   Damage: 1.05

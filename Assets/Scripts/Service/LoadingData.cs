@@ -11,6 +11,7 @@ public class LoadingData : MonoBehaviour
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
     private void Awake()
     {
+        SaveService.GetData(data);
         if (YandexGame.SDKEnabled == true)
         {
             GetData();
@@ -34,24 +35,5 @@ public class LoadingData : MonoBehaviour
         data.souls = YandexGame.savesData.souls;
         data.butterflies = YandexGame.savesData.butterflies;
         languageSettings.SetLanguage(YandexGame.savesData.language);
-    }
-
-    public void SaveData()
-    {
-        for(int i = 0; i < chara.Length; i++)
-        {
-            YandexGame.savesData.charaLvl[i] = chara[i].Level;
-        }
-        for(int i = 0; i < data.upgrades.Length; i++)
-        {
-            YandexGame.savesData.upgrades[i] = data.upgrades[i].level;
-        }
-        for (int i = 0; i < data.stageCompletion.Length; i++)
-        {
-            YandexGame.savesData.stage[i] = data.stageCompletion[i];
-        }
-        YandexGame.savesData.souls = data.souls;
-        YandexGame.savesData.butterflies = data.butterflies;
-        YandexGame.SaveProgress();
     }
 }

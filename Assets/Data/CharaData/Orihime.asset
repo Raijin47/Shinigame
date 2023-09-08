@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
   m_Name: Orihime
   m_EditorClassIdentifier: 
-  icon: {fileID: -1536323271, guid: 803f34f22b4ce4446943777f16bb941d, type: 3}
+  ID: 3
+  icon: {fileID: -1484170121, guid: 00eaf63b4d708fb4597922ea986758ba, type: 3}
   Name: Orihime
   WeaponName: Soten
   WeaponDescription: SotenDes
   spritePrefab: {fileID: 588852195598865551, guid: 386186e126c6f6044a815c1b3da166d1, type: 3}
   startingWeapon: {fileID: 11400000, guid: 8872ddc863c070944b3bd1034b057466, type: 2}
-  Level: 0
-  Health: 200
+  Level: 1
+  Health: 300
   MovementSpeed: 3
   Damage: 0.8

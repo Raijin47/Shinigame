@@ -43,7 +43,7 @@ MonoBehaviour:
     health: 0
     recovery: 0
     projectileCount: 0
-    armor: 1
+    armor: 0.08
     duration: 0
   persistanceStats:
     HealAmount: 0

@@ -6,11 +6,12 @@ public class Coins : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinsCountText;
     private float _soulBoost;
     private DataContainer data;
+    private int _coins;
 
     private void Start()
     {
+        _coins = 0;
         data = EssentialService.instance.dataContainer;
-        Add(0);
     }
     public void SetBoost(float coinBoost)
     {
@@ -19,7 +20,8 @@ public class Coins : MonoBehaviour
 
     public void Add(int count)
     {
+        _coins += (int)(count * _soulBoost);
         data.souls += (int)(count * _soulBoost);
-        coinsCountText.text = data.souls.ToString();
+        coinsCountText.text = _coins.ToString();
     }
 }

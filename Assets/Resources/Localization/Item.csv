@@ -1,11 +1,11 @@
 Key,ru,en
 ReishukakuUnlock,Разблокировать Рейшукаку,Unlock Reishukaku
 ReishukakuUp,Улучшить Рейшукаку,Upgrade Reishukaku
-ReishukakuDes,Увеличивает защиту на 1.,Increases protection by 1.
-ReishukakuUp1,Увеличивает защиту на 2.,Increases protection by 2.
-ReishukakuUp2,Увеличивает защиту на 3.,Increases protection by 3.
-ReishukakuUp3,Увеличивает защиту на 4.,Increases protection by 4.
-ReishukakuUp4,Увеличивает защиту на 5.,Increases protection by 5.
+ReishukakuDes,Уменьшает входящий урон на 8%.,Reduces incoming damage by 8%.
+ReishukakuUp1,Уменьшает входящий урон на 16%.,Reduces incoming damage by 16%.
+ReishukakuUp2,Уменьшает входящий урон на 24%.,Reduces incoming damage by 24%.
+ReishukakuUp3,Уменьшает входящий урон на 32%.,Reduces incoming damage by 32%.
+ReishukakuUp4,Уменьшает входящий урон на 40%.,Reduces incoming damage by 40%.
 HogyokuUnlock,Разблокировать Хогьёку,Unlock Hogyoku
 HogyokuUp,Улучшить Хогьёку,Upgrade Hogyoku
 HogyokuDes,Увеличивает размер атак на 7%.,Increases the size of attacks by 7%.

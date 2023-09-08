@@ -98,7 +98,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bb6d15a322d42c740b2a9c3eb7033317, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -134,6 +134,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.04375417}
-  m_Size: {x: 0.71698636, y: 0.21805796}
+  m_Offset: {x: 0, y: 0.11794851}
+  m_Size: {x: 0.82828075, y: 0.36644801}
   m_Direction: 1

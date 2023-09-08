@@ -15,7 +15,7 @@ public class ItemStats
     public float health;
     public int recovery;
     public int projectileCount;
-    public int armor;
+    public float armor;
     public float duration;
 
     internal void Sum(ItemStats stats)
@@ -48,7 +48,6 @@ public class ItemData: ScriptableObject
     {
         this.Name = Name;
         stats = new ItemStats();
-        //upgrades = new List<UpgradeData>();
     }
     public void Equip(Character character)
     {        

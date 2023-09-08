@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d59d6eebc3f4d14db809e48370fe280, type: 3}
   m_Name: Toshiro
   m_EditorClassIdentifier: 
-  icon: {fileID: -1933394095, guid: 803f34f22b4ce4446943777f16bb941d, type: 3}
+  ID: 4
+  icon: {fileID: 199509286, guid: 00eaf63b4d708fb4597922ea986758ba, type: 3}
   Name: Toshiro
   WeaponName: Hyourinmaru
   WeaponDescription: HyourinmaruDes
   spritePrefab: {fileID: 8310345486343702789, guid: 84f0ab949171af8459b4951435838b44, type: 3}
   startingWeapon: {fileID: 11400000, guid: a01847feda3bf0a4491cfc34c15c3092, type: 2}
-  Level: 0
-  Health: 140
+  Level: 1
+  Health: 280
   MovementSpeed: 3.1
   Damage: 1.15

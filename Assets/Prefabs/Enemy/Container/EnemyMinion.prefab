@@ -179,7 +179,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5a1eec2b49ed9594690114d28c4c6b53, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -282,13 +282,14 @@ MonoBehaviour:
     MoveSpeed: 0
   _rigidbody: {fileID: 4485219277040489462}
   _deathSound: {fileID: 7445372753022495551}
-  _attackArea: {x: 0.71, y: 0.27}
-  _offset: {x: 0, y: 0.03, z: 0}
+  _attackArea: {x: 0.7, y: 0.3}
+  _offset: {x: 0, y: 0.09, z: 0}
   _player:
     serializedVersion: 2
     m_Bits: 256
   _dropData:
   - {fileID: 11400000, guid: 778b6154553d4ad4da2b824934da1c26, type: 2}
   _chanceDrop: 0.05
-  _timeToAttack: 0.5
+  _timeToAttack: 0.3
+  _disposeDistance: 50
   _boxCol: {fileID: 3055248425950474085}

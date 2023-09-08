@@ -25,4 +25,8 @@ public class EnemyRunner : Enemy
     {
 
     }
+    public override void Knockback(Vector2 vector, float force, float timeWeight)
+    {
+
+    }
 }

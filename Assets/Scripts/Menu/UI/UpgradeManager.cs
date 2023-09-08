@@ -73,7 +73,7 @@ public class UpgradeManager : MonoBehaviour
     {
         UpdateRerollStatus();
         Clean();
-        pauseManager.PauseGame();
+        pauseManager.PauseGame(true);
         panel.SetActive(true);
 
         this.upgradeData = upgradeDatas;
@@ -100,7 +100,7 @@ public class UpgradeManager : MonoBehaviour
     {
         HideButtons();
 
-        pauseManager.UnPauseGame();
+        pauseManager.UnPauseGame(false);
         panel.SetActive(false);
     }
     private void HideButtons()

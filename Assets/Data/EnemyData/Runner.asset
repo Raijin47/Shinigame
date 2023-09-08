@@ -15,7 +15,7 @@ MonoBehaviour:
   nameEnemy: EnemyRunner
   poolObjectData: {fileID: 11400000, guid: 6cd26d75d4e600f439d57f50e8f994c3, type: 2}
   stats:
-    Hp: 100
-    Damage: 12
-    ExperienceReward: 1500
+    Hp: 80
+    Damage: 20
+    ExperienceReward: 800
     MoveSpeed: 4

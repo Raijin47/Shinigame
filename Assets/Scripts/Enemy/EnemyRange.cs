@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class EnemyRange : Enemy
 {
-    [SerializeField] private float _distance;
     [SerializeField] private PoolObjectData _projectile;
     [SerializeField] private Vector3 _offsetProjectile = new Vector2(0, 0.8f);
-    [SerializeField] private Transform _projectileSpawner;
 
     private PoolManager _poolManager;
 

@@ -4,6 +4,7 @@ public class CoinPickUp : MonoBehaviour, IPickUpObject, IPoolMember
 {
     [SerializeField] int count;
     private PoolMember poolMember;
+
     public void OnPickUp(Character character)
     {
         character.coins.Add(count);
@@ -14,7 +15,7 @@ public class CoinPickUp : MonoBehaviour, IPickUpObject, IPoolMember
     {
         this.poolMember = poolMember;
     }
-    private void DestroyObj()
+    public void DestroyObj()
     {
         if (poolMember == null)
         {

@@ -21,8 +21,6 @@ public class EnemyStats
     internal void ApplyProgress(float progress)
     {
         Hp = (int)(Hp * progress);
-        //Damage = (int)(Damage * progress);
-        //this.experienceReward = (int)(experienceReward * progress);
     }
 }
 public class Enemy : MonoBehaviour, IDamageable, IPoolMember
@@ -37,18 +35,18 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     [SerializeField] private AudioSource _deathSound;
     [SerializeField] private Vector2 _attackArea;
     [SerializeField] private Vector3 _offset;
-    [SerializeField] private LayerMask _player;
+    [SerializeField] protected LayerMask _player;
     [SerializeField] private PoolObjectData[] _dropData;
     [SerializeField, Range(0f, 1f)] private float _chanceDrop;
     [SerializeField] protected float _timeToAttack = .5f;
-
+    [SerializeField] private float _disposeDistance;
     [SerializeField] private BoxCollider2D _boxCol;
 
     protected bool _isActive;
     private bool _isBurn;
     private bool _isStunned;
     private bool _isknockback;
-    private bool _isRight = true;
+    protected bool _isRight = true;
 
     private int _burnDamage;
 
@@ -61,12 +59,13 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private Vector2 _knockbackVector;
     private Vector2 _newVelocity;
 
-    private Character _targetCharacter;
+    protected Character _targetCharacter;
     private PoolMember _poolMember;
     private EnemyFade _enemyFade;
     private MessageSystem _message;
     private DropManager _dropManager;
     private SpriteRenderer _spriteRenderer;
+    protected EnemyManager _enemyManager;
 
     private Coroutine _updateDirectionCoroutine;
     private Coroutine _updateBurnProcessCoroutine;
@@ -74,6 +73,9 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     private Coroutine _updateAttackPorecessCoroutine;
     private Coroutine _updateMovementProcessCoroutine;
     private Coroutine _updateKnockbackTimeCoroutine;
+    private Coroutine _updateReturnToPoolCoroutine;
+
+    private WaitForSeconds _checkDispose = new(2f);
 
     public virtual void Activate()
     {
@@ -94,12 +96,18 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             _spriteRenderer = transform.GetChild(1).GetComponent<SpriteRenderer>();
         }
 
+        if(_enemyManager == null)
+        {
+            _enemyManager = EssentialService.instance.enemyManager;
+        }
+
         if (_updateDirectionCoroutine != null)
         {
             StopCoroutine(_updateDirectionCoroutine);
             _updateDirectionCoroutine = null;
         }
         _updateDirectionCoroutine = StartCoroutine(UpdateDirection());
+
         if (_updateAttackPorecessCoroutine != null)
         {
             StopCoroutine(_updateAttackPorecessCoroutine);
@@ -113,6 +121,13 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             _updateMovementProcessCoroutine = null;
         }
         _updateMovementProcessCoroutine = StartCoroutine(UpdateMovementProcess());
+
+        if(_updateReturnToPoolCoroutine != null)
+        {
+            StopCoroutine(_updateReturnToPoolCoroutine);
+            _updateReturnToPoolCoroutine = null;
+        }
+        _updateReturnToPoolCoroutine = StartCoroutine(UpdateReturnToPool());
     }
     public void SetTarget(GameObject target, Character chara, DropManager drop)
     {
@@ -153,6 +168,12 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         _dropManager.ExpDrop(transform.position, Stats.ExperienceReward);
         _dropManager.Drop(transform.position, _dropData, _chanceDrop);
+        Remove();
+    }
+
+    private void Remove()
+    {
+        _enemyManager.RemoveEnemy();
         if (_poolMember != null)
         {
             _poolMember.ReturnToPool();
@@ -179,7 +200,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
         _updateStunPrecessCoroutine = StartCoroutine(UpdateStunPrecess());
     }
-    public void Knockback(Vector2 vector, float force, float timeWeight)
+    public virtual void Knockback(Vector2 vector, float force, float timeWeight)
     {
         if (force == 0) { return; }
 
@@ -221,6 +242,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             _targetCharacter.TakeDamage(Stats.Damage);
         }
     }
+
     private IEnumerator UpdateAttackPorecess()
     {
         while (_isActive)
@@ -273,6 +295,17 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
                 Move();
             }
             yield return null;
+        }
+    }
+    private IEnumerator UpdateReturnToPool()
+    {
+        while(_isActive)
+        {
+            if(Vector2.Distance(transform.position, _targetDestination.position) > _disposeDistance)
+            {
+                Remove();
+            }
+            yield return _checkDispose;
         }
     }
     protected virtual void Move()

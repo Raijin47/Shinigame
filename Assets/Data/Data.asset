@@ -12,26 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f5c78592c1a2c4994cacb2864e3bdb, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  souls: 100090
-  butterflies: 3
+  souls: 98000
+  butterflies: 15
   stageCompletion: 010000
   upgrades:
   - persisrentUpgrades: 0
     level: 0
     maxLevel: 5
-    costToUpgrade: 64000000f4010000e8030000b80b000088130000
+    costToUpgrade: e8030000c40900006a1800008c3c000058980000
   - persisrentUpgrades: 1
-    level: 0
+    level: 1
     maxLevel: 5
-    costToUpgrade: 2c010000e8030000d00700008813000010270000
+    costToUpgrade: d007000088130000d4300000127a000080380100
   - persisrentUpgrades: 2
     level: 0
     maxLevel: 4
-    costToUpgrade: c8000000f4010000d0070000d0070000
+    costToUpgrade: dc050000a60e0000b8240000cc5b0000
   - persisrentUpgrades: 3
     level: 0
     maxLevel: 5
-    costToUpgrade: f4010000d007000088130000581b0000e8030000
+    costToUpgrade: dc050000a60e0000b8240000a861000060ea0000
   - persisrentUpgrades: 4
     level: 0
     maxLevel: 5
@@ -68,4 +68,4 @@ MonoBehaviour:
     level: 0
     maxLevel: 3
     costToUpgrade: 640000006400000064000000
-  selectedCharacter: {fileID: 11400000, guid: 63fb5a02d9d6c1341b6b959d59e41337, type: 2}
+  selectedCharacter: {fileID: 11400000, guid: 7f27d2bcef8c823418f530e8326a3efd, type: 2}

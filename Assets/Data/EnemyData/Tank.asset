@@ -15,7 +15,7 @@ MonoBehaviour:
   nameEnemy: Tank
   poolObjectData: {fileID: 11400000, guid: 56e1696ae80a46148b2fa6609d55132c, type: 2}
   stats:
-    Hp: 50
-    Damage: 12
-    ExperienceReward: 800
+    Hp: 80
+    Damage: 15
+    ExperienceReward: 500
     MoveSpeed: 1
