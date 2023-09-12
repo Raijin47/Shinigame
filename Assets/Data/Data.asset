@@ -12,38 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f5c78592c1a2c4994cacb2864e3bdb, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  souls: 98000
-  butterflies: 15
-  stageCompletion: 010000
+  souls: 1530
+  butterflies: 0
+  stageCompletion: 000000
   upgrades:
   - persisrentUpgrades: 0
     level: 0
     maxLevel: 5
-    costToUpgrade: e8030000c40900006a1800008c3c000058980000
+    costToUpgrade: dc0500002f0d0000b01d0000cc42000064960000
   - persisrentUpgrades: 1
-    level: 1
+    level: 0
     maxLevel: 5
-    costToUpgrade: d007000088130000d4300000127a000080380100
+    costToUpgrade: d0070000941100008d2700001c57000050c30000
   - persisrentUpgrades: 2
     level: 0
     maxLevel: 4
-    costToUpgrade: dc050000a60e0000b8240000cc5b0000
+    costToUpgrade: d0070000941100008d2700001c570000
   - persisrentUpgrades: 3
     level: 0
     maxLevel: 5
-    costToUpgrade: dc050000a60e0000b8240000a861000060ea0000
+    costToUpgrade: dc0500002f0d0000b01d0000cc42000064960000
   - persisrentUpgrades: 4
     level: 0
     maxLevel: 5
-    costToUpgrade: 6400000064000000640000006400000064000000
+    costToUpgrade: dc0500002f0d0000b01d0000cc42000064960000
   - persisrentUpgrades: 5
     level: 0
     maxLevel: 5
-    costToUpgrade: 6400000064000000640000006400000064000000
+    costToUpgrade: c4090000f9150000d4300000606d000060ea0000
   - persisrentUpgrades: 6
     level: 0
     maxLevel: 3
-    costToUpgrade: 640000006400000064000000
+    costToUpgrade: d00700009411000010270000
   - persisrentUpgrades: 7
     level: 0
     maxLevel: 1
@@ -51,21 +51,21 @@ MonoBehaviour:
   - persisrentUpgrades: 8
     level: 0
     maxLevel: 5
-    costToUpgrade: 6400000064000000640000006400000064000000
+    costToUpgrade: b00400008c0a0000bb17000058340000c6750000
   - persisrentUpgrades: 9
     level: 0
     maxLevel: 5
-    costToUpgrade: 6400000064000000640000006400000064000000
+    costToUpgrade: b00400008c0a0000bb17000058340000c6750000
   - persisrentUpgrades: 10
     level: 0
     maxLevel: 2
-    costToUpgrade: 6400000064000000
+    costToUpgrade: b80b00005e1a0000
   - persisrentUpgrades: 11
     level: 0
     maxLevel: 3
-    costToUpgrade: 640000006400000064000000
+    costToUpgrade: 88130000f22b0000a8610000
   - persisrentUpgrades: 12
     level: 0
     maxLevel: 3
-    costToUpgrade: 640000006400000064000000
+    costToUpgrade: d0070000941100008d270000
   selectedCharacter: {fileID: 11400000, guid: 7f27d2bcef8c823418f530e8326a3efd, type: 2}

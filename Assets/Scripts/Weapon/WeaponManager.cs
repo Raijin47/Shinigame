@@ -8,9 +8,11 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Transform weaponObjectContainer;
     [SerializeField] PoolManager poolManager;
 
+    [SerializeField] private int d;
     [SerializeField] public List<WeaponBase> weapons;
     [SerializeField] private Image[] img;
     [SerializeField] private TextMeshProUGUI[] lvl;
+    [SerializeField] private WeaponCooldownUI[] _weaponCooldown;
     Character character;
     Level level;
     private void Awake()
@@ -42,6 +44,8 @@ public class WeaponManager : MonoBehaviour
         int i = weapons.IndexOf(weaponBase);
         img[i].sprite = weaponData.icon;
         lvl[i].text = weaponData.level;
+        _weaponCooldown[i].gameObject.SetActive(true);
+        _weaponCooldown[i].Activate(weaponBase, weaponData);
 
         if (weapons.Count == 6) level.RemoveWeaponList();
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item MovementSpeed
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 8a72e41eb6156d9458b53df8f8f9751b, type: 3}
+  icon: {fileID: 1369353628, guid: 5208fd745702e9d438e9b7352f47d9cd, type: 3}
   level: E
   Name: MovementSpeed
   stats:

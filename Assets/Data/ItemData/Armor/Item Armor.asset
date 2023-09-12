@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b6bb1ab063a824c9a98c67efd6abf6, type: 3}
   m_Name: Item Armor
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: d9ab61c1a4bf8134b976bb33a611c1cf, type: 3}
+  icon: {fileID: 1632149003, guid: 5208fd745702e9d438e9b7352f47d9cd, type: 3}
   level: E
   Name: Armor
   stats:

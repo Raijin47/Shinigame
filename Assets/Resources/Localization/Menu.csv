@@ -1,30 +1,33 @@
-Key,ru,en
-Back,Назад,Back
-Upgrades,Улучшения,Upgrades
-Gacha,Гача,Gacha
-Settings,Настройки,Settings
-Play,Играть,Play
-Twist,Крутить,Twist
-Improve,Улучшить,Upgrade
-Max,Максимум,Maximum
-Yes,Да,Yes
-No,Нет,No
-Rank,Ранг,Rank
-PanelUpgrades,Панель Улучшений,Panel Upgrades
-PanelGacha,Испытай удачу,Gacha
-PanelChara,Выбор Персонажа,Character Selection
-PanelStage,Выбор этапа,Stage selection
-NoMoney,Недостаточно адских бабочек!,Not enough hellish butterflies!
-Ads,Реклама,AD
-MovementSpeed,Скорость Движения,Movement Speed
-Health,Здоровье,Health
-desNoMoney,"Адские бабочки можно получить в награду за прохождение этапа, вы также можете покрутить бесплатно за просмотр рекламы!","Infernal butterflies can be obtained as a reward for completing the stage, you can also spin for free for watching ads!"
-Shop,Магазин,Shop
-Sound,Звук,Sound
-Music,Музыка,Music
-Language,Язык,Language
-Effects,Эффекты,Effects
-Audio,Аудио,Audio
-Select,Выбрать,Choose
-Pay,Купить,Buy
-GachaDes,"Получите случайного персонажа, при повторе увеличьте ранг персонажа. Ранг увеличивает ХП и Атаку на 3% вплоть до 90%.","Get a random character, increase the character's rank when repeating. Rank increases HP and Attack by 3% up to 90%."
+Key,ru,en,tr
+Back,Назад,Back,Geri
+Upgrades,Улучшения,Upgrades,Yükseltmeler
+Gacha,Гача,Gacha,Gacha'nın
+Settings,Настройки,Settings,Ayarlar
+Play,Играть,Play,Oyna
+Twist,Крутить,Twist,Bükülme
+Improve,Улучшить,Upgrade,Yükseltme
+Max,Максимум,Maximum,Maksimum
+Yes,Да,Yes,Evet
+No,Нет,No,Hayır
+Rank,Ранг,Rank,Rütbe
+PanelUpgrades,Панель Улучшений,Panel Upgrades,Panel Yükseltmeleri
+PanelGacha,Испытай удачу,Gacha,Gacha'nın
+PanelChara,Выбор Персонажа,Character Selection,Karakter Seçimi
+PanelStage,Выбор этапа,Stage selection,Sahne seçimi
+NoMoney,Недостаточно адских бабочек!,Not enough hellish butterflies!,Yeterince cehennem kelebeği yok!
+Ads,Реклама,AD,REKLAM
+MovementSpeed,Скорость Движения,Movement Speed,Hareket Hızı
+Health,Здоровье,Health,Sağlık
+desNoMoney,"Адские бабочки можно получить в награду за прохождение этапа, вы также можете покрутить бесплатно за просмотр рекламы!","Infernal butterflies can be obtained as a reward for completing the stage, you can also spin for free for watching ads!","Cehennemi kelebekler aşamayı tamamlamanın ödülü olarak elde edilebilir, ayrıca reklamları izlemek için ücretsiz olarak dönebilirsiniz!"
+Shop,Магазин,Shop,Dükkan
+Sound,Звук,Sound,Ses
+Music,Музыка,Music,Müzik
+Language,Язык,Language,Dil
+Effects,Эффекты,Effects,Etkileri
+Audio,Аудио,Audio,Ses
+Floating,Плавающий,Floating,Yüzen
+Joystick,Джойстик,Joystick,Oyun Çubuğu
+Dynamic,Динамический,Dynamic,Dinamik
+Select,Выбрать,Choose,Seç
+Pay,Купить,Buy,Satın Al
+GachaDes,"Получите случайного персонажа, при повторе увеличьте ранг персонажа. Ранг увеличивает ХП и Атаку на 3% вплоть до 90%.","Get a random character, increase the character's rank when repeating. Rank increases HP and Attack by 3% up to 90%.","Rastgele bir karakter alın, tekrarlarken karakterin sıralamasını artırın. Rütbe, hp'yi ve Saldırıyı% 3 ila% 90 artırır."

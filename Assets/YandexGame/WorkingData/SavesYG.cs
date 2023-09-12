@@ -20,10 +20,9 @@ namespace YG
 
         public SavesYG()
         {
-            stage[0] = true;
             charaLvl[0] = 1;
-            souls = 100000;
-            butterflies = 20;
+            souls = 0;
+            butterflies = 0;
         }
     }
 }

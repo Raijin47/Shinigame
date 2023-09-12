@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c948207983de166488dea650eea79c80, type: 3}
   m_Name: Hyorinmaru
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: b95348a1e8a72d146808e35f67d0698a, type: 3}
+  icon: {fileID: 855609760, guid: 83aa7abf86a935a469bdf8604546be7b, type: 3}
   level: F
   Name: Heorinmaru
   stats:
@@ -24,7 +24,7 @@ MonoBehaviour:
     stun: 0
     knockback: 5
     knockbackTimeWeight: 0.1
-    attackAreaSize: 0.3
+    attackAreaSize: 0.2
     timeBurn: 0
     damageBurn: 0
     duration: 5

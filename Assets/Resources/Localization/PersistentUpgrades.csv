@@ -1,0 +1,27 @@
+Key,ru,en,tr
+Survive,Живучесть,Survivability,Hayatta kalma
+Recovery,Регенерация,Regeneration,Yenilenme
+Exp,Развитие,Development,Gelişim
+Gold,Жадность,Greed,Açgözlülük
+Reroll,Повтор,Reroll,Reroll'un
+Armor,Броня,Armor,Zırh
+Speed,Передвижение,Movement,Hareket
+Damage,Урон,Damage,Hasar
+AttackSpeed,Скорость Атаки,Attack Speed,Saldırı Hızı
+Radius,Радиус,Radius,Yarıçap
+Duration,Длительность,Duration,Süre
+ProjectSpeed,Ускорение,Acceleration,Hızlanma
+ProjectCount,Боезапас,Ammunition,Mühimmat
+desDamage,Увеличивает наносимый урон на 6% с каждым рангом.,Increases damage dealt by 6% with each rank.,Her rütbe ile verilen hasarı% 6 artırır.
+desArmor,Уменьшает входящий урон на 4% за каждый ранг.,Reduces incoming damage by 4% per rank.,Gelen hasarı rütbe başına% 4 azaltır.
+desProjectCount,Выпускает на 1 снаряд больше.,Releases 1 more projectile.,1 Mermi daha serbest bırakır.
+desExp,Персонаж получает на 5% опыта больше за каждый ранг.,The character gets 5% more experience for each rank.,Karakter her rütbe için% 5 daha fazla deneyim kazanır.
+desGold,Персонаж получает на 5% больше золота за каждый ранг.,The character gets 5% more gold for each rank.,Karakter her rütbe için% 5 daha fazla altın alır.
+desSurvivability,Увеличивает максимум ОЗ на 10% за каждый ранг.,Increases the maximum HP by 10% for each rank.,Her rütbe için maksimum SN'yi% 10 artırır.
+desSpeed,Увеличивает скорость движения на 3% с каждым рангом.,Increases movement speed by 3% with each rank.,Her rütbe ile hareket hızını% 3 artırır.
+desRadius,Увеличивает размер атак на 5% за ранг.,Increases the size of attacks by 5% per rank.,Saldırıların boyutunu rütbe başına% 5 artırır.
+desRecovery,Восстанавливает 1 ОЗ/секунду за каждый ранг.,Recovers 1 HP/second for each rank.,Her rütbe için 1 SN/saniye kurtarır.
+desProjectSpeed,Увеличивает скорость снарядов на 5% за каждый ранг.,Increases projectile speed by 5% for each rank.,Her rütbe için mermi hızını% 5 artırır.
+desDuration,Продлевает эффект оружия на 3% за ранг.,Extends weapon effect by 3% per rank.,Silah etkisini rütbe başına% 3 artırır.
+desAttackSpeed,Уменьшает перезарядку оружия на 2% за ранг.,Reduces weapon reload by 2% per rank.,Silah yeniden yüklemesini rütbe başına% 2 azaltır.
+desReroll,Один раз за ранг позволяет обновить выбор предметов при повышении уровня.,Once per rank allows you to update the selection of items as you level up.,"Rütbe başına bir kez, seviye atladıkça öğe seçimini güncellemenize izin verir."

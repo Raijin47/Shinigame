@@ -194,7 +194,7 @@ MonoBehaviour:
   _dropData:
   - {fileID: 11400000, guid: b38ee66aec075c1489617a4a3e08733c, type: 2}
   - {fileID: 11400000, guid: 8dbca3d8b31457c48b4b01859cd19604, type: 2}
-  _chanceDrop: 1
+  _chanceDrop: 0.4
   _timeToAttack: 0.2
   _disposeDistance: 100
   _boxCol: {fileID: 785331809924357596}

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EnemySpawnGroup
 {
@@ -38,6 +39,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private Character _chara;
     [SerializeField] private DropManager _dropManager;
     [SerializeField] private GameObject _barrierZone;
+    [SerializeField] private TextMeshProUGUI _textBossHealth;
 
     private int _enemyCount;
     private int _totalBossHealth;
@@ -107,10 +109,12 @@ public class EnemyManager : MonoBehaviour
 
         newEnemy.transform.parent = transform;
     }
-    public void SpawnEnemy(EnemyData enemyToSpawn, Vector2 pos)
+    public void SpawnEnemy(EnemyData enemyToSpawn)
     {
+        var position = GenerateSpawnPos();
+
         GameObject newEnemy = _poolManager.GetObject(enemyToSpawn.poolObjectData);
-        newEnemy.transform.position = pos;
+        newEnemy.transform.position = position;
 
         var newEnemyComponent = newEnemy.GetComponent<Enemy>();
         newEnemyComponent.SetTarget(_player, _chara, _dropManager);
@@ -213,9 +217,11 @@ public class EnemyManager : MonoBehaviour
         }
 
         _bossHealthBar.value = _currentBossHealth;
+        _textBossHealth.text = _currentBossHealth.ToString() + " / " + _totalBossHealth.ToString();
 
-        if(_currentBossHealth <= 0)
+        if (_currentBossHealth <= 0)
         {
+            _totalBossHealth = 0;
             _bossHealthBar.gameObject.SetActive(false);
             _bossEnemiesList.Clear();
 
@@ -228,6 +234,7 @@ public class EnemyManager : MonoBehaviour
     {
         if(_bossEnemiesList == null) { _bossEnemiesList = new List<Enemy>(); }
         _bossEnemiesList.Add(newBoss);
+
         _totalBossHealth += newBoss.Stats.Hp;
 
         _bossHealthBar.gameObject.SetActive(true);
@@ -251,7 +258,6 @@ public class EnemyManager : MonoBehaviour
         ProcessSpawn();
         ProcessRepeatedSpawnGroups();
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

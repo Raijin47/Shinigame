@@ -159,6 +159,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
         if (Stats.Hp < 1)
         {
+            Stats.Hp = 0;
             _targetCharacter.AddKilled();
             Defeated();
         }
@@ -280,7 +281,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             _spriteRenderer.flipX = !_isRight;
         }
     }
-
     private IEnumerator UpdateStunPrecess()
     {
         yield return new WaitForSeconds(_stunTime);

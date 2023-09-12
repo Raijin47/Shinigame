@@ -6,7 +6,9 @@ public class LoadingData : MonoBehaviour
     [SerializeField] private DataContainer data;
     [SerializeField] private CharacterData[] chara;
     [SerializeField] private LanguageSettings languageSettings;
+    [SerializeField] private Animator stub;
 
+    private readonly string startGame = "PanelStubOut";
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
     private void Awake()
@@ -35,5 +37,9 @@ public class LoadingData : MonoBehaviour
         data.souls = YandexGame.savesData.souls;
         data.butterflies = YandexGame.savesData.butterflies;
         languageSettings.SetLanguage(YandexGame.savesData.language);
+
+        YandexGame.StickyAdActivity(true);
+
+        stub.Play(startGame);
     }
 }

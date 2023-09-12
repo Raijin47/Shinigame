@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Souls
   m_EditorClassIdentifier: 
   upgradeType: 4
-  Name: 
-  Description: 
+  Name: PerGold
+  Description: PerGoldDes
   icon: {fileID: 21300000, guid: 864dfefc5743e8040bfa7609f442d228, type: 3}
+  level: 
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
@@ -46,4 +47,5 @@ MonoBehaviour:
     duration: 0
   persistanceStats:
     HealAmount: 0
-    SoulAmount: 100
+    SoulAmount: 200
+  nextUpgrade: {fileID: 0}

@@ -21,10 +21,10 @@ public abstract class WeaponBase : MonoBehaviour
     protected PlayerMovement playerMove;
     private MessageSystem message;
     [SerializeField] private AudioSource _audio;
-    private float timer;
+    public float timer;
 
     //currentWeaponStats
-    [SerializeField] private float curTimer;
+    [SerializeField] public float curTimer;
     [SerializeField] protected float duration;
     public float size;
     public int damage;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c948207983de166488dea650eea79c80, type: 3}
   m_Name: Tobiume
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 6e083a2e4556d5345991f0727d2a5e00, type: 3}
+  icon: {fileID: -566502058, guid: 83aa7abf86a935a469bdf8604546be7b, type: 3}
   level: F
   Name: Tobiume
   stats:

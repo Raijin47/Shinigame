@@ -1,12 +1,16 @@
-Key,ru,en
-lvlUp,Уровень Повышен!,Level UP!
-NoRerollCount,Обновить за просмотр Рекламы!,Update for viewing Ads!
-GameOver,Игра Oкончена!,Game Over!
-YouWin,Ты победил!!!,You Win!!!
-Menu,Меню,Menu
-Paused,Пауза,Paused
-Retry,Повторить,Retry
-Continue,Продолжить,Continue
-Level,УР:,LV:
-GrandFisher,Большой Удильщик,Grand Fisher
-Menos,Менос Гранде,Menos Grande
+Key,ru,en,tr
+lvlUp,Уровень Повышен!,Level UP!,Seviye yükseltildi!
+NoRerollCount,Обновить за просмотр Рекламы!,Update for viewing Ads!,Reklamları görüntülemek için Güncelleme!
+GameOver,Игра Oкончена!,Game Over!,Oyun bitti!
+YouWin,Ты победил!!!,You Win!!!,Sen kazandın!!!
+Menu,Меню,Menu,Menü
+Paused,Пауза,Paused,Duraklatıldı
+Retry,Повторить,Retry,Yeniden dene
+Continue,Продолжить,Continue,Devam etmek
+Level,УР.,LV.,SV.
+GrandFisher,Большой Удильщик,Grand Fisher,Büyük Balıkçı
+Menos,Менос Гранде,Menos Grande,Menos Grande
+PerGold,Большой мешок монет,Big bag of coins,Büyük para çantası
+PerGoldDes,Добавляет 200 к запасу золотых монет.,Adds 200 gold coins to your supply.,Kaynağınıza 200 altın para ekler.
+PerHeal,Зелье Жизни,Potion of Life,Yaşam iksiri
+PerHealDes,Восстанавливает 80 ОЗ.,Restores 80 HP.,80 SN'yi geri yükler.

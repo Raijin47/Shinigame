@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 0
   Name: CeroUp
   Description: CeroUp1
-  icon: {fileID: 21300000, guid: d1897cd004a40384fba9902667c21ad3, type: 3}
+  icon: {fileID: -260780340, guid: 83aa7abf86a935a469bdf8604546be7b, type: 3}
   level: E
   weaponData: {fileID: 11400000, guid: d710338531566894c9a936020c119557, type: 2}
   weaponUpgradeStats:

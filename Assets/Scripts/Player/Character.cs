@@ -107,9 +107,6 @@ public class Character : MonoBehaviour
         int projectileCountUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.ProjectileCount);
         projectileCountBonus = projectileCountUpgradeLevel + projectileCountItem;
 
-        //int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
-        //armor = armorUpgradeLevel + armorItem;
-
         int armorUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Armor);
         armor = 1f - (armorUpgradeLevel * 0.04f + armorItem);
 
@@ -130,7 +127,6 @@ public class Character : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if(isDeath) { return; }
-        //ApplyArmor(ref damage);
         int dmg = (int)(damage * armor);
         currentHp -= dmg;
 
@@ -141,11 +137,6 @@ public class Character : MonoBehaviour
         }
         hpBar.SetState(currentHp, maxHp);
     }
-    //private void ApplyArmor(ref int damage)
-    //{
-    //    damage -= armor;
-    //    if (damage < 0) { damage = 1; }
-    //}
     public void Heal(int amount)
     {
         if(currentHp <= 0) { return; }

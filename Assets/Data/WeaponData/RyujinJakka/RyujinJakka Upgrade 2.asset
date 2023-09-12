@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 0
   Name: RyujinUp
   Description: RyujinUp2
-  icon: {fileID: 21300000, guid: 305dbd6314fdf264198069217b227c36, type: 3}
+  icon: {fileID: 1435250487, guid: 83aa7abf86a935a469bdf8604546be7b, type: 3}
   level: D
   weaponData: {fileID: 11400000, guid: fc13f1f1ee840774bb3dd9b51923bb06, type: 2}
   weaponUpgradeStats:

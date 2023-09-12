@@ -20,6 +20,7 @@ public static class SaveService
     {
         YandexGame.savesData.souls = Data.souls;
         YandexGame.savesData.butterflies = Data.butterflies;
+        YandexGame.savesData.stage = Data.stageCompletion;
 
         YandexGame.SaveProgress();
     }

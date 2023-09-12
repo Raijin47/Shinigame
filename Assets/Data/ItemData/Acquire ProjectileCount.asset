@@ -15,7 +15,8 @@ MonoBehaviour:
   upgradeType: 3
   Name: ChappyUnlock
   Description: ChappyDes
-  icon: {fileID: 21300000, guid: 1812413db2710d6429f3971356a31876, type: 3}
+  icon: {fileID: 1227538432, guid: 5208fd745702e9d438e9b7352f47d9cd, type: 3}
+  level: 
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
@@ -47,3 +48,4 @@ MonoBehaviour:
   persistanceStats:
     HealAmount: 0
     SoulAmount: 0
+  nextUpgrade: {fileID: 0}

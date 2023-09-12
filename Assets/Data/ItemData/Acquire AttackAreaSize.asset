@@ -15,7 +15,8 @@ MonoBehaviour:
   upgradeType: 3
   Name: HogyokuUnlock
   Description: HogyokuDes
-  icon: {fileID: 21300000, guid: 2b90e1f19360a15458987aeebe6c1108, type: 3}
+  icon: {fileID: 266580324, guid: 5208fd745702e9d438e9b7352f47d9cd, type: 3}
+  level: 
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
@@ -47,3 +48,4 @@ MonoBehaviour:
   persistanceStats:
     HealAmount: 0
     SoulAmount: 0
+  nextUpgrade: {fileID: 0}

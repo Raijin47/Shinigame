@@ -19,7 +19,7 @@ MonoBehaviour:
   WeaponDescription: CeroDes
   spritePrefab: {fileID: 7319573382895179681, guid: 09f809416d7bf8d45a788a333f460ca5, type: 3}
   startingWeapon: {fileID: 11400000, guid: b198d1ace86eaad4181fa6f6e5cafd1b, type: 2}
-  Level: 1
-  Health: 200
+  Level: 0
+  Health: 260
   MovementSpeed: 3.3
   Damage: 1.15

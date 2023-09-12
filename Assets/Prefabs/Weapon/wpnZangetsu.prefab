@@ -69,6 +69,10 @@ MonoBehaviour:
   numberOfAttacks: 0
   projectileSpeed: 0
   getsugaPrefab: {fileID: 11400000, guid: c34d6103ad347744883b3f25751ff0d1, type: 2}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 512
+  _radius: 5
 --- !u!82 &108601995021889572
 AudioSource:
   m_ObjectHideFlags: 0

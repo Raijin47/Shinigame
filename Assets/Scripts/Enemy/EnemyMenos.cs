@@ -44,8 +44,7 @@ public class EnemyMenos : Enemy
             var action = Random.Range(0, 2) switch
             {
                 0 => CeroPhase(),
-                1 => IdlePhase(),
-                _ => null,
+                _ => IdlePhase(),
             };
             yield return StartCoroutine(action);
             _isAction = false;
@@ -58,6 +57,16 @@ public class EnemyMenos : Enemy
         else _particle.transform.position = transform.position + new Vector3(-0.5f, 1.85f);
         _particle.Play();
 
+        yield return StartCoroutine(CeroRotate());
+        yield return StartCoroutine(CeroAttack());
+
+        _particle.Stop();
+
+        yield return new WaitForSeconds(_timeDelayOutPhase);
+    }
+
+    private IEnumerator CeroRotate()
+    {
         float t = 0;
 
         while (t < _timeCeroRotate)
@@ -67,9 +76,10 @@ public class EnemyMenos : Enemy
             t += Time.deltaTime;
             yield return null;
         }
-
-        t = 0;
-
+    }
+    private IEnumerator CeroAttack()
+    {
+        float t = 0;
         while (t < _timeCeroAttack)
         {
             Collider2D col = Physics2D.Linecast(_transformParticle.position, _target.position, _player).collider;
@@ -80,10 +90,6 @@ public class EnemyMenos : Enemy
             t += Time.deltaTime;
             yield return new WaitForSeconds(_timeToAttack);
         }
-
-        _particle.Stop();
-
-        yield return new WaitForSeconds(_timeDelayOutPhase);
     }
     private IEnumerator IdlePhase()
     {

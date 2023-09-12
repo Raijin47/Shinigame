@@ -22,13 +22,6 @@ public class ExpPickUpObject: MonoBehaviour, IPickUpObject, IPoolMember, IMovabl
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-    //private void FixedUpdate()
-    //{
-    //    if (_target == null) return;
-
-    //    _velocity = (_target.position - transform.position).normalized;
-    //    _rigidbody.velocity = _velocity * speed;
-    //}
     public void SetPoolMember(PoolMember poolMember)
     {
         this._poolMember = poolMember;

@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 0
   Name: KunaiUp
   Description: KunaiUp6
-  icon: {fileID: 21300000, guid: 53cd99240d3dfb24d90785d935448112, type: 3}
+  icon: {fileID: 1864518342, guid: 83aa7abf86a935a469bdf8604546be7b, type: 3}
   level: S
   weaponData: {fileID: 11400000, guid: 458a206aac94e084e8371f7f3c1364e7, type: 2}
   weaponUpgradeStats:

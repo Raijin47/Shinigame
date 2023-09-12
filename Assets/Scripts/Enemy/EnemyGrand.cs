@@ -6,11 +6,15 @@ public class EnemyGrand : Enemy
     [SerializeField] private PoolObjectData _projectile;
     [SerializeField] private Vector3 _offsetProjectile = new Vector2(0,0.8f);
     [SerializeField] private EnemyData _minion;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private float _rangeTimerToAttack;
+    [SerializeField] private int _minionCount;
+    [SerializeField] private int _balaDamage;
 
     private PoolManager _poolManager;
+    private Animator _animator;
 
     private Coroutine _updatePhaseCoroutine;
+    private Coroutine _updateRangeAttackCoroutine;
 
     private bool _isAction;
 
@@ -39,6 +43,13 @@ public class EnemyGrand : Enemy
             _updatePhaseCoroutine = null;
         }
         _updatePhaseCoroutine = StartCoroutine(UpdatePhaseProcess());
+
+        if(_updateRangeAttackCoroutine != null)
+        {
+            StopCoroutine(_updateRangeAttackCoroutine);
+            _updateRangeAttackCoroutine = null;
+        }
+        _updateRangeAttackCoroutine = StartCoroutine(UpdateRangeAttack());
     }
 
     protected override void Move()
@@ -67,6 +78,14 @@ public class EnemyGrand : Enemy
             yield return new WaitForSeconds(Random.Range(5f, 10f));
         }
     }
+    private IEnumerator UpdateRangeAttack()
+    {
+        while(_isActive)
+        {
+            RangeAttack();
+            yield return new WaitForSeconds(_rangeTimerToAttack);
+        }
+    }
 
     private void Rush()
     {
@@ -90,9 +109,9 @@ public class EnemyGrand : Enemy
         _animator.SetTrigger(IdleA);
         var timer = new WaitForSeconds(0.5f);
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < _minionCount; i++)
         {
-            _enemyManager.SpawnEnemy(_minion, transform.position);
+            _enemyManager.SpawnEnemy(_minion);
             yield return timer;
         }
     }
@@ -101,7 +120,7 @@ public class EnemyGrand : Enemy
         var projectile = _poolManager.GetObject(poolObjectData).GetComponent<EnemyProjectile>();
         projectile.transform.position = position;
 
-        projectile.SetDirection(ShotDirection(), Stats.Damage);
+        projectile.SetDirection(ShotDirection(), _balaDamage);
 
         return projectile.gameObject;
     }
@@ -114,13 +133,14 @@ public class EnemyGrand : Enemy
     {
         base.Defeated();
         _updatePhaseCoroutine = null;
+        _updateRangeAttackCoroutine = null;
     }
-    protected override void Attack()
+    private void RangeAttack()
     {
-        base.Attack();
         if (_isAction) { return; }
         SpawnProjectile(_projectile, transform.position + _offsetProjectile);
     }
+
     protected override void Flip()
     {
         if(_isAction) { return; }

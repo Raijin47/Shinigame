@@ -9,9 +9,11 @@ public enum PlatformInput
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private Joystick joystick;
+    [SerializeField] private VariableJoystick joystick;
     [HideInInspector] public Vector2 direction;
     [SerializeField] private PlatformInput state;
+
+    private readonly string Joystick = "JoysticType";
 
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
@@ -31,6 +33,7 @@ public class PlayerInput : MonoBehaviour
         else
         {
             state = PlatformInput.Joystick;
+            joystick.SetMode((JoystickType)PlayerPrefs.GetInt(Joystick, 1));
         }
     }
     void Update()

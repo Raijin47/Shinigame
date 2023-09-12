@@ -37,7 +37,6 @@ public class GachaPanel : MonoBehaviour
     private void Start()
     {
         id = 0;
-        UpdateUI();
     }
     public void LeftButton()
     {
@@ -57,7 +56,7 @@ public class GachaPanel : MonoBehaviour
         }
         UpdateUI();
     }
-    private void UpdateUI()
+    public void UpdateUI()
     {
         bunnerSprite.sprite = gacha[id].bunnerImage;
         text.Localize(gacha[id].nameBanner);

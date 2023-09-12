@@ -93,7 +93,7 @@ MonoBehaviour:
     count: 6
     isRepeatedEvent: 0
     repeatEverySeconds: 10
-    repeatCount: 6
+    repeatCount: 10
   - eventType: 0
     time: 242
     message: 

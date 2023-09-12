@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 1
   Name: HollowUp
   Description: HollowUp3
-  icon: {fileID: 21300000, guid: c309a00f48bc31346959889b9604a546, type: 3}
+  icon: {fileID: 1884958737, guid: 5208fd745702e9d438e9b7352f47d9cd, type: 3}
   level: B
   weaponData: {fileID: 0}
   weaponUpgradeStats:

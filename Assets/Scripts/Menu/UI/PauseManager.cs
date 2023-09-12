@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 public class PauseManager : MonoBehaviour
 {
@@ -25,15 +26,17 @@ public class PauseManager : MonoBehaviour
     }
     public void PauseGame(bool isForced)
     {
+        YandexGame.StickyAdActivity(true);
         _isForced = isForced;
-        Time.timeScale = 0f;
         _playerInput.StopAction();
+        Time.timeScale = 0f;
     }
     public void UnPauseGame(bool isForced)
     {
+        YandexGame.StickyAdActivity(false);
         _isForced = isForced;
-        Time.timeScale = 1f;
         _playerInput.ResumeAction();
+        Time.timeScale = 1f;
     }
 
     public void CloseMenu()

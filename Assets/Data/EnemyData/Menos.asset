@@ -15,7 +15,7 @@ MonoBehaviour:
   nameEnemy: Menos
   poolObjectData: {fileID: 11400000, guid: ecaf27691b9ba51439c3e2d7040d9515, type: 2}
   stats:
-    Hp: 1500
-    Damage: 20
-    ExperienceReward: 5000
+    Hp: 500
+    Damage: 30
+    ExperienceReward: 3000
     MoveSpeed: 1
