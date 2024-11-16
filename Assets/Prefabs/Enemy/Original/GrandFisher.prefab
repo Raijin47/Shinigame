@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 5174170425593344539}
   - component: {fileID: 7428655660141425609}
   - component: {fileID: 6940974029592624993}
-  - component: {fileID: 4416959653214040060}
-  m_Layer: 15
+  m_Layer: 6
   m_Name: GrandFisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,19 +120,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedFade: 3
---- !u!70 &4416959653214040060
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3969817234301370717}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.12648799}
-  m_Size: {x: 1.2980709, y: 0.52827805}
-  m_Direction: 1

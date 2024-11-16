@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3928154488159259739}
   - component: {fileID: 3928154488159259736}
   - component: {fileID: 2004765743908535725}
+  - component: {fileID: -1716023414206718954}
   m_Layer: 0
   m_Name: wpnSotenKisshun
   m_TagString: Untagged
@@ -46,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDirection: 1
+  _source: {fileID: -1716023414206718954}
+  _clip:
+    _id: 4cf5abf9-83f8-4e86-8eeb-916cf8a6fd96
+    _key: Soten
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -61,7 +66,7 @@ MonoBehaviour:
     damageBurn: 0
     duration: 0
   vectorOfAttack: {x: 0, y: 0}
-  _audio: {fileID: 2004765743908535725}
+  timer: 0
   curTimer: 0
   duration: 0
   size: 0
@@ -79,7 +84,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5052682f23f19384da5d743dc76ed64b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -165,3 +170,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1716023414206718954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3928154488159259737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 0

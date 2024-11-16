@@ -27,12 +27,12 @@ public class GachaPanel : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.RewardVideoEvent += RewardedAds;
-        YandexGame.PurchaseSuccessEvent += Pay;
+        //YandexGame.PurchaseSuccessEvent += Pay;
     }
     private void OnDisable()
     {
         YandexGame.RewardVideoEvent -= RewardedAds;
-        YandexGame.PurchaseSuccessEvent -= Pay;
+        //YandexGame.PurchaseSuccessEvent -= Pay;
     }
     private void Start()
     {
@@ -82,10 +82,10 @@ public class GachaPanel : MonoBehaviour
         YandexGame.RewVideoShow(id);
     }
 
-    private void Pay(string id)
-    {
-        menuManager.SubPanelAnim(1);
-    }
+    //private void Pay(string id)
+    //{
+    //    menuManager.SubPanelAnim(1);
+    //}
     public void Reward()
     {
         int a = UnityEngine.Random.Range(0, gacha[id].data.Length);

@@ -16,7 +16,6 @@ public class EnemyFade : MonoBehaviour
     int fadePropertyID;
     int firePropertyID;
 
-
     void Start()
     {
         _enemy = GetComponentInParent<Enemy>();

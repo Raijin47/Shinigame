@@ -5,11 +5,14 @@ public class StageTime : MonoBehaviour
     [HideInInspector] public float time;
     private TimerUI _timer;
     private bool _isBossBattle;
+    [HideInInspector] public float _startTime;
 
     private void Start()
     {
         _timer = EssentialService.instance.timerUI;
         _isBossBattle = false;
+        _startTime = Time.time;
+        EssentialService.instance.finalStatictic.GetStageTime(this);
     }
     private void Update()
     {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3958507477446290103}
   - component: {fileID: 86918958199226130}
   - component: {fileID: 108601995021889572}
+  - component: {fileID: 7989070713609760502}
   m_Layer: 0
   m_Name: wpnZangetsu
   m_TagString: Untagged
@@ -46,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDirection: 1
+  _source: {fileID: 7989070713609760502}
+  _clip:
+    _id: be0881e0-39b1-4a21-9b60-9a95b1a850c6
+    _key: Zangetsu
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -61,7 +66,7 @@ MonoBehaviour:
     damageBurn: 0
     duration: 0
   vectorOfAttack: {x: 0, y: 0}
-  _audio: {fileID: 108601995021889572}
+  timer: 0
   curTimer: 0
   duration: 0
   size: 0
@@ -83,7 +88,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9c62c93deb5774144a661cff013c5171, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -169,3 +174,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7989070713609760502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9098344206436914155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 0

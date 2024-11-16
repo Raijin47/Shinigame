@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2624728931165348670}
   - component: {fileID: 8671298969638149892}
   - component: {fileID: 8062900483592437559}
+  - component: {fileID: -2923527099866592946}
   m_Layer: 0
   m_Name: wpnKunai
   m_TagString: Untagged
@@ -46,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDirection: 1
+  _source: {fileID: -2923527099866592946}
+  _clip:
+    _id: 38d83dc3-2769-4d4f-8aaa-a513ed6a2b94
+    _key: Kunai
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -61,7 +66,7 @@ MonoBehaviour:
     damageBurn: 0
     duration: 0
   vectorOfAttack: {x: 0, y: 0}
-  _audio: {fileID: 8062900483592437559}
+  timer: 0
   curTimer: 0
   duration: 0
   size: 0
@@ -82,8 +87,8 @@ AudioSource:
   m_GameObject: {fileID: 5001563910123114232}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9b5343bb64cf12f4e929ea08e14451ed, type: 3}
+  OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -169,3 +174,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2923527099866592946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001563910123114232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 0

@@ -129,9 +129,9 @@ public class EnemyGrand : Enemy
         var direction = _targetDestination.position - (transform.position + _offsetProjectile);
         return direction.normalized;
     }
-    protected override void Defeated()
+    protected override void StopAction()
     {
-        base.Defeated();
+        base.StopAction();
         _updatePhaseCoroutine = null;
         _updateRangeAttackCoroutine = null;
     }

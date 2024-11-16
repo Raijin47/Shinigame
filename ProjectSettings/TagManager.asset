@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Projectile
+  - 
   - Water
   - UI
   - Enemy
@@ -19,8 +19,8 @@ TagManager:
   - Item
   - AutoPickUp
   - Chara
-  - EnemyNoColl
-  - Boss
+  - 
+  - 
   - 
   - 
   - 

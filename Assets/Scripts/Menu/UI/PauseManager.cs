@@ -1,16 +1,17 @@
+using System.Collections;
 using UnityEngine;
-using YG;
 
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private GameObject _boostPanel;
     private bool _isForced;
 
     private void Start()
     {
         UnPauseGame(false);
-        _isForced = false;
+        StartCoroutine(BoostCoroutine());
     }
 
     private void Update()
@@ -26,16 +27,12 @@ public class PauseManager : MonoBehaviour
     }
     public void PauseGame(bool isForced)
     {
-        YandexGame.StickyAdActivity(true);
         _isForced = isForced;
-        _playerInput.StopAction();
         Time.timeScale = 0f;
     }
     public void UnPauseGame(bool isForced)
     {
-        YandexGame.StickyAdActivity(false);
         _isForced = isForced;
-        _playerInput.ResumeAction();
         Time.timeScale = 1f;
     }
 
@@ -49,5 +46,12 @@ public class PauseManager : MonoBehaviour
     {
         PauseGame(false);
         _pausePanel.SetActive(true);
+    }
+
+    private IEnumerator BoostCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _boostPanel.SetActive(true);
+        PauseGame(true);
     }
 }

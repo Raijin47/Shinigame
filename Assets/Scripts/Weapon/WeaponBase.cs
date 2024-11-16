@@ -1,4 +1,6 @@
 using UnityEngine;
+using Plugins.Audio.Core;
+using Plugins.Audio.Utils;
 
 public enum DirectionOfAttack
 {
@@ -11,6 +13,8 @@ public enum DirectionOfAttack
 public abstract class WeaponBase : MonoBehaviour
 {
     [SerializeField] DirectionOfAttack attackDirection;
+    [SerializeField] private SourceAudio _source;
+    [SerializeField] private AudioDataProperty _clip;
 
     [HideInInspector] public WeaponData weaponData;
     public WeaponStats weaponStats;
@@ -20,7 +24,6 @@ public abstract class WeaponBase : MonoBehaviour
     protected PoolManager poolManager;
     protected PlayerMovement playerMove;
     private MessageSystem message;
-    [SerializeField] private AudioSource _audio;
     public float timer;
 
     //currentWeaponStats
@@ -138,8 +141,8 @@ public abstract class WeaponBase : MonoBehaviour
         }
         vectorOfAttack = vectorOfAttack.normalized;
     }
-    protected void AudioPlay() => _audio.Play();
-    protected void AudioStop() => _audio.Stop();
+    protected void AudioPlay() => _source.Play(_clip.Key);
+    protected void AudioStop() => _source.Stop();
     public GameObject SpawnProjectile(PoolObjectData poolObjectData, Vector2 position)
     {
         GameObject projectileGO = poolManager.GetObject(poolObjectData);

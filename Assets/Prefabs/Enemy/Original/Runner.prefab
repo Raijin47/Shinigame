@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 1989832579181447118}
   - component: {fileID: 3241356991283314073}
   - component: {fileID: 7401258698701034749}
-  - component: {fileID: 6538064651517097618}
-  m_Layer: 14
+  m_Layer: 6
   m_Name: Runner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,19 +120,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedFade: 3
---- !u!70 &6538064651517097618
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2745311483445507313}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0051777423, y: 0.044703487}
-  m_Size: {x: 0.7303558, y: 0.28896573}
-  m_Direction: 1

@@ -17,7 +17,6 @@ namespace YG
         public bool[] stage = new bool[12];
         public int souls;
         public int butterflies;
-
         public SavesYG()
         {
             charaLvl[0] = 1;

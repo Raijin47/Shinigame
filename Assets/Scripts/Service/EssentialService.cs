@@ -12,6 +12,7 @@ public class EssentialService : MonoBehaviour
     public DropManager dropManager;
     public PoolManager poolManager;
     public EnemyManager enemyManager;
+    public FinalStatictic finalStatictic;
     private void Awake()
     {
         if (instance == null)

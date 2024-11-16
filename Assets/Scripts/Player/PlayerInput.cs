@@ -28,6 +28,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (YandexGame.EnvironmentData.isDesktop)
         {
+            joystick.GetComponent<Image>().raycastTarget = false;
             state = PlatformInput.Keyboard;
         }
         else
@@ -49,6 +50,4 @@ public class PlayerInput : MonoBehaviour
                 break;
         }
     }
-    public void StopAction() => joystick.GetComponent<Image>().raycastTarget = false;
-    public void ResumeAction() => joystick.GetComponent<Image>().raycastTarget = true;
 }

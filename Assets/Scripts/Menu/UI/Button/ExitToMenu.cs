@@ -5,6 +5,7 @@ public class ExitToMenu : MonoBehaviour
 {
     public void GoToMenu()
     {
+        SaveService.SaveGame();
         SceneManager.LoadScene("Menu");
     }
 }

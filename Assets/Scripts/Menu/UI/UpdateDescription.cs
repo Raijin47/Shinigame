@@ -23,7 +23,7 @@ public class UpdateDescription : MonoBehaviour
     }
     public void SetData()
     {
-        panelChara.UpdateUI(data, id);
+        panelChara.UpdateUI(data);
     }
     public void AnimEnd()
     {

@@ -13,4 +13,12 @@ Menos,Менос Гранде,Menos Grande,Menos Grande
 PerGold,Большой мешок монет,Big bag of coins,Büyük para çantası
 PerGoldDes,Добавляет 200 к запасу золотых монет.,Adds 200 gold coins to your supply.,Kaynağınıza 200 altın para ekler.
 PerHeal,Зелье Жизни,Potion of Life,Yaşam iksiri
-PerHealDes,Восстанавливает 80 ОЗ.,Restores 80 HP.,80 SN'yi geri yükler.
+PerHealDes,Восстанавливает 150 ОЗ.,Restores 150 HP.,150 SN'yi geri yükler.
+DoubleGold,УДВОИТЬ ЗОЛОТО,DOUBLE GOLD,ÇİFT ALTİN
+KilledHollow,Убито пустых,Killed hollow,İçi boş öldürüldü
+TimeSpent,Время забега,Race time,Yarış zamanı
+GoldEarned,Заработано золота,Gold earned,Kazanılan altın
+Receive,Получить,Receive,Almak
+Refuse,Отказаться,Refuse,Reddetmek
+Boost,"Бонус +30% к золоту, урону, ОЗ.","Bonus +30% to gold, damage, HP.","Bonus +30% altın, hasar, SN."
+ThxForWatch,Бонус Активирован!,Bonus Activated!,Bonus Etkinleştirildi!

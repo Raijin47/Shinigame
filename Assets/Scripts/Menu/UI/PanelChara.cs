@@ -16,13 +16,8 @@ public class PanelChara : MonoBehaviour
     [SerializeField] private UpdateDescription updateDescription;
     [SerializeField] private SelectionCharaButton[] buttons;
 
-    private int currentIndex = 0;
-    public void UpdateUI(CharacterData getData, int id)
+    public void UpdateUI(CharacterData getData)
     {
-        buttons[currentIndex].DeselectButton();
-        currentIndex = id;
-        buttons[currentIndex].SelectedButton();
-
         data.SetSelectedCharacter(getData);
         nameChara.Localize(getData.Name);
         levelChara.text = getData.Level.ToString();

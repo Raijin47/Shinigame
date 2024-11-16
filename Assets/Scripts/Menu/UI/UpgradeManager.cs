@@ -31,7 +31,7 @@ public class UpgradeManager : MonoBehaviour
     }
     private void RewardedAds(int x)
     {
-        characterLevel.Reroll();
+        if(x == 0) characterLevel.Reroll();
     }
     public void RerollPanel()
     {

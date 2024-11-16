@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7756044158071482660}
   - component: {fileID: 7692918413170465964}
   - component: {fileID: 4958015510493407330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PreCero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4825,7 +4825,7 @@ GameObject:
   - component: {fileID: 4452987618380608148}
   - component: {fileID: 1758924948138307802}
   - component: {fileID: 80035969548808242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileCero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9654,8 +9654,7 @@ GameObject:
   - component: {fileID: 3826917875380047567}
   - component: {fileID: 7974142548493455866}
   - component: {fileID: 5565027655998682357}
-  - component: {fileID: 7275039705742306452}
-  m_Layer: 15
+  m_Layer: 6
   m_Name: Menos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9764,22 +9763,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedFade: 3
---- !u!70 &7275039705742306452
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3765566939805045583}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.28082648}
-  m_Size: {x: 1.3311795, y: 0.6948443}
-  m_Direction: 1
 --- !u!1 &5257245279140644992
 GameObject:
   m_ObjectHideFlags: 0
@@ -9790,7 +9773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018558952109248261}
   - component: {fileID: 9177977345331551076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9835,7 +9818,7 @@ GameObject:
   - component: {fileID: 5825723702638028133}
   - component: {fileID: 5825723702638028135}
   - component: {fileID: 5825723702638028132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BeamCero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14649,7 +14632,7 @@ GameObject:
   - component: {fileID: 8760233919142009397}
   - component: {fileID: 3518564645838302649}
   - component: {fileID: 5626393119588455403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small glows
   m_TagString: Untagged
   m_Icon: {fileID: 0}

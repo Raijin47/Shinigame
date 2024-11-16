@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 7146135478730718600}
   - component: {fileID: 4921850473174738291}
   - component: {fileID: 2443074951651643696}
-  - component: {fileID: 6293904458541881319}
-  m_Layer: 14
+  m_Layer: 6
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,19 +120,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedFade: 3
---- !u!70 &6293904458541881319
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6479632626532139933}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.11794851}
-  m_Size: {x: 0.82828075, y: 0.36644801}
-  m_Direction: 1

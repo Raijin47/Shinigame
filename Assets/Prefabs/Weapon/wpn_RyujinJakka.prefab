@@ -4851,7 +4851,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 693423281
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: -1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4895,6 +4895,7 @@ GameObject:
   - component: {fileID: 3789149728561387588}
   - component: {fileID: 1674166463833375588}
   - component: {fileID: 1048517666003742266}
+  - component: {fileID: -770890899753181426}
   m_Layer: 0
   m_Name: wpn_RyujinJakka
   m_TagString: Untagged
@@ -4934,6 +4935,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDirection: 4
+  _source: {fileID: -770890899753181426}
+  _clip:
+    _id: cf6c97eb-ba79-428f-b118-bc617e55536a
+    _key: Ryujin
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -4949,7 +4954,7 @@ MonoBehaviour:
     damageBurn: 0
     duration: 0
   vectorOfAttack: {x: 0, y: 0}
-  _audio: {fileID: 1048517666003742266}
+  timer: 0
   curTimer: 0
   duration: 0
   size: 0
@@ -9779,7 +9784,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 693423281
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: -1
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9820,7 +9825,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 039bafb75dd98f2468a3e53bfa6ddf32, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -9906,6 +9911,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-770890899753181426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031643930611410761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 0
 --- !u!1 &5088587482600684983
 GameObject:
   m_ObjectHideFlags: 0
@@ -14757,7 +14775,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 693423281
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: -1
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -19531,7 +19549,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 693423281
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: -1
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -24413,7 +24431,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 693423281
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: -1
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0

@@ -20,8 +20,8 @@ public class Character : MonoBehaviour
     private float armor;
     private int recoveryHp;
     private int maxHp;
-    // default stats
-    //item stats
+
+    //ItemStats
     [HideInInspector] public float damageItem = 1;
     [HideInInspector] public float attackSpeedItem = 1;
     [HideInInspector] public float attackAreaSizeItem = 1;
@@ -34,12 +34,15 @@ public class Character : MonoBehaviour
     [HideInInspector] public int recoveryItem;
     [HideInInspector] public int projectileCountItem;
     [HideInInspector] public float armorItem;
-    //itme stats
+
+    private float adsDamage = 1;
+    private float adsHp = 1;
+    private float adsCoin = 1;
 
     private float hpRegenerationRate = 1f;
     private float hpRegenerationTimer;
     private int currentHp;
-    private int enemyKilled = 0;
+    [HideInInspector] public int enemyKilled = 0;
     private bool isDeath = false;
 
     private void Awake()
@@ -73,7 +76,7 @@ public class Character : MonoBehaviour
         
         int damageUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.Damage);
         float damageCharaBase = data.selectedCharacter.Damage;
-        damageBonus = (damageCharaBase + damageUpgradeLevel * 0.06f + charaLevel * 0.03f) * damageItem;
+        damageBonus = (damageCharaBase + damageUpgradeLevel * 0.06f + charaLevel * 0.03f) * damageItem * adsDamage;
 
         int attackSpeedUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.AttackSpeed);
         attackSpeedBonus = (1 + attackSpeedUpgradeLevel * 0.02f) * attackSpeedItem;
@@ -94,12 +97,12 @@ public class Character : MonoBehaviour
         level.SetBoost(boostExp);
 
         float soulsUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.GoldBoost);
-        float soulsBoost = (1 + soulsUpgradeLevel * 0.05f) * soulsItem;
+        float soulsBoost = (1 + soulsUpgradeLevel * 0.05f) * soulsItem * adsCoin;
         coins.SetBoost(soulsBoost);
 
         int healthCharaBase = data.selectedCharacter.Health;
         int hpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.HP);
-        maxHp = (int)((1 + hpUpgradeLevel * 0.1f + charaLevel * 0.03f) * healthCharaBase * healthItem);
+        maxHp = (int)((1 + hpUpgradeLevel * 0.1f + charaLevel * 0.03f) * healthCharaBase * healthItem * adsHp);
 
         int recoveryHpUpgradeLevel = data.GetUpgradeLevel(PlayerPersisrentUpgrades.RecoveryHP);
         recoveryHp = recoveryHpUpgradeLevel + recoveryItem;
@@ -157,5 +160,15 @@ public class Character : MonoBehaviour
     {
         enemyKilled++;
         textEnemy.text = enemyKilled.ToString();
+    }
+    public void AdsBoost()
+    {
+        adsDamage = 1.3f;
+        adsHp = 1.3f;
+        adsCoin = 1.3f;
+
+        CalculateStats();
+        currentHp = maxHp;
+        hpBar.SetState(currentHp, maxHp);
     }
 }

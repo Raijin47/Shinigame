@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Plugins.Audio.Core;
+using Plugins.Audio.Utils;
 
 public class EnemySpawnGroup
 {
@@ -40,6 +42,8 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private DropManager _dropManager;
     [SerializeField] private GameObject _barrierZone;
     [SerializeField] private TextMeshProUGUI _textBossHealth;
+    [SerializeField] private SourceAudio _source;
+    [SerializeField] private AudioDataProperty _clip;
 
     private int _enemyCount;
     private int _totalBossHealth;
@@ -81,7 +85,10 @@ public class EnemyManager : MonoBehaviour
 
         _repeatedSpawnGroupList.Add(repeatSpawnGroup);
     }
-
+    public void AudioPlay()
+    {
+        _source.Play(_clip.Key);
+    }
     public void RemoveEnemy()
     {
         _enemyCount--;

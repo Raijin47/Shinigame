@@ -13,6 +13,7 @@ public class LoadingData : MonoBehaviour
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
     private void Awake()
     {
+        Time.timeScale = 1f;
         SaveService.GetData(data);
         if (YandexGame.SDKEnabled == true)
         {
@@ -36,10 +37,11 @@ public class LoadingData : MonoBehaviour
 
         data.souls = YandexGame.savesData.souls;
         data.butterflies = YandexGame.savesData.butterflies;
+        if(YandexGame.savesData.isFirstSession)
+        {
+            YandexGame.savesData.language = YandexGame.EnvironmentData.language;
+        }
         languageSettings.SetLanguage(YandexGame.savesData.language);
-
-        YandexGame.StickyAdActivity(true);
-
         stub.Play(startGame);
     }
 }

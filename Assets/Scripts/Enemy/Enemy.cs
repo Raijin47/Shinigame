@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     [SerializeField] protected Rigidbody2D _rigidbody;
     protected Transform _targetDestination;
 
-    [SerializeField] private AudioSource _deathSound;
     [SerializeField] private Vector2 _attackArea;
     [SerializeField] private Vector3 _offset;
     [SerializeField] protected LayerMask _player;
@@ -128,6 +127,18 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             _updateReturnToPoolCoroutine = null;
         }
         _updateReturnToPoolCoroutine = StartCoroutine(UpdateReturnToPool());
+
+        if (_updateKnockbackTimeCoroutine != null)
+        {
+            StopCoroutine(_updateKnockbackTimeCoroutine);
+            _updateKnockbackTimeCoroutine = null;
+        }
+
+        if (_updateStunPrecessCoroutine != null)
+        {
+            StopCoroutine(_updateStunPrecessCoroutine);
+            _updateStunPrecessCoroutine = null;
+        }
     }
     public void SetTarget(GameObject target, Character chara, DropManager drop)
     {
@@ -161,7 +172,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         {
             Stats.Hp = 0;
             _targetCharacter.AddKilled();
-            Defeated();
+            Die();
         }
     }
 
@@ -183,6 +194,26 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         {
             Destroy(gameObject);
         }
+    }
+    private void Die()
+    {
+        _enemyManager.AudioPlay();
+        _enemyFade.Death();
+        StopAction();
+    }
+
+    protected virtual void StopAction()
+    {
+        _isActive = false;
+        _isDeath = true;
+        _boxCol.enabled = false;
+        StopAllCoroutines();
+        _updateDirectionCoroutine = null;
+        _updateBurnProcessCoroutine = null;
+        _updateStunPrecessCoroutine = null;
+        _updateAttackPorecessCoroutine = null;
+        _updateMovementProcessCoroutine = null;
+        _updateKnockbackTimeCoroutine = null;
     }
 
     public void Stun(float stunTime)
@@ -221,7 +252,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         _poolMember = poolMember;
     }
-
     internal void UpdateStatsForProgress(float progress)
     {
         Stats.ApplyProgress(progress);
@@ -230,7 +260,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
     {
         Stats = new EnemyStats(stats);
     }
-
     protected virtual void Attack()
     {
         var direction = _targetDestination.position - (transform.position + _offset);
@@ -243,7 +272,6 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
             _targetCharacter.TakeDamage(Stats.Damage);
         }
     }
-
     private IEnumerator UpdateAttackPorecess()
     {
         while (_isActive)
@@ -303,6 +331,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
         {
             if(Vector2.Distance(transform.position, _targetDestination.position) > _disposeDistance)
             {
+                StopAction();
                 Remove();
             }
             yield return _checkDispose;
@@ -321,27 +350,10 @@ public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 
         _rigidbody.velocity = _newVelocity;
     }
-
     private IEnumerator UpdateKnockbackTime()
     {
         yield return new WaitForSeconds(_knockbackTimeWeight);
         _isknockback = false;
-    }
-    protected virtual void Defeated()
-    {
-        _deathSound.Play();
-        _isActive = false;
-        _isDeath = true;
-        _boxCol.enabled = false;
-        _enemyFade.Death();
-
-        StopAllCoroutines();
-        _updateDirectionCoroutine = null;
-        _updateBurnProcessCoroutine = null;
-        _updateStunPrecessCoroutine = null;
-        _updateAttackPorecessCoroutine = null;
-        _updateMovementProcessCoroutine = null;
-        _updateKnockbackTimeCoroutine = null;
     }
 
     private void OnDrawGizmos()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 364815553644355660}
   - component: {fileID: 2379378370174047501}
   - component: {fileID: 1611172424119736583}
+  - component: {fileID: -2500224178847901433}
   m_Layer: 0
   m_Name: wpnCero
   m_TagString: Untagged
@@ -47,6 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDirection: 4
+  _source: {fileID: -2500224178847901433}
+  _clip:
+    _id: 8c5d0ec5-1965-4800-8959-f3632e4c78b0
+    _key: Cero
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -62,7 +67,7 @@ MonoBehaviour:
     damageBurn: 0
     duration: 0
   vectorOfAttack: {x: 0, y: 0}
-  _audio: {fileID: 1611172424119736583}
+  timer: 0
   curTimer: 0
   duration: 0
   size: 0
@@ -85,7 +90,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 282f2e6fd1d7d854d8e2258943dbdcb1, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -171,6 +176,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2500224178847901433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364815553644355661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 0
 --- !u!1 &2615153248027220651
 GameObject:
   m_ObjectHideFlags: 0

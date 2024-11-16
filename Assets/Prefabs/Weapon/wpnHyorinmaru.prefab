@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 700939199533458216}
   - component: {fileID: 2424146318356893252}
   - component: {fileID: 8766656604601851545}
+  - component: {fileID: -4684157418046233584}
   m_Layer: 0
   m_Name: wpnHyorinmaru
   m_TagString: Untagged
@@ -46,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDirection: 4
+  _source: {fileID: -4684157418046233584}
+  _clip:
+    _id: f0813040-8f1f-4e7f-970d-fe573db2957a
+    _key: Hyorin
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -61,7 +66,7 @@ MonoBehaviour:
     damageBurn: 0
     duration: 0
   vectorOfAttack: {x: 0, y: 0}
-  _audio: {fileID: 8766656604601851545}
+  timer: 0
   curTimer: 0
   duration: 0
   size: 0
@@ -79,7 +84,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 97a93348ae9ec424a9b78f55944f74b0, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -165,3 +170,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4684157418046233584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700503478688335230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 4
   Name: PerHeal
   Description: PerHealDes
-  icon: {fileID: 21300000, guid: 6b9b0b6beff14f345ae91f1528e80a96, type: 3}
+  icon: {fileID: 21300000, guid: b3874ee7e8e143a4196d6556cd8933a3, type: 3}
   level: 
   weaponData: {fileID: 0}
   weaponUpgradeStats:
@@ -46,6 +46,6 @@ MonoBehaviour:
     armor: 0
     duration: 0
   persistanceStats:
-    HealAmount: 80
+    HealAmount: 150
     SoulAmount: 0
   nextUpgrade: {fileID: 0}

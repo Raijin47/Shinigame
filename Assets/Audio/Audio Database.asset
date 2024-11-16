@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4645132edefd4c74968a0c941a98fb89, type: 3}
+  m_Name: Audio Database
+  m_EditorClassIdentifier: 
+  _items:
+  - Clip: {fileID: 8300000, guid: b7843f76e2f97fa46bffc9fe12b2fe70, type: 3}
+    Key: Game
+    FolderPath: Audio\
+    Name: Game.mp3
+    Preload: 1
+    _id: 81ca4422-f02c-442d-9517-8c281866e39c
+  - Clip: {fileID: 8300000, guid: f90f2e7a52aac1b4ba113fa3b6f3e2e4, type: 3}
+    Key: Menu
+    FolderPath: Audio\
+    Name: Menu.mp3
+    Preload: 1
+    _id: b15116e8-aee3-4598-8754-a6bbf13fcc3b
+  - Clip: {fileID: 8300000, guid: 5a1eec2b49ed9594690114d28c4c6b53, type: 3}
+    Key: Death
+    FolderPath: Audio\SFX\
+    Name: Death.mp3
+    Preload: 1
+    _id: 0d1f4e11-01cd-4060-a471-d0ae6f1b9d7c
+  - Clip: {fileID: 8300000, guid: 9b5343bb64cf12f4e929ea08e14451ed, type: 3}
+    Key: Kunai
+    FolderPath: Audio\SFX\
+    Name: Kunai.mp3
+    Preload: 1
+    _id: 38d83dc3-2769-4d4f-8aaa-a513ed6a2b94
+  - Clip: {fileID: 8300000, guid: 039bafb75dd98f2468a3e53bfa6ddf32, type: 3}
+    Key: Ryujin
+    FolderPath: Audio\SFX\
+    Name: Ryujin.mp3
+    Preload: 1
+    _id: cf6c97eb-ba79-428f-b118-bc617e55536a
+  - Clip: {fileID: 8300000, guid: ce3b91d36ebdd7d4583d0abc37f81cc4, type: 3}
+    Key: Cero
+    FolderPath: Audio\SFX\
+    Name: Cero.mp3
+    Preload: 1
+    _id: 8c5d0ec5-1965-4800-8959-f3632e4c78b0
+  - Clip: {fileID: 8300000, guid: fd6dfb0718ae81247ab466532992a9dd, type: 3}
+    Key: Hyorin
+    FolderPath: Audio\SFX\
+    Name: Hyorinmaru.mp3
+    Preload: 1
+    _id: f0813040-8f1f-4e7f-970d-fe573db2957a
+  - Clip: {fileID: 8300000, guid: 2a1bc65ec2f73ae4f90d49a87504f740, type: 3}
+    Key: Lightning
+    FolderPath: Audio\SFX\
+    Name: Lightning.mp3
+    Preload: 1
+    _id: 3cc89e3f-fe8b-4250-a5db-bd8aeb100e91
+  - Clip: {fileID: 8300000, guid: f5771732450af1e4e89bf3ed0dffb2ab, type: 3}
+    Key: Soten
+    FolderPath: Audio\SFX\
+    Name: Soten.mp3
+    Preload: 1
+    _id: 4cf5abf9-83f8-4e86-8eeb-916cf8a6fd96
+  - Clip: {fileID: 8300000, guid: 39947df6669f1014f905ccaebdb44ef5, type: 3}
+    Key: Tobiume
+    FolderPath: Audio\SFX\
+    Name: Tobiume.mp3
+    Preload: 1
+    _id: f568bdad-b88b-4698-af3d-26e8bf779bb6
+  - Clip: {fileID: 8300000, guid: 22e32221288cb8941bea395db09e71e9, type: 3}
+    Key: Zangetsu
+    FolderPath: Audio\SFX\
+    Name: Zangetsu.mp3
+    Preload: 1
+    _id: be0881e0-39b1-4a21-9b60-9a95b1a850c6

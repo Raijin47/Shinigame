@@ -20,6 +20,6 @@ MonoBehaviour:
   spritePrefab: {fileID: 1229542461025739982, guid: fa971848a4d2b194a8e8e0ff118626d9, type: 3}
   startingWeapon: {fileID: 11400000, guid: 090f74db5dc3448469bb3839233b0ffa, type: 2}
   Level: 0
-  Health: 300
+  Health: 600
   MovementSpeed: 3.2
   Damage: 1.1

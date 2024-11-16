@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 55139143778044942}
   - component: {fileID: 3786661093629409855}
   - component: {fileID: -2344151124628580245}
+  - component: {fileID: 5580266620047737795}
   m_Layer: 0
   m_Name: wpnLightning
   m_TagString: Untagged
@@ -46,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDirection: 4
+  _source: {fileID: 5580266620047737795}
+  _clip:
+    _id: 3cc89e3f-fe8b-4250-a5db-bd8aeb100e91
+    _key: Lightning
   weaponData: {fileID: 0}
   weaponStats:
     damage: 0
@@ -61,7 +66,7 @@ MonoBehaviour:
     damageBurn: 0
     duration: 0
   vectorOfAttack: {x: 0, y: 0}
-  _audio: {fileID: -2344151124628580245}
+  timer: 0
   curTimer: 0
   duration: 0
   size: 0
@@ -83,8 +88,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243485103152924164, guid: b3e9cd88a146b5b44a5d6fbe1eddb79c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0bab18109cc0d434fa35ed3a525ef1e2, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -169,3 +174,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5580266620047737795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455311492470679645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 0

@@ -96,9 +96,9 @@ public class EnemyMenos : Enemy
         yield return null;
     }
 
-    protected override void Defeated()
+    protected override void StopAction()
     {
-        base.Defeated();
+        base.StopAction();
         _updatePhaseCoroutine = null;
     }
     protected override void Flip()

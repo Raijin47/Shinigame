@@ -6,7 +6,7 @@ public class Coins : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinsCountText;
     private float _soulBoost;
     private DataContainer data;
-    private int _coins;
+    [HideInInspector] public int _coins;
 
     private void Start()
     {
@@ -17,11 +17,15 @@ public class Coins : MonoBehaviour
     {
         _soulBoost = coinBoost;
     }
-
     public void Add(int count)
     {
         _coins += (int)(count * _soulBoost);
         data.souls += (int)(count * _soulBoost);
         coinsCountText.text = _coins.ToString();
+    }
+    public void DoubleCoins()
+    {
+        data.souls += _coins;
+        _coins *= 2;
     }
 }

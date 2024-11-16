@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f5c78592c1a2c4994cacb2864e3bdb, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  souls: 1530
-  butterflies: 0
+  souls: 5018450
+  butterflies: 2
   stageCompletion: 000000
   upgrades:
   - persisrentUpgrades: 0
-    level: 0
+    level: 3
     maxLevel: 5
     costToUpgrade: dc0500002f0d0000b01d0000cc42000064960000
   - persisrentUpgrades: 1
-    level: 0
+    level: 3
     maxLevel: 5
     costToUpgrade: d0070000941100008d2700001c57000050c30000
   - persisrentUpgrades: 2
@@ -29,19 +29,19 @@ MonoBehaviour:
     maxLevel: 4
     costToUpgrade: d0070000941100008d2700001c570000
   - persisrentUpgrades: 3
-    level: 0
+    level: 3
     maxLevel: 5
     costToUpgrade: dc0500002f0d0000b01d0000cc42000064960000
   - persisrentUpgrades: 4
-    level: 0
+    level: 3
     maxLevel: 5
     costToUpgrade: dc0500002f0d0000b01d0000cc42000064960000
   - persisrentUpgrades: 5
-    level: 0
+    level: 3
     maxLevel: 5
     costToUpgrade: c4090000f9150000d4300000606d000060ea0000
   - persisrentUpgrades: 6
-    level: 0
+    level: 2
     maxLevel: 3
     costToUpgrade: d00700009411000010270000
   - persisrentUpgrades: 7
@@ -49,11 +49,11 @@ MonoBehaviour:
     maxLevel: 1
     costToUpgrade: 10270000
   - persisrentUpgrades: 8
-    level: 0
+    level: 3
     maxLevel: 5
     costToUpgrade: b00400008c0a0000bb17000058340000c6750000
   - persisrentUpgrades: 9
-    level: 0
+    level: 2
     maxLevel: 5
     costToUpgrade: b00400008c0a0000bb17000058340000c6750000
   - persisrentUpgrades: 10
@@ -65,7 +65,7 @@ MonoBehaviour:
     maxLevel: 3
     costToUpgrade: 88130000f22b0000a8610000
   - persisrentUpgrades: 12
-    level: 0
+    level: 2
     maxLevel: 3
     costToUpgrade: d0070000941100008d270000
   selectedCharacter: {fileID: 11400000, guid: 7f27d2bcef8c823418f530e8326a3efd, type: 2}
